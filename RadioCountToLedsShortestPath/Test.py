@@ -40,7 +40,7 @@ allPaths = [[-1 for x in range(numNodes)] for y in range(numNodes)]
 sys.stdout = open('out_test.txt','w')
 
 
-f = open("/opt/tinyos-2.1.2/apps/RadioCountToLeds/topo.txt", "r")
+f = open("topo.txt", "r")
 for line in f:
 	s = line.split()
 	if s:
