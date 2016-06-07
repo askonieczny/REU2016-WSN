@@ -105,6 +105,6 @@ for selNode in range(numNodes):
 
 
 pkt = t.newPacket()
-send(5, 11, pkt)
+send(5, 2, pkt)
 for i in range(1000):
 	t.runNextEvent()
