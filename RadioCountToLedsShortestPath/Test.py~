@@ -1,0 +1,119 @@
+from TOSSIM import *
+from array import *
+from RadioCountMsg import *
+import sys
+import random
+
+t = Tossim([])
+r= t.radio()
+sys.stdout = open('out_test.txt','w')
+
+
+f = open("topo.txt", "r")
+for line in f:
+  s = line.split()
+from TOSSIM import *
+from array import *
+from RadioCountMsg import *
+import sys
+import random
+from queue import *
+
+
+class Node(object):
+  next = []
+  pathLength = float('inf')
+  id = -1
+  def __init__(self,id):
+    self.id=id
+
+def sendOptimally(source, dest, finalDest, pkt):
+    if allPaths[source[dest]] == source:
+        pkt.setDestination(dest)
+        pkt.deliver(dest, t.time() + 80)
+        if dest != finalDest:
+            sendOptimally(dest, finalDest, finalDest)
+    else:
+        sendOptimally(source, allPaths[source[dest]], finalDest, pkt)
+
+
+t = Tossim([])
+r= t.radio()
+graph = [Node]
+listNodes = []
+numNodes = 6
+allPaths = [[]]
+sys.stdout = open('out_test.txt','w')
+
+
+f = open("topo.txt", "r")
+for line in f:
+  s = line.split()
+  if s:
+    r.add(int(s[0]), int(s[1]), float(s[2]))
+    if s[0] not in listNodes:
+        graph.insert(s[0], Node(s[0]))
+        listNodes.append(s[0])
+    if s[1] not in listNodes:
+        graph.insert(s[1], Node(s[1]))
+        listNodes.append(s[1])
+
+    graph[s[0]].next.append(s[1]) #add connection from s[0] to s[1] in graph
+
+
+
+
+noise = open("meyer-heavy.txt", "r")
+for line in noise:
+  str1 = line.strip()
+  if str1:
+    val = -100
+    for i in range(0, numNodes):
+      t.getNode(i).addNoiseTraceReading(val)
+
+for i in range(0, numNodes):
+  t.getNode(i).createNoiseModel()
+
+
+t.addChannel('RadioCountToLedsC',sys.stdout)
+for i in range(numNodes):
+  t.getNode(i).bootAtTime(10)
+
+radioobjs = list()
+for i in range(numNodes):
+    radioobjs.append(RadioCountMsg())
+    radioobjs[i].set_temp(random.randint(64, 83))
+    radioobjs[i].set_hum(random.randint(55, 83))
+    radioobjs[i].set_wind(random.randint(0, 20))
+
+
+
+for selNode in range(numNodes):
+    que = Queue()
+
+    graph[selNode].pathLength = 0 #path length to same node is 0
+    que.put(graph[selNode])
+    for j in range(numNodes):
+        if j != selNode:
+            graph[j].pathLength = float('inf') #reset all path lengths
+
+    while que.length > 0 :
+        n = que.get()
+        curLength = n.pathLength
+        connectedNodes = n.next #gets all connected node indexes
+        while connectedNodes.__len__() != 0:
+            curConnNode = graph[connectedNodes.pop()]
+            if curConnNode.pathLength == float('inf'):
+                curConnNode.pathLength == curLength + 1
+                allPaths[selNode[curConnNode.id]] = n.id #tells last connected node
+                que.put(curConnNode)
+
+
+pkt = t.newPacket()
+pkt.setType(radioobjs[i].get_amType())
+pkt.setData(radioobjs[i].data)
+sendOptimally(0, 4, 4, pkt)
+for i in range(10000):
+    t.runNextEvent()
+
+

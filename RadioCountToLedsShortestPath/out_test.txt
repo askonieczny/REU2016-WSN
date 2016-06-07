@@ -1,0 +1,8 @@
+Sending from 5 to 1
+Sending from 1 to 0
+Sending from 0 to 3
+Sending from 3 to 11
+DEBUG (11): Received packet of length 12.
+DEBUG (11): Current average wind is: 80.
+DEBUG (11): Current average humidity is: 50.
+DEBUG (11): Current average temperature is: 70.

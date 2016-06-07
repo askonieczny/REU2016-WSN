@@ -1,0 +1,76 @@
+from TOSSIM import *
+from array import *
+import sys
+
+t = Tossim([])
+r= t.radio()
+
+
+f = open("topo.txt", "r")
+for line in f:
+  s = line.split()
+  if s:
+    r.add(int(s[0]), int(s[1]), float(s[2]))
+
+
+
+noise = open("meyer-heavy.txt", "r")
+for line in noise:
+  str1 = line.strip()
+  if str1:
+    val = -100
+    for i in range(0, 19):
+      t.getNode(i).addNoiseTraceReading(val)
+
+for i in range(0, 19):
+  t.getNode(i).createNoiseModel()
+
+
+t.addChannel('RadioCountToLedsC',sys.stdout)
+m1 = t.getNode(0)
+m2 = t.getNode(1)
+m3 = t.getNode(2)
+m4 = t.getNode(3)
+m5 = t.getNode(4)
+m6 = t.getNode(5)
+m7 = t.getNode(6)
+m8 = t.getNode(7)
+m9 = t.getNode(8)
+m10 = t.getNode(9)
+m11 = t.getNode(10)
+m12 = t.getNode(11)
+m13 = t.getNode(12)
+m14 = t.getNode(13)
+m15 = t.getNode(14)
+m16 = t.getNode(15)
+m17 = t.getNode(16)
+m18 = t.getNode(17)
+m19 = t.getNode(18)
+m20 = t.getNode(19)
+
+
+m1.bootAtTime(10000)
+m2.bootAtTime(10001)
+m3.bootAtTime(10002)
+m4.bootAtTime(10003)
+m5.bootAtTime(10004)
+m6.bootAtTime(10005)
+m7.bootAtTime(10006)
+m8.bootAtTime(10007)
+m9.bootAtTime(10008)
+m10.bootAtTime(10009)
+m11.bootAtTime(10010)
+m12.bootAtTime(10011)
+m13.bootAtTime(10012)
+m14.bootAtTime(10013)
+m15.bootAtTime(10014)
+m16.bootAtTime(10015)
+m17.bootAtTime(10016)
+m18.bootAtTime(10017)
+m19.bootAtTime(10018)
+m20.bootAtTime(10019)
+
+t.runNextEvent();
+time = t.time()
+while time + 5000000000 > t.time():
+  t.runNextEvent()
