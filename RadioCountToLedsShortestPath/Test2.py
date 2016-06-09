@@ -95,20 +95,18 @@ for i in range(numNodes):
 	t.getNode(i).bootAtTime(10)
 
 
-radioobjs = list()
-for i in range(numNodes):
-	radioobjs.append(RadioCountMsg())
-	if(i == 5): #this should change according to what you want to send and from which nodes
-		radioobjs[i].set_temp(70)
-		radioobjs[i].set_hum(50)
-		radioobjs[i].set_wind(80)
-    	# radioobjs[i].set_temp(random.randint(64, 83))
-    	# radioobjs[i].set_hum(random.randint(55, 83))
-    	# radioobjs[i].set_wind(random.randint(0, 20))
 
-pkt = t.newPacket()
-pkt.setType(radioobjs[5].get_amType())
-pkt.setData(radioobjs[5].data)
-send(5, pkt) #destination is always base station
-for i in range(1000):
+for j in range(100):
+	radioobjs = list()
+	for i in range(numNodes):
+		radioobjs.append(RadioCountMsg())
+		radioobjs[i].set_temp(random.random() *19 + 64)
+		radioobjs[i].set_hum(random.random() * 28 + 55)
+		radioobjs[i].set_wind(random.random() * 20)
+		pkt = t.newPacket()
+		pkt.setType(radioobjs[i].get_amType())
+		pkt.setData(radioobjs[i].data)
+		send(i, pkt) #destination is always base station
+
+for i in range(10000):
 	t.runNextEvent()

@@ -8,7 +8,7 @@
 import tinyos.message.Message
 
 # The default size of this message type in bytes.
-DEFAULT_MESSAGE_SIZE = 16
+DEFAULT_MESSAGE_SIZE = 2
 
 # The Active Message type associated with this message.
 AM_TYPE = 6
@@ -43,43 +43,43 @@ class PathMsg(tinyos.message.Message.Message):
     # Accessor methods for field: counter
     #   Field type: int
     #   Offset (bits): 0
-    #   Size (bits): 16*8
+    #   Size (bits): 16
     #
 
     #
     # Return whether the field 'counter' is signed (False).
     #
-    def isSigned_counter(self):
+    def isSigned_path(self):
         return False
     
     #
     # Return whether the field 'counter' is an array (False).
     #
-    def isArray_counter(self):
+    def isArray_path(self):
         return False
     
     #
     # Return the offset (in bytes) of the field 'counter'
     #
-    def offset_counter(self):
+    def offset_path(self):
         return (0 / 8)
     
     #
     # Return the offset (in bits) of the field 'counter'
     #
-    def offsetBits_counter(self):
+    def offsetBits_path(self):
         return 0
     
     #
     # Return the value (as a int) of the field 'counter'
     #
-    def get_counter(self):
-        return self.getUIntElement(self.offsetBits_counter(), 16, 1)
+    def get_path(self):
+        return self.getUIntElement(self.offsetBits_path(), 16, 1)
     
     #
     # Set the value of the field 'counter'
     #
-    def set_counter(self, value):
+    def set_path(self, value):
         self.setUIntElement(self.offsetBits_counter(), 16, value, 1)
     
     #
