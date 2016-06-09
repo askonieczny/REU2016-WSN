@@ -40,7 +40,7 @@ class PathMsg(tinyos.message.Message.Message):
 
     #
     # Accessor methods for field: path
-    #   Field type: long
+    #   Field type: int
     #   Offset (bits): 0
     #   Size (bits): 32
     #
@@ -70,16 +70,16 @@ class PathMsg(tinyos.message.Message.Message):
         return 0
     
     #
-    # Return the value (as a long) of the field 'path'
+    # Return the value (as a int) of the field 'path'
     #
     def get_path(self):
-        return self.getUIntElement(self.offsetBits_path(), 32, 1)
+        return self.getSIntElement(self.offsetBits_path(), 32, 1)
     
     #
     # Set the value of the field 'path'
     #
     def set_path(self, value):
-        self.setUIntElement(self.offsetBits_path(), 32, value, 1)
+        self.setSIntElement(self.offsetBits_path(), 32, value, 1)
     
     #
     # Return the size, in bytes, of the field 'path'

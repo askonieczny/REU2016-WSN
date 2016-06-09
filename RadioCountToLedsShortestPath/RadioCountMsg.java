@@ -7,12 +7,12 @@
 public class RadioCountMsg extends net.tinyos.message.Message {
 
     /** The default size of this message type in bytes. */
-    public static final int DEFAULT_MESSAGE_SIZE = 12;
+    public static final int DEFAULT_MESSAGE_SIZE = 16;
 
     /** The Active Message type associated with this message. */
     public static final int AM_TYPE = 6;
 
-    /** Create a new RadioCountMsg of size 12. */
+    /** Create a new RadioCountMsg of size 16. */
     public RadioCountMsg() {
         super(DEFAULT_MESSAGE_SIZE);
         amTypeSet(AM_TYPE);
@@ -92,6 +92,9 @@ public class RadioCountMsg extends net.tinyos.message.Message {
       } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
       try {
         s += "  [wind=0x"+Long.toHexString(get_wind())+"]\n";
+      } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
+      try {
+        s += "  [num=0x"+Long.toHexString(get_num())+"]\n";
       } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
       return s;
     }
@@ -284,6 +287,69 @@ public class RadioCountMsg extends net.tinyos.message.Message {
      * Return the size, in bits, of the field 'wind'
      */
     public static int sizeBits_wind() {
+        return 32;
+    }
+
+    /////////////////////////////////////////////////////////
+    // Accessor methods for field: num
+    //   Field type: long, unsigned
+    //   Offset (bits): 96
+    //   Size (bits): 32
+    /////////////////////////////////////////////////////////
+
+    /**
+     * Return whether the field 'num' is signed (false).
+     */
+    public static boolean isSigned_num() {
+        return false;
+    }
+
+    /**
+     * Return whether the field 'num' is an array (false).
+     */
+    public static boolean isArray_num() {
+        return false;
+    }
+
+    /**
+     * Return the offset (in bytes) of the field 'num'
+     */
+    public static int offset_num() {
+        return (96 / 8);
+    }
+
+    /**
+     * Return the offset (in bits) of the field 'num'
+     */
+    public static int offsetBits_num() {
+        return 96;
+    }
+
+    /**
+     * Return the value (as a long) of the field 'num'
+     */
+    public long get_num() {
+        return (long)getUIntBEElement(offsetBits_num(), 32);
+    }
+
+    /**
+     * Set the value of the field 'num'
+     */
+    public void set_num(long value) {
+        setUIntBEElement(offsetBits_num(), 32, value);
+    }
+
+    /**
+     * Return the size, in bytes, of the field 'num'
+     */
+    public static int size_num() {
+        return (32 / 8);
+    }
+
+    /**
+     * Return the size, in bits, of the field 'num'
+     */
+    public static int sizeBits_num() {
         return 32;
     }
 

@@ -7,7 +7,7 @@ DEBUG (2): Received instruction to send to 0
 DEBUG (1): Received packet of length 4.
 DEBUG (1): Received instruction to send to 0
 DEBUG (0): Received packet of length 4.
-DEBUG (0): Received instruction to send to 0
+DEBUG (0): Received instruction to send to -1
 DEBUG (9): Received packet of length 4.
 DEBUG (9): Received instruction to send to 4
 DEBUG (8): Received packet of length 4.
@@ -18,276 +18,598 @@ DEBUG (6): Received packet of length 4.
 DEBUG (6): Received instruction to send to 2
 DEBUG (5): Received packet of length 4.
 DEBUG (5): Received instruction to send to 2
-DEBUG (3): Received packet of length 12.
-DEBUG (3): Current average wind is: 17.000
-DEBUG (3): Current average humidity is: 80.000
-DEBUG (3): Current average temperature is: 81.000
-DEBUG (8): Received packet of length 12.
-DEBUG (8): Current average wind is: 4.000
-DEBUG (8): Current average humidity is: 57.000
-DEBUG (8): Current average temperature is: 64.000
-DEBUG (9): Received packet of length 12.
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 9.000
+DEBUG (8): Current average humidity is: 64.000
+DEBUG (8): Current average temperature is: 79.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 16.000
+DEBUG (2): Current average humidity is: 55.000
+DEBUG (2): Current average temperature is: 79.000
+DEBUG (9): Received packet of length 16.
 DEBUG (9): Current average wind is: 17.000
-DEBUG (9): Current average humidity is: 73.000
-DEBUG (9): Current average temperature is: 67.000
-DEBUG (7): Received packet of length 12.
-DEBUG (7): Current average wind is: 1.000
-DEBUG (7): Current average humidity is: 66.000
-DEBUG (7): Current average temperature is: 71.000
-DEBUG (6): Received packet of length 12.
-DEBUG (6): Current average wind is: 11.000
-DEBUG (6): Current average humidity is: 65.000
-DEBUG (6): Current average temperature is: 64.000
-DEBUG (5): Received packet of length 12.
-DEBUG (5): Current average wind is: 16.000
-DEBUG (5): Current average humidity is: 66.000
-DEBUG (5): Current average temperature is: 77.000
-DEBUG (4): Received packet of length 12.
-DEBUG (4): Current average wind is: 8.000
-DEBUG (4): Current average humidity is: 55.000
-DEBUG (4): Current average temperature is: 82.000
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 8.000
-DEBUG (2): Current average humidity is: 63.000
-DEBUG (2): Current average temperature is: 77.000
-DEBUG (1): Received packet of length 12.
-DEBUG (1): Current average wind is: 13.000
+DEBUG (9): Current average humidity is: 65.000
+DEBUG (9): Current average temperature is: 64.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 17.000
 DEBUG (1): Current average humidity is: 67.000
-DEBUG (1): Current average temperature is: 80.000
-DEBUG (8): Sent radio count packet to 3
-DEBUG (2): Sent radio count packet to 0
-DEBUG (5): Sent radio count packet to 2
-DEBUG (4): Sent radio count packet to 1
+DEBUG (1): Current average temperature is: 73.000
+DEBUG (9): Received packet of length 16.
+DEBUG (9): Current average wind is: 18.000
+DEBUG (9): Current average humidity is: 140.000
+DEBUG (9): Current average temperature is: 133.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 22.000
+DEBUG (1): Current average humidity is: 140.000
+DEBUG (1): Current average temperature is: 138.000
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 22.000
+DEBUG (8): Current average humidity is: 128.000
+DEBUG (8): Current average temperature is: 143.000
+DEBUG (9): Received packet of length 16.
+DEBUG (9): Current average wind is: 34.000
+DEBUG (9): Current average humidity is: 210.000
+DEBUG (9): Current average temperature is: 212.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 14.000
+DEBUG (7): Current average humidity is: 65.000
+DEBUG (7): Current average temperature is: 67.000
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 41.000
+DEBUG (8): Current average humidity is: 199.000
+DEBUG (8): Current average temperature is: 212.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 24.000
+DEBUG (7): Current average humidity is: 139.000
+DEBUG (7): Current average temperature is: 143.000
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 44.000
+DEBUG (8): Current average humidity is: 279.000
+DEBUG (8): Current average temperature is: 284.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 34.000
+DEBUG (7): Current average humidity is: 204.000
+DEBUG (7): Current average temperature is: 225.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 19.000
+DEBUG (6): Current average humidity is: 66.000
+DEBUG (6): Current average temperature is: 72.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 21.000
+DEBUG (6): Current average humidity is: 139.000
+DEBUG (6): Current average temperature is: 145.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 28.000
+DEBUG (6): Current average humidity is: 209.000
+DEBUG (6): Current average temperature is: 210.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 5.000
+DEBUG (5): Current average humidity is: 70.000
+DEBUG (5): Current average temperature is: 66.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 8.000
+DEBUG (5): Current average humidity is: 140.000
+DEBUG (5): Current average temperature is: 132.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 30.000
+DEBUG (2): Current average humidity is: 111.000
+DEBUG (2): Current average temperature is: 148.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 38.000
+DEBUG (1): Current average humidity is: 219.000
+DEBUG (1): Current average temperature is: 205.000
+DEBUG (9): Received packet of length 16.
+DEBUG (9): Current average wind is: 48.000
+DEBUG (9): Current average humidity is: 265.000
+DEBUG (9): Current average temperature is: 287.000
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 46.000
+DEBUG (8): Current average humidity is: 351.000
+DEBUG (8): Current average temperature is: 356.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 45.000
+DEBUG (7): Current average humidity is: 273.000
+DEBUG (7): Current average temperature is: 297.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 43.000
+DEBUG (6): Current average humidity is: 272.000
+DEBUG (6): Current average temperature is: 283.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 18.000
+DEBUG (5): Current average humidity is: 222.000
+DEBUG (5): Current average temperature is: 209.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 15.000
+DEBUG (4): Current average humidity is: 73.000
+DEBUG (4): Current average temperature is: 76.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 24.000
+DEBUG (4): Current average humidity is: 149.000
+DEBUG (4): Current average temperature is: 153.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 18.000
+DEBUG (3): Current average humidity is: 77.000
+DEBUG (3): Current average temperature is: 74.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 38.000
+DEBUG (1): Current average humidity is: 292.000
+DEBUG (1): Current average temperature is: 274.000
+DEBUG (9): Received packet of length 16.
+DEBUG (9): Current average wind is: 60.000
+DEBUG (9): Current average humidity is: 343.000
+DEBUG (9): Current average temperature is: 368.000
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 63.000
+DEBUG (8): Current average humidity is: 419.000
+DEBUG (8): Current average temperature is: 430.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 51.000
+DEBUG (7): Current average humidity is: 338.000
+DEBUG (7): Current average temperature is: 368.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 56.000
+DEBUG (6): Current average humidity is: 351.000
+DEBUG (6): Current average temperature is: 352.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 30.000
+DEBUG (5): Current average humidity is: 304.000
+DEBUG (5): Current average temperature is: 276.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 40.000
+DEBUG (4): Current average humidity is: 216.000
+DEBUG (4): Current average temperature is: 226.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 22.000
+DEBUG (3): Current average humidity is: 158.000
+DEBUG (3): Current average temperature is: 142.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 33.000
+DEBUG (2): Current average humidity is: 171.000
+DEBUG (2): Current average temperature is: 222.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 51.000
+DEBUG (1): Current average humidity is: 373.000
+DEBUG (1): Current average temperature is: 345.000
+DEBUG (9): Received packet of length 16.
+DEBUG (9): Current average wind is: 76.000
+DEBUG (9): Current average humidity is: 398.000
+DEBUG (9): Current average temperature is: 440.000
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 78.000
+DEBUG (8): Current average humidity is: 499.000
+DEBUG (8): Current average temperature is: 510.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 54.000
+DEBUG (7): Current average humidity is: 413.000
+DEBUG (7): Current average temperature is: 445.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 73.000
+DEBUG (6): Current average humidity is: 413.000
+DEBUG (6): Current average temperature is: 431.000
+DEBUG (9): Received packet of length 16.
+DEBUG (9): Current average wind is: 84.000
+DEBUG (9): Current average humidity is: 457.000
+DEBUG (9): Current average temperature is: 512.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 40.000
+DEBUG (5): Current average humidity is: 383.000
+DEBUG (5): Current average temperature is: 344.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 40.000
+DEBUG (3): Current average humidity is: 221.000
+DEBUG (3): Current average temperature is: 224.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 41.000
+DEBUG (2): Current average humidity is: 241.000
+DEBUG (2): Current average temperature is: 291.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 65.000
+DEBUG (1): Current average humidity is: 451.000
+DEBUG (1): Current average temperature is: 425.000
+DEBUG (9): Received packet of length 16.
+DEBUG (9): Current average wind is: 99.000
+DEBUG (9): Current average humidity is: 519.000
+DEBUG (9): Current average temperature is: 578.000
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 83.000
+DEBUG (8): Current average humidity is: 581.000
+DEBUG (8): Current average temperature is: 588.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 63.000
+DEBUG (7): Current average humidity is: 492.000
+DEBUG (7): Current average temperature is: 522.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 40.000
+DEBUG (4): Current average humidity is: 290.000
+DEBUG (4): Current average temperature is: 305.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 59.000
+DEBUG (5): Current average humidity is: 458.000
+DEBUG (5): Current average temperature is: 418.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 49.000
+DEBUG (4): Current average humidity is: 364.000
+DEBUG (4): Current average temperature is: 380.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 42.000
+DEBUG (3): Current average humidity is: 283.000
+DEBUG (3): Current average temperature is: 305.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 48.000
+DEBUG (3): Current average humidity is: 339.000
+DEBUG (3): Current average temperature is: 381.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 81.000
+DEBUG (1): Current average humidity is: 506.000
+DEBUG (1): Current average temperature is: 500.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 61.000
+DEBUG (4): Current average humidity is: 434.000
+DEBUG (4): Current average temperature is: 456.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 51.000
+DEBUG (2): Current average humidity is: 320.000
+DEBUG (2): Current average temperature is: 364.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 98.000
+DEBUG (1): Current average humidity is: 570.000
+DEBUG (1): Current average temperature is: 575.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 48.000
+DEBUG (3): Current average humidity is: 417.000
+DEBUG (3): Current average temperature is: 452.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 52.000
+DEBUG (3): Current average humidity is: 483.000
+DEBUG (3): Current average temperature is: 525.000
+DEBUG (9): Received packet of length 16.
+DEBUG (9): Current average wind is: 105.000
+DEBUG (9): Current average humidity is: 595.000
+DEBUG (9): Current average temperature is: 644.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 63.000
+DEBUG (3): Current average humidity is: 539.000
+DEBUG (3): Current average temperature is: 606.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 59.000
+DEBUG (2): Current average humidity is: 382.000
+DEBUG (2): Current average temperature is: 437.000
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 91.000
+DEBUG (8): Current average humidity is: 649.000
+DEBUG (8): Current average temperature is: 666.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 64.000
+DEBUG (2): Current average humidity is: 456.000
+DEBUG (2): Current average temperature is: 513.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 67.000
+DEBUG (7): Current average humidity is: 571.000
+DEBUG (7): Current average temperature is: 598.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 76.000
+DEBUG (6): Current average humidity is: 486.000
+DEBUG (6): Current average temperature is: 510.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 75.000
+DEBUG (7): Current average humidity is: 632.000
+DEBUG (7): Current average temperature is: 677.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 105.000
+DEBUG (1): Current average humidity is: 634.000
+DEBUG (1): Current average temperature is: 651.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 63.000
+DEBUG (5): Current average humidity is: 535.000
+DEBUG (5): Current average temperature is: 484.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 80.000
+DEBUG (4): Current average humidity is: 497.000
+DEBUG (4): Current average temperature is: 530.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 72.000
+DEBUG (2): Current average humidity is: 521.000
+DEBUG (2): Current average temperature is: 586.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 74.000
+DEBUG (3): Current average humidity is: 605.000
+DEBUG (3): Current average temperature is: 675.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 81.000
+DEBUG (2): Current average humidity is: 587.000
+DEBUG (2): Current average temperature is: 665.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 97.000
+DEBUG (4): Current average humidity is: 556.000
+DEBUG (4): Current average temperature is: 603.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 108.000
+DEBUG (1): Current average humidity is: 702.000
+DEBUG (1): Current average temperature is: 726.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 63.000
+DEBUG (5): Current average humidity is: 593.000
+DEBUG (5): Current average temperature is: 551.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 97.000
+DEBUG (4): Current average humidity is: 615.000
+DEBUG (4): Current average temperature is: 675.000
+DEBUG (9): Received packet of length 16.
+DEBUG (9): Current average wind is: 123.000
+DEBUG (9): Current average humidity is: 671.000
+DEBUG (9): Current average temperature is: 710.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 81.000
+DEBUG (6): Current average humidity is: 562.000
+DEBUG (6): Current average temperature is: 589.000
+DEBUG (8): Received packet of length 16.
+DEBUG (8): Current average wind is: 104.000
+DEBUG (8): Current average humidity is: 712.000
+DEBUG (8): Current average temperature is: 735.000
+DEBUG (7): Received packet of length 16.
+DEBUG (7): Current average wind is: 78.000
+DEBUG (7): Current average humidity is: 695.000
+DEBUG (7): Current average temperature is: 751.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 77.000
+DEBUG (5): Current average humidity is: 660.000
+DEBUG (5): Current average temperature is: 625.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 81.000
+DEBUG (6): Current average humidity is: 626.000
+DEBUG (6): Current average temperature is: 665.000
+DEBUG (6): Received packet of length 16.
+DEBUG (6): Current average wind is: 98.000
+DEBUG (6): Current average humidity is: 692.000
+DEBUG (6): Current average temperature is: 739.000
+DEBUG (5): Received packet of length 16.
+DEBUG (5): Current average wind is: 91.000
+DEBUG (5): Current average humidity is: 732.000
+DEBUG (5): Current average temperature is: 697.000
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 105.000
+DEBUG (4): Current average humidity is: 697.000
+DEBUG (4): Current average temperature is: 747.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 91.000
+DEBUG (2): Current average humidity is: 649.000
+DEBUG (2): Current average temperature is: 737.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 87.000
+DEBUG (3): Current average humidity is: 673.000
+DEBUG (3): Current average temperature is: 743.000
 DEBUG (3): Sent radio count packet to 1
-DEBUG (9): Sent radio count packet to 4
+DEBUG (4): Sent radio count packet to 1
+DEBUG (1): Sent radio count packet to 0
 DEBUG (7): Sent radio count packet to 3
 DEBUG (6): Sent radio count packet to 2
-DEBUG (1): Sent radio count packet to 0
-DEBUG (1): Received packet of length 12.
-DEBUG (1): Current average wind is: 10.500
-DEBUG (1): Current average humidity is: 61.000
-DEBUG (1): Current average temperature is: 81.000
-DEBUG (4): Received packet of length 12.
-DEBUG (4): Current average wind is: 12.500
-DEBUG (4): Current average humidity is: 64.000
-DEBUG (4): Current average temperature is: 74.500
-DEBUG (3): Received packet of length 12.
-DEBUG (3): Current average wind is: 10.500
-DEBUG (3): Current average humidity is: 68.500
-DEBUG (3): Current average temperature is: 72.500
-DEBUG (3): Received packet of length 12.
-DEBUG (3): Current average wind is: 7.333
-DEBUG (3): Current average humidity is: 67.667
-DEBUG (3): Current average temperature is: 72.000
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 13.000
-DEBUG (0): Current average humidity is: 67.000
-DEBUG (0): Current average temperature is: 80.000
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 9.500
-DEBUG (2): Current average humidity is: 64.000
-DEBUG (2): Current average temperature is: 70.500
-DEBUG (1): Received packet of length 12.
-DEBUG (1): Current average wind is: 12.667
-DEBUG (1): Current average humidity is: 67.333
-DEBUG (1): Current average temperature is: 81.000
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 10.500
-DEBUG (0): Current average humidity is: 65.000
-DEBUG (0): Current average temperature is: 78.500
-DEBUG (2): Sent radio count packet to 0
-DEBUG (1): Sent radio count packet to 0
-DEBUG (5): Sent radio count packet to 2
-DEBUG (6): Sent radio count packet to 2
-DEBUG (0): Sent radio count packet to 0
-DEBUG (8): Sent radio count packet to 3
-DEBUG (4): Sent radio count packet to 1
-DEBUG (7): Sent radio count packet to 3
-DEBUG (3): Sent radio count packet to 1
-DEBUG (9): Sent radio count packet to 4
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 11.000
-DEBUG (0): Current average humidity is: 65.667
-DEBUG (0): Current average temperature is: 79.333
-DEBUG (4): Received packet of length 12.
-DEBUG (4): Current average wind is: 14.000
-DEBUG (4): Current average humidity is: 67.000
-DEBUG (4): Current average temperature is: 72.000
-DEBUG (3): Received packet of length 12.
-DEBUG (3): Current average wind is: 5.750
-DEBUG (3): Current average humidity is: 67.250
-DEBUG (3): Current average temperature is: 71.750
-DEBUG (3): Received packet of length 12.
-DEBUG (3): Current average wind is: 5.400
-DEBUG (3): Current average humidity is: 65.200
-DEBUG (3): Current average temperature is: 70.200
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 10.500
-DEBUG (0): Current average humidity is: 65.250
-DEBUG (0): Current average temperature is: 77.000
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 10.000
-DEBUG (2): Current average humidity is: 64.333
-DEBUG (2): Current average temperature is: 68.333
-DEBUG (8): Sent radio count packet to 3
-DEBUG (5): Sent radio count packet to 2
-DEBUG (4): Sent radio count packet to 1
-DEBUG (9): Sent radio count packet to 4
-DEBUG (2): Sent radio count packet to 0
-DEBUG (1): Sent radio count packet to 0
-DEBUG (0): Sent radio count packet to 0
-DEBUG (7): Sent radio count packet to 3
-DEBUG (6): Sent radio count packet to 2
-DEBUG (3): Sent radio count packet to 1
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 10.250
-DEBUG (2): Current average humidity is: 64.500
-DEBUG (2): Current average temperature is: 67.250
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 10.400
-DEBUG (0): Current average humidity is: 65.000
-DEBUG (0): Current average temperature is: 75.200
-DEBUG (1): Received packet of length 12.
-DEBUG (1): Current average wind is: 13.000
-DEBUG (1): Current average humidity is: 67.250
-DEBUG (1): Current average temperature is: 78.750
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 10.667
-DEBUG (0): Current average humidity is: 65.333
-DEBUG (0): Current average temperature is: 76.167
-DEBUG (6): Sent radio count packet to 2
-DEBUG (9): Sent radio count packet to 4
-DEBUG (8): Sent radio count packet to 3
-DEBUG (3): Sent radio count packet to 1
-DEBUG (5): Sent radio count packet to 2
-DEBUG (7): Sent radio count packet to 3
-DEBUG (1): Sent radio count packet to 0
-DEBUG (0): Sent radio count packet to 0
-DEBUG (4): Sent radio count packet to 1
-DEBUG (2): Sent radio count packet to 0
-DEBUG (1): Received packet of length 12.
-DEBUG (1): Current average wind is: 11.400
-DEBUG (1): Current average humidity is: 66.800
-DEBUG (1): Current average temperature is: 77.000
-DEBUG (1): Received packet of length 12.
-DEBUG (1): Current average wind is: 11.833
-DEBUG (1): Current average humidity is: 66.833
-DEBUG (1): Current average temperature is: 76.167
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 11.400
-DEBUG (2): Current average humidity is: 64.800
-DEBUG (2): Current average temperature is: 69.200
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 11.000
-DEBUG (0): Current average humidity is: 65.571
-DEBUG (0): Current average temperature is: 76.429
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 11.333
-DEBUG (2): Current average humidity is: 64.833
-DEBUG (2): Current average temperature is: 68.333
-DEBUG (4): Received packet of length 12.
-DEBUG (4): Current average wind is: 14.750
-DEBUG (4): Current average humidity is: 68.500
-DEBUG (4): Current average temperature is: 70.750
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 10.875
-DEBUG (0): Current average humidity is: 65.375
-DEBUG (0): Current average temperature is: 75.250
-DEBUG (0): Sent radio count packet to 0
-DEBUG (4): Sent radio count packet to 1
-DEBUG (5): Sent radio count packet to 2
-DEBUG (9): Sent radio count packet to 4
-DEBUG (3): Sent radio count packet to 1
-DEBUG (2): Sent radio count packet to 0
-DEBUG (7): Sent radio count packet to 3
-DEBUG (8): Sent radio count packet to 3
-DEBUG (6): Sent radio count packet to 2
-DEBUG (1): Sent radio count packet to 0
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 11.286
-DEBUG (2): Current average humidity is: 64.857
-DEBUG (2): Current average temperature is: 67.714
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 11.875
-DEBUG (2): Current average humidity is: 65.000
-DEBUG (2): Current average temperature is: 68.875
-DEBUG (4): Received packet of length 12.
-DEBUG (4): Current average wind is: 15.200
-DEBUG (4): Current average humidity is: 69.400
-DEBUG (4): Current average temperature is: 70.000
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 10.889
-DEBUG (0): Current average humidity is: 65.444
-DEBUG (0): Current average temperature is: 75.333
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 10.900
-DEBUG (0): Current average humidity is: 65.300
-DEBUG (0): Current average temperature is: 74.600
-DEBUG (3): Received packet of length 12.
-DEBUG (3): Current average wind is: 4.667
-DEBUG (3): Current average humidity is: 65.333
-DEBUG (3): Current average temperature is: 70.333
-DEBUG (6): Sent radio count packet to 2
-DEBUG (0): Sent radio count packet to 0
-DEBUG (7): Sent radio count packet to 3
-DEBUG (8): Sent radio count packet to 3
-DEBUG (1): Sent radio count packet to 0
-DEBUG (4): Sent radio count packet to 1
-DEBUG (5): Sent radio count packet to 2
-DEBUG (3): Sent radio count packet to 1
-DEBUG (2): Sent radio count packet to 0
-DEBUG (9): Sent radio count packet to 4
-DEBUG (4): Received packet of length 12.
-DEBUG (4): Current average wind is: 15.500
-DEBUG (4): Current average humidity is: 70.000
-DEBUG (4): Current average temperature is: 69.500
-DEBUG (1): Received packet of length 12.
-DEBUG (1): Current average wind is: 10.714
-DEBUG (1): Current average humidity is: 66.571
-DEBUG (1): Current average temperature is: 75.286
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 11.778
-DEBUG (2): Current average humidity is: 65.000
-DEBUG (2): Current average temperature is: 68.333
-DEBUG (3): Received packet of length 12.
-DEBUG (3): Current average wind is: 4.571
-DEBUG (3): Current average humidity is: 64.143
-DEBUG (3): Current average temperature is: 69.429
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 12.200
-DEBUG (2): Current average humidity is: 65.100
-DEBUG (2): Current average temperature is: 69.200
-DEBUG (7): Sent radio count packet to 3
-DEBUG (6): Sent radio count packet to 2
-DEBUG (1): Sent radio count packet to 0
-DEBUG (9): Sent radio count packet to 4
-DEBUG (5): Sent radio count packet to 2
-DEBUG (4): Sent radio count packet to 1
 DEBUG (2): Sent radio count packet to 0
 DEBUG (8): Sent radio count packet to 3
-DEBUG (0): Sent radio count packet to 0
+DEBUG (5): Sent radio count packet to 2
+DEBUG (9): Sent radio count packet to 4
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 114.000
+DEBUG (4): Current average humidity is: 684.000
+DEBUG (4): Current average temperature is: 728.500
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 95.500
+DEBUG (3): Current average humidity is: 692.500
+DEBUG (3): Current average temperature is: 739.000
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 54.000
+DEBUG (0): Current average humidity is: 351.000
+DEBUG (0): Current average temperature is: 363.000
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 94.500
+DEBUG (2): Current average humidity is: 670.500
+DEBUG (2): Current average temperature is: 738.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 97.500
+DEBUG (1): Current average humidity is: 687.500
+DEBUG (1): Current average temperature is: 734.500
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 66.333
+DEBUG (0): Current average humidity is: 450.333
+DEBUG (0): Current average temperature is: 487.667
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 100.000
+DEBUG (1): Current average humidity is: 690.667
+DEBUG (1): Current average temperature is: 738.667
+DEBUG (1): Sent radio count packet to 0
+DEBUG (7): Sent radio count packet to 3
 DEBUG (3): Sent radio count packet to 1
-DEBUG (1): Received packet of length 12.
-DEBUG (1): Current average wind is: 9.875
-DEBUG (1): Current average humidity is: 66.250
-DEBUG (1): Current average temperature is: 74.500
-DEBUG (3): Received packet of length 12.
-DEBUG (3): Current average wind is: 4.125
-DEBUG (3): Current average humidity is: 64.375
-DEBUG (3): Current average temperature is: 69.625
-DEBUG (2): Received packet of length 12.
-DEBUG (2): Current average wind is: 12.091
-DEBUG (2): Current average humidity is: 65.091
-DEBUG (2): Current average temperature is: 68.727
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 10.818
-DEBUG (0): Current average humidity is: 65.364
-DEBUG (0): Current average temperature is: 74.636
-DEBUG (1): Received packet of length 12.
-DEBUG (1): Current average wind is: 10.444
-DEBUG (1): Current average humidity is: 66.667
-DEBUG (1): Current average temperature is: 73.889
-DEBUG (0): Received packet of length 12.
-DEBUG (0): Current average wind is: 10.917
-DEBUG (0): Current average humidity is: 65.333
-DEBUG (0): Current average temperature is: 74.167
+DEBUG (6): Sent radio count packet to 2
+DEBUG (5): Sent radio count packet to 2
+DEBUG (8): Sent radio count packet to 3
+DEBUG (2): Sent radio count packet to 0
+DEBUG (4): Sent radio count packet to 1
+DEBUG (9): Sent radio count packet to 4
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 77.600
+DEBUG (0): Current average humidity is: 538.400
+DEBUG (0): Current average temperature is: 587.800
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 117.000
+DEBUG (4): Current average humidity is: 679.667
+DEBUG (4): Current average temperature is: 722.333
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 89.667
+DEBUG (3): Current average humidity is: 693.333
+DEBUG (3): Current average temperature is: 743.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 98.200
+DEBUG (1): Current average humidity is: 691.400
+DEBUG (1): Current average temperature is: 738.800
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 93.250
+DEBUG (3): Current average humidity is: 698.000
+DEBUG (3): Current average temperature is: 741.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 102.714
+DEBUG (1): Current average humidity is: 689.286
+DEBUG (1): Current average temperature is: 735.857
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 86.000
+DEBUG (0): Current average humidity is: 595.500
+DEBUG (0): Current average temperature is: 644.375
+DEBUG (7): Sent radio count packet to 3
+DEBUG (4): Sent radio count packet to 1
+DEBUG (1): Sent radio count packet to 0
+DEBUG (8): Sent radio count packet to 3
+DEBUG (9): Sent radio count packet to 4
+DEBUG (2): Sent radio count packet to 0
+DEBUG (5): Sent radio count packet to 2
+DEBUG (3): Sent radio count packet to 1
+DEBUG (6): Sent radio count packet to 2
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 87.700
+DEBUG (0): Current average humidity is: 610.500
+DEBUG (0): Current average temperature is: 663.100
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 95.667
+DEBUG (2): Current average humidity is: 677.667
+DEBUG (2): Current average temperature is: 738.333
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 95.400
+DEBUG (3): Current average humidity is: 700.800
+DEBUG (3): Current average temperature is: 739.800
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 107.000
+DEBUG (1): Current average humidity is: 686.400
+DEBUG (1): Current average temperature is: 731.800
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 94.500
+DEBUG (2): Current average humidity is: 691.250
+DEBUG (2): Current average temperature is: 728.000
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 92.500
+DEBUG (3): Current average humidity is: 699.833
+DEBUG (3): Current average temperature is: 741.667
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 93.882
+DEBUG (0): Current average humidity is: 642.941
+DEBUG (0): Current average temperature is: 693.059
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 103.071
+DEBUG (1): Current average humidity is: 689.714
+DEBUG (1): Current average temperature is: 734.429
+DEBUG (3): Sent radio count packet to 1
+DEBUG (5): Sent radio count packet to 2
+DEBUG (7): Sent radio count packet to 3
+DEBUG (1): Sent radio count packet to 0
+DEBUG (4): Sent radio count packet to 1
+DEBUG (8): Sent radio count packet to 3
+DEBUG (2): Sent radio count packet to 0
+DEBUG (6): Sent radio count packet to 2
+DEBUG (9): Sent radio count packet to 4
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 118.500
+DEBUG (4): Current average humidity is: 677.500
+DEBUG (4): Current average temperature is: 719.250
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 99.900
+DEBUG (1): Current average humidity is: 692.750
+DEBUG (1): Current average temperature is: 736.600
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 93.800
+DEBUG (2): Current average humidity is: 699.400
+DEBUG (2): Current average temperature is: 721.800
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 94.143
+DEBUG (3): Current average humidity is: 701.571
+DEBUG (3): Current average temperature is: 740.714
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 94.500
+DEBUG (2): Current average humidity is: 698.167
+DEBUG (2): Current average temperature is: 724.667
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 98.032
+DEBUG (0): Current average humidity is: 664.065
+DEBUG (0): Current average temperature is: 711.742
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 97.629
+DEBUG (0): Current average humidity is: 667.171
+DEBUG (0): Current average temperature is: 713.600
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 102.130
+DEBUG (1): Current average humidity is: 691.043
+DEBUG (1): Current average temperature is: 734.739
+DEBUG (5): Sent radio count packet to 2
+DEBUG (7): Sent radio count packet to 3
+DEBUG (4): Sent radio count packet to 1
+DEBUG (3): Sent radio count packet to 1
+DEBUG (2): Sent radio count packet to 0
+DEBUG (6): Sent radio count packet to 2
+DEBUG (8): Sent radio count packet to 3
+DEBUG (9): Sent radio count packet to 4
+DEBUG (1): Sent radio count packet to 0
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 97.171
+DEBUG (0): Current average humidity is: 671.707
+DEBUG (0): Current average temperature is: 715.219
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 95.375
+DEBUG (3): Current average humidity is: 702.875
+DEBUG (3): Current average temperature is: 740.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 100.267
+DEBUG (1): Current average humidity is: 693.500
+DEBUG (1): Current average temperature is: 736.133
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 93.444
+DEBUG (3): Current average humidity is: 702.000
+DEBUG (3): Current average temperature is: 741.222
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 98.953
+DEBUG (0): Current average humidity is: 678.656
+DEBUG (0): Current average temperature is: 722.234
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 102.412
+DEBUG (1): Current average humidity is: 691.618
+DEBUG (1): Current average temperature is: 734.147
+DEBUG (7): Sent radio count packet to 3
+DEBUG (2): Sent radio count packet to 0
+DEBUG (1): Sent radio count packet to 0
+DEBUG (6): Sent radio count packet to 2
+DEBUG (9): Sent radio count packet to 4
+DEBUG (4): Sent radio count packet to 1
+DEBUG (5): Sent radio count packet to 2
+DEBUG (8): Sent radio count packet to 3
+DEBUG (3): Sent radio count packet to 1
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 98.571
+DEBUG (0): Current average humidity is: 680.329
+DEBUG (0): Current average temperature is: 722.443
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 94.000
+DEBUG (2): Current average humidity is: 703.000
+DEBUG (2): Current average temperature is: 720.714
+DEBUG (2): Received packet of length 16.
+DEBUG (2): Current average wind is: 94.500
+DEBUG (2): Current average humidity is: 701.625
+DEBUG (2): Current average temperature is: 723.000
+DEBUG (1): Received packet of length 16.
+DEBUG (1): Current average wind is: 100.535
+DEBUG (1): Current average humidity is: 693.791
+DEBUG (1): Current average temperature is: 735.628
+DEBUG (4): Received packet of length 16.
+DEBUG (4): Current average wind is: 119.400
+DEBUG (4): Current average humidity is: 676.200
+DEBUG (4): Current average temperature is: 717.400
+DEBUG (3): Received packet of length 16.
+DEBUG (3): Current average wind is: 94.500
+DEBUG (3): Current average humidity is: 703.000
+DEBUG (3): Current average temperature is: 740.600
+DEBUG (0): Received packet of length 16.
+DEBUG (0): Current average wind is: 99.827
+DEBUG (0): Current average humidity is: 684.019
+DEBUG (0): Current average temperature is: 726.269
+DEBUG (2): Sent radio count packet to 0
+DEBUG (6): Sent radio count packet to 2
+DEBUG (1): Sent radio count packet to 0
+DEBUG (3): Sent radio count packet to 1
+DEBUG (9): Sent radio count packet to 4
+DEBUG (8): Sent radio count packet to 3
+DEBUG (7): Sent radio count packet to 3
+DEBUG (4): Sent radio count packet to 1
+DEBUG (5): Sent radio count packet to 2

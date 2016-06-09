@@ -7,14 +7,14 @@
 import tinyos.message.Message
 
 # The default size of this message type in bytes.
-DEFAULT_MESSAGE_SIZE = 12
+DEFAULT_MESSAGE_SIZE = 16
 
 # The Active Message type associated with this message.
 AM_TYPE = 6
 
 class RadioCountMsg(tinyos.message.Message.Message):
-    # Create a new RadioCountMsg of size 12.
-    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=12):
+    # Create a new RadioCountMsg of size 16.
+    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=16):
         tinyos.message.Message.Message.__init__(self, data, addr, gid, base_offset, data_length)
         self.amTypeSet(AM_TYPE)
     
@@ -40,6 +40,10 @@ class RadioCountMsg(tinyos.message.Message.Message):
             pass
         try:
             s += "  [wind=0x%x]\n" % (self.get_wind())
+        except:
+            pass
+        try:
+            s += "  [num=0x%x]\n" % (self.get_num())
         except:
             pass
         return s
@@ -209,5 +213,60 @@ class RadioCountMsg(tinyos.message.Message.Message):
     # Return the size, in bits, of the field 'wind'
     #
     def sizeBits_wind(self):
+        return 32
+    
+    #
+    # Accessor methods for field: num
+    #   Field type: long
+    #   Offset (bits): 96
+    #   Size (bits): 32
+    #
+
+    #
+    # Return whether the field 'num' is signed (False).
+    #
+    def isSigned_num(self):
+        return False
+    
+    #
+    # Return whether the field 'num' is an array (False).
+    #
+    def isArray_num(self):
+        return False
+    
+    #
+    # Return the offset (in bytes) of the field 'num'
+    #
+    def offset_num(self):
+        return (96 / 8)
+    
+    #
+    # Return the offset (in bits) of the field 'num'
+    #
+    def offsetBits_num(self):
+        return 96
+    
+    #
+    # Return the value (as a long) of the field 'num'
+    #
+    def get_num(self):
+        return self.getUIntElement(self.offsetBits_num(), 32, 1)
+    
+    #
+    # Set the value of the field 'num'
+    #
+    def set_num(self, value):
+        self.setUIntElement(self.offsetBits_num(), 32, value, 1)
+    
+    #
+    # Return the size, in bytes, of the field 'num'
+    #
+    def size_num(self):
+        return (32 / 8)
+    
+    #
+    # Return the size, in bits, of the field 'num'
+    #
+    def sizeBits_num(self):
         return 32
     

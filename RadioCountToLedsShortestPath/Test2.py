@@ -82,7 +82,7 @@ while que.qsize() > 0:
 			allPaths[curConnNode.idNum] = n.idNum #tells last connected node
 			que.put(curConnNode)
 
-allPaths[baseStation] = baseStation 
+allPaths[baseStation] = -1
 
 t.addChannel('RadioCountToLedsC',sys.stdout)
 for i in range(numNodes):
@@ -103,13 +103,14 @@ for i in range(numNodes):
 	#print "tried to send"
 
 #send sensor readings to nodes
-for j in range(1):
+for j in range(10):
 	radioobjs = list()
 	for i in range(numNodes):
 		radioobjs.append(RadioCountMsg())
 		radioobjs[i].set_temp(random.random() *19 + 64)
 		radioobjs[i].set_hum(random.random() * 28 + 55)
 		radioobjs[i].set_wind(random.random() * 20)
+		radioobjs[i].set_num(0)
 		pkt = t.newPacket()
 		pkt.setType(radioobjs[i].get_amType())
 		pkt.setData(radioobjs[i].data)

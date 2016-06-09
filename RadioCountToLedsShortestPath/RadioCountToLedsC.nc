@@ -79,11 +79,11 @@ implementation {
   bool locked;
   bool pathPresent = FALSE;
   bool rcmReceived = FALSE;
-  float num = 0;
+  float num = 1;
   float wind = 0;
   float temp = 0;
   float hum = 0;
-  nx_uint32_t path;
+  nx_int32_t path;
 
   event void Boot.booted() {
     call AMControl.start();
@@ -114,13 +114,15 @@ implementation {
             return;
           }
 
-          rcm -> wind = wind/num;
-          rcm -> hum = hum/num;
-          rcm -> temp = temp/num;
-
-          if (call AMSend.send(path, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
-            dbg("RadioCountToLedsC", "Sent radio count packet to %i\n", path);
-            locked = TRUE;
+          rcm -> wind = wind;
+          rcm -> hum = hum;
+          rcm -> temp = temp;
+          rcm -> num = num;
+          if(path != -1) {
+            if (call AMSend.send(path, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
+              dbg("RadioCountToLedsC", "Sent radio count packet to %i\n", path);
+              locked = TRUE;
+            }
           }
     }
   }
@@ -145,7 +147,7 @@ implementation {
       wind += rcm -> wind;
       hum += rcm -> hum;
       temp += rcm -> temp;
-      num++;
+      num += rcm -> num;
       rcmReceived = TRUE;
       dbg("RadioCountToLedsC", "Current average wind is: %.3f\n", wind/num);
       dbg("RadioCountToLedsC", "Current average humidity is: %.3f\n", hum/num);

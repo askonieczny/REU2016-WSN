@@ -94,16 +94,16 @@ public class PathMsg extends net.tinyos.message.Message {
 
     /////////////////////////////////////////////////////////
     // Accessor methods for field: path
-    //   Field type: long, unsigned
+    //   Field type: int, signed
     //   Offset (bits): 0
     //   Size (bits): 32
     /////////////////////////////////////////////////////////
 
     /**
-     * Return whether the field 'path' is signed (false).
+     * Return whether the field 'path' is signed (true).
      */
     public static boolean isSigned_path() {
-        return false;
+        return true;
     }
 
     /**
@@ -128,17 +128,17 @@ public class PathMsg extends net.tinyos.message.Message {
     }
 
     /**
-     * Return the value (as a long) of the field 'path'
+     * Return the value (as a int) of the field 'path'
      */
-    public long get_path() {
-        return (long)getUIntBEElement(offsetBits_path(), 32);
+    public int get_path() {
+        return (int)getSIntBEElement(offsetBits_path(), 32);
     }
 
     /**
      * Set the value of the field 'path'
      */
-    public void set_path(long value) {
-        setUIntBEElement(offsetBits_path(), 32, value);
+    public void set_path(int value) {
+        setSIntBEElement(offsetBits_path(), 32, value);
     }
 
     /**

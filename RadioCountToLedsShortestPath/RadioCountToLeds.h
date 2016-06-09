@@ -45,10 +45,11 @@ typedef nx_struct radio_count_msg {
   nx_uint32_t temp;
   nx_uint32_t hum;
   nx_uint32_t wind;
+  nx_uint32_t num;
 } radio_count_msg_t;
 
 typedef nx_struct path_msg {
-  nx_uint32_t path;
+  nx_int32_t path;
 } path_msg_t;
 
 enum {
