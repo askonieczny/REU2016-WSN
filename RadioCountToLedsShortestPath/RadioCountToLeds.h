@@ -47,6 +47,10 @@ typedef nx_struct radio_count_msg {
   nx_uint32_t wind;
 } radio_count_msg_t;
 
+typedef nx_struct path_msg {
+  nx_uint32_t path;
+} path_msg_t;
+
 enum {
   AM_RADIO_COUNT_MSG = 6,
 };

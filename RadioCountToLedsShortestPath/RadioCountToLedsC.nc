@@ -66,8 +66,8 @@ module RadioCountToLedsC @safe() {
     interface SplitControl as AMControl;
     interface Packet;
   }
-  provides interface Get<nx_uint16_t>;
-  provides interface Set<nx_uint16_t>;
+  provides interface Get<nx_uint32_t>;
+  provides interface Set<nx_uint32_t>;
 }
 
 
@@ -79,11 +79,13 @@ implementation {
   message_t packet;
 
   bool locked;
+  bool pathPresent = FALSE;
+  bool rcmReceived = FALSE;
   float num = 0;
   float wind = 0;
   float temp = 0;
   float hum = 0;
-  nx_uint16_t path;
+  nx_uint32_t path;
 
   event void Boot.booted() {
     call AMControl.start();
@@ -104,19 +106,49 @@ implementation {
   }
 
   event void MilliTimer.fired() {
-    // do nothing
+    if(locked || !pathPresent || !rcmReceived) {
+      return;
+    }
+
+    else {
+      radio_count_msg_t* rcm = (radio_count_msg_t*)call Packet.getPayload(&packet, sizeof(radio_count_msg_t));
+          if (rcm == NULL) {
+            return;
+          }
+
+          rcm -> wind = wind;
+          rcm -> hum = hum;
+          rcm -> temp = temp;
+
+          if (call AMSend.send(path, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
+            dbg("RadioCountToLedsC", "Sent radio count packet to %i\n", path); 
+            locked = TRUE;
+          }
+    }
   }
 
   event message_t* Receive.receive(message_t* bufPtr,
 				   void* payload, uint8_t len) {
     dbg("RadioCountToLedsC", "Received packet of length %hhu.\n", len);
-    if (len != sizeof(radio_count_msg_t)) {return bufPtr;}
+    if (len != sizeof(radio_count_msg_t) && len != sizeof(path_msg_t)) 
+    {
+      dbg("RadioCountToLedsC", "Length is messed up\n");
+      return bufPtr;
+    }
+    else if(len == sizeof(path_msg_t)) {
+      path_msg_t* pm = (path_msg_t*) payload;
+      path = pm -> path;
+      dbg("RadioCountToLedsC", "Received instruction to send to %d\n", path);
+      pathPresent = TRUE;
+      return bufPtr;
+    }
     else {
       radio_count_msg_t* rcm = (radio_count_msg_t*) payload;
       wind += rcm -> wind;
       hum += rcm -> hum;
       temp += rcm -> temp;
       num++;
+      rcmReceived = TRUE;
       dbg("RadioCountToLedsC", "Current average wind is: %.3f\n", wind/num);
       dbg("RadioCountToLedsC", "Current average humidity is: %.3f\n", hum/num);
       dbg("RadioCountToLedsC", "Current average temperature is: %.3f\n", temp/num);
@@ -130,11 +162,11 @@ implementation {
     }
   }
 
-  command nx_uint16_t Get.get() {
+  command nx_uint32_t Get.get() {
   	return path;
   }
 
-  command void Set.set(nx_uint16_t p) {
+  command void Set.set(nx_uint32_t p) {
   	path = p;
   }
 

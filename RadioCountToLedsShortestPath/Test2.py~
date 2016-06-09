@@ -14,13 +14,13 @@ class Node(object):
 		self.pathLength = float('inf')
 		self.idNum=idNum
 
-# def send(source, pkt): #final destination will always be the base station 
-#   	dest = allPaths[source]
-#   	pkt.setDestination(dest)
-# 	pkt.deliver(dest, t.time() + 80)
-# 	print "Sending from " + str(source) + " to " + str(dest)
-# 	if dest != baseStation:
-# 		send(dest, pkt)
+def send(source, pkt): #final destination will always be the base station 
+  	dest = allPaths[source]
+  	pkt.setDestination(dest)
+	pkt.deliver(dest, t.time() + 80)
+	print "Sending from " + str(source) + " to " + str(dest)
+	if dest != baseStation:
+		send(dest, pkt)
 
 t = Tossim([])
 r= t.radio()
@@ -46,7 +46,7 @@ listNodes = []
 graph = []
 for i in range(numNodes):
 	graph.append(Node(-1))
-allPaths = [0 for x in range(numNodes)] 
+allPaths = [-1 for x in range(numNodes)] 
 
 f = open("topo.txt", "r")
 for line in f:
@@ -101,14 +101,11 @@ for i in range(numNodes):
 	msg = PathMsg()
 	msg.set_path(allPaths[i]) #tells where to send packets to next
 	p = t.newPacket()
-	p.setLength(4)
 	p.setType(msg.get_amType())
 	p.setData(msg.data)
-	p.setSource(baseStation)
 	p.setDestination(i)
-	#pdb.set_trace()
-	p.deliver(i, t.time() + 80)
-	#print "tried to send"
+	p.deliver(i, t.time() + 40)
+	print "tried to send"
 
 
 for j in range(1):
@@ -121,9 +118,8 @@ for j in range(1):
 		pkt = t.newPacket()
 		pkt.setType(radioobjs[i].get_amType())
 		pkt.setData(radioobjs[i].data)
-		if i != baseStation:
-			pkt.setDestination(i)
-			pkt.deliver(i, t.time() + 200)
+		#if i != baseStation:
+		#	send(i, pkt) #destination is always base station
 
-for i in range(1000):
+for i in range(10000):
 	t.runNextEvent()
