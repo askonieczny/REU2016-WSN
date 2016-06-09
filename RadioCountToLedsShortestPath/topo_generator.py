@@ -4,7 +4,7 @@ import sys
 finished = True
 sel = "tree"
 numNodes = 12
-topoTxt = open("/opt/tinyos-2.1.2/apps/RadioCountToLeds/topo.txt", "w")
+topoTxt = open("topo.txt", "w")
 
 
 if(finished):
