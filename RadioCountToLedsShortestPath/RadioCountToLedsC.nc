@@ -54,26 +54,36 @@
  * @date   June 6 2005
  */
 
+
 module RadioCountToLedsC @safe() {
   uses {
     interface Leds;
     interface Boot;
     interface Receive;
     interface AMSend;
+
     interface Timer<TMilli> as MilliTimer;
     interface SplitControl as AMControl;
     interface Packet;
   }
+  provides interface Get<nx_uint16_t>;
+  provides interface Set<nx_uint16_t>;
 }
+
+
+
 implementation {
+
+
 
   message_t packet;
 
   bool locked;
-  uint16_t num = 0;
-  uint32_t wind = 0;
-  uint32_t temp = 0;
-  uint32_t hum = 0;
+  float num = 0;
+  float wind = 0;
+  float temp = 0;
+  float hum = 0;
+  nx_uint16_t path;
 
   event void Boot.booted() {
     call AMControl.start();
@@ -82,6 +92,7 @@ implementation {
   event void AMControl.startDone(error_t err) {
     if (err == SUCCESS) {
       call MilliTimer.startPeriodic(250);
+
     }
     else {
       call AMControl.start();
@@ -93,7 +104,7 @@ implementation {
   }
 
   event void MilliTimer.fired() {
-
+    // do nothing
   }
 
   event message_t* Receive.receive(message_t* bufPtr,
@@ -106,9 +117,9 @@ implementation {
       hum += rcm -> hum;
       temp += rcm -> temp;
       num++;
-      dbg("RadioCountToLedsC", "Current average wind is: %hu.\n", wind/num);
-      dbg("RadioCountToLedsC", "Current average humidity is: %hu.\n", hum/num);
-      dbg("RadioCountToLedsC", "Current average temperature is: %hu.\n", temp/num);
+      dbg("RadioCountToLedsC", "Current average wind is: %.3f\n", wind/num);
+      dbg("RadioCountToLedsC", "Current average humidity is: %.3f\n", hum/num);
+      dbg("RadioCountToLedsC", "Current average temperature is: %.3f\n", temp/num);
             return bufPtr;
   }
   }
@@ -117,6 +128,14 @@ implementation {
     if (&packet == bufPtr) {
       locked = FALSE;
     }
+  }
+
+  command nx_uint16_t Get.get() {
+  	return path;
+  }
+
+  command void Set.set(nx_uint16_t p) {
+  	path = p;
   }
 
 }

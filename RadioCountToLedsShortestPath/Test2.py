@@ -5,29 +5,22 @@ import sys
 import random
 import Queue
 
+baseStation = 0
+
 class Node(object):
 	def __init__(self,idNum):
 		self.nextNodes = []
 		self.pathLength = float('inf')
 		self.idNum=idNum
 
-def send(source, dest, pkt):
-  	pkt.setType(radioobjs[source].get_amType())
-  	pkt.setData(radioobjs[source].data)
-  	path = []
-	send_r(source, dest, pkt, path)
-
-def send_r(source, dest, pkt, path):
-	path.append(dest)
-	if allPaths[source][dest] == source:
-		while len(path) > 0:
-			tempDest = path.pop()
-			pkt.setDestination(tempDest)
-			pkt.deliver(tempDest, t.time() + 80)
-			print "Sending from " + str(source) + " to " + str(tempDest)
-			source = tempDest
-	else:
-		send_r(source, allPaths[source][dest], pkt, path)
+def send(source, pkt): #final destination will always be the base station 
+  	dest = allPaths[source]
+  	pkt.setDestination(dest)
+	pkt.deliver(dest, t.time() + 80)
+	print "Sending from " + str(source) + " to " + str(dest)
+	
+	if dest != baseStation:
+		send(dest, pkt)
 
 t = Tossim([])
 r= t.radio()
@@ -53,7 +46,7 @@ listNodes = []
 graph = []
 for i in range(numNodes):
 	graph.append(Node(-1))
-allPaths = [[-1 for x in range(numNodes)] for y in range(numNodes)] 
+allPaths = [-1 for x in range(numNodes)] 
 
 f = open("topo.txt", "r")
 for line in f:
@@ -82,24 +75,20 @@ for line in noise:
 for i in range(0, numNodes):
 	t.getNode(i).createNoiseModel()
 
-for selNode in range(numNodes):
-	que = Queue.Queue()
-	que.put(graph[selNode])
-	for j in range(numNodes):
-		graph[j].pathLength = float('inf') #reset all path lengths
+graph[baseStation].pathLength = 0 #path length to same node is 0
+que = Queue.Queue()
+que.put(graph[baseStation])
 
-	graph[selNode].pathLength = 0 #path length to same node is 0
-
-	while que.qsize() > 0:
-		n = que.get()
-		curLength = n.pathLength
-		connectedNodes = list(n.nextNodes) #gets all connected node indexes
-		while len(connectedNodes) != 0:
-			curConnNode = graph[connectedNodes.pop()]
-			if curConnNode.pathLength == float('inf'):
-				curConnNode.pathLength = curLength + 1
-				allPaths[selNode][curConnNode.idNum] = n.idNum #tells last connected node
-				que.put(curConnNode)
+while que.qsize() > 0:
+	n = que.get()
+	curLength = n.pathLength
+	connectedNodes = list(n.nextNodes) #gets all connected node indexes
+	while len(connectedNodes) != 0:
+		curConnNode = graph[connectedNodes.pop()]
+		if curConnNode.pathLength == float('inf'):
+			curConnNode.pathLength = curLength + 1
+			allPaths[curConnNode.idNum] = n.idNum #tells last connected node
+			que.put(curConnNode)
 
 t.addChannel('RadioCountToLedsC',sys.stdout)
 for i in range(numNodes):
@@ -117,10 +106,9 @@ for i in range(numNodes):
     	# radioobjs[i].set_hum(random.randint(55, 83))
     	# radioobjs[i].set_wind(random.randint(0, 20))
 
-
-
-
 pkt = t.newPacket()
-send(5, 3, pkt)
+pkt.setType(radioobjs[5].get_amType())
+pkt.setData(radioobjs[5].data)
+send(5, pkt) #destination is always base station
 for i in range(1000):
 	t.runNextEvent()

@@ -12,7 +12,7 @@ if(finished):
     numNodes = int(sys.argv[2])
 
 if sel.lower() == "star":
-    for i in range(1, numNodes + 1):
+    for i in range(1, numNodes):
         topoTxt.write("0  " + str(i) + " " + str(random.randrange(-60, -49)) + "\n")
         topoTxt.write(str(i) + "  0" + " " + str(random.randrange(-60, -49)) + "\n")
 

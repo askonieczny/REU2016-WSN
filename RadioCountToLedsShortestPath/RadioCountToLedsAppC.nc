@@ -53,7 +53,9 @@
  * @date   June 6 2005
  */
 
-configuration RadioCountToLedsAppC {}
+configuration RadioCountToLedsAppC {
+  
+}
 implementation {
   components MainC, RadioCountToLedsC as App, LedsC;
   components new AMSenderC(AM_RADIO_COUNT_MSG);
