@@ -42,7 +42,7 @@ m3.bootAtTime(10)
 
 
 radioobjs = list()
-for i in range(10):
+for i in range(1000):
     radioobjs.append(RadioCountMsg())
     radioobjs[i].set_temp(random.random() *19 + 64)
     radioobjs[i].set_hum(random.random() * 28 + 55)
@@ -52,6 +52,6 @@ for i in range(10):
     pkt.setData(radioobjs[i].data)
     pkt.setSource(random.randint(1, 2))
     pkt.setDestination(0)
-    pkt.deliver(0, t.time() + 80)
+    pkt.deliver(0, t.time() + 10)
 for i in range(10000):
     t.runNextEvent()
