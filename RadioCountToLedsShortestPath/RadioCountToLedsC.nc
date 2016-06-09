@@ -66,8 +66,6 @@ module RadioCountToLedsC @safe() {
     interface SplitControl as AMControl;
     interface Packet;
   }
-  provides interface Get<nx_uint32_t>;
-  provides interface Set<nx_uint32_t>;
 }
 
 
@@ -160,14 +158,6 @@ implementation {
     if (&packet == bufPtr) {
       locked = FALSE;
     }
-  }
-
-  command nx_uint32_t Get.get() {
-  	return path;
-  }
-
-  command void Set.set(nx_uint32_t p) {
-  	path = p;
   }
 
 }

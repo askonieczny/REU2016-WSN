@@ -14,14 +14,6 @@ class Node(object):
 		self.pathLength = float('inf')
 		self.idNum=idNum
 
-# def send(source, pkt): #final destination will always be the base station 
-#   	dest = allPaths[source]
-#   	pkt.setDestination(dest)
-# 	pkt.deliver(dest, t.time() + 80)
-# 	print "Sending from " + str(source) + " to " + str(dest)
-# 	if dest != baseStation:
-# 		send(dest, pkt)
-
 t = Tossim([])
 r= t.radio()
 
@@ -41,7 +33,7 @@ for line in f:
 		if valTwo not in listNodes:
 			listNodes.append(int(s[1]))
 
-numNodes = len(listNodes) #MUST CHANGE IF YOU CHANGE # OF NODES IN TOPO FILE
+numNodes = len(listNodes) 
 listNodes = []
 graph = []
 for i in range(numNodes):
@@ -110,7 +102,7 @@ for i in range(numNodes):
 	p.deliver(i, t.time() + 80)
 	#print "tried to send"
 
-
+#send sensor readings to nodes
 for j in range(1):
 	radioobjs = list()
 	for i in range(numNodes):
