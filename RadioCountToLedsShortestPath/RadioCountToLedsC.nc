@@ -116,12 +116,12 @@ implementation {
             return;
           }
 
-          rcm -> wind = wind;
-          rcm -> hum = hum;
-          rcm -> temp = temp;
+          rcm -> wind = wind/num;
+          rcm -> hum = hum/num;
+          rcm -> temp = temp/num;
 
           if (call AMSend.send(path, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
-            dbg("RadioCountToLedsC", "Sent radio count packet to %i\n", path); 
+            dbg("RadioCountToLedsC", "Sent radio count packet to %i\n", path);
             locked = TRUE;
           }
     }
@@ -130,7 +130,7 @@ implementation {
   event message_t* Receive.receive(message_t* bufPtr,
 				   void* payload, uint8_t len) {
     dbg("RadioCountToLedsC", "Received packet of length %hhu.\n", len);
-    if (len != sizeof(radio_count_msg_t) && len != sizeof(path_msg_t)) 
+    if (len != sizeof(radio_count_msg_t) && len != sizeof(path_msg_t))
     {
       dbg("RadioCountToLedsC", "Length is messed up\n");
       return bufPtr;
