@@ -79,10 +79,10 @@ implementation {
   bool locked;
   bool pathPresent = FALSE;
   bool rcmReceived = FALSE;
-  float num = 1;
-  float wind = 0;
-  float temp = 0;
-  float hum = 0;
+  float numForNode = 0;
+  float windForNode = 0;
+  float tempForNode = 0;
+  float humForNode = 0;
   nx_int32_t path;
 
   event void Boot.booted() {
@@ -104,20 +104,22 @@ implementation {
   }
 
   event void MilliTimer.fired() {
-    if(locked || !pathPresent || !rcmReceived) {
+    //don't send message if not ready to
+    if(locked || !pathPresent || !rcmReceived) { 
       return;
     }
 
+    //send RCM message to next node in path if ready
     else {
       radio_count_msg_t* rcm = (radio_count_msg_t*)call Packet.getPayload(&packet, sizeof(radio_count_msg_t));
           if (rcm == NULL) {
             return;
           }
 
-          rcm -> wind = wind;
-          rcm -> hum = hum;
-          rcm -> temp = temp;
-          rcm -> num = num;
+          rcm -> wind = windForNode;
+          rcm -> hum = humForNode;
+          rcm -> temp = tempForNode;
+          rcm -> num = numForNode;
           if(path != -1) {
             if (call AMSend.send(path, &packet, sizeof(radio_count_msg_t)) == SUCCESS) {
               dbg("RadioCountToLedsC", "Sent radio count packet to %i\n", path);
@@ -132,10 +134,10 @@ implementation {
     dbg("RadioCountToLedsC", "Received packet of length %hhu.\n", len);
     if (len != sizeof(radio_count_msg_t) && len != sizeof(path_msg_t))
     {
-      dbg("RadioCountToLedsC", "Length is messed up\n");
       return bufPtr;
     }
     else if(len == sizeof(path_msg_t)) {
+      //receive path information message, store in path variable
       path_msg_t* pm = (path_msg_t*) payload;
       path = pm -> path;
       dbg("RadioCountToLedsC", "Received instruction to send to %d\n", path);
@@ -143,15 +145,16 @@ implementation {
       return bufPtr;
     }
     else {
+      //receive RadioCountMessage, update current sensing data
       radio_count_msg_t* rcm = (radio_count_msg_t*) payload;
-      wind += rcm -> wind;
-      hum += rcm -> hum;
-      temp += rcm -> temp;
-      num += rcm -> num;
+      windForNode += rcm -> wind;
+      humForNode += rcm -> hum;
+      tempForNode += rcm -> temp;
+      numForNode += rcm -> num;
       rcmReceived = TRUE;
-      dbg("RadioCountToLedsC", "Current average wind is: %.3f\n", wind/num);
-      dbg("RadioCountToLedsC", "Current average humidity is: %.3f\n", hum/num);
-      dbg("RadioCountToLedsC", "Current average temperature is: %.3f\n", temp/num);
+      dbg("RadioCountToLedsC", "Current average wind is: %.3f\n", windForNode/numForNode);
+      dbg("RadioCountToLedsC", "Current average humidity is: %.3f\n", humForNode/numForNode);
+      dbg("RadioCountToLedsC", "Current average temperature is: %.3f\n", tempForNode/numForNode);
             return bufPtr;
   }
   }

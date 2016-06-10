@@ -20,7 +20,7 @@ r= t.radio()
 listNodes = []
 sys.stdout = open('out_test.txt','w')
 
-
+#read topology once to get number of nodes
 f = open("topo.txt", "r")
 for line in f:
 	s = line.split()
@@ -40,6 +40,7 @@ for i in range(numNodes):
 	graph.append(Node(-1))
 allPaths = [0 for x in range(numNodes)] 
 
+#read topology again to construct graph list needed for breadth first search
 f = open("topo.txt", "r")
 for line in f:
 	s = line.split()
@@ -65,8 +66,9 @@ for line in noise:
 			t.getNode(i).addNoiseTraceReading(val)
 
 for i in range(0, numNodes):
-	t.getNode(i).createNoiseModel()
+	 t.getNode(i).createNoiseModel()
 
+#Find shortest path information
 graph[baseStation].pathLength = 0 #path length to same node is 0
 que = Queue.Queue()
 que.put(graph[baseStation])
@@ -110,7 +112,7 @@ for j in range(10):
 		radioobjs[i].set_temp(random.random() *19 + 64)
 		radioobjs[i].set_hum(random.random() * 28 + 55)
 		radioobjs[i].set_wind(random.random() * 20)
-		radioobjs[i].set_num(0)
+		radioobjs[i].set_num(1)
 		pkt = t.newPacket()
 		pkt.setType(radioobjs[i].get_amType())
 		pkt.setData(radioobjs[i].data)
