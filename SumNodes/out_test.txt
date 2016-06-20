@@ -1,0 +1,1016 @@
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 1.
+DEBUG (19): RadioCountToLedsC: packet sent.
+DEBUG (0): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 3.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 4.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 5.
+DEBUG (6): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 6.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 7.
+DEBUG (0): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 8.
+DEBUG (0): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 9.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 10.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 11.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 12.
+DEBUG (0): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 13.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 14.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 15.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 16.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 17.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 18.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 19.
+DEBUG (5): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 20.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 21.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (7): Received packet of length 2.
+DEBUG (5): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (0): RadioCountToLedsC: packet sent.
+DEBUG (1): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (1): RadioCountToLedsC: packet sent.
+DEBUG (2): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (2): RadioCountToLedsC: packet sent.
+DEBUG (3): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (3): RadioCountToLedsC: packet sent.
+DEBUG (4): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (4): RadioCountToLedsC: packet sent.
+DEBUG (5): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (5): RadioCountToLedsC: packet sent.
+DEBUG (6): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (6): RadioCountToLedsC: packet sent.
+DEBUG (7): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (7): RadioCountToLedsC: packet sent.
+DEBUG (8): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (8): RadioCountToLedsC: packet sent.
+DEBUG (9): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (9): RadioCountToLedsC: packet sent.
+DEBUG (10): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (10): RadioCountToLedsC: packet sent.
+DEBUG (11): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (11): RadioCountToLedsC: packet sent.
+DEBUG (12): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (12): RadioCountToLedsC: packet sent.
+DEBUG (13): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (13): RadioCountToLedsC: packet sent.
+DEBUG (14): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (14): RadioCountToLedsC: packet sent.
+DEBUG (15): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (15): RadioCountToLedsC: packet sent.
+DEBUG (16): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (16): RadioCountToLedsC: packet sent.
+DEBUG (17): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (17): RadioCountToLedsC: packet sent.
+DEBUG (18): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (18): RadioCountToLedsC: packet sent.
+DEBUG (19): RadioCountToLedsC: timer fired, counter is 22.
+DEBUG (7): Received packet of length 2.
+DEBUG (6): Received packet of length 2.
+DEBUG (12): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
+DEBUG (0): Received packet of length 2.
