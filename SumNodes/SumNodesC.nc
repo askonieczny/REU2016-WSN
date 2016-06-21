@@ -65,12 +65,12 @@ implementation {
   event message_t* Receive.receive(message_t* bufPtr,
 				   void* payload, uint8_t len) {
     dbg("SumNodesC", "Received packet of length %hhu.\n", len);
-    if (len != sizeof(radio_count_msg_t)) && len != sizeof(path_msg_t)) {
+    if ((len != sizeof(radio_count_msg_t)) && (len != sizeof(path_msg_t))) {
       return bufPtr;
     }
     else if(len == sizeof(path_msg_t)){
       //receive path information message, store in path variable
-      path_msg_t* pm = (path_mst_t*) payload;
+      path_msg_t* pm = (path_msg_t*) payload;
       path = pm -> path;
       dbg("SumNodesC", "Recieved instruction to send to %d\n", path);
       pathPresent = TRUE;
