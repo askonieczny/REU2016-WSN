@@ -31,7 +31,7 @@ class RadioCountMsg(tinyos.message.Message.Message):
     def __str__(self):
         s = "Message <RadioCountMsg> \n"
         try:
-            s += "  [val=0x%x]\n" % (self.get_val())
+            s += "  [counter=0x%x]\n" % (self.get_counter())
         except:
             pass
         return s
@@ -39,57 +39,57 @@ class RadioCountMsg(tinyos.message.Message.Message):
     # Message-type-specific access methods appear below.
 
     #
-    # Accessor methods for field: val
+    # Accessor methods for field: counter
     #   Field type: int
     #   Offset (bits): 0
     #   Size (bits): 16
     #
 
     #
-    # Return whether the field 'val' is signed (False).
+    # Return whether the field 'counter' is signed (False).
     #
-    def isSigned_val(self):
+    def isSigned_counter(self):
         return False
     
     #
-    # Return whether the field 'val' is an array (False).
+    # Return whether the field 'counter' is an array (False).
     #
-    def isArray_val(self):
+    def isArray_counter(self):
         return False
     
     #
-    # Return the offset (in bytes) of the field 'val'
+    # Return the offset (in bytes) of the field 'counter'
     #
-    def offset_val(self):
+    def offset_counter(self):
         return (0 / 8)
     
     #
-    # Return the offset (in bits) of the field 'val'
+    # Return the offset (in bits) of the field 'counter'
     #
-    def offsetBits_val(self):
+    def offsetBits_counter(self):
         return 0
     
     #
-    # Return the value (as a int) of the field 'val'
+    # Return the value (as a int) of the field 'counter'
     #
-    def get_val(self):
-        return self.getUIntElement(self.offsetBits_val(), 16, 1)
+    def get_counter(self):
+        return self.getUIntElement(self.offsetBits_counter(), 16, 1)
     
     #
-    # Set the value of the field 'val'
+    # Set the value of the field 'counter'
     #
-    def set_val(self, value):
-        self.setUIntElement(self.offsetBits_val(), 16, value, 1)
+    def set_counter(self, value):
+        self.setUIntElement(self.offsetBits_counter(), 16, value, 1)
     
     #
-    # Return the size, in bytes, of the field 'val'
+    # Return the size, in bytes, of the field 'counter'
     #
-    def size_val(self):
+    def size_counter(self):
         return (16 / 8)
     
     #
-    # Return the size, in bits, of the field 'val'
+    # Return the size, in bits, of the field 'counter'
     #
-    def sizeBits_val(self):
+    def sizeBits_counter(self):
         return 16
     

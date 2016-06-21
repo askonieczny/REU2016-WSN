@@ -22,7 +22,7 @@ implementation {
   bool pathPresent = FALSE;
   bool rcmReceived = FALSE;
   uint16_t valForNode = 0;
-  uint16_t counter = 0;
+  nx_int32_t path;
 
   event void Boot.booted() {
     call AMControl.start();
@@ -48,7 +48,7 @@ implementation {
     }
     //send RCM message to next node if path is ready
     else{
-      radio_count_msg_t* rcm = (radio_count_msg_t*)call Packet.getPayload(&packet, sizeof(radeo_count_mst_t));
+      radio_count_msg_t* rcm = (radio_count_msg_t*)call Packet.getPayload(&packet, sizeof(radio_count_msg_t));
         if (rcm == NULL) {
           return;
         }
@@ -65,7 +65,7 @@ implementation {
   event message_t* Receive.receive(message_t* bufPtr,
 				   void* payload, uint8_t len) {
     dbg("SumNodesC", "Received packet of length %hhu.\n", len);
-    if (len != sizeof(radio_count_msg_t)) && len != sizeof(path_msg_t){
+    if (len != sizeof(radio_count_msg_t)) && len != sizeof(path_msg_t)) {
       return bufPtr;
     }
     else if(len == sizeof(path_msg_t)){
@@ -92,5 +92,4 @@ implementation {
       locked = FALSE;
     }
   }
-
 }

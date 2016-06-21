@@ -7,12 +7,12 @@
 public class RadioCountMsg extends net.tinyos.message.Message {
 
     /** The default size of this message type in bytes. */
-    public static final int DEFAULT_MESSAGE_SIZE = 2;
+    public static final int DEFAULT_MESSAGE_SIZE = 16;
 
     /** The Active Message type associated with this message. */
     public static final int AM_TYPE = 6;
 
-    /** Create a new RadioCountMsg of size 2. */
+    /** Create a new RadioCountMsg of size 16. */
     public RadioCountMsg() {
         super(DEFAULT_MESSAGE_SIZE);
         amTypeSet(AM_TYPE);
@@ -93,7 +93,7 @@ public class RadioCountMsg extends net.tinyos.message.Message {
     // Message-type-specific access methods appear below.
 
     /////////////////////////////////////////////////////////
-    // Accessor methods for field: val
+    // Accessor methods for field: counter
     //   Field type: int, unsigned
     //   Offset (bits): 0
     //   Size (bits): 16
@@ -131,7 +131,7 @@ public class RadioCountMsg extends net.tinyos.message.Message {
      * Return the value (as a int) of the field 'val'
      */
     public int get_val() {
-        return (int)getUIntBEElement(offsetBits_val(), 16);
+        return (int)getUIntBEElement(offsetBits_val(), 32);
     }
 
     /**
@@ -145,14 +145,14 @@ public class RadioCountMsg extends net.tinyos.message.Message {
      * Return the size, in bytes, of the field 'val'
      */
     public static int size_val() {
-        return (16 / 8);
+        return (32 / 8);
     }
 
     /**
      * Return the size, in bits, of the field 'val'
      */
     public static int sizeBits_val() {
-        return 16;
+        return 32;
     }
 
 }
