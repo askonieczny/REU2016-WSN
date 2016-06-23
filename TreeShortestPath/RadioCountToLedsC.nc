@@ -78,6 +78,7 @@ implementation {
   message_t packet;
 
   bool locked;
+  bool routReceived = FALSE;
   bool pathPresent = FALSE;
   bool rcmReceived = FALSE;
   float numForNode = 0;
@@ -85,6 +86,7 @@ implementation {
   float tempForNode = 0;
   float humForNode = 0;
   nx_int32_t path;
+  nx_int32_t rout;
 
   event void Boot.booted() {
     call AMControl.start();
@@ -106,7 +108,7 @@ implementation {
 
   event void MilliTimer.fired() {
     //don't send message if not ready to
-    if(locked || !pathPresent || !rcmReceived) { 
+    if(locked || !pathPresent || !rcmReceived || !routReceived) {
       return;
     }
 
@@ -133,9 +135,17 @@ implementation {
   event message_t* Receive.receive(message_t* bufPtr,
 				   void* payload, uint8_t len) {
     dbg("RadioCountToLedsC", "Received packet of length %hhu.\n", len);
-    if (len != sizeof(radio_count_msg_t) && len != sizeof(path_msg_t))
+    if (len != sizeof(radio_count_msg_t) && len != sizeof(path_msg_t) && len!= sizeof(rout_msg_t))
     {
       return bufPtr;
+    }
+    else if (len == sizeof(rout_msg_t)){
+      rout_msg_t* r = (rout_msg_t*) payload;
+      rout = r -> routing;
+      dbg("RadioCountToLedsC", "Routing protocol for this node is %d\n", rout);
+      routReceived = TRUE;
+      return bufPtr;
+
     }
     else if(len == sizeof(path_msg_t)) {
       //receive path information message, store in path variable

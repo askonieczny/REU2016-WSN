@@ -52,8 +52,15 @@ typedef nx_struct path_msg {
   nx_int32_t path;
 } path_msg_t;
 
+typedef nx_struct rout_msg {
+  nx_int32_t routing;
+  nx_int32_t placeholder;
+} rout_msg_t;
+
 enum {
   AM_RADIO_COUNT_MSG = 6,
+  AM_PATH_MSG = 6,
+  AM_ROUT_MSG = 6,
 };
 
 #endif

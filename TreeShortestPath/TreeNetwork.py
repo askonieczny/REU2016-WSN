@@ -2,6 +2,7 @@ from TOSSIM import *
 from array import *
 from RadioCountMsg import *
 from PathMsg import *
+from RoutMsg import *
 import sys
 import random
 import Queue
@@ -33,12 +34,12 @@ for line in f:
 		if valTwo not in listNodes:
 			listNodes.append(int(s[1]))
 
-numNodes = len(listNodes) 
+numNodes = len(listNodes)
 listNodes = []
 graph = []
 for i in range(numNodes):
 	graph.append(Node(-1))
-allPaths = [0 for x in range(numNodes)] 
+allPaths = [0 for x in range(numNodes)]
 
 #read topology again to construct graph list needed for breadth first search
 f = open("topo.txt", "r")
@@ -89,6 +90,21 @@ allPaths[baseStation] = -1
 t.addChannel('RadioCountToLedsC',sys.stdout)
 for i in range(numNodes):
 	t.getNode(i).bootAtTime(10)
+
+#Declares routing protocol for each node
+#1 = AODV
+#2 = CTP
+for i in range(numNodes):
+	msg = RoutMsg()
+	msg.set_routing(random.randint(1, 2))
+	msg.set_placeholder(0)
+	pkt = t.newPacket()
+	pkt.setType(msg.get_amType())
+	pkt.setData(msg.data)
+	pkt.setDestination(i)
+	pkt.deliver(i, 11)
+
+
 
 #send route info to nodes
 for i in range(numNodes):
