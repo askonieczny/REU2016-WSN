@@ -15,9 +15,11 @@
 #include "CtpDebugMsg.h"
 
 module TestNetworkC {
-  //provides interface Receive[uint8_t id];
+  //provides interface Receive as ReceiveAODV;
   uses interface Boot;
-  uses interface SplitControl;
+  uses interface Receive as ReceiveAODV;
+  uses interface Receive;
+  uses interface SplitControl as SplitControlAODV;
   uses interface SplitControl as RadioControl;
   uses interface SplitControl as SerialControl;
   uses interface StdControl as RoutingControl;
@@ -28,9 +30,6 @@ module TestNetworkC {
   uses interface Read<uint16_t> as ReadSensor;
   uses interface Timer<TMilli>;
   uses interface RootControl;
-  uses interface Receive;
-  uses interface Receive as ReceiveCTP;
-  uses interface Receive as ReceiveAODV;
   uses interface AMSend;
   uses interface AMSend as UARTSend;
   uses interface CollectionPacket;
@@ -43,6 +42,8 @@ module TestNetworkC {
   uses interface AMPacket;
   uses interface Packet as RadioPacket;
 }
+
+
 implementation {
 
   /* 
@@ -77,8 +78,9 @@ implementation {
   event void ReadSensor.readDone(error_t err, uint16_t val) { }  
 
   event void Boot.booted() {
+    call SplitControlAODV.start();
     call SerialControl.start();
-    call SplitControl.start();
+    //call SplitControl.start();
   }
   event void SerialControl.startDone(error_t err) {
     call RadioControl.start();
@@ -99,14 +101,11 @@ implementation {
     }
   }
 
-  event void SplitControl.startDone(error_r err) {
-    p_pkt = &pkt;
-  }
-
+  event void SplitControlAODV.startDone(error_t err) {p_pkt = &pkt;}
+  event void SplitControlAODV.stopDone(error_t err) {}
   event void RadioControl.stopDone(error_t err) {}
   event void SerialControl.stopDone(error_t err) {}	
-  event void SplitControl.stopDone(error_t err) {}
-
+  
   void failedSend() {
     dbg("App", "%s: Send failed.\n", __FUNCTION__);
     call CollectionDebug.logEvent(NET_C_DBG_1);
@@ -183,8 +182,12 @@ implementation {
   uint8_t prevSeq = 0;
   uint8_t firstMsg = 0;
 
-  event message_t* 
-  Receive.receive(message_t* msg, void* payload, uint8_t len) {
+  event message_t* ReceiveAODV.receive(message_t* msg, void* payload, uint8_len) {
+     dbg("TestNetworkC", "AODV node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
+    return msg;
+  }
+
+  event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len) {
     if(len == sizeof(rout_msg_t)) { //if protocol isn't specified yet
         rout_msg_t* r = (rout_msg_t*)payload;
         prot = r -> routing;
@@ -192,13 +195,37 @@ implementation {
         return msg;
 
     } else if(prot == 1) { //if protocol is CTP
-      signal ReceiveCTP.receive(msg, payload, len);
+      dbg("TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
+    call Leds.led1Toggle();
+
+    if (call CollectionPacket.getOrigin(msg) == 1) {
+      if (firstMsg == 1) {
+      if (call CollectionPacket.getSequenceNumber(msg) - prevSeq > 1) {
+        call Leds.led2On();
+      }
+        } else {
+          firstMsg = 1;
+        }
+        prevSeq = call CollectionPacket.getSequenceNumber(msg);
+    }
+
+    if (!call Pool.empty() && call Queue.size() < call Queue.maxSize()) {
+      message_t* tmp = call Pool.get();
+      call Queue.enqueue(msg);
+      if (!uartbusy) {
+        post uartEchoTask();
+      }
+      return tmp;
+    }
+    return msg;
 
     } else if(prot == 2) {
       signal ReceiveAODV.receive(msg, payload, len);
+      return msg;
     }
  }
 
+/*
   event message_t* ReceiveCTP.receive(message_t* msg, void* payload, uint8_len) {
     dbg("TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
     call Leds.led1Toggle();
@@ -224,11 +251,7 @@ implementation {
     }
     return msg; 
  }
-
-  event message_t* ReceiveAODV.receive(message_t* msg, void* payload, uint8_len) {
-     dbg("TestNetworkC", "AODV node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
-    return msg;
-  }
+ */
 
 
  task void uartEchoTask() {

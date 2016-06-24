@@ -3,6 +3,7 @@
 
 #include <AM.h>
 #include "TestNetworkC.h"
+#include "ReceiveAODV.nc"
 
 typedef nx_struct TestNetworkMsg {
   nx_am_addr_t source;
@@ -14,5 +15,9 @@ typedef nx_struct TestNetworkMsg {
   nx_uint16_t sendCount;
   nx_uint16_t sendSuccessCount;
 } TestNetworkMsg;
+
+typedef nx_struct rout_msg {
+  nx_int32_t routing;
+} rout_msg_t;
 
 #endif

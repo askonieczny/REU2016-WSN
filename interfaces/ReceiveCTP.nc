@@ -1,6 +1,5 @@
 #include <TinyError.h>
 #include <message.h>
-#include <Receive.nc>
 
 interface ReceiveCTP {
 
@@ -24,6 +23,6 @@ interface ReceiveCTP {
    *                  received packet.
    */
   
-  //event message_t* receive(message_t* msg, void* payload, uint8_t len);
+  event message_t* receive(message_t* msg, void* payload, uint8_t len);
   
 }

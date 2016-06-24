@@ -4,6 +4,7 @@
 #include <AM.h>
 #include "TestNetworkC.h"
 
+
 typedef nx_struct TestNetworkMsg {
   nx_am_addr_t source;
   nx_uint16_t seqno;

@@ -14,6 +14,7 @@
 #include "Ctp.h"
 
 configuration TestNetworkAppC {}
+
 implementation {
   components TestNetworkC, MainC, LedsC, ActiveMessageC, AODV;
   components DisseminationC;
@@ -43,7 +44,7 @@ implementation {
   TestNetworkC.Send -> CollectionSenderC;
   TestNetworkC.ReadSensor -> DemoSensorC;
   TestNetworkC.RootControl -> Collector;
-  TestNetworkC.ReceiveCTP -> Collector.Receive[CL_TEST];
+  TestNetworkC.Receive -> Collector.Receive[CL_TEST];
   TestNetworkC.UARTSend -> SerialAMSenderC.AMSend;
   TestNetworkC.CollectionPacket -> Collector;
   TestNetworkC.CtpInfo -> Collector;
@@ -56,6 +57,7 @@ implementation {
   //AODV components
   TestNetworkC.ReceiveAODV -> AODV.Receive[1];
   TestNetworkC.AMSend -> AODV.AMSend[1];
+  TestNetworkC.SplitControlAODV -> AODV.SplitControl;
   
   
 #ifndef NO_DEBUG
