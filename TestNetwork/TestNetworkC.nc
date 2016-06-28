@@ -5,7 +5,7 @@
  * through dissemination. The default send rate is every 10s.
  *
  * See TEP118: Dissemination and TEP 119: Collection for details.
- * 
+ *
  * @author Philip Levis
  * @version $Revision: 1.11 $ $Date: 2010-01-14 21:53:58 $
  */
@@ -47,11 +47,11 @@ module TestNetworkC {
 
 implementation {
 
-  /* 
+  /*
     global variable that determines whether to use CTP (if 1)
     or AODV (if 2)
   */
-  nx_int16_t prot; //protocol not initially specified
+  nx_int32_t prot; //protocol not initially specified
 
   //CTP variables
   task void uartEchoTask();
@@ -77,10 +77,10 @@ implementation {
 
   uint8_t prevSeq = 0;
   uint8_t firstMsg = 0;
-  
+
   rout_msg_t* r;
 
-  event void ReadSensor.readDone(error_t err, uint16_t val) { }  
+  event void ReadSensor.readDone(error_t err, uint16_t val) { }
 
   event void Boot.booted() {
     call SplitControlAODV.start();
@@ -109,14 +109,14 @@ implementation {
   event void SplitControlAODV.startDone(error_t err) {p_pkt = &pkt;}
   event void SplitControlAODV.stopDone(error_t err) {}
   event void RadioControl.stopDone(error_t err) {}
-  event void SerialControl.stopDone(error_t err) {}	
-  
+  event void SerialControl.stopDone(error_t err) {}
+
   void failedSend() {
     dbg("App", "%s: Send failed.\n", __FUNCTION__);
     call CollectionDebug.logEvent(NET_C_DBG_1);
   }
 
-   
+
   void sendMessage() {
     TestNetworkMsg* msg = (TestNetworkMsg*)call Send.getPayload(&packet, sizeof(TestNetworkMsg));
     uint16_t metric;
@@ -139,17 +139,17 @@ implementation {
     }
     else {
       sendBusy = TRUE;
-      seqno++; 
+      seqno++;
       dbg("TestNetworkC", "%s: Transmission succeeded.\n", __FUNCTION__);
     }
   }
 
- 
+
   event void Timer.fired() {
   //This does nothing right now, will uncomment when I get RoutMsg to deliver
   /*
     uint32_t nextInt;
-    
+
     nextInt = call Random.rand32() % SEND_INTERVAL;
     nextInt += SEND_INTERVAL >> 1;
     call Timer.startOneShot(nextInt);
@@ -179,7 +179,7 @@ implementation {
   event void AMSend.sendDone(message_t* bufPtr, error_t error) {
       dbg("TestNetworkC", "AODV Send completed.\n");
     }
-  
+
   event void DisseminationPeriod.changed() {
     const uint32_t* newVal = call DisseminationPeriod.get();
     call Timer.stop();
@@ -230,7 +230,7 @@ implementation {
     }
     return msg;
 
-    } 
+    }
  }
 
 
@@ -260,7 +260,7 @@ implementation {
     call Pool.put(msg);
     if (!call Queue.empty()) {
       post uartEchoTask();
-    } 
+    }
     else {
       //        call CtpCongestion.setClientCongested(FALSE);
     }
@@ -285,5 +285,5 @@ implementation {
     default command error_t CollectionDebug.logEventRoute(uint8_t type, am_addr_t parent, uint8_t hopcount, uint16_t metric) {
         return SUCCESS;
     }
- 
+
 }

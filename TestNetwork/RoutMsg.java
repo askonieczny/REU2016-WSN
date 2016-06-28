@@ -7,12 +7,12 @@
 public class RoutMsg extends net.tinyos.message.Message {
 
     /** The default size of this message type in bytes. */
-    public static final int DEFAULT_MESSAGE_SIZE = 2;
+    public static final int DEFAULT_MESSAGE_SIZE = 4;
 
     /** The Active Message type associated with this message. */
-    public static final int AM_TYPE = 6;
+    public static final int AM_TYPE = 1;
 
-    /** Create a new RoutMsg of size 2. */
+    /** Create a new RoutMsg of size 4. */
     public RoutMsg() {
         super(DEFAULT_MESSAGE_SIZE);
         amTypeSet(AM_TYPE);
@@ -94,9 +94,9 @@ public class RoutMsg extends net.tinyos.message.Message {
 
     /////////////////////////////////////////////////////////
     // Accessor methods for field: routing
-    //   Field type: short, signed
+    //   Field type: int, signed
     //   Offset (bits): 0
-    //   Size (bits): 16
+    //   Size (bits): 32
     /////////////////////////////////////////////////////////
 
     /**
@@ -128,31 +128,31 @@ public class RoutMsg extends net.tinyos.message.Message {
     }
 
     /**
-     * Return the value (as a short) of the field 'routing'
+     * Return the value (as a int) of the field 'routing'
      */
-    public short get_routing() {
-        return (short)getSIntBEElement(offsetBits_routing(), 16);
+    public int get_routing() {
+        return (int)getSIntBEElement(offsetBits_routing(), 32);
     }
 
     /**
      * Set the value of the field 'routing'
      */
-    public void set_routing(short value) {
-        setSIntBEElement(offsetBits_routing(), 16, value);
+    public void set_routing(int value) {
+        setSIntBEElement(offsetBits_routing(), 32, value);
     }
 
     /**
      * Return the size, in bytes, of the field 'routing'
      */
     public static int size_routing() {
-        return (16 / 8);
+        return (32 / 8);
     }
 
     /**
      * Return the size, in bits, of the field 'routing'
      */
     public static int sizeBits_routing() {
-        return 16;
+        return 32;
     }
 
 }

@@ -34,9 +34,8 @@ for line in lines:
 for i in range(0, numNodes):
   m = t.getNode(i);
   m.createNoiseModel();
-  time = random.randint(t.ticksPerSecond(), 10 * t.ticksPerSecond())
-  m.bootAtTime(time)
-  print "Booting ", i, " at time ", time
+  m.bootAtTime(10)
+  print "Booting ", i, " at 10 "
 
 print "Starting simulation."
 
@@ -66,7 +65,7 @@ for i in range(numNodes):
   pkt.setType(msg.get_amType())
   pkt.setData(msg.data)
   pkt.setDestination(i)
-  pkt.deliver(i, t.time() + 200) 
+  pkt.deliver(i, 11)
 
 while (t.time() < 1000 * t.ticksPerSecond()):
   t.runNextEvent()

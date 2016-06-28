@@ -6,7 +6,7 @@
  *
  * See TEP118: Dissemination, TEP 119: Collection, and TEP 123: The
  * Collection Tree Protocol for details.
- * 
+ *
  * @author Philip Levis
  * @version $Revision: 1.7 $ $Date: 2009-09-16 00:51:50 $
  */
@@ -61,8 +61,8 @@ implementation {
   TestNetworkC.SplitControlAODV -> AODV.SplitControl;
 
   TestNetworkC.ReceiveRout -> AMReceiverC;
-  
-  
+
+
 #ifndef NO_DEBUG
   components new PoolC(message_t, 10) as DebugMessagePool;
   components new QueueC(message_t*, 10) as DebugSendQueue;

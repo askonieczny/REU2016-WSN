@@ -7,14 +7,14 @@
 import tinyos.message.Message
 
 # The default size of this message type in bytes.
-DEFAULT_MESSAGE_SIZE = 2
+DEFAULT_MESSAGE_SIZE = 4
 
 # The Active Message type associated with this message.
 AM_TYPE = 1
 
 class RoutMsg(tinyos.message.Message.Message):
-    # Create a new RoutMsg of size 2.
-    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=2):
+    # Create a new RoutMsg of size 4.
+    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=4):
         tinyos.message.Message.Message.__init__(self, data, addr, gid, base_offset, data_length)
         self.amTypeSet(AM_TYPE)
     
@@ -40,9 +40,9 @@ class RoutMsg(tinyos.message.Message.Message):
 
     #
     # Accessor methods for field: routing
-    #   Field type: short
+    #   Field type: int
     #   Offset (bits): 0
-    #   Size (bits): 16
+    #   Size (bits): 32
     #
 
     #
@@ -70,26 +70,26 @@ class RoutMsg(tinyos.message.Message.Message):
         return 0
     
     #
-    # Return the value (as a short) of the field 'routing'
+    # Return the value (as a int) of the field 'routing'
     #
     def get_routing(self):
-        return self.getSIntElement(self.offsetBits_routing(), 16, 1)
+        return self.getSIntElement(self.offsetBits_routing(), 32, 1)
     
     #
     # Set the value of the field 'routing'
     #
     def set_routing(self, value):
-        self.setSIntElement(self.offsetBits_routing(), 16, value, 1)
+        self.setSIntElement(self.offsetBits_routing(), 32, value, 1)
     
     #
     # Return the size, in bytes, of the field 'routing'
     #
     def size_routing(self):
-        return (16 / 8)
+        return (32 / 8)
     
     #
     # Return the size, in bits, of the field 'routing'
     #
     def sizeBits_routing(self):
-        return 16
+        return 32
     
