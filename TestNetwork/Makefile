@@ -16,6 +16,8 @@ LIBMOTE = $(TOSDIR)/../support/sdk/c/libmote.a
 #BUILD_EXTRA_DEPS += tn-injector #tn-listener
 LISTEN_OBJS = collection_msg.o test_network_msg.o tn-listener.o $(LIBMOTE)
 INJECT_OBJS = set_rate_msg.o tn-injector.o collection_debug_msg.o $(LIBMOTE)
+BUILD_EXTRA_DEPS = RoutMsg.py RoutMsg.class
+CLEAN_EXTRA = RoutMsg.py RoutMsg.class RoutMsg.java
 
 # arguments: output filename stem, input filename, struct name
 define mig_templ
@@ -60,14 +62,14 @@ tn-injector.o: tn-injector.c test_network_msg.c
 #collection_msg.c:
 #	mig -o collection_msg.h c -target=$(PLATFORM) $(CFLAGS) $(TFLAGS) $(TOSDIR)/lib/net/collection/ForwardingEngine.h collection_header
 
-RoutMsg.py: RadioCountToLeds.h
-	mig python -target=$(PLATFORM) $(CFLAGS) -python-classname=RoutMsg RadioCountToLeds.h rout_msg -o $@
+RoutMsg.py: TestNetwork.h
+	mig python -target=$(PLATFORM) $(CFLAGS) -python-classname=RoutMsg TestNetwork.h rout_msg -o $@
 
 RoutMsg.class: RoutMsg.java
 	javac RoutMsg.java
 
-RoutMsg.java: RadioCountToLeds.h
-	mig java -target=$(PLATFORM) $(CFLAGS) -java-classname=RoutMsg RadioCountToLeds.h rout_msg -o $@
+RoutMsg.java: TestNetwork.h
+	mig java -target=$(PLATFORM) $(CFLAGS) -java-classname=RoutMsg TestNetwork.h rout_msg -o $@
 
 
 include $(MAKERULES)

@@ -24,6 +24,7 @@ implementation {
   components new TimerMilliC();
   components new DemoSensorC();
   components new SerialAMSenderC(CL_TEST);
+  components new AMReceiverC(AM_ROUT_MSG);
   components SerialActiveMessageC;
 #ifndef NO_DEBUG
   components new SerialAMSenderC(AM_COLLECTION_DEBUG) as UARTSender;
@@ -44,7 +45,7 @@ implementation {
   TestNetworkC.Send -> CollectionSenderC;
   TestNetworkC.ReadSensor -> DemoSensorC;
   TestNetworkC.RootControl -> Collector;
-  TestNetworkC.Receive -> Collector.Receive[CL_TEST];
+  TestNetworkC.ReceiveCTP -> Collector.Receive[CL_TEST];
   TestNetworkC.UARTSend -> SerialAMSenderC.AMSend;
   TestNetworkC.CollectionPacket -> Collector;
   TestNetworkC.CtpInfo -> Collector;
@@ -58,6 +59,8 @@ implementation {
   TestNetworkC.ReceiveAODV -> AODV.Receive[1];
   TestNetworkC.AMSend -> AODV.AMSend[1];
   TestNetworkC.SplitControlAODV -> AODV.SplitControl;
+
+  TestNetworkC.ReceiveRout -> AMReceiverC;
   
   
 #ifndef NO_DEBUG

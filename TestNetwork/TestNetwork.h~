@@ -3,7 +3,7 @@
 
 #include <AM.h>
 #include "TestNetworkC.h"
-#include "ReceiveAODV.nc"
+
 
 typedef nx_struct TestNetworkMsg {
   nx_am_addr_t source;

@@ -1,12 +1,15 @@
 from TOSSIM import *
 from tinyos.tossim.TossimApp import *
-from random import *
+import random
+from RoutMsg import *
 import sys
 
 #n = NescApp("TestNetwork", "app.xml")
 #t = Tossim(n.variables.variables())
 t = Tossim([])
 r = t.radio()
+
+numNodes = 10
 
 f = open("sparse-grid.txt", "r")
 lines = f.readlines()
@@ -22,16 +25,16 @@ for line in lines:
   str = line.strip()
   if (str != ""):
     val = int(str)
-    for i in range(0, 10):
+    for i in range(0, numNodes):
       m = t.getNode(i);
       m.addNoiseTraceReading(val)
 
 
 
-for i in range(0, 10):
+for i in range(0, numNodes):
   m = t.getNode(i);
   m.createNoiseModel();
-  time = randint(t.ticksPerSecond(), 10 * t.ticksPerSecond())
+  time = random.randint(t.ticksPerSecond(), 10 * t.ticksPerSecond())
   m.bootAtTime(time)
   print "Booting ", i, " at time ", time
 
@@ -44,11 +47,26 @@ print "Starting simulation."
 #t.addChannel("PointerBug", sys.stdout)
 #t.addChannel("QueueC", sys.stdout)
 #t.addChannel("Gain", sys.stdout)
-t.addChannel("Forwarder", sys.stdout)
+#t.addChannel("Forwarder", sys.stdout)
 t.addChannel("TestNetworkC", sys.stdout)
 #t.addChannel("App", sys.stdout)
 #t.addChannel("Traffic", sys.stdout)
 #t.addChannel("Acks", sys.stdout)
+
+#Declares routing protocol for each node
+#1 = AODV
+#2 = CTP
+for i in range(numNodes):
+  msg = RoutMsg()
+  if (i % 2 == 0):
+    msg.set_routing(1)
+  else:
+    msg.set_routing(2)
+  pkt = t.newPacket()
+  pkt.setType(msg.get_amType())
+  pkt.setData(msg.data)
+  pkt.setDestination(i)
+  pkt.deliver(i, 50)
 
 while (t.time() < 1000 * t.ticksPerSecond()):
   t.runNextEvent()

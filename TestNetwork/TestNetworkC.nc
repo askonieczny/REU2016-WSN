@@ -18,7 +18,8 @@ module TestNetworkC {
   //provides interface Receive as ReceiveAODV;
   uses interface Boot;
   uses interface Receive as ReceiveAODV;
-  uses interface Receive;
+  uses interface Receive as ReceiveCTP;
+  uses interface Receive as ReceiveRout;
   uses interface SplitControl as SplitControlAODV;
   uses interface SplitControl as RadioControl;
   uses interface SplitControl as SerialControl;
@@ -47,8 +48,8 @@ module TestNetworkC {
 implementation {
 
   /* 
-    global variable that determines whether to use CTP (if 0)
-    or AODV (if 1)
+    global variable that determines whether to use CTP (if 1)
+    or AODV (if 2)
   */
   nx_int16_t prot; //protocol not initially specified
 
@@ -73,7 +74,11 @@ implementation {
 
   uint16_t src = 0x0007;
   uint16_t dest = 0x000A;
+
+  uint8_t prevSeq = 0;
+  uint8_t firstMsg = 0;
   
+  rout_msg_t* r;
 
   event void ReadSensor.readDone(error_t err, uint16_t val) { }  
 
@@ -141,23 +146,26 @@ implementation {
 
  
   event void Timer.fired() {
-    if(prot == 0) {
-      uint32_t nextInt;
-      dbg("TestNetworkC", "TestNetworkC: Timer fired for CTP node.\n");
-      nextInt = call Random.rand32() % SEND_INTERVAL;
-      nextInt += SEND_INTERVAL >> 1;
-      call Timer.startOneShot(nextInt);
-      if (!sendBusy)
-	     sendMessage();
-    } else if (prot == 1) {
-      uint32_t nextInt;
-      dbg("TestNetworkC", "TestNetworkC: Timer fired for AODV node.\n");
-      nextInt = call Random.rand32() % SEND_INTERVAL;
-      nextInt += SEND_INTERVAL >> 1;
-      call Timer.startOneShot(nextInt);
-      if (!sendBusy)
+  //This does nothing right now, will uncomment when I get RoutMsg to deliver
+  /*
+    uint32_t nextInt;
+    
+    nextInt = call Random.rand32() % SEND_INTERVAL;
+    nextInt += SEND_INTERVAL >> 1;
+    call Timer.startOneShot(nextInt);
+    if (!sendBusy) {
+      if(prot == 1) {
+        sendMessage();
+      } else if(prot == 2) {
         call AMSend.send(dest, p_pkt, 5);
+      }
     }
+    if(prot == 1) {
+      dbg("TestNetworkC", "TestNetworkC: Timer fired for CTP node.\n");
+    } else if(prot == 2) {
+      dbg("TestNetworkC", "TestNetworkC: Timer fired for AODV node.\n");
+    }
+  */
   }
 
   event void Send.sendDone(message_t* m, error_t err) {
@@ -178,55 +186,26 @@ implementation {
     call Timer.startPeriodic(*newVal);
   }
 
-
-  uint8_t prevSeq = 0;
-  uint8_t firstMsg = 0;
-
-  event message_t* ReceiveAODV.receive(message_t* msg, void* payload, uint8_len) {
-     dbg("TestNetworkC", "AODV node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
+  /*
+   !!!This is receive event that should be firing when RoutMsg is received!!!!!
+  */
+  event message_t* ReceiveRout.receive(message_t* msg, void* payload, uint8_t len) {
+    dbg("TestNetworkC", "this receive event called");
+    r = (rout_msg_t*)payload;
+    prot = r -> routing;
+    dbg("TestNetworkC", "Routing protocol for this node is %d\n", prot);
     return msg;
   }
 
-  event message_t* Receive.receive(message_t* msg, void* payload, uint8_t len) {
-    if(len == sizeof(rout_msg_t)) { //if protocol isn't specified yet
-        rout_msg_t* r = (rout_msg_t*)payload;
-        prot = r -> routing;
-        dbg("TestNetworkC", "Routing protocol for this node is %d\n", prot);
-        return msg;
-
-    } else if(prot == 1) { //if protocol is CTP
-      dbg("TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
-    call Leds.led1Toggle();
-
-    if (call CollectionPacket.getOrigin(msg) == 1) {
-      if (firstMsg == 1) {
-      if (call CollectionPacket.getSequenceNumber(msg) - prevSeq > 1) {
-        call Leds.led2On();
-      }
-        } else {
-          firstMsg = 1;
-        }
-        prevSeq = call CollectionPacket.getSequenceNumber(msg);
-    }
-
-    if (!call Pool.empty() && call Queue.size() < call Queue.maxSize()) {
-      message_t* tmp = call Pool.get();
-      call Queue.enqueue(msg);
-      if (!uartbusy) {
-        post uartEchoTask();
-      }
-      return tmp;
+  event message_t* ReceiveAODV.receive(message_t* msg, void* payload, uint8_t len) {
+    if(prot == 2) {
+     dbg("TestNetworkC", "AODV node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
     }
     return msg;
+  }
 
-    } else if(prot == 2) {
-      signal ReceiveAODV.receive(msg, payload, len);
-      return msg;
-    }
- }
-
-/*
-  event message_t* ReceiveCTP.receive(message_t* msg, void* payload, uint8_len) {
+  event message_t* ReceiveCTP.receive(message_t* msg, void* payload, uint8_t len) {
+    if(prot == 1) { //if protocol is CTP
     dbg("TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
     call Leds.led1Toggle();
 
@@ -249,9 +228,10 @@ implementation {
       }
       return tmp;
     }
-    return msg; 
+    return msg;
+
+    } 
  }
- */
 
 
  task void uartEchoTask() {

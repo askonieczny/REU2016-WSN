@@ -17,7 +17,7 @@ typedef nx_struct TestNetworkMsg {
 } TestNetworkMsg;
 
 typedef nx_struct rout_msg {
-  nx_int32_t routing;
+  nx_int16_t routing;
 } rout_msg_t;
 
 #endif

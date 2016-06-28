@@ -7,7 +7,7 @@ enum {
  SAMPLE_RATE_KEY = 0x1,
  CL_TEST = 0xee,
  TEST_NETWORK_QUEUE_SIZE = 8,
- AM_ROUT_MSG = 6,
+ AM_ROUT_MSG = 1,
 };
 
 #endif
