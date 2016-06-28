@@ -47,9 +47,10 @@ print "Starting simulation."
 #t.addChannel("QueueC", sys.stdout)
 #t.addChannel("Gain", sys.stdout)
 #t.addChannel("Forwarder", sys.stdout)
+t.addChannel("AODV", sys.stdout)
 t.addChannel("TestNetworkC", sys.stdout)
 #t.addChannel("App", sys.stdout)
-#t.addChannel("Traffic", sys.stdout)
+t.addChannel("Traffic", sys.stdout)
 #t.addChannel("Acks", sys.stdout)
 
 #Declares routing protocol for each node
@@ -67,7 +68,7 @@ for i in range(numNodes):
   pkt.setDestination(i)
   pkt.deliver(i, 11)
 
-while (t.time() < 1000 * t.ticksPerSecond()):
+while (t.time() < 200 * t.ticksPerSecond()):
   t.runNextEvent()
 
 print "Completed simulation."

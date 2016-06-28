@@ -146,8 +146,6 @@ implementation {
 
 
   event void Timer.fired() {
-  //This does nothing right now, will uncomment when I get RoutMsg to deliver
-  /*
     uint32_t nextInt;
 
     nextInt = call Random.rand32() % SEND_INTERVAL;
@@ -160,12 +158,6 @@ implementation {
         call AMSend.send(dest, p_pkt, 5);
       }
     }
-    if(prot == 1) {
-      dbg("TestNetworkC", "TestNetworkC: Timer fired for CTP node.\n");
-    } else if(prot == 2) {
-      dbg("TestNetworkC", "TestNetworkC: Timer fired for AODV node.\n");
-    }
-  */
   }
 
   event void Send.sendDone(message_t* m, error_t err) {
@@ -186,11 +178,7 @@ implementation {
     call Timer.startPeriodic(*newVal);
   }
 
-  /*
-   !!!This is receive event that should be firing when RoutMsg is received!!!!!
-  */
   event message_t* ReceiveRout.receive(message_t* msg, void* payload, uint8_t len) {
-    dbg("TestNetworkC", "this receive event called");
     r = (rout_msg_t*)payload;
     prot = r -> routing;
     dbg("TestNetworkC", "Routing protocol for this node is %d\n", prot);
@@ -235,7 +223,7 @@ implementation {
 
 
  task void uartEchoTask() {
-    dbg("Traffic", "Sending packet to UART.\n");
+    dbg("Traffic", "CTP node sending packet to UART.\n");
    if (call Queue.empty()) {
      return;
    }
