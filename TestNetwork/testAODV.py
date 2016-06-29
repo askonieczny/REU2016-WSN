@@ -8,9 +8,11 @@ import sys
 #t = Tossim(n.variables.variables())
 t = Tossim([])
 r = t.radio()
-numNodes = 5
+numNodes = 25
+endTime = 6
+sys.stdout = open('out_test.txt','w')
 
-f = open("special-topo.txt", "r")
+f = open("topology.txt", "r")
 lines = f.readlines()
 for line in lines:
   s = line.split()
@@ -24,17 +26,17 @@ for line in lines:
   str = line.strip()
   if (str != ""):
     val = int(str)
-    for i in range(0, numNodes):
+    for i in range(1, numNodes + 1):
       m = t.getNode(i);
       m.addNoiseTraceReading(val)
 
 
 
-for i in range(0, numNodes):
+for i in range(1, numNodes + 1):
   m = t.getNode(i);
   m.createNoiseModel();
-  m.bootAtTime(10)
-  print "Booting ", i, " at 10 "
+  m.bootAtTime(1000 * i);
+  print "Booting ", i, " at ", i * 1000
 
 print "Starting simulation."
 
@@ -47,24 +49,27 @@ print "Starting simulation."
 #t.addChannel("Gain", sys.stdout)
 #t.addChannel("Forwarder", sys.stdout)
 t.addChannel("AODV", sys.stdout)
-#t.addChannel("TestNetworkC", sys.stdout)
-#t.addChannel("App", sys.stdout)
+t.addChannel("TestNetworkC", sys.stdout)
+t.addChannel("APPS", sys.stdout)
 t.addChannel("Traffic", sys.stdout)
+t.addChannel("AODV_DBG", sys.stdout)
 #t.addChannel("Acks", sys.stdout)
 
 #Declares routing protocol for each node
-#1 = AODV
-#2 = CTP
-for i in range(numNodes):
+#1 = CTP
+#2 = AODV
+for i in range(1, numNodes + 1):
   msg = RoutMsg()
   msg.set_routing(random.randint(2, 2))
   pkt = t.newPacket()
   pkt.setType(msg.get_amType())
   pkt.setData(msg.data)
   pkt.setDestination(i)
-  pkt.deliver(i, 11)
+  pkt.deliver(i, numNodes * 1000 + 1000)
 
-while (t.time() < 150 * t.ticksPerSecond()):
+while True:
   t.runNextEvent()
+  if t.time() > endTime * 10000000000:
+    break
 
 print "Completed simulation."

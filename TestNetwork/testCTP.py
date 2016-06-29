@@ -8,9 +8,9 @@ import sys
 #t = Tossim(n.variables.variables())
 t = Tossim([])
 r = t.radio()
-numNodes = 5
+numNodes = 25
 
-f = open("special-topo.txt", "r")
+f = open("topology.txt", "r")
 lines = f.readlines()
 for line in lines:
   s = line.split()
@@ -47,8 +47,8 @@ print "Starting simulation."
 #t.addChannel("Gain", sys.stdout)
 #t.addChannel("Forwarder", sys.stdout)
 t.addChannel("AODV", sys.stdout)
-#t.addChannel("TestNetworkC", sys.stdout)
-#t.addChannel("App", sys.stdout)
+t.addChannel("TestNetworkC", sys.stdout)
+t.addChannel("APPS", sys.stdout)
 t.addChannel("Traffic", sys.stdout)
 #t.addChannel("Acks", sys.stdout)
 
@@ -57,7 +57,7 @@ t.addChannel("Traffic", sys.stdout)
 #2 = CTP
 for i in range(numNodes):
   msg = RoutMsg()
-  msg.set_routing(random.randint(2, 2))
+  msg.set_routing(random.randint(1, 1))
   pkt = t.newPacket()
   pkt.setType(msg.get_amType())
   pkt.setData(msg.data)

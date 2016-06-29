@@ -59,7 +59,9 @@ implementation {
   TestNetworkC.ReceiveAODV -> AODV.Receive[1];
   TestNetworkC.AMSend -> AODV.AMSend[1];
   TestNetworkC.SplitControlAODV -> AODV.SplitControl;
+  TestNetworkC.MilliTimer -> TimerMilliC;
 
+  //Routing protocol receive component
   TestNetworkC.ReceiveRout -> AMReceiverC;
 
 

@@ -30,6 +30,7 @@ module TestNetworkC {
   uses interface Leds;
   uses interface Read<uint16_t> as ReadSensor;
   uses interface Timer<TMilli>;
+  uses interface Timer<TMilli> as MilliTimer;
   uses interface RootControl;
   uses interface AMSend;
   uses interface AMSend as UARTSend;
@@ -61,6 +62,7 @@ implementation {
   uint8_t msglen;
   bool sendBusy = FALSE;
   bool uartbusy = FALSE;
+  bool initialBoot = FALSE;
   bool firstTimer = TRUE;
   uint16_t seqno;
   enum {
@@ -72,8 +74,8 @@ implementation {
   message_t pkt;
   message_t* p_pkt;
 
-  uint16_t src = 0x0007;
-  uint16_t dest = 0x000A;
+  uint16_t src = 7;
+  uint16_t dest = 10;
 
   uint8_t prevSeq = 0;
   uint8_t firstMsg = 0;
@@ -85,7 +87,6 @@ implementation {
   event void Boot.booted() {
     call SplitControlAODV.start();
     call SerialControl.start();
-    //call SplitControl.start();
   }
   event void SerialControl.startDone(error_t err) {
     call RadioControl.start();
@@ -94,19 +95,19 @@ implementation {
     if (err != SUCCESS) {
       call RadioControl.start();
     }
-    else {
-      call DisseminationControl.start();
-      call RoutingControl.start();
-      //p_pkt = &pkt;
-      if (TOS_NODE_ID % 500 == 0) {
-	     call RootControl.setRoot();
-      }
-      seqno = 0;
-        call Timer.startOneShot(call Random.rand16() & 0x1ff);
+    else { 
+      initialBoot = TRUE;
+      
     }
   }
 
-  event void SplitControlAODV.startDone(error_t err) {p_pkt = &pkt;}
+  event void SplitControlAODV.startDone(error_t err) {
+    if (err == SUCCESS) {
+      initialBoot = TRUE;
+    } else {
+      call SplitControlAODV.start();
+      }
+  }
   event void SplitControlAODV.stopDone(error_t err) {}
   event void RadioControl.stopDone(error_t err) {}
   event void SerialControl.stopDone(error_t err) {}
@@ -146,17 +147,24 @@ implementation {
 
 
   event void Timer.fired() {
-    uint32_t nextInt;
+    if(prot == 1) {
+      uint32_t nextInt;
 
-    nextInt = call Random.rand32() % SEND_INTERVAL;
-    nextInt += SEND_INTERVAL >> 1;
-    call Timer.startOneShot(nextInt);
-    if (!sendBusy) {
-      if(prot == 1) {
-        sendMessage();
-      } else if(prot == 2) {
-        call AMSend.send(dest, p_pkt, 5);
+      nextInt = call Random.rand32() % SEND_INTERVAL;
+      nextInt += SEND_INTERVAL >> 1;
+      call Timer.startOneShot(nextInt);
+      if (!sendBusy) {
+        if(prot == 1) {
+          sendMessage();
+        }
       }
+    }
+  }
+
+  event void MilliTimer.fired() {
+    if(prot == 2) {
+      dbg("APPS", "%s\t APPS: MilliTimer.fired()\n", sim_time_string());
+      call AMSend.send(dest, p_pkt, 5);
     }
   }
 
@@ -169,7 +177,7 @@ implementation {
   }
 
   event void AMSend.sendDone(message_t* bufPtr, error_t error) {
-      dbg("TestNetworkC", "AODV Send completed.\n");
+      dbg("APPS", "APPS: sendDone!!\n");
     }
 
   event void DisseminationPeriod.changed() {
@@ -178,16 +186,38 @@ implementation {
     call Timer.startPeriodic(*newVal);
   }
 
+  //This event receives routing protocol specification (CTP = 1, AODV = 2)
   event message_t* ReceiveRout.receive(message_t* msg, void* payload, uint8_t len) {
     r = (rout_msg_t*)payload;
     prot = r -> routing;
-    dbg("TestNetworkC", "Routing protocol for this node is %d\n", prot);
+    dbg("TestNetworkC", "Routing protocol for this node (%d) is %d\n", TOS_NODE_ID, prot);
+
+    //Set up CTP routing stuff
+    if(prot == 1 && initialBoot == TRUE) {
+      call DisseminationControl.start();
+      call RoutingControl.start();
+      //p_pkt = &pkt;
+      if (TOS_NODE_ID % 500 == 0) {
+       call RootControl.setRoot();
+      }
+      seqno = 0;
+        call Timer.startOneShot(call Random.rand16() & 0x1ff);
+    }
+
+    if(prot == 2 && initialBoot == TRUE) {
+      dbg("APPS", "%s\t APPS: startDone\n", sim_time_string());
+      p_pkt = &pkt;
+      if( TOS_NODE_ID == src ) {
+        dbg("AODV", "Millitimer started on node %d because src is %d\n", TOS_NODE_ID, src);
+        call MilliTimer.startPeriodic(1024);
+        }
+    }
     return msg;
   }
 
   event message_t* ReceiveAODV.receive(message_t* msg, void* payload, uint8_t len) {
     if(prot == 2) {
-     dbg("TestNetworkC", "AODV node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
+     dbg("AODV", "%s\t New AODV packet received\n", sim_time_string());
     }
     return msg;
   }
