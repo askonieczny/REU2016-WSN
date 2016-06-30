@@ -16,7 +16,7 @@
 configuration TestNetworkAppC {}
 
 implementation {
-  components TestNetworkC, MainC, LedsC, ActiveMessageC, AODV;
+  components TestNetworkC, MainC, LedsC, AODV, ActiveMessageC;
   components DisseminationC;
   components new DisseminatorC(uint32_t, SAMPLE_RATE_KEY) as Object32C;
   components CollectionC as Collector;
@@ -26,7 +26,7 @@ implementation {
   components new SerialAMSenderC(CL_TEST);
   components new AMReceiverC(AM_ROUT_MSG);
   components SerialActiveMessageC;
-#ifndef NO_DEBUG
+#ifndef NO_DEBUG 
   components new SerialAMSenderC(AM_COLLECTION_DEBUG) as UARTSender;
   components UARTDebugSenderP as DebugSender;
 #endif
@@ -34,7 +34,7 @@ implementation {
   components new QueueC(message_t*, 12);
   components new PoolC(message_t, 12);
 
-  TestNetworkC.Boot -> MainC;
+  TestNetworkC.Boot -> MainC.Boot;
   TestNetworkC.RadioControl -> ActiveMessageC;
   TestNetworkC.SerialControl -> SerialActiveMessageC;
   TestNetworkC.RoutingControl -> Collector;
@@ -60,6 +60,7 @@ implementation {
   TestNetworkC.AMSend -> AODV.AMSend[1];
   TestNetworkC.SplitControlAODV -> AODV.SplitControl;
   TestNetworkC.MilliTimer -> TimerMilliC;
+  TestNetworkC.Leds -> LedsC;
 
   //Routing protocol receive component
   TestNetworkC.ReceiveRout -> AMReceiverC;

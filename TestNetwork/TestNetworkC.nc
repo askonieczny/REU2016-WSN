@@ -15,7 +15,6 @@
 #include "CtpDebugMsg.h"
 
 module TestNetworkC {
-  //provides interface Receive as ReceiveAODV;
   uses interface Boot;
   uses interface Receive as ReceiveAODV;
   uses interface Receive as ReceiveCTP;
@@ -62,7 +61,7 @@ implementation {
   uint8_t msglen;
   bool sendBusy = FALSE;
   bool uartbusy = FALSE;
-  bool initialBoot = FALSE;
+  bool initialBoot = TRUE;
   bool firstTimer = TRUE;
   uint16_t seqno;
   enum {
@@ -74,8 +73,8 @@ implementation {
   message_t pkt;
   message_t* p_pkt;
 
-  uint16_t src = 7;
-  uint16_t dest = 10;
+  uint16_t src = 10; //source node of AODV send
+  uint16_t dest = 19; //destination node of AODV send
 
   uint8_t prevSeq = 0;
   uint8_t firstMsg = 0;
@@ -88,6 +87,7 @@ implementation {
     call SplitControlAODV.start();
     call SerialControl.start();
   }
+
   event void SerialControl.startDone(error_t err) {
     call RadioControl.start();
   }
@@ -117,7 +117,6 @@ implementation {
     call CollectionDebug.logEvent(NET_C_DBG_1);
   }
 
-
   void sendMessage() {
     TestNetworkMsg* msg = (TestNetworkMsg*)call Send.getPayload(&packet, sizeof(TestNetworkMsg));
     uint16_t metric;
@@ -145,7 +144,6 @@ implementation {
     }
   }
 
-
   event void Timer.fired() {
     if(prot == 1) {
       uint32_t nextInt;
@@ -161,12 +159,15 @@ implementation {
     }
   }
 
+
   event void MilliTimer.fired() {
     if(prot == 2) {
       dbg("APPS", "%s\t APPS: MilliTimer.fired()\n", sim_time_string());
-      call AMSend.send(dest, p_pkt, 5);
+      call Leds.led0Toggle();
+      call AMSend.send(dest, p_pkt, sizeof(pkt));
     }
   }
+
 
   event void Send.sendDone(message_t* m, error_t err) {
     if (err != SUCCESS) {
@@ -203,7 +204,7 @@ implementation {
       seqno = 0;
         call Timer.startOneShot(call Random.rand16() & 0x1ff);
     }
-
+    
     if(prot == 2 && initialBoot == TRUE) {
       dbg("APPS", "%s\t APPS: startDone\n", sim_time_string());
       p_pkt = &pkt;
@@ -217,7 +218,7 @@ implementation {
 
   event message_t* ReceiveAODV.receive(message_t* msg, void* payload, uint8_t len) {
     if(prot == 2) {
-     dbg("AODV", "%s\t New AODV packet received\n", sim_time_string());
+     dbg("AODV", "%s\t Received!!!!\n", sim_time_string());
     }
     return msg;
   }
@@ -250,7 +251,6 @@ implementation {
 
     }
  }
-
 
  task void uartEchoTask() {
     dbg("Traffic", "CTP node sending packet to UART.\n");
@@ -287,6 +287,7 @@ implementation {
   /* Default implementations for CollectionDebug calls.
    * These allow CollectionDebug not to be wired to anything if debugging
    * is not desired. */
+
 
     default command error_t CollectionDebug.logEvent(uint8_t type) {
         return SUCCESS;
