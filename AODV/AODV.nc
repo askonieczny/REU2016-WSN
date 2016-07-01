@@ -25,7 +25,7 @@ configuration AODV {
 }
 
 implementation {
-  components AODV_M, RandomC, ActiveMessageC;
+  components AODV_M, RandomC, ActiveMessageC, TestNetworkC;
   
   SplitControl = AODV_M.SplitControl;
   AMSend = AODV_M.AMSend;
@@ -62,6 +62,7 @@ implementation {
   
   components new TimerMilliC() as RREQ_Timer;
   AODV_M.RREQTimer -> RREQ_Timer;
-  
+
+  AODV_M.GetProt -> TestNetworkC.GetProt;
 }
 

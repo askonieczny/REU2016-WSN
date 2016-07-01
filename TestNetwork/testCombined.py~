@@ -19,7 +19,7 @@ for line in lines:
   if (len(s) > 0):
 	r.add(int(s[0]), int(s[1]), float(s[2]))
 
-noise = open("meyer-short.txt", "r")
+noise = open("noise.txt", "r")
 lines = noise.readlines()
 for line in lines:
   str = line.strip()

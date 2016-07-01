@@ -810,7 +810,7 @@ extern void *malloc(size_t __size) __attribute((__leaf__)) __attribute((__nothro
 #line 483
 extern void free(void *__ptr) __attribute((__leaf__)) __attribute((__nothrow__)) ;
 #line 742
-typedef int (*__compar_fn_t)(const void *arg_0x2b9d81b90cf8, const void *arg_0x2b9d81b8f020);
+typedef int (*__compar_fn_t)(const void *arg_0x2b964fa78cf8, const void *arg_0x2b964fa77020);
 #line 780
 __extension__ 
 #line 797
@@ -828,7 +828,7 @@ extern double sqrt(double __x) __attribute((__leaf__)) __attribute((__nothrow__)
 #line 184
 extern double floor(double __x) __attribute((__leaf__)) __attribute((__nothrow__)) __attribute((const)) ;
 #line 250
-extern double erfc(double arg_0x2b9d81c11618) __attribute((__leaf__)) __attribute((__nothrow__)) ;
+extern double erfc(double arg_0x2b964faf9618) __attribute((__leaf__)) __attribute((__nothrow__)) ;
 #line 326
 __extension__ 
 
@@ -1228,8 +1228,8 @@ typedef struct hashtable hashtable_t;
 #line 78
 struct hashtable *
 create_hashtable(unsigned int minsize, 
-unsigned int (*hashfunction)(void *arg_0x2b9d81e528e8), 
-int (*key_eq_fn)(void *arg_0x2b9d81e510c8, void *arg_0x2b9d81e51368));
+unsigned int (*hashfunction)(void *arg_0x2b964fd3a8e8), 
+int (*key_eq_fn)(void *arg_0x2b964fd390c8, void *arg_0x2b964fd39368));
 #line 103
 #line 102
 int 
@@ -1842,7 +1842,7 @@ struct tm;
 
 struct tm;
 # 46 "/opt/tinyos-2.1.2/tos/lib/tossim/randomlib.h"
-static inline void RandomInitialise(int arg_0x2b9d82062610, int arg_0x2b9d82062878);
+static inline void RandomInitialise(int arg_0x2b964ff4a610, int arg_0x2b964ff4a878);
 static double RandomUniform(void );
 # 51 "/opt/tinyos-2.1.2/tos/lib/tossim/sim_noise.c"
 int numCase1 = 0;
@@ -4186,6 +4186,8 @@ uint8_t len);
 static void TestNetworkC$ReadSensor$readDone(error_t result, TestNetworkC$ReadSensor$val_t val);
 # 69 "/opt/tinyos-2.1.2/tos/lib/net/DisseminationValue.nc"
 static void TestNetworkC$DisseminationPeriod$changed(void );
+# 44 "/opt/tinyos-2.1.2/tos/interfaces/GetProt.nc"
+static __nesc_nxbase_nx_int32_t TestNetworkC$GetProt$get(void );
 # 83 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
 static void TestNetworkC$MilliTimer$fired(void );
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
@@ -4253,11 +4255,11 @@ static error_t MeasureClockC$Init$init(void );
 # 67 "/opt/tinyos-2.1.2/tos/interfaces/TaskBasic.nc"
 static error_t SimSchedulerBasicP$TaskBasic$postTask(
 # 49 "/opt/tinyos-2.1.2/tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x2b9d82163020);
+uint8_t arg_0x2b96500cc020);
 # 75 "/opt/tinyos-2.1.2/tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP$TaskBasic$default$runTask(
 # 49 "/opt/tinyos-2.1.2/tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x2b9d82163020);
+uint8_t arg_0x2b96500cc020);
 # 57 "/opt/tinyos-2.1.2/tos/interfaces/Scheduler.nc"
 static void SimSchedulerBasicP$Scheduler$init(void );
 
@@ -4287,7 +4289,7 @@ static long long int SimMoteP$SimMote$getStartTime(void );
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 static error_t TossimActiveMessageC$AMSend$send(
 # 47 "/opt/tinyos-2.1.2/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b9d8256c0c8, 
+am_id_t arg_0x2b96504d30c8, 
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -4308,7 +4310,7 @@ void *
 
 TossimActiveMessageC$AMSend$getPayload(
 # 47 "/opt/tinyos-2.1.2/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b9d8256c0c8, 
+am_id_t arg_0x2b96504d30c8, 
 # 132 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4317,7 +4319,7 @@ uint8_t len);
 #line 123
 static uint8_t TossimActiveMessageC$AMSend$maxPayloadLength(
 # 47 "/opt/tinyos-2.1.2/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b9d8256c0c8);
+am_id_t arg_0x2b96504d30c8);
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 static 
 #line 74
@@ -4327,7 +4329,7 @@ message_t *
 
 TossimActiveMessageC$Snoop$default$receive(
 # 49 "/opt/tinyos-2.1.2/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b9d8256ad68, 
+am_id_t arg_0x2b96504d2d68, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4374,7 +4376,7 @@ message_t *
 
 TossimActiveMessageC$Receive$default$receive(
 # 48 "/opt/tinyos-2.1.2/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b9d8256a220, 
+am_id_t arg_0x2b96504d2220, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4548,7 +4550,7 @@ static void AODV_M$resendRERR$runTask(void );
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 static error_t AODV_M$AMSend$send(
 # 14 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
-am_id_t arg_0x2b9d82766020, 
+am_id_t arg_0x2b96506cf020, 
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -4565,7 +4567,7 @@ uint8_t len);
 #line 110
 static void AODV_M$AMSend$default$sendDone(
 # 14 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
-am_id_t arg_0x2b9d82766020, 
+am_id_t arg_0x2b96506cf020, 
 # 103 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4625,7 +4627,7 @@ message_t *
 
 AODV_M$Receive$default$receive(
 # 15 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
-uint8_t arg_0x2b9d82765158, 
+uint8_t arg_0x2b96506cd158, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4701,7 +4703,7 @@ error_t error);
 # 110 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$sendDone(
 # 48 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x2b9d828fd960, 
+am_id_t arg_0x2b9650863020, 
 # 103 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4714,7 +4716,7 @@ error_t error);
 # 75 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$send(
 # 46 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b9d828fe788, 
+uint8_t arg_0x2b9650865e18, 
 # 67 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4732,7 +4734,7 @@ void *
 
 /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$getPayload(
 # 46 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b9d828fe788, 
+uint8_t arg_0x2b9650865e18, 
 # 122 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4741,11 +4743,11 @@ uint8_t len);
 #line 112
 static uint8_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$maxPayloadLength(
 # 46 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b9d828fe788);
+uint8_t arg_0x2b9650865e18);
 # 100 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$default$sendDone(
 # 46 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b9d828fe788, 
+uint8_t arg_0x2b9650865e18, 
 # 96 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -4885,27 +4887,27 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$TimerFrom$fire
 #line 136
 static uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$getNow(
 # 48 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9d82bd8c28);
+uint8_t arg_0x2b9650b3fc28);
 # 83 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$default$fired(
 # 48 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9d82bd8c28);
+uint8_t arg_0x2b9650b3fc28);
 # 151 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
 static uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$getdt(
 # 48 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9d82bd8c28);
+uint8_t arg_0x2b9650b3fc28);
 # 144 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
 static uint32_t /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$gett0(
 # 48 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9d82bd8c28);
+uint8_t arg_0x2b9650b3fc28);
 # 92 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
 static bool /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$isRunning(
 # 48 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9d82bd8c28);
+uint8_t arg_0x2b9650b3fc28);
 # 64 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$startPeriodic(
 # 48 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9d82bd8c28, 
+uint8_t arg_0x2b9650b3fc28, 
 # 64 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
 uint32_t dt);
 
@@ -4918,7 +4920,7 @@ uint32_t dt);
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$startOneShot(
 # 48 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9d82bd8c28, 
+uint8_t arg_0x2b9650b3fc28, 
 # 73 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
 uint32_t dt);
 
@@ -4927,7 +4929,7 @@ uint32_t dt);
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$stop(
 # 48 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9d82bd8c28);
+uint8_t arg_0x2b9650b3fc28);
 # 82 "/opt/tinyos-2.1.2/tos/lib/timer/Counter.nc"
 static void /*HilTimerMilliC.CounterToLocalTimeC*/CounterToLocalTimeC$0$Counter$overflow(void );
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
@@ -4972,37 +4974,37 @@ error_t error);
 # 90 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static void DisseminationEngineImplP$TrickleTimer$fired(
 # 50 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c38c68);
+uint16_t arg_0x2b9650b9fdf0);
 # 85 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static void DisseminationEngineImplP$TrickleTimer$default$incrementCounter(
 # 50 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c38c68);
+uint16_t arg_0x2b9650b9fdf0);
 # 80 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static void DisseminationEngineImplP$TrickleTimer$default$reset(
 # 50 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c38c68);
+uint16_t arg_0x2b9650b9fdf0);
 # 68 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static error_t DisseminationEngineImplP$TrickleTimer$default$start(
 # 50 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c38c68);
+uint16_t arg_0x2b9650b9fdf0);
 # 48 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
 static void DisseminationEngineImplP$DisseminationCache$default$storeData(
 # 49 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c398e8, 
+uint16_t arg_0x2b9650ba0a40, 
 # 48 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
 void * data, uint8_t size, uint32_t seqno);
 #line 45
 static error_t DisseminationEngineImplP$DisseminationCache$start(
 # 49 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c398e8);
+uint16_t arg_0x2b9650ba0a40);
 # 49 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
 static uint32_t DisseminationEngineImplP$DisseminationCache$default$requestSeqno(
 # 49 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c398e8);
+uint16_t arg_0x2b9650ba0a40);
 # 47 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
 static void *DisseminationEngineImplP$DisseminationCache$default$requestData(
 # 49 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c398e8, 
+uint16_t arg_0x2b9650ba0a40, 
 # 47 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
 uint8_t *size);
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
@@ -5027,7 +5029,7 @@ static error_t DisseminationEngineImplP$StdControl$start(void );
 #line 95
 static error_t DisseminationEngineImplP$DisseminatorControl$default$start(
 # 51 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c35020);
+uint16_t arg_0x2b9650b9c0c8);
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 static error_t /*DisseminationEngineP.DisseminationSendC.SenderC.AMQueueEntryP*/AMQueueEntryP$4$AMSend$send(am_addr_t addr, 
 #line 71
@@ -5083,19 +5085,19 @@ static error_t /*TestNetworkAppC.Object32C.DisseminatorP*/DisseminatorP$0$StdCon
 # 90 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static void /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$TrickleTimer$default$fired(
 # 58 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimerImplP.nc"
-uint8_t arg_0x2b9d82d04630);
+uint8_t arg_0x2b9650c6b630);
 # 85 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static void /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$TrickleTimer$incrementCounter(
 # 58 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimerImplP.nc"
-uint8_t arg_0x2b9d82d04630);
+uint8_t arg_0x2b9650c6b630);
 # 80 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static void /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$TrickleTimer$reset(
 # 58 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimerImplP.nc"
-uint8_t arg_0x2b9d82d04630);
+uint8_t arg_0x2b9650c6b630);
 # 68 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static error_t /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$TrickleTimer$start(
 # 58 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimerImplP.nc"
-uint8_t arg_0x2b9d82d04630);
+uint8_t arg_0x2b9650c6b630);
 # 62 "/opt/tinyos-2.1.2/tos/interfaces/Init.nc"
 static error_t /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$Init$init(void );
 # 75 "/opt/tinyos-2.1.2/tos/interfaces/TaskBasic.nc"
@@ -5167,7 +5169,7 @@ static void /*CtpP.Forwarder*/CtpForwardingEngineP$0$LinkEstimator$evicted(am_ad
 # 31 "/opt/tinyos-2.1.2/tos/interfaces/Intercept.nc"
 static bool /*CtpP.Forwarder*/CtpForwardingEngineP$0$Intercept$default$forward(
 # 114 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x2b9d82e09c00, 
+collection_id_t arg_0x2b9650d70c00, 
 # 20 "/opt/tinyos-2.1.2/tos/interfaces/Intercept.nc"
 message_t * msg, 
 
@@ -5218,7 +5220,7 @@ message_t *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP$0$Snoop$default$receive(
 # 113 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x2b9d82e090c8, 
+collection_id_t arg_0x2b9650d700c8, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -5231,7 +5233,7 @@ uint8_t len);
 # 75 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 static error_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$send(
 # 111 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x2b9d82e0c368, 
+uint8_t arg_0x2b9650d73368, 
 # 67 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -5249,7 +5251,7 @@ void *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$getPayload(
 # 111 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x2b9d82e0c368, 
+uint8_t arg_0x2b9650d73368, 
 # 122 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -5258,11 +5260,11 @@ uint8_t len);
 #line 112
 static uint8_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$maxPayloadLength(
 # 111 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x2b9d82e0c368);
+uint8_t arg_0x2b9650d73368);
 # 100 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 static void /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$default$sendDone(
 # 111 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x2b9d82e0c368, 
+uint8_t arg_0x2b9650d73368, 
 # 96 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -5288,7 +5290,7 @@ message_t *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP$0$Receive$default$receive(
 # 112 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x2b9d82e0b4d0, 
+collection_id_t arg_0x2b9650d724d0, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -5375,7 +5377,7 @@ uint8_t len);
 # 46 "/opt/tinyos-2.1.2/tos/lib/net/CollectionId.nc"
 static collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$CollectionId$default$fetch(
 # 146 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x2b9d82e3a318);
+uint8_t arg_0x2b9650da1318);
 # 97 "/opt/tinyos-2.1.2/tos/interfaces/Pool.nc"
 static 
 #line 94
@@ -5707,7 +5709,7 @@ error_t error);
 #line 75
 static error_t /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$send(
 # 46 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b9d828fe788, 
+uint8_t arg_0x2b9650865e18, 
 # 67 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -5725,7 +5727,7 @@ void *
 
 /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$getPayload(
 # 46 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b9d828fe788, 
+uint8_t arg_0x2b9650865e18, 
 # 122 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -5734,7 +5736,7 @@ uint8_t len);
 #line 100
 static void /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$default$sendDone(
 # 46 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b9d828fe788, 
+uint8_t arg_0x2b9650865e18, 
 # 96 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -5750,7 +5752,7 @@ static error_t SerialActiveMessageC$SplitControl$start(void );
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 static error_t SerialActiveMessageC$AMSend$send(
 # 49 "/opt/tinyos-2.1.2/tos/lib/tossim/SerialActiveMessageC.nc"
-am_id_t arg_0x2b9d832c2020, 
+am_id_t arg_0x2b9651229020, 
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -5771,7 +5773,7 @@ void *
 
 SerialActiveMessageC$AMSend$getPayload(
 # 49 "/opt/tinyos-2.1.2/tos/lib/tossim/SerialActiveMessageC.nc"
-am_id_t arg_0x2b9d832c2020, 
+am_id_t arg_0x2b9651229020, 
 # 132 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -6130,14 +6132,14 @@ static void TestNetworkC$Timer$startOneShot(uint32_t dt);
 static void TestNetworkC$Timer$stop(void );
 # 67 "/opt/tinyos-2.1.2/tos/interfaces/TaskBasic.nc"
 static error_t TestNetworkC$uartEchoTask$postTask(void );
-# 57 "TestNetworkC.nc"
+# 58 "TestNetworkC.nc"
 enum TestNetworkC$__nesc_unnamed4357 {
-#line 57
+#line 58
   TestNetworkC$uartEchoTask = 0U
 };
-#line 57
+#line 58
 typedef int TestNetworkC$__nesc_sillytask_uartEchoTask[TestNetworkC$uartEchoTask];
-#line 54
+#line 55
 nx_int32_t TestNetworkC$prot[1000];
 
 
@@ -6194,7 +6196,6 @@ static inline void TestNetworkC$SplitControlAODV$startDone(error_t err);
 
 
 
-
 static inline void TestNetworkC$SplitControlAODV$stopDone(error_t err);
 static inline void TestNetworkC$RadioControl$stopDone(error_t err);
 static inline void TestNetworkC$SerialControl$stopDone(error_t err);
@@ -6237,7 +6238,7 @@ static void TestNetworkC$DisseminationPeriod$changed(void );
 
 
 static inline message_t *TestNetworkC$ReceiveRout$receive(message_t *msg, void *payload, uint8_t len);
-#line 219
+#line 221
 static inline message_t *TestNetworkC$ReceiveAODV$receive(message_t *msg, void *payload, uint8_t len);
 
 
@@ -6246,10 +6247,12 @@ static inline message_t *TestNetworkC$ReceiveAODV$receive(message_t *msg, void *
 
 
 static message_t *TestNetworkC$ReceiveCTP$receive(message_t *msg, void *payload, uint8_t len);
-#line 255
+#line 257
 static inline void TestNetworkC$uartEchoTask$runTask(void );
-#line 275
+#line 277
 static void TestNetworkC$UARTSend$sendDone(message_t *msg, error_t error);
+#line 289
+static inline __nesc_nxbase_nx_int32_t TestNetworkC$GetProt$get(void );
 # 62 "/opt/tinyos-2.1.2/tos/interfaces/Init.nc"
 static error_t PlatformP$MoteInit$init(void );
 #line 62
@@ -6327,7 +6330,7 @@ int sim_main_start_mote(void )   ;
 # 75 "/opt/tinyos-2.1.2/tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP$TaskBasic$runTask(
 # 49 "/opt/tinyos-2.1.2/tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x2b9d82163020);
+uint8_t arg_0x2b96500cc020);
 
 
 
@@ -6495,7 +6498,7 @@ static am_addr_t TossimActiveMessageC$amAddress(void );
 # 110 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 static void TossimActiveMessageC$AMSend$sendDone(
 # 47 "/opt/tinyos-2.1.2/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b9d8256c0c8, 
+am_id_t arg_0x2b96504d30c8, 
 # 103 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -6514,7 +6517,7 @@ message_t *
 
 TossimActiveMessageC$Snoop$receive(
 # 49 "/opt/tinyos-2.1.2/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b9d8256ad68, 
+am_id_t arg_0x2b96504d2d68, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -6533,7 +6536,7 @@ message_t *
 
 TossimActiveMessageC$Receive$receive(
 # 48 "/opt/tinyos-2.1.2/tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x2b9d8256a220, 
+am_id_t arg_0x2b96504d2220, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -6999,7 +7002,7 @@ message_t * msg);
 # 110 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 static void AODV_M$AMSend$sendDone(
 # 14 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
-am_id_t arg_0x2b9d82766020, 
+am_id_t arg_0x2b96506cf020, 
 # 103 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -7039,6 +7042,8 @@ message_t * msg,
 uint8_t len);
 # 67 "/opt/tinyos-2.1.2/tos/interfaces/TaskBasic.nc"
 static error_t AODV_M$resendRREQ$postTask(void );
+# 44 "/opt/tinyos-2.1.2/tos/interfaces/GetProt.nc"
+static __nesc_nxbase_nx_int32_t AODV_M$GetProt$get(void );
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 static 
 #line 74
@@ -7048,7 +7053,7 @@ message_t *
 
 AODV_M$Receive$receive(
 # 15 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
-uint8_t arg_0x2b9d82765158, 
+uint8_t arg_0x2b96506cd158, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -7112,28 +7117,28 @@ message_t * msg,
 uint8_t len);
 # 67 "/opt/tinyos-2.1.2/tos/interfaces/TaskBasic.nc"
 static error_t AODV_M$resendRREP$postTask(void );
-# 69 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 73 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 enum AODV_M$__nesc_unnamed4363 {
-#line 69
+#line 73
   AODV_M$resendRREQ = 4U
 };
-#line 69
+#line 73
 typedef int AODV_M$__nesc_sillytask_resendRREQ[AODV_M$resendRREQ];
 
 
 enum AODV_M$__nesc_unnamed4364 {
-#line 72
+#line 76
   AODV_M$resendRREP = 5U
 };
-#line 72
+#line 76
 typedef int AODV_M$__nesc_sillytask_resendRREP[AODV_M$resendRREP];
 
 
 enum AODV_M$__nesc_unnamed4365 {
-#line 75
+#line 79
   AODV_M$resendRERR = 6U
 };
-#line 75
+#line 79
 typedef int AODV_M$__nesc_sillytask_resendRERR[AODV_M$resendRERR];
 
 
@@ -7144,12 +7149,14 @@ typedef int AODV_M$__nesc_sillytask_resendRERR[AODV_M$resendRERR];
 
 
 enum AODV_M$__nesc_unnamed4366 {
-#line 84
+#line 88
   AODV_M$update_rreq_cache = 7U
 };
-#line 84
+#line 88
 typedef int AODV_M$__nesc_sillytask_update_rreq_cache[AODV_M$update_rreq_cache];
-#line 40
+#line 42
+nx_int32_t AODV_M$protocol[1000];
+
 message_t AODV_M$rreq_msg_[1000];
 message_t AODV_M$rrep_msg_[1000];
 message_t AODV_M$rerr_msg_[1000];
@@ -7202,12 +7209,13 @@ static void AODV_M$del_route_table(am_addr_t dest);
 static am_addr_t AODV_M$get_next_hop(am_addr_t dest);
 
 
+
 static void AODV_M$print_route_table(void );
 static void AODV_M$print_rreq_cache(void );
 
 
 static error_t AODV_M$SplitControl$start(void );
-#line 131
+#line 135
 static inline void AODV_M$AMControl$startDone(error_t e);
 
 
@@ -7229,25 +7237,25 @@ static inline void AODV_M$AMControl$stopDone(error_t e);
 
 
 static bool AODV_M$sendRREQ(am_addr_t dest, bool forward);
-#line 189
+#line 193
 static bool AODV_M$sendRREP(am_addr_t dest, bool forward);
-#line 214
+#line 218
 static bool AODV_M$sendRERR(am_addr_t dest, am_addr_t src, bool forward);
-#line 239
+#line 243
 static inline void AODV_M$resendRREQ$runTask(void );
-#line 257
+#line 261
 static inline void AODV_M$resendRREP$runTask(void );
-#line 277
+#line 281
 static inline void AODV_M$resendRERR$runTask(void );
-#line 332
+#line 336
 static inline bool AODV_M$is_rreq_cached(aodv_rreq_hdr *rreq_hdr);
-#line 353
+#line 357
 static bool AODV_M$add_rreq_cache(uint8_t seq, am_addr_t dest, am_addr_t src, uint8_t hop);
-#line 389
+#line 393
 static inline void AODV_M$del_rreq_cache(uint8_t id);
-#line 413
+#line 417
 static inline void AODV_M$update_rreq_cache$runTask(void );
-#line 428
+#line 432
 static inline uint8_t AODV_M$get_route_table_index(am_addr_t dest);
 
 
@@ -7259,15 +7267,15 @@ static inline uint8_t AODV_M$get_route_table_index(am_addr_t dest);
 
 
 static void AODV_M$del_route_table(am_addr_t dest);
-#line 465
+#line 469
 static bool AODV_M$add_route_table(uint8_t seq, am_addr_t dest, am_addr_t nexthop, uint8_t hop);
-#line 507
+#line 511
 static am_addr_t AODV_M$get_next_hop(am_addr_t dest);
-#line 522
+#line 526
 static inline error_t AODV_M$forwardMSG(message_t *p_msg, am_addr_t nexthop, uint8_t len);
-#line 563
+#line 567
 static inline error_t AODV_M$AMSend$send(am_id_t id, am_addr_t addr, message_t *msg, uint8_t len);
-#line 613
+#line 617
 static inline void AODV_M$SendRREQ$sendDone(message_t *p_msg, error_t e);
 
 
@@ -7280,25 +7288,25 @@ static inline void AODV_M$SendRREQ$sendDone(message_t *p_msg, error_t e);
 
 
 static inline void AODV_M$SendRREP$sendDone(message_t *p_msg, error_t e);
-#line 638
+#line 642
 static inline void AODV_M$SendRERR$sendDone(message_t *p_msg, error_t e);
-#line 653
+#line 657
 static inline message_t *AODV_M$ReceiveRREQ$receive(message_t *p_msg, 
 void *payload, uint8_t len);
-#line 715
+#line 724
 static inline message_t *AODV_M$ReceiveRREP$receive(message_t *p_msg, 
 void *payload, uint8_t len);
-#line 742
+#line 751
 static inline message_t *AODV_M$ReceiveRERR$receive(message_t *p_msg, 
 void *payload, uint8_t len);
-#line 780
+#line 789
 static inline void AODV_M$SubSend$sendDone(message_t *p_msg, error_t e);
-#line 817
+#line 826
 static inline message_t *AODV_M$SubReceive$receive(message_t *p_msg, 
 void *payload, uint8_t len);
-#line 847
+#line 856
 static inline void AODV_M$AODVTimer$fired(void );
-#line 865
+#line 874
 static inline void AODV_M$RREQTimer$fired(void );
 
 
@@ -7316,7 +7324,7 @@ static inline message_t *AODV_M$Receive$default$receive(am_id_t id, message_t *m
 
 
 static void AODV_M$print_route_table(void );
-#line 893
+#line 902
 static void AODV_M$print_rreq_cache(void );
 # 52 "/opt/tinyos-2.1.2/tos/system/RandomMlcgC.nc"
 uint32_t RandomMlcgC$seed[1000];
@@ -7383,7 +7391,7 @@ static inline void /*AODV.MHSendRREQ.SenderC.AMQueueEntryP*/AMQueueEntryP$0$Send
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$send(
 # 48 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x2b9d828fd960, 
+am_id_t arg_0x2b9650863020, 
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -7404,7 +7412,7 @@ void *
 
 /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$getPayload(
 # 48 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x2b9d828fd960, 
+am_id_t arg_0x2b9650863020, 
 # 132 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -7413,11 +7421,11 @@ uint8_t len);
 #line 123
 static uint8_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$maxPayloadLength(
 # 48 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x2b9d828fd960);
+am_id_t arg_0x2b9650863020);
 # 100 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$sendDone(
 # 46 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b9d828fe788, 
+uint8_t arg_0x2b9650865e18, 
 # 96 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -7984,7 +7992,7 @@ static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$TimerFrom$stop
 
 static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$fired(
 # 48 "/opt/tinyos-2.1.2/tos/lib/timer/VirtualizeTimerC.nc"
-uint8_t arg_0x2b9d82bd8c28);
+uint8_t arg_0x2b9650b3fc28);
 #line 71
 enum /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$__nesc_unnamed4372 {
 #line 71
@@ -8104,34 +8112,34 @@ static uint8_t DisseminationEngineImplP$AMSend$maxPayloadLength(void );
 # 85 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static void DisseminationEngineImplP$TrickleTimer$incrementCounter(
 # 50 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c38c68);
+uint16_t arg_0x2b9650b9fdf0);
 # 80 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static void DisseminationEngineImplP$TrickleTimer$reset(
 # 50 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c38c68);
+uint16_t arg_0x2b9650b9fdf0);
 # 68 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static error_t DisseminationEngineImplP$TrickleTimer$start(
 # 50 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c38c68);
+uint16_t arg_0x2b9650b9fdf0);
 # 48 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
 static void DisseminationEngineImplP$DisseminationCache$storeData(
 # 49 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c398e8, 
+uint16_t arg_0x2b9650ba0a40, 
 # 48 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
 void * data, uint8_t size, uint32_t seqno);
 static uint32_t DisseminationEngineImplP$DisseminationCache$requestSeqno(
 # 49 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c398e8);
+uint16_t arg_0x2b9650ba0a40);
 # 47 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
 static void *DisseminationEngineImplP$DisseminationCache$requestData(
 # 49 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c398e8, 
+uint16_t arg_0x2b9650ba0a40, 
 # 47 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
 uint8_t *size);
 # 95 "/opt/tinyos-2.1.2/tos/interfaces/StdControl.nc"
 static error_t DisseminationEngineImplP$DisseminatorControl$start(
 # 51 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationEngineImplP.nc"
-uint16_t arg_0x2b9d82c35020);
+uint16_t arg_0x2b9650b9c0c8);
 #line 64
 enum DisseminationEngineImplP$__nesc_unnamed4375 {
 #line 64
@@ -8354,7 +8362,7 @@ static uint16_t /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/Tric
 # 90 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
 static void /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$TrickleTimer$fired(
 # 58 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimerImplP.nc"
-uint8_t arg_0x2b9d82d04630);
+uint8_t arg_0x2b9650c6b630);
 # 67 "/opt/tinyos-2.1.2/tos/interfaces/TaskBasic.nc"
 static error_t /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$timerTask$postTask(void );
 # 136 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
@@ -8546,7 +8554,7 @@ static bool /*CtpP.Forwarder*/CtpForwardingEngineP$0$SentCache$lookup(/*CtpP.For
 # 31 "/opt/tinyos-2.1.2/tos/interfaces/Intercept.nc"
 static bool /*CtpP.Forwarder*/CtpForwardingEngineP$0$Intercept$forward(
 # 114 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x2b9d82e09c00, 
+collection_id_t arg_0x2b9650d70c00, 
 # 20 "/opt/tinyos-2.1.2/tos/interfaces/Intercept.nc"
 message_t * msg, 
 
@@ -8569,7 +8577,7 @@ message_t *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP$0$Snoop$receive(
 # 113 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x2b9d82e090c8, 
+collection_id_t arg_0x2b9650d700c8, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -8584,7 +8592,7 @@ static uint16_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$Random$rand16(void );
 # 100 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 static void /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$sendDone(
 # 111 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x2b9d82e0c368, 
+uint8_t arg_0x2b9650d73368, 
 # 96 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -8674,7 +8682,7 @@ message_t *
 
 /*CtpP.Forwarder*/CtpForwardingEngineP$0$Receive$receive(
 # 112 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-collection_id_t arg_0x2b9d82e0b4d0, 
+collection_id_t arg_0x2b9650d724d0, 
 # 71 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -8729,7 +8737,7 @@ static error_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$MessagePool$put(
 # 46 "/opt/tinyos-2.1.2/tos/lib/net/CollectionId.nc"
 static collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$CollectionId$fetch(
 # 146 "/opt/tinyos-2.1.2/tos/lib/net/ctp/CtpForwardingEngineP.nc"
-uint8_t arg_0x2b9d82e3a318);
+uint8_t arg_0x2b9650da1318);
 #line 234
 enum /*CtpP.Forwarder*/CtpForwardingEngineP$0$__nesc_unnamed4381 {
 #line 234
@@ -9507,8 +9515,8 @@ uint32_t /*CtpP.Router*/CtpRoutingEngineP$0$parentChanges[1000];
 
 
 static inline void /*CtpP.Router*/CtpRoutingEngineP$0$routingTableInit(void );
-static uint8_t /*CtpP.Router*/CtpRoutingEngineP$0$routingTableFind(am_addr_t arg_0x2b9d83184678);
-static inline error_t /*CtpP.Router*/CtpRoutingEngineP$0$routingTableUpdateEntry(am_addr_t arg_0x2b9d83182020, am_addr_t arg_0x2b9d831822e8, uint16_t arg_0x2b9d831825a8);
+static uint8_t /*CtpP.Router*/CtpRoutingEngineP$0$routingTableFind(am_addr_t arg_0x2b96510eb678);
+static inline error_t /*CtpP.Router*/CtpRoutingEngineP$0$routingTableUpdateEntry(am_addr_t arg_0x2b96510ea020, am_addr_t arg_0x2b96510ea2e8, uint16_t arg_0x2b96510ea5a8);
 static inline error_t /*CtpP.Router*/CtpRoutingEngineP$0$routingTableEvict(am_addr_t neighbor);
 #line 181
 uint32_t /*CtpP.Router*/CtpRoutingEngineP$0$currentInterval[1000];
@@ -9779,7 +9787,7 @@ static inline void /*TestNetworkAppC.SerialAMSenderC.AMQueueEntryP*/AMQueueEntry
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 static error_t /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$AMSend$send(
 # 48 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x2b9d828fd960, 
+am_id_t arg_0x2b9650863020, 
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 am_addr_t addr, 
 #line 71
@@ -9800,7 +9808,7 @@ void *
 
 /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$AMSend$getPayload(
 # 48 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-am_id_t arg_0x2b9d828fd960, 
+am_id_t arg_0x2b9650863020, 
 # 132 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -9809,7 +9817,7 @@ uint8_t len);
 # 100 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 static void /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$sendDone(
 # 46 "/opt/tinyos-2.1.2/tos/system/AMQueueImplP.nc"
-uint8_t arg_0x2b9d828fe788, 
+uint8_t arg_0x2b9650865e18, 
 # 96 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
 message_t * msg, 
 
@@ -10630,6 +10638,50 @@ static __inline  uint16_t __nesc_hton_uint16(void * target, uint16_t value)
   return value;
 }
 
+#line 340
+static __inline  uint32_t __nesc_ntoh_uint32(const void * source)
+#line 340
+{
+  const uint8_t *base = source;
+
+#line 342
+  return ((((uint32_t )base[0] << 24) | (
+  (uint32_t )base[1] << 16)) | (
+  (uint32_t )base[2] << 8)) | base[3];
+}
+
+#line 372
+static __inline  int32_t __nesc_ntoh_int32(const void * source)
+#line 372
+{
+#line 372
+  return __nesc_ntoh_uint32(source);
+}
+
+#line 347
+static __inline  uint32_t __nesc_hton_uint32(void * target, uint32_t value)
+#line 347
+{
+  uint8_t *base = target;
+
+#line 349
+  base[3] = value;
+  base[2] = value >> 8;
+  base[1] = value >> 16;
+  base[0] = value >> 24;
+  return value;
+}
+
+#line 372
+static __inline  int32_t __nesc_hton_int32(void * target, int32_t value)
+#line 372
+{
+#line 372
+  __nesc_hton_uint32(target, value);
+#line 372
+  return value;
+}
+
 # 89 "/opt/tinyos-2.1.2/tos/system/RandomMlcgC.nc"
 static inline uint16_t RandomMlcgC$Random$rand16(void )
 #line 89
@@ -10672,9 +10724,9 @@ inline static void AODV_M$RREQTimer$stop(void ){
 #line 78
 }
 #line 78
-# 332 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 336 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline bool AODV_M$is_rreq_cached(aodv_rreq_hdr *rreq_hdr)
-#line 332
+#line 336
 {
   int i;
 
@@ -10689,7 +10741,7 @@ static inline bool AODV_M$is_rreq_cached(aodv_rreq_hdr *rreq_hdr)
               return TRUE;
             }
           else 
-#line 344
+#line 348
             {
               return FALSE;
             }
@@ -10728,60 +10780,87 @@ inline static am_addr_t AODV_M$AMPacket$address(void ){
 #line 68
 }
 #line 68
-# 653 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 289 "TestNetworkC.nc"
+static inline __nesc_nxbase_nx_int32_t TestNetworkC$GetProt$get(void )
+#line 289
+{
+  return __nesc_ntoh_int32(TestNetworkC$prot[sim_node()].nxdata);
+}
+
+# 44 "/opt/tinyos-2.1.2/tos/interfaces/GetProt.nc"
+inline static __nesc_nxbase_nx_int32_t AODV_M$GetProt$get(void ){
+#line 44
+  int __nesc_result;
+#line 44
+
+#line 44
+  __nesc_result = TestNetworkC$GetProt$get();
+#line 44
+
+#line 44
+  return __nesc_result;
+#line 44
+}
+#line 44
+# 657 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline message_t *AODV_M$ReceiveRREQ$receive(message_t *p_msg, 
 void *payload, uint8_t len)
-#line 654
+#line 658
 {
-  bool cached = FALSE;
-  bool added = FALSE;
 
-  am_addr_t me = AODV_M$AMPacket$address();
-  am_addr_t src = AODV_M$AMPacket$source(p_msg);
-  aodv_rreq_hdr *aodv_hdr = (aodv_rreq_hdr *)p_msg->data;
-  aodv_rreq_hdr *rreq_aodv_hdr = (aodv_rreq_hdr *)AODV_M$p_rreq_msg_[sim_node()]->data;
-  aodv_rrep_hdr *rrep_aodv_hdr = (aodv_rrep_hdr *)AODV_M$p_rrep_msg_[sim_node()]->data;
+  __nesc_hton_int32(AODV_M$protocol[sim_node()].nxdata, AODV_M$GetProt$get());
+  if (__nesc_ntoh_int32(AODV_M$protocol[sim_node()].nxdata) == 2) {
 
-  sim_log_debug(194U, "AODV", "%s\t AODV: ReceiveRREQ.receive() src:%d dest: %d \n", sim_time_string(), __nesc_ntoh_uint16(aodv_hdr->src.nxdata), __nesc_ntoh_uint16(aodv_hdr->dest.nxdata));
+      bool cached = FALSE;
+      bool added = FALSE;
 
+      am_addr_t me = AODV_M$AMPacket$address();
+      am_addr_t src = AODV_M$AMPacket$source(p_msg);
+      aodv_rreq_hdr *aodv_hdr = (aodv_rreq_hdr *)p_msg->data;
+      aodv_rreq_hdr *rreq_aodv_hdr = (aodv_rreq_hdr *)AODV_M$p_rreq_msg_[sim_node()]->data;
+      aodv_rrep_hdr *rrep_aodv_hdr = (aodv_rrep_hdr *)AODV_M$p_rrep_msg_[sim_node()]->data;
 
-  if (__nesc_ntoh_uint8(aodv_hdr->hop.nxdata) > 10) {
-      return p_msg;
-    }
-
-
-  if (!AODV_M$is_rreq_cached(aodv_hdr)) {
-      sim_log_debug(195U, "AODV_DBG", "%s\t AODV: ReceiveRREQ.receive() already received one\n", sim_time_string());
-
-      return p_msg;
-    }
+      sim_log_debug(194U, "AODV", "%s\t AODV: ReceiveRREQ.receive() src:%d dest: %d \n", sim_time_string(), __nesc_ntoh_uint16(aodv_hdr->src.nxdata), __nesc_ntoh_uint16(aodv_hdr->dest.nxdata));
 
 
-  AODV_M$add_route_table(__nesc_ntoh_uint8(aodv_hdr->seq.nxdata), src, src, 1);
-  added = AODV_M$add_route_table(__nesc_ntoh_uint8(aodv_hdr->seq.nxdata), __nesc_ntoh_uint16(aodv_hdr->src.nxdata), src, __nesc_ntoh_uint8(aodv_hdr->hop.nxdata));
-
-  cached = AODV_M$add_rreq_cache(__nesc_ntoh_uint8(aodv_hdr->seq.nxdata), __nesc_ntoh_uint16(aodv_hdr->dest.nxdata), __nesc_ntoh_uint16(aodv_hdr->src.nxdata), __nesc_ntoh_uint8(aodv_hdr->hop.nxdata));
-
+      if (__nesc_ntoh_uint8(aodv_hdr->hop.nxdata) > 10) {
+          return p_msg;
+        }
 
 
-  if (__nesc_ntoh_uint16(aodv_hdr->dest.nxdata) == me && added) {
-      __nesc_hton_uint8(rrep_aodv_hdr->seq.nxdata, __nesc_ntoh_uint8(aodv_hdr->seq.nxdata));
-      __nesc_hton_uint16(rrep_aodv_hdr->dest.nxdata, __nesc_ntoh_uint16(aodv_hdr->dest.nxdata));
-      __nesc_hton_uint16(rrep_aodv_hdr->src.nxdata, __nesc_ntoh_uint16(aodv_hdr->src.nxdata));
-      __nesc_hton_uint8(rrep_aodv_hdr->hop.nxdata, 1);
-      AODV_M$sendRREP(src, FALSE);
-      return p_msg;
-    }
+      if (!AODV_M$is_rreq_cached(aodv_hdr)) {
+          sim_log_debug(195U, "AODV_DBG", "%s\t AODV: ReceiveRREQ.receive() already received one\n", sim_time_string());
+
+          return p_msg;
+        }
 
 
-  if (!AODV_M$rreq_pending_[sim_node()] && __nesc_ntoh_uint16(aodv_hdr->src.nxdata) != me && cached) {
+      AODV_M$add_route_table(__nesc_ntoh_uint8(aodv_hdr->seq.nxdata), src, src, 1);
+      added = AODV_M$add_route_table(__nesc_ntoh_uint8(aodv_hdr->seq.nxdata), __nesc_ntoh_uint16(aodv_hdr->src.nxdata), src, __nesc_ntoh_uint8(aodv_hdr->hop.nxdata));
 
-      __nesc_hton_uint8(rreq_aodv_hdr->seq.nxdata, __nesc_ntoh_uint8(aodv_hdr->seq.nxdata));
-      __nesc_hton_uint16(rreq_aodv_hdr->dest.nxdata, __nesc_ntoh_uint16(aodv_hdr->dest.nxdata));
-      __nesc_hton_uint16(rreq_aodv_hdr->src.nxdata, __nesc_ntoh_uint16(aodv_hdr->src.nxdata));
-      __nesc_hton_uint8(rreq_aodv_hdr->hop.nxdata, __nesc_ntoh_uint8(aodv_hdr->hop.nxdata) + 1);
-      AODV_M$RREQTimer$stop();
-      AODV_M$RREQTimer$startOneShot(AODV_M$Random$rand16() % 7 * 10);
+      cached = AODV_M$add_rreq_cache(__nesc_ntoh_uint8(aodv_hdr->seq.nxdata), __nesc_ntoh_uint16(aodv_hdr->dest.nxdata), __nesc_ntoh_uint16(aodv_hdr->src.nxdata), __nesc_ntoh_uint8(aodv_hdr->hop.nxdata));
+
+
+
+      if (__nesc_ntoh_uint16(aodv_hdr->dest.nxdata) == me && added) {
+          __nesc_hton_uint8(rrep_aodv_hdr->seq.nxdata, __nesc_ntoh_uint8(aodv_hdr->seq.nxdata));
+          __nesc_hton_uint16(rrep_aodv_hdr->dest.nxdata, __nesc_ntoh_uint16(aodv_hdr->dest.nxdata));
+          __nesc_hton_uint16(rrep_aodv_hdr->src.nxdata, __nesc_ntoh_uint16(aodv_hdr->src.nxdata));
+          __nesc_hton_uint8(rrep_aodv_hdr->hop.nxdata, 1);
+          AODV_M$sendRREP(src, FALSE);
+          return p_msg;
+        }
+
+
+      if (!AODV_M$rreq_pending_[sim_node()] && __nesc_ntoh_uint16(aodv_hdr->src.nxdata) != me && cached) {
+
+          __nesc_hton_uint8(rreq_aodv_hdr->seq.nxdata, __nesc_ntoh_uint8(aodv_hdr->seq.nxdata));
+          __nesc_hton_uint16(rreq_aodv_hdr->dest.nxdata, __nesc_ntoh_uint16(aodv_hdr->dest.nxdata));
+          __nesc_hton_uint16(rreq_aodv_hdr->src.nxdata, __nesc_ntoh_uint16(aodv_hdr->src.nxdata));
+          __nesc_hton_uint8(rreq_aodv_hdr->hop.nxdata, __nesc_ntoh_uint8(aodv_hdr->hop.nxdata) + 1);
+          AODV_M$RREQTimer$stop();
+          AODV_M$RREQTimer$startOneShot(AODV_M$Random$rand16() % 7 * 10);
+        }
     }
 
   return p_msg;
@@ -10795,11 +10874,11 @@ void *payload, uint8_t len)
 
 static inline message_t *AODV_M$ReceiveRREP$receive(message_t *p_msg, 
 void *payload, uint8_t len)
-#line 716
+#line 725
 {
   unsigned char __nesc_temp45;
   unsigned char *__nesc_temp44;
-#line 717
+#line 726
   aodv_rrep_hdr *aodv_hdr = (aodv_rrep_hdr *)p_msg->data;
   aodv_rrep_hdr *rrep_aodv_hdr = (aodv_rrep_hdr *)AODV_M$p_rrep_msg_[sim_node()]->data;
   am_addr_t src = AODV_M$AMPacket$source(p_msg);
@@ -10810,11 +10889,11 @@ void *payload, uint8_t len)
       AODV_M$add_route_table(__nesc_ntoh_uint8(aodv_hdr->seq.nxdata), __nesc_ntoh_uint16(aodv_hdr->dest.nxdata), src, __nesc_ntoh_uint8(aodv_hdr->hop.nxdata));
     }
   else 
-#line 725
+#line 734
     {
       am_addr_t dest = AODV_M$get_next_hop(__nesc_ntoh_uint16(aodv_hdr->src.nxdata));
 
-#line 727
+#line 736
       if (dest != 0xFFFF) {
 
           __nesc_hton_uint8(rrep_aodv_hdr->seq.nxdata, __nesc_ntoh_uint8(aodv_hdr->seq.nxdata));
@@ -10832,11 +10911,11 @@ void *payload, uint8_t len)
 
 static inline message_t *AODV_M$ReceiveRERR$receive(message_t *p_msg, 
 void *payload, uint8_t len)
-#line 743
+#line 752
 {
   aodv_rerr_hdr *aodv_hdr = (aodv_rerr_hdr *)p_msg->data;
 
-#line 745
+#line 754
   sim_log_debug(197U, "AODV", "%s\t AODV: ReceiveRERR.receive()\n", sim_time_string());
   AODV_M$del_route_table(__nesc_ntoh_uint16(aodv_hdr->dest.nxdata));
   if (__nesc_ntoh_uint16(aodv_hdr->src.nxdata) != AODV_M$AMPacket$address()) {
@@ -10875,9 +10954,9 @@ inline static error_t AODV_M$PacketAcknowledgements$requestAck(message_t * msg){
 #line 59
 }
 #line 59
-# 522 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 526 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline error_t AODV_M$forwardMSG(message_t *p_msg, am_addr_t nexthop, uint8_t len)
-#line 522
+#line 526
 {
   aodv_msg_hdr *aodv_hdr = (aodv_msg_hdr *)p_msg->data;
   aodv_msg_hdr *msg_aodv_hdr = (aodv_msg_hdr *)AODV_M$p_aodv_msg_[sim_node()]->data;
@@ -10908,7 +10987,7 @@ static inline error_t AODV_M$forwardMSG(message_t *p_msg, am_addr_t nexthop, uin
       AODV_M$msg_pending_[sim_node()] = TRUE;
     }
   else 
-#line 550
+#line 554
     {
       sim_log_debug(187U, "AODV", "%s\t AODV: forwardMSG() fail to send\n", sim_time_string());
       AODV_M$msg_pending_[sim_node()] = FALSE;
@@ -10916,29 +10995,9 @@ static inline error_t AODV_M$forwardMSG(message_t *p_msg, am_addr_t nexthop, uin
   return SUCCESS;
 }
 
-# 340 "/usr/lib/ncc/nesc_nx.h"
-static __inline  uint32_t __nesc_ntoh_uint32(const void * source)
-#line 340
-{
-  const uint8_t *base = source;
-
-#line 342
-  return ((((uint32_t )base[0] << 24) | (
-  (uint32_t )base[1] << 16)) | (
-  (uint32_t )base[2] << 8)) | base[3];
-}
-
-#line 372
-static __inline  int32_t __nesc_ntoh_int32(const void * source)
-#line 372
-{
-#line 372
-  return __nesc_ntoh_uint32(source);
-}
-
-# 219 "TestNetworkC.nc"
+# 221 "TestNetworkC.nc"
 static inline message_t *TestNetworkC$ReceiveAODV$receive(message_t *msg, void *payload, uint8_t len)
-#line 219
+#line 221
 {
   if (__nesc_ntoh_int32(TestNetworkC$prot[sim_node()].nxdata) == 2) {
       sim_log_debug(55U, "AODV", "%s\t Received!!!!\n", sim_time_string());
@@ -10946,21 +11005,21 @@ static inline message_t *TestNetworkC$ReceiveAODV$receive(message_t *msg, void *
   return msg;
 }
 
-# 875 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 884 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline message_t *AODV_M$Receive$default$receive(am_id_t id, message_t *msg, void *payload, uint8_t len)
-#line 875
+#line 884
 {
   return msg;
 }
 
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
-inline static message_t * AODV_M$Receive$receive(uint8_t arg_0x2b9d82765158, message_t * msg, void * payload, uint8_t len){
+inline static message_t * AODV_M$Receive$receive(uint8_t arg_0x2b96506cd158, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-  switch (arg_0x2b9d82765158) {
+  switch (arg_0x2b96506cd158) {
 #line 78
     case 1:
 #line 78
@@ -10970,7 +11029,7 @@ inline static message_t * AODV_M$Receive$receive(uint8_t arg_0x2b9d82765158, mes
 #line 78
     default:
 #line 78
-      __nesc_result = AODV_M$Receive$default$receive(arg_0x2b9d82765158, msg, payload, len);
+      __nesc_result = AODV_M$Receive$default$receive(arg_0x2b96506cd158, msg, payload, len);
 #line 78
       break;
 #line 78
@@ -10982,10 +11041,10 @@ inline static message_t * AODV_M$Receive$receive(uint8_t arg_0x2b9d82765158, mes
 #line 78
 }
 #line 78
-# 817 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 826 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline message_t *AODV_M$SubReceive$receive(message_t *p_msg, 
 void *payload, uint8_t len)
-#line 818
+#line 827
 {
   uint8_t i;
   aodv_msg_hdr *aodv_hdr = (aodv_msg_hdr *)p_msg->data;
@@ -11003,11 +11062,11 @@ void *payload, uint8_t len)
       len - sizeof(aodv_msg_hdr ));
     }
   else 
-#line 833
+#line 842
     {
       am_addr_t nexthop = AODV_M$get_next_hop(__nesc_ntoh_uint16(aodv_hdr->dest.nxdata));
 
-#line 835
+#line 844
       sim_log_debug(203U, "AODV", "%s\t AODV: SubReceive.receive() deliver to next hop:%x\n", sim_time_string(), nexthop);
 
 
@@ -11033,9 +11092,9 @@ static inline void DisseminationEngineImplP$TrickleTimer$default$incrementCounte
 }
 
 # 85 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
-inline static void DisseminationEngineImplP$TrickleTimer$incrementCounter(uint16_t arg_0x2b9d82c38c68){
+inline static void DisseminationEngineImplP$TrickleTimer$incrementCounter(uint16_t arg_0x2b9650b9fdf0){
 #line 85
-  switch (arg_0x2b9d82c38c68) {
+  switch (arg_0x2b9650b9fdf0) {
 #line 85
     case 1:
 #line 85
@@ -11045,7 +11104,7 @@ inline static void DisseminationEngineImplP$TrickleTimer$incrementCounter(uint16
 #line 85
     default:
 #line 85
-      DisseminationEngineImplP$TrickleTimer$default$incrementCounter(arg_0x2b9d82c38c68);
+      DisseminationEngineImplP$TrickleTimer$default$incrementCounter(arg_0x2b9650b9fdf0);
 #line 85
       break;
 #line 85
@@ -11060,9 +11119,9 @@ static inline void DisseminationEngineImplP$TrickleTimer$default$reset(uint16_t 
 }
 
 # 80 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
-inline static void DisseminationEngineImplP$TrickleTimer$reset(uint16_t arg_0x2b9d82c38c68){
+inline static void DisseminationEngineImplP$TrickleTimer$reset(uint16_t arg_0x2b9650b9fdf0){
 #line 80
-  switch (arg_0x2b9d82c38c68) {
+  switch (arg_0x2b9650b9fdf0) {
 #line 80
     case 1:
 #line 80
@@ -11072,7 +11131,7 @@ inline static void DisseminationEngineImplP$TrickleTimer$reset(uint16_t arg_0x2b
 #line 80
     default:
 #line 80
-      DisseminationEngineImplP$TrickleTimer$default$reset(arg_0x2b9d82c38c68);
+      DisseminationEngineImplP$TrickleTimer$default$reset(arg_0x2b9650b9fdf0);
 #line 80
       break;
 #line 80
@@ -11092,9 +11151,9 @@ uint32_t seqno)
 }
 
 # 48 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
-inline static void DisseminationEngineImplP$DisseminationCache$storeData(uint16_t arg_0x2b9d82c398e8, void * data, uint8_t size, uint32_t seqno){
+inline static void DisseminationEngineImplP$DisseminationCache$storeData(uint16_t arg_0x2b9650ba0a40, void * data, uint8_t size, uint32_t seqno){
 #line 48
-  switch (arg_0x2b9d82c398e8) {
+  switch (arg_0x2b9650ba0a40) {
 #line 48
     case 1:
 #line 48
@@ -11104,7 +11163,7 @@ inline static void DisseminationEngineImplP$DisseminationCache$storeData(uint16_
 #line 48
     default:
 #line 48
-      DisseminationEngineImplP$DisseminationCache$default$storeData(arg_0x2b9d82c398e8, data, size, seqno);
+      DisseminationEngineImplP$DisseminationCache$default$storeData(arg_0x2b9650ba0a40, data, size, seqno);
 #line 48
       break;
 #line 48
@@ -11131,13 +11190,13 @@ DisseminationEngineImplP$DisseminationCache$default$requestSeqno(uint16_t key)
 }
 
 # 49 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
-inline static uint32_t DisseminationEngineImplP$DisseminationCache$requestSeqno(uint16_t arg_0x2b9d82c398e8){
+inline static uint32_t DisseminationEngineImplP$DisseminationCache$requestSeqno(uint16_t arg_0x2b9650ba0a40){
 #line 49
   unsigned int __nesc_result;
 #line 49
 
 #line 49
-  switch (arg_0x2b9d82c398e8) {
+  switch (arg_0x2b9650ba0a40) {
 #line 49
     case 1:
 #line 49
@@ -11147,7 +11206,7 @@ inline static uint32_t DisseminationEngineImplP$DisseminationCache$requestSeqno(
 #line 49
     default:
 #line 49
-      __nesc_result = DisseminationEngineImplP$DisseminationCache$default$requestSeqno(arg_0x2b9d82c398e8);
+      __nesc_result = DisseminationEngineImplP$DisseminationCache$default$requestSeqno(arg_0x2b9650ba0a40);
 #line 49
       break;
 #line 49
@@ -11696,13 +11755,13 @@ uint8_t len)
 }
 
 # 31 "/opt/tinyos-2.1.2/tos/interfaces/Intercept.nc"
-inline static bool /*CtpP.Forwarder*/CtpForwardingEngineP$0$Intercept$forward(collection_id_t arg_0x2b9d82e09c00, message_t * msg, void * payload, uint8_t len){
+inline static bool /*CtpP.Forwarder*/CtpForwardingEngineP$0$Intercept$forward(collection_id_t arg_0x2b9650d70c00, message_t * msg, void * payload, uint8_t len){
 #line 31
   unsigned char __nesc_result;
 #line 31
 
 #line 31
-    __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP$0$Intercept$default$forward(arg_0x2b9d82e09c00, msg, payload, len);
+    __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP$0$Intercept$default$forward(arg_0x2b9650d70c00, msg, payload, len);
 #line 31
 
 #line 31
@@ -11720,13 +11779,13 @@ uint8_t len)
 }
 
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
-inline static message_t * /*CtpP.Forwarder*/CtpForwardingEngineP$0$Receive$receive(collection_id_t arg_0x2b9d82e0b4d0, message_t * msg, void * payload, uint8_t len){
+inline static message_t * /*CtpP.Forwarder*/CtpForwardingEngineP$0$Receive$receive(collection_id_t arg_0x2b9650d724d0, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-  switch (arg_0x2b9d82e0b4d0) {
+  switch (arg_0x2b9650d724d0) {
 #line 78
     case CL_TEST:
 #line 78
@@ -11736,7 +11795,7 @@ inline static message_t * /*CtpP.Forwarder*/CtpForwardingEngineP$0$Receive$recei
 #line 78
     default:
 #line 78
-      __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP$0$Receive$default$receive(arg_0x2b9d82e0b4d0, msg, payload, len);
+      __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP$0$Receive$default$receive(arg_0x2b9650d724d0, msg, payload, len);
 #line 78
       break;
 #line 78
@@ -11851,13 +11910,13 @@ static inline uint8_t TossimActiveMessageC$AMSend$maxPayloadLength(am_id_t id)
 }
 
 # 123 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
-inline static uint8_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$maxPayloadLength(am_id_t arg_0x2b9d828fd960){
+inline static uint8_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$maxPayloadLength(am_id_t arg_0x2b9650863020){
 #line 123
   unsigned char __nesc_result;
 #line 123
 
 #line 123
-  __nesc_result = TossimActiveMessageC$AMSend$maxPayloadLength(arg_0x2b9d828fd960);
+  __nesc_result = TossimActiveMessageC$AMSend$maxPayloadLength(arg_0x2b9650863020);
 #line 123
 
 #line 123
@@ -12575,30 +12634,6 @@ uint8_t len)
   LinkEstimatorP$Packet$payloadLength(msg));
 }
 
-# 347 "/usr/lib/ncc/nesc_nx.h"
-static __inline  uint32_t __nesc_hton_uint32(void * target, uint32_t value)
-#line 347
-{
-  uint8_t *base = target;
-
-#line 349
-  base[3] = value;
-  base[2] = value >> 8;
-  base[1] = value >> 16;
-  base[0] = value >> 24;
-  return value;
-}
-
-#line 372
-static __inline  int32_t __nesc_hton_int32(void * target, int32_t value)
-#line 372
-{
-#line 372
-  __nesc_hton_uint32(target, value);
-#line 372
-  return value;
-}
-
 # 64 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
 inline static void TestNetworkC$MilliTimer$startPeriodic(uint32_t dt){
 #line 64
@@ -12822,13 +12857,13 @@ static inline error_t DisseminationEngineImplP$TrickleTimer$default$start(uint16
 }
 
 # 68 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
-inline static error_t DisseminationEngineImplP$TrickleTimer$start(uint16_t arg_0x2b9d82c38c68){
+inline static error_t DisseminationEngineImplP$TrickleTimer$start(uint16_t arg_0x2b9650b9fdf0){
 #line 68
   unsigned char __nesc_result;
 #line 68
 
 #line 68
-  switch (arg_0x2b9d82c38c68) {
+  switch (arg_0x2b9650b9fdf0) {
 #line 68
     case 1:
 #line 68
@@ -12838,7 +12873,7 @@ inline static error_t DisseminationEngineImplP$TrickleTimer$start(uint16_t arg_0
 #line 68
     default:
 #line 68
-      __nesc_result = DisseminationEngineImplP$TrickleTimer$default$start(arg_0x2b9d82c38c68);
+      __nesc_result = DisseminationEngineImplP$TrickleTimer$default$start(arg_0x2b9650b9fdf0);
 #line 68
       break;
 #line 68
@@ -12900,13 +12935,13 @@ static inline error_t DisseminationEngineImplP$DisseminatorControl$default$start
 }
 
 # 95 "/opt/tinyos-2.1.2/tos/interfaces/StdControl.nc"
-inline static error_t DisseminationEngineImplP$DisseminatorControl$start(uint16_t arg_0x2b9d82c35020){
+inline static error_t DisseminationEngineImplP$DisseminatorControl$start(uint16_t arg_0x2b9650b9c0c8){
 #line 95
   unsigned char __nesc_result;
 #line 95
 
 #line 95
-  switch (arg_0x2b9d82c35020) {
+  switch (arg_0x2b9650b9c0c8) {
 #line 95
     case /*TestNetworkAppC.Object32C*/DisseminatorC$0$TIMER_ID:
 #line 95
@@ -12916,7 +12951,7 @@ inline static error_t DisseminationEngineImplP$DisseminatorControl$start(uint16_
 #line 95
     default:
 #line 95
-      __nesc_result = DisseminationEngineImplP$DisseminatorControl$default$start(arg_0x2b9d82c35020);
+      __nesc_result = DisseminationEngineImplP$DisseminatorControl$default$start(arg_0x2b9650b9c0c8);
 #line 95
       break;
 #line 95
@@ -12977,6 +13012,7 @@ static inline message_t *TestNetworkC$ReceiveRout$receive(message_t *msg, void *
       TestNetworkC$Timer$startOneShot(TestNetworkC$Random$rand16() & 0x1ff);
     }
 
+
   if (__nesc_ntoh_int32(TestNetworkC$prot[sim_node()].nxdata) == 2 && TestNetworkC$initialBoot[sim_node()] == TRUE) {
       sim_log_debug(53U, "APPS", "%s\t APPS: startDone\n", sim_time_string());
       TestNetworkC$p_pkt[sim_node()] = &TestNetworkC$pkt[sim_node()];
@@ -12996,13 +13032,13 @@ static inline message_t *TossimActiveMessageC$Receive$default$receive(am_id_t id
 }
 
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC$Receive$receive(am_id_t arg_0x2b9d8256a220, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC$Receive$receive(am_id_t arg_0x2b96504d2220, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-  switch (arg_0x2b9d8256a220) {
+  switch (arg_0x2b96504d2220) {
 #line 78
     case 1:
 #line 78
@@ -13060,7 +13096,7 @@ inline static message_t * TossimActiveMessageC$Receive$receive(am_id_t arg_0x2b9
 #line 78
     default:
 #line 78
-      __nesc_result = TossimActiveMessageC$Receive$default$receive(arg_0x2b9d8256a220, msg, payload, len);
+      __nesc_result = TossimActiveMessageC$Receive$default$receive(arg_0x2b96504d2220, msg, payload, len);
 #line 78
       break;
 #line 78
@@ -13810,13 +13846,13 @@ inline static uint16_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$Random$rand16(vo
 }
 #line 52
 # 135 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
-inline static void * /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$getPayload(am_id_t arg_0x2b9d828fd960, message_t * msg, uint8_t len){
+inline static void * /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$getPayload(am_id_t arg_0x2b9650863020, message_t * msg, uint8_t len){
 #line 135
   void *__nesc_result;
 #line 135
 
 #line 135
-  __nesc_result = TossimActiveMessageC$AMSend$getPayload(arg_0x2b9d828fd960, msg, len);
+  __nesc_result = TossimActiveMessageC$AMSend$getPayload(arg_0x2b9650863020, msg, len);
 #line 135
 
 #line 135
@@ -13886,13 +13922,13 @@ DisseminationEngineImplP$DisseminationCache$default$requestData(uint16_t key, ui
 }
 
 # 47 "/opt/tinyos-2.1.2/tos/lib/net/drip/DisseminationCache.nc"
-inline static void *DisseminationEngineImplP$DisseminationCache$requestData(uint16_t arg_0x2b9d82c398e8, uint8_t *size){
+inline static void *DisseminationEngineImplP$DisseminationCache$requestData(uint16_t arg_0x2b9650ba0a40, uint8_t *size){
 #line 47
   void *__nesc_result;
 #line 47
 
 #line 47
-  switch (arg_0x2b9d82c398e8) {
+  switch (arg_0x2b9650ba0a40) {
 #line 47
     case 1:
 #line 47
@@ -13902,7 +13938,7 @@ inline static void *DisseminationEngineImplP$DisseminationCache$requestData(uint
 #line 47
     default:
 #line 47
-      __nesc_result = DisseminationEngineImplP$DisseminationCache$default$requestData(arg_0x2b9d82c398e8, size);
+      __nesc_result = DisseminationEngineImplP$DisseminationCache$default$requestData(arg_0x2b9650ba0a40, size);
 #line 47
       break;
 #line 47
@@ -14036,13 +14072,13 @@ inline static am_addr_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMPacket$destina
 }
 #line 78
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
-inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$send(am_id_t arg_0x2b9d828fd960, am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$send(am_id_t arg_0x2b9650863020, am_addr_t addr, message_t * msg, uint8_t len){
 #line 80
   unsigned char __nesc_result;
 #line 80
 
 #line 80
-  __nesc_result = TossimActiveMessageC$AMSend$send(arg_0x2b9d828fd960, addr, msg, len);
+  __nesc_result = TossimActiveMessageC$AMSend$send(arg_0x2b9650863020, addr, msg, len);
 #line 80
 
 #line 80
@@ -14051,9 +14087,9 @@ inline static error_t /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$send(am_id_
 }
 #line 80
 #line 110
-inline static void TossimActiveMessageC$AMSend$sendDone(am_id_t arg_0x2b9d8256c0c8, message_t * msg, error_t error){
+inline static void TossimActiveMessageC$AMSend$sendDone(am_id_t arg_0x2b96504d30c8, message_t * msg, error_t error){
 #line 110
-  /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$sendDone(arg_0x2b9d8256c0c8, msg, error);
+  /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$AMSend$sendDone(arg_0x2b96504d30c8, msg, error);
 #line 110
 }
 #line 110
@@ -14817,9 +14853,9 @@ void
 }
 
 # 100 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
-inline static void /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$sendDone(uint8_t arg_0x2b9d82e0c368, message_t * msg, error_t error){
+inline static void /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$sendDone(uint8_t arg_0x2b9650d73368, message_t * msg, error_t error){
 #line 100
-  switch (arg_0x2b9d82e0c368) {
+  switch (arg_0x2b9650d73368) {
 #line 100
     case 0U:
 #line 100
@@ -14829,7 +14865,7 @@ inline static void /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$sendDone(uint8_
 #line 100
     default:
 #line 100
-      /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$default$sendDone(arg_0x2b9d82e0c368, msg, error);
+      /*CtpP.Forwarder*/CtpForwardingEngineP$0$Send$default$sendDone(arg_0x2b9650d73368, msg, error);
 #line 100
       break;
 #line 100
@@ -15068,17 +15104,17 @@ static inline void TestNetworkC$AMSend$sendDone(message_t *bufPtr, error_t error
   sim_log_debug(51U, "APPS", "APPS: sendDone!!\n");
 }
 
-# 871 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 880 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$AMSend$default$sendDone(uint8_t id, message_t *msg, error_t err)
-#line 871
+#line 880
 {
   return;
 }
 
 # 110 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
-inline static void AODV_M$AMSend$sendDone(am_id_t arg_0x2b9d82766020, message_t * msg, error_t error){
+inline static void AODV_M$AMSend$sendDone(am_id_t arg_0x2b96506cf020, message_t * msg, error_t error){
 #line 110
-  switch (arg_0x2b9d82766020) {
+  switch (arg_0x2b96506cf020) {
 #line 110
     case 1:
 #line 110
@@ -15088,7 +15124,7 @@ inline static void AODV_M$AMSend$sendDone(am_id_t arg_0x2b9d82766020, message_t 
 #line 110
     default:
 #line 110
-      AODV_M$AMSend$default$sendDone(arg_0x2b9d82766020, msg, error);
+      AODV_M$AMSend$default$sendDone(arg_0x2b96506cf020, msg, error);
 #line 110
       break;
 #line 110
@@ -15141,9 +15177,9 @@ inline static bool AODV_M$PacketAcknowledgements$wasAcked(message_t * msg){
 #line 85
 }
 #line 85
-# 780 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 789 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$SubSend$sendDone(message_t *p_msg, error_t e)
-#line 780
+#line 789
 {
   aodv_msg_hdr *aodv_hdr = (aodv_msg_hdr *)p_msg->data;
   bool wasAcked = AODV_M$PacketAcknowledgements$wasAcked(p_msg);
@@ -15160,7 +15196,7 @@ static inline void AODV_M$SubSend$sendDone(message_t *p_msg, error_t e)
           AODV_M$msg_pending_[sim_node()] = FALSE;
         }
       else 
-#line 794
+#line 803
         {
           AODV_M$msg_retries_[sim_node()]--;
           if (AODV_M$msg_retries_[sim_node()] > 0) {
@@ -15171,7 +15207,7 @@ static inline void AODV_M$SubSend$sendDone(message_t *p_msg, error_t e)
               AODV_M$Packet$payloadLength(AODV_M$p_aodv_msg_[sim_node()]));
             }
           else 
-#line 802
+#line 811
             {
               sim_log_debug(200U, "AODV", "%s\t AODV: SubSend.sendDone() route may be corrupted\n", sim_time_string());
 
@@ -15182,7 +15218,7 @@ static inline void AODV_M$SubSend$sendDone(message_t *p_msg, error_t e)
         }
     }
   else 
-#line 810
+#line 819
     {
       AODV_M$AMSend$sendDone(__nesc_ntoh_uint8(aodv_hdr->app.nxdata), p_msg, e);
     }
@@ -15231,19 +15267,19 @@ inline static error_t /*AODV.MHSend.SenderC.AMQueueEntryP*/AMQueueEntryP$3$Send$
 #line 75
 }
 #line 75
-# 428 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 432 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline uint8_t AODV_M$get_route_table_index(am_addr_t dest)
-#line 428
+#line 432
 {
   int i;
 
-#line 430
+#line 434
   for (i = 0; i < 10; i++) {
       if (AODV_M$route_table_[sim_node()][i].dest == dest) {
         return i;
         }
     }
-#line 434
+#line 438
   return 0xFF;
 }
 
@@ -15276,9 +15312,9 @@ inline static error_t /*AODV.MHSendRERR.SenderC.AMQueueEntryP*/AMQueueEntryP$2$S
 #line 75
 }
 #line 75
-# 638 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 642 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$SendRERR$sendDone(message_t *p_msg, error_t e)
-#line 638
+#line 642
 {
   sim_log_debug(193U, "AODV_DBG", "%s\t AODV: SendRERR.sendDone() \n", sim_time_string());
   AODV_M$send_pending_[sim_node()] = FALSE;
@@ -15286,7 +15322,7 @@ static inline void AODV_M$SendRERR$sendDone(message_t *p_msg, error_t e)
     AODV_M$rerr_pending_[sim_node()] = FALSE;
     }
   else {
-#line 644
+#line 648
     AODV_M$rerr_pending_[sim_node()] = TRUE;
     }
 }
@@ -15305,9 +15341,9 @@ static inline void /*AODV.MHSendRERR.SenderC.AMQueueEntryP*/AMQueueEntryP$2$Send
   /*AODV.MHSendRERR.SenderC.AMQueueEntryP*/AMQueueEntryP$2$AMSend$sendDone(m, err);
 }
 
-# 624 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 628 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$SendRREP$sendDone(message_t *p_msg, error_t e)
-#line 624
+#line 628
 {
   sim_log_debug(192U, "AODV_DBG", "%s\t AODV: SendRREP.sendDone()\n", sim_time_string());
   AODV_M$send_pending_[sim_node()] = FALSE;
@@ -15315,7 +15351,7 @@ static inline void AODV_M$SendRREP$sendDone(message_t *p_msg, error_t e)
     AODV_M$rrep_pending_[sim_node()] = FALSE;
     }
   else {
-#line 630
+#line 634
     AODV_M$rrep_pending_[sim_node()] = TRUE;
     }
 }
@@ -15334,9 +15370,9 @@ static inline void /*AODV.MHSendRREP.SenderC.AMQueueEntryP*/AMQueueEntryP$1$Send
   /*AODV.MHSendRREP.SenderC.AMQueueEntryP*/AMQueueEntryP$1$AMSend$sendDone(m, err);
 }
 
-# 613 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 617 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$SendRREQ$sendDone(message_t *p_msg, error_t e)
-#line 613
+#line 617
 {
   sim_log_debug(191U, "AODV_DBG", "%s\t AODV: SendRREQ.sendDone()\n", sim_time_string());
   AODV_M$send_pending_[sim_node()] = FALSE;
@@ -15584,13 +15620,13 @@ uint8_t len)
 }
 
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
-inline static message_t * /*CtpP.Forwarder*/CtpForwardingEngineP$0$Snoop$receive(collection_id_t arg_0x2b9d82e090c8, message_t * msg, void * payload, uint8_t len){
+inline static message_t * /*CtpP.Forwarder*/CtpForwardingEngineP$0$Snoop$receive(collection_id_t arg_0x2b9650d700c8, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-    __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP$0$Snoop$default$receive(arg_0x2b9d82e090c8, msg, payload, len);
+    __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP$0$Snoop$default$receive(arg_0x2b9650d700c8, msg, payload, len);
 #line 78
 
 #line 78
@@ -15643,13 +15679,13 @@ static inline message_t *TossimActiveMessageC$Snoop$default$receive(am_id_t id, 
 }
 
 # 78 "/opt/tinyos-2.1.2/tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC$Snoop$receive(am_id_t arg_0x2b9d8256ad68, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC$Snoop$receive(am_id_t arg_0x2b96504d2d68, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-  switch (arg_0x2b9d8256ad68) {
+  switch (arg_0x2b96504d2d68) {
 #line 78
     case 113:
 #line 78
@@ -15659,7 +15695,7 @@ inline static message_t * TossimActiveMessageC$Snoop$receive(am_id_t arg_0x2b9d8
 #line 78
     default:
 #line 78
-      __nesc_result = TossimActiveMessageC$Snoop$default$receive(arg_0x2b9d8256ad68, msg, payload, len);
+      __nesc_result = TossimActiveMessageC$Snoop$default$receive(arg_0x2b96504d2d68, msg, payload, len);
 #line 78
       break;
 #line 78
@@ -16002,20 +16038,20 @@ inline static bool TestNetworkC$Queue$empty(void ){
 #line 50
 }
 #line 50
-# 255 "TestNetworkC.nc"
+# 257 "TestNetworkC.nc"
 static inline void TestNetworkC$uartEchoTask$runTask(void )
-#line 255
+#line 257
 {
   sim_log_debug(57U, "Traffic", "CTP node sending packet to UART.\n");
   if (TestNetworkC$Queue$empty()) {
       return;
     }
   else {
-#line 260
+#line 262
     if (!TestNetworkC$uartbusy[sim_node()]) {
         message_t *msg = TestNetworkC$Queue$dequeue();
 
-#line 262
+#line 264
         sim_log_debug(58U, "Traffic", "Sending packet to UART.\n");
         if (TestNetworkC$UARTSend$send(0xffff, msg, TestNetworkC$RadioPacket$payloadLength(msg)) == SUCCESS) {
             TestNetworkC$uartbusy[sim_node()] = TRUE;
@@ -16045,9 +16081,9 @@ inline static error_t TestNetworkC$RadioControl$start(void ){
 #line 104
 }
 #line 104
-# 94 "TestNetworkC.nc"
+# 95 "TestNetworkC.nc"
 static inline void TestNetworkC$RadioControl$startDone(error_t err)
-#line 94
+#line 95
 {
   if (err != SUCCESS) {
       TestNetworkC$RadioControl$start();
@@ -16086,12 +16122,11 @@ inline static error_t TestNetworkC$SplitControlAODV$start(void ){
 #line 104
 }
 #line 104
-# 104 "TestNetworkC.nc"
+# 105 "TestNetworkC.nc"
 static inline void TestNetworkC$SplitControlAODV$startDone(error_t err)
-#line 104
+#line 105
 {
   if (err == SUCCESS) {
-      TestNetworkC$initialBoot[sim_node()] = TRUE;
     }
   else 
 #line 107
@@ -16114,16 +16149,16 @@ inline static void AODV_M$AODVTimer$startPeriodic(uint32_t dt){
 #line 64
 }
 #line 64
-# 131 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 135 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$AMControl$startDone(error_t e)
-#line 131
+#line 135
 {
   if (e == SUCCESS) {
       AODV_M$AODVTimer$startPeriodic(100);
       AODV_M$SplitControl$startDone(e);
     }
   else 
-#line 135
+#line 139
     {
       AODV_M$AMControl$start();
     }
@@ -16241,9 +16276,9 @@ inline static void AODV_M$AODVTimer$stop(void ){
 #line 78
 }
 #line 78
-# 141 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 145 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$AMControl$stopDone(error_t e)
-#line 141
+#line 145
 {
   AODV_M$AODVTimer$stop();
   AODV_M$SplitControl$stopDone(e);
@@ -16324,9 +16359,9 @@ inline static error_t AODV_M$SendRREQ$send(am_addr_t addr, message_t * msg, uint
 #line 80
 }
 #line 80
-# 239 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 243 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$resendRREQ$runTask(void )
-#line 239
+#line 243
 {
   sim_log_debug(178U, "AODV", "%s\t AODV: resendRREQ()\n", sim_time_string());
 
@@ -16359,13 +16394,13 @@ inline static error_t AODV_M$SendRREP$send(am_addr_t addr, message_t * msg, uint
 #line 80
 }
 #line 80
-# 257 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 261 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$resendRREP$runTask(void )
-#line 257
+#line 261
 {
   am_addr_t dest = AODV_M$AMPacket$destination(AODV_M$p_rrep_msg_[sim_node()]);
 
-#line 259
+#line 263
   if (AODV_M$rrep_retries_[sim_node()] == 0) {
       AODV_M$rrep_pending_[sim_node()] = FALSE;
       return;
@@ -16376,7 +16411,7 @@ static inline void AODV_M$resendRREP$runTask(void )
       AODV_M$PacketAcknowledgements$requestAck(AODV_M$p_rrep_msg_[sim_node()]);
 
       if (
-#line 267
+#line 271
       AODV_M$SendRREP$send(dest, 
       AODV_M$p_rrep_msg_[sim_node()], sizeof(aodv_rrep_hdr )) == SUCCESS) {
           sim_log_debug(179U, "AODV", "%s\t AODV: resendRREP() to %d\n", sim_time_string(), dest);
@@ -16401,13 +16436,13 @@ inline static error_t AODV_M$SendRERR$send(am_addr_t addr, message_t * msg, uint
 #line 80
 }
 #line 80
-# 277 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 281 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$resendRERR$runTask(void )
-#line 277
+#line 281
 {
   am_addr_t dest = AODV_M$AMPacket$destination(AODV_M$p_rerr_msg_[sim_node()]);
 
-#line 279
+#line 283
   if (AODV_M$rerr_retries_[sim_node()] == 0) {
       AODV_M$rerr_pending_[sim_node()] = FALSE;
       return;
@@ -16418,7 +16453,7 @@ static inline void AODV_M$resendRERR$runTask(void )
       AODV_M$PacketAcknowledgements$requestAck(AODV_M$p_rerr_msg_[sim_node()]);
 
       if (
-#line 287
+#line 291
       AODV_M$SendRERR$send(dest, 
       AODV_M$p_rerr_msg_[sim_node()], sizeof(aodv_rerr_hdr )) == SUCCESS) {
           sim_log_debug(180U, "AODV", "%s\t AODV: resendRERR() to %d\n", sim_time_string());
@@ -16428,9 +16463,9 @@ static inline void AODV_M$resendRERR$runTask(void )
     }
 }
 
-#line 389
+#line 393
 static inline void AODV_M$del_rreq_cache(uint8_t id)
-#line 389
+#line 393
 {
   uint8_t i;
 
@@ -16456,17 +16491,17 @@ static inline void AODV_M$del_rreq_cache(uint8_t id)
 
 
 static inline void AODV_M$update_rreq_cache$runTask(void )
-#line 413
+#line 417
 {
   uint8_t i;
 
-#line 415
+#line 419
   for (i = 0; i < 10 - 1; i++) {
       if (AODV_M$rreq_cache_[sim_node()][i].dest == 0xFFFF) {
         break;
         }
       else {
-#line 418
+#line 422
         if (AODV_M$rreq_cache_[sim_node()][i].ttl-- == 0) {
           AODV_M$del_rreq_cache(i);
           }
@@ -16736,9 +16771,9 @@ static inline void /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/T
 }
 
 # 90 "/opt/tinyos-2.1.2/tos/lib/net/TrickleTimer.nc"
-inline static void /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$TrickleTimer$fired(uint8_t arg_0x2b9d82d04630){
+inline static void /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$TrickleTimer$fired(uint8_t arg_0x2b9650c6b630){
 #line 90
-  switch (arg_0x2b9d82d04630) {
+  switch (arg_0x2b9650c6b630) {
 #line 90
     case /*TestNetworkAppC.Object32C*/DisseminatorC$0$TIMER_ID:
 #line 90
@@ -16748,7 +16783,7 @@ inline static void /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/T
 #line 90
     default:
 #line 90
-      /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$TrickleTimer$default$fired(arg_0x2b9d82d04630);
+      /*DisseminationTimerP.TrickleTimerMilliC.TrickleTimerImplP*/TrickleTimerImplP$0$TrickleTimer$default$fired(arg_0x2b9650c6b630);
 #line 90
       break;
 #line 90
@@ -17572,13 +17607,13 @@ static inline void *SerialActiveMessageC$AMSend$getPayload(am_id_t id, message_t
 }
 
 # 135 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
-inline static void * /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$AMSend$getPayload(am_id_t arg_0x2b9d828fd960, message_t * msg, uint8_t len){
+inline static void * /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$AMSend$getPayload(am_id_t arg_0x2b9650863020, message_t * msg, uint8_t len){
 #line 135
   void *__nesc_result;
 #line 135
 
 #line 135
-  __nesc_result = SerialActiveMessageC$AMSend$getPayload(arg_0x2b9d828fd960, msg, len);
+  __nesc_result = SerialActiveMessageC$AMSend$getPayload(arg_0x2b9650863020, msg, len);
 #line 135
 
 #line 135
@@ -17831,9 +17866,9 @@ static inline void /*CtpP.Router*/CtpRoutingEngineP$0$updateRouteTask$runTask(vo
   /*CtpP.Router*/CtpRoutingEngineP$0$justEvicted[sim_node()] = FALSE;
 }
 
-# 84 "TestNetworkC.nc"
+# 85 "TestNetworkC.nc"
 static inline void TestNetworkC$ReadSensor$readDone(error_t err, uint16_t val)
-#line 84
+#line 85
 {
 }
 
@@ -17886,9 +17921,9 @@ static inline void /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$default$se
 }
 
 # 100 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
-inline static void /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$sendDone(uint8_t arg_0x2b9d828fe788, message_t * msg, error_t error){
+inline static void /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$sendDone(uint8_t arg_0x2b9650865e18, message_t * msg, error_t error){
 #line 100
-  switch (arg_0x2b9d828fe788) {
+  switch (arg_0x2b9650865e18) {
 #line 100
     case 0U:
 #line 100
@@ -17904,7 +17939,7 @@ inline static void /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$sendDone(u
 #line 100
     default:
 #line 100
-      /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$default$sendDone(arg_0x2b9d828fe788, msg, error);
+      /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$Send$default$sendDone(arg_0x2b9650865e18, msg, error);
 #line 100
       break;
 #line 100
@@ -17938,13 +17973,13 @@ uint8_t len)
 }
 
 # 80 "/opt/tinyos-2.1.2/tos/interfaces/AMSend.nc"
-inline static error_t /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$AMSend$send(am_id_t arg_0x2b9d828fd960, am_addr_t addr, message_t * msg, uint8_t len){
+inline static error_t /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$AMSend$send(am_id_t arg_0x2b9650863020, am_addr_t addr, message_t * msg, uint8_t len){
 #line 80
   unsigned char __nesc_result;
 #line 80
 
 #line 80
-  __nesc_result = SerialActiveMessageC$AMSend$send(arg_0x2b9d828fd960, addr, msg, len);
+  __nesc_result = SerialActiveMessageC$AMSend$send(arg_0x2b9650863020, addr, msg, len);
 #line 80
 
 #line 80
@@ -18093,9 +18128,9 @@ static inline void /*SerialAMQueueP.AMQueueImplP*/AMQueueImplP$1$CancelTask$runT
     }
 }
 
-# 91 "TestNetworkC.nc"
+# 92 "TestNetworkC.nc"
 static inline void TestNetworkC$SerialControl$startDone(error_t err)
-#line 91
+#line 92
 {
   TestNetworkC$RadioControl$start();
 }
@@ -18294,9 +18329,9 @@ static inline void SimSchedulerBasicP$TaskBasic$default$runTask(uint8_t id)
 }
 
 # 75 "/opt/tinyos-2.1.2/tos/interfaces/TaskBasic.nc"
-inline static void SimSchedulerBasicP$TaskBasic$runTask(uint8_t arg_0x2b9d82163020){
+inline static void SimSchedulerBasicP$TaskBasic$runTask(uint8_t arg_0x2b96500cc020){
 #line 75
-  switch (arg_0x2b9d82163020) {
+  switch (arg_0x2b96500cc020) {
 #line 75
     case TestNetworkC$uartEchoTask:
 #line 75
@@ -18438,7 +18473,7 @@ inline static void SimSchedulerBasicP$TaskBasic$runTask(uint8_t arg_0x2b9d821630
 #line 75
     default:
 #line 75
-      SimSchedulerBasicP$TaskBasic$default$runTask(arg_0x2b9d82163020);
+      SimSchedulerBasicP$TaskBasic$default$runTask(arg_0x2b96500cc020);
 #line 75
       break;
 #line 75
@@ -18568,9 +18603,9 @@ inline static error_t AODV_M$resendRREQ$postTask(void ){
 #line 67
 }
 #line 67
-# 847 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 856 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline void AODV_M$AODVTimer$fired(void )
-#line 847
+#line 856
 {
   sim_log_debug(204U, "AODV_DBG2", "%s\t AODV: Timer.fired()\n", sim_time_string());
   if (AODV_M$rreq_pending_[sim_node()]) {
@@ -18590,7 +18625,7 @@ static inline void AODV_M$AODVTimer$fired(void )
 
 
 static inline void AODV_M$RREQTimer$fired(void )
-#line 865
+#line 874
 {
   sim_log_debug(205U, "AODV_DBG", "%s\t AODV: RREQTimer.fired()\n", sim_time_string());
   AODV_M$sendRREQ(0, TRUE);
@@ -18758,9 +18793,9 @@ static inline void /*CtpP.Forwarder*/CtpForwardingEngineP$0$RetxmitTimer$fired(v
   /*CtpP.Forwarder*/CtpForwardingEngineP$0$sendTask$postTask();
 }
 
-# 563 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 567 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static inline error_t AODV_M$AMSend$send(am_id_t id, am_addr_t addr, message_t *msg, uint8_t len)
-#line 563
+#line 567
 {
   uint8_t i;
   aodv_msg_hdr *aodv_hdr = (aodv_msg_hdr *)AODV_M$p_aodv_msg_[sim_node()]->data;
@@ -18879,13 +18914,13 @@ static inline collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$Collectio
 }
 
 # 46 "/opt/tinyos-2.1.2/tos/lib/net/CollectionId.nc"
-inline static collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$CollectionId$fetch(uint8_t arg_0x2b9d82e3a318){
+inline static collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$CollectionId$fetch(uint8_t arg_0x2b9650da1318){
 #line 46
   unsigned char __nesc_result;
 #line 46
 
 #line 46
-  switch (arg_0x2b9d82e3a318) {
+  switch (arg_0x2b9650da1318) {
 #line 46
     case 0U:
 #line 46
@@ -18895,7 +18930,7 @@ inline static collection_id_t /*CtpP.Forwarder*/CtpForwardingEngineP$0$Collectio
 #line 46
     default:
 #line 46
-      __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP$0$CollectionId$default$fetch(arg_0x2b9d82e3a318);
+      __nesc_result = /*CtpP.Forwarder*/CtpForwardingEngineP$0$CollectionId$default$fetch(arg_0x2b9650da1318);
 #line 46
       break;
 #line 46
@@ -19122,9 +19157,9 @@ static inline void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$d
 }
 
 # 83 "/opt/tinyos-2.1.2/tos/lib/timer/Timer.nc"
-inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$fired(uint8_t arg_0x2b9d82bd8c28){
+inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$fired(uint8_t arg_0x2b9650b3fc28){
 #line 83
-  switch (arg_0x2b9d82bd8c28) {
+  switch (arg_0x2b9650b3fc28) {
 #line 83
     case 0U:
 #line 83
@@ -19172,7 +19207,7 @@ inline static void /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$f
 #line 83
     default:
 #line 83
-      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$default$fired(arg_0x2b9d82bd8c28);
+      /*HilTimerMilliC.VirtualizeTimerC*/VirtualizeTimerC$0$Timer$default$fired(arg_0x2b9650b3fc28);
 #line 83
       break;
 #line 83
@@ -20199,9 +20234,9 @@ inline static error_t TestNetworkC$SerialControl$start(void ){
 #line 104
 }
 #line 104
-# 86 "TestNetworkC.nc"
+# 87 "TestNetworkC.nc"
 static inline void TestNetworkC$Boot$booted(void )
-#line 86
+#line 87
 {
   TestNetworkC$SplitControlAODV$start();
   TestNetworkC$SerialControl$start();
@@ -22703,9 +22738,9 @@ static error_t UARTDebugSenderP$CollectionDebug$logEvent(uint8_t type)
     }
 }
 
-# 226 "TestNetworkC.nc"
+# 228 "TestNetworkC.nc"
 static message_t *TestNetworkC$ReceiveCTP$receive(message_t *msg, void *payload, uint8_t len)
-#line 226
+#line 228
 {
   if (__nesc_ntoh_int32(TestNetworkC$prot[sim_node()].nxdata) == 1) {
       sim_log_debug(56U, "TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), TestNetworkC$CollectionPacket$getOrigin(msg));
@@ -22718,7 +22753,7 @@ static message_t *TestNetworkC$ReceiveCTP$receive(message_t *msg, void *payload,
                 }
             }
           else 
-#line 236
+#line 238
             {
               TestNetworkC$firstMsg[sim_node()] = 1;
             }
@@ -22728,7 +22763,7 @@ static message_t *TestNetworkC$ReceiveCTP$receive(message_t *msg, void *payload,
       if (!TestNetworkC$Pool$empty() && TestNetworkC$Queue$size() < TestNetworkC$Queue$maxSize()) {
           message_t *tmp = TestNetworkC$Pool$get();
 
-#line 244
+#line 246
           TestNetworkC$Queue$enqueue(msg);
           if (!TestNetworkC$uartbusy[sim_node()]) {
               TestNetworkC$uartEchoTask$postTask();
@@ -23158,9 +23193,9 @@ static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$default$sendDone(uint8_
 }
 
 # 100 "/opt/tinyos-2.1.2/tos/interfaces/Send.nc"
-static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$sendDone(uint8_t arg_0x2b9d828fe788, message_t * msg, error_t error){
+static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$sendDone(uint8_t arg_0x2b9650865e18, message_t * msg, error_t error){
 #line 100
-  switch (arg_0x2b9d828fe788) {
+  switch (arg_0x2b9650865e18) {
 #line 100
     case 0U:
 #line 100
@@ -23212,7 +23247,7 @@ static void /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$sendDone(uint8_t arg_0x
 #line 100
     default:
 #line 100
-      /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$default$sendDone(arg_0x2b9d828fe788, msg, error);
+      /*AMQueueP.AMQueueImplP*/AMQueueImplP$0$Send$default$sendDone(arg_0x2b9650865e18, msg, error);
 #line 100
       break;
 #line 100
@@ -23414,9 +23449,9 @@ uint8_t len)
   return /*AODV.MHSend.SenderC.AMQueueEntryP*/AMQueueEntryP$3$Send$send(msg, len);
 }
 
-# 438 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 442 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static void AODV_M$del_route_table(am_addr_t dest)
-#line 438
+#line 442
 {
   uint8_t i;
   uint8_t id = AODV_M$get_route_table_index(dest);
@@ -23439,25 +23474,25 @@ static void AODV_M$del_route_table(am_addr_t dest)
   AODV_M$print_route_table();
 }
 
-#line 881
+#line 890
 static void AODV_M$print_route_table(void )
-#line 881
+#line 890
 {
   uint8_t i;
 
-#line 883
+#line 892
   for (i = 0; i < 10; i++) {
       if (AODV_M$route_table_[sim_node()][i].dest == 0xFFFF) {
         break;
         }
-#line 886
+#line 895
       sim_log_debug(206U, "AODV_DBG2", "%s\t AODV: ROUTE_TABLE i: %d: dest: %d next: %d seq:%d hop: %d \n", sim_time_string(), i, AODV_M$route_table_[sim_node()][i].dest, AODV_M$route_table_[sim_node()][i].next, AODV_M$route_table_[sim_node()][i].seq, AODV_M$route_table_[sim_node()][i].hop);
     }
 }
 
-#line 214
+#line 218
 static bool AODV_M$sendRERR(am_addr_t dest, am_addr_t src, bool forward)
-#line 214
+#line 218
 {
   aodv_rerr_hdr *aodv_hdr = (aodv_rerr_hdr *)AODV_M$p_rerr_msg_[sim_node()]->data;
   am_addr_t target;
@@ -23482,13 +23517,13 @@ static bool AODV_M$sendRERR(am_addr_t dest, am_addr_t src, bool forward)
   return FALSE;
 }
 
-#line 507
+#line 511
 static am_addr_t AODV_M$get_next_hop(am_addr_t dest)
-#line 507
+#line 511
 {
   int i;
 
-#line 509
+#line 513
   for (i = 0; i < 10; i++) {
       if (AODV_M$route_table_[sim_node()][i].dest == dest) {
           return AODV_M$route_table_[sim_node()][i].next;
@@ -23583,9 +23618,9 @@ static void TestNetworkC$DisseminationPeriod$changed(void )
   TestNetworkC$Timer$startPeriodic(*newVal);
 }
 
-# 465 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 469 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static bool AODV_M$add_route_table(uint8_t seq, am_addr_t dest, am_addr_t nexthop, uint8_t hop)
-#line 465
+#line 469
 {
   uint8_t i;
   uint8_t id = 10;
@@ -23613,7 +23648,7 @@ static bool AODV_M$add_route_table(uint8_t seq, am_addr_t dest, am_addr_t nextho
         }
     }
   else {
-#line 490
+#line 494
     if (i != 10) {
         AODV_M$route_table_[sim_node()][i].seq = seq;
         AODV_M$route_table_[sim_node()][i].dest = dest;
@@ -23623,14 +23658,14 @@ static bool AODV_M$add_route_table(uint8_t seq, am_addr_t dest, am_addr_t nextho
         return TRUE;
       }
     }
-#line 498
+#line 502
   return FALSE;
   AODV_M$print_route_table();
 }
 
-#line 189
+#line 193
 static bool AODV_M$sendRREP(am_addr_t dest, bool forward)
-#line 189
+#line 193
 {
 
   sim_log_debug(174U, "AODV_DBG", "%s\t AODV: sendRREP() dest: %d send_pending_: %d\n", sim_time_string(), dest, AODV_M$send_pending_[sim_node()]);
@@ -23640,7 +23675,7 @@ static bool AODV_M$sendRREP(am_addr_t dest, bool forward)
       AODV_M$PacketAcknowledgements$requestAck(AODV_M$p_rrep_msg_[sim_node()]);
 
       if (
-#line 196
+#line 200
       AODV_M$SendRREP$send(dest, AODV_M$p_rrep_msg_[sim_node()], 
       sizeof(aodv_rrep_hdr )) == SUCCESS) {
           sim_log_debug(175U, "AODV", "%s\t AODV: sendRREP() to %d\n", sim_time_string(), dest);
@@ -23665,9 +23700,9 @@ uint8_t len)
   return /*AODV.MHSendRREP.SenderC.AMQueueEntryP*/AMQueueEntryP$1$Send$send(msg, len);
 }
 
-# 353 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 357 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static bool AODV_M$add_rreq_cache(uint8_t seq, am_addr_t dest, am_addr_t src, uint8_t hop)
-#line 353
+#line 357
 {
   uint8_t i;
   uint8_t id = 10;
@@ -23692,7 +23727,7 @@ static bool AODV_M$add_rreq_cache(uint8_t seq, am_addr_t dest, am_addr_t src, ui
         }
     }
   else {
-#line 375
+#line 379
     if (i != 10) {
         AODV_M$rreq_cache_[sim_node()][i].seq = seq;
         AODV_M$rreq_cache_[sim_node()][i].dest = dest;
@@ -23706,18 +23741,18 @@ static bool AODV_M$add_rreq_cache(uint8_t seq, am_addr_t dest, am_addr_t src, ui
   return FALSE;
 }
 
-#line 893
+#line 902
 static void AODV_M$print_rreq_cache(void )
-#line 893
+#line 902
 {
   uint8_t i;
 
-#line 895
+#line 904
   for (i = 0; i < 10; i++) {
       if (AODV_M$rreq_cache_[sim_node()][i].dest == 0xFFFF) {
         break;
         }
-#line 898
+#line 907
       sim_log_debug(207U, "AODV_DBG2", "%s\t AODV: RREQ_CACHE i: %d: dest: %d src: %d seq:%d hop: %d \n", sim_time_string(), i, AODV_M$rreq_cache_[sim_node()][i].dest, AODV_M$rreq_cache_[sim_node()][i].src, AODV_M$rreq_cache_[sim_node()][i].seq, AODV_M$rreq_cache_[sim_node()][i].hop);
     }
 }
@@ -23959,9 +23994,9 @@ static void UARTDebugSenderP$UARTSend$sendDone(message_t *msg, error_t error)
     }
 }
 
-# 275 "TestNetworkC.nc"
+# 277 "TestNetworkC.nc"
 static void TestNetworkC$UARTSend$sendDone(message_t *msg, error_t error)
-#line 275
+#line 277
 {
   sim_log_debug(59U, "Traffic", "UART send done.\n");
   TestNetworkC$uartbusy[sim_node()] = FALSE;
@@ -24013,13 +24048,13 @@ static void LedsP$Leds$led0Toggle(void )
   ;
 }
 
-# 151 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 155 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static bool AODV_M$sendRREQ(am_addr_t dest, bool forward)
-#line 151
+#line 155
 {
   unsigned char __nesc_temp43;
   unsigned char *__nesc_temp42;
-#line 152
+#line 156
   aodv_rreq_hdr *aodv_hdr = (aodv_rreq_hdr *)AODV_M$p_rreq_msg_[sim_node()]->data;
 
   sim_log_debug(172U, "AODV", "%s\t AODV: sendRREQ() dest: %d\n", sim_time_string(), dest);
@@ -24036,7 +24071,7 @@ static bool AODV_M$sendRREQ(am_addr_t dest, bool forward)
       AODV_M$add_rreq_cache(__nesc_ntoh_uint8(aodv_hdr->seq.nxdata), __nesc_ntoh_uint16(aodv_hdr->dest.nxdata), __nesc_ntoh_uint16(aodv_hdr->src.nxdata), 0);
     }
   else 
-#line 166
+#line 170
     {
       (__nesc_temp42 = aodv_hdr->hop.nxdata, __nesc_hton_uint8(__nesc_temp42, (__nesc_temp43 = __nesc_ntoh_uint8(__nesc_temp42)) + 1), __nesc_temp43);
     }
@@ -24044,7 +24079,7 @@ static bool AODV_M$sendRREQ(am_addr_t dest, bool forward)
   if (!AODV_M$send_pending_[sim_node()]) {
 
       if (
-#line 171
+#line 175
       AODV_M$SendRREQ$send(0xFFFF, AODV_M$p_rreq_msg_[sim_node()], 
       sizeof(aodv_rreq_hdr )) == SUCCESS) {
           sim_log_debug(173U, "AODV", "%s\t AODV: sendRREQ()\n", sim_time_string());
@@ -24302,9 +24337,9 @@ static void HplAtm128Timer0AsyncP$configure_compare(sim_event_t *evt)
   evt->time = compareTime;
 }
 
-# 96 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
+# 101 "/opt/tinyos-2.1.2/tos/lib/AODV/AODV_M.nc"
 static error_t AODV_M$SplitControl$start(void )
-#line 96
+#line 101
 {
   int i;
 
@@ -24899,6 +24934,12 @@ static int __nesc_nido_resolve(int __nesc_mote,
   /* Module LedsP */
 
   /* Module AODV_M */
+  if (!strcmp(varname, "AODV_M$protocol"))
+  {
+    *addr = (uintptr_t)&AODV_M$protocol[__nesc_mote];
+    *size = sizeof(AODV_M$protocol[__nesc_mote]);
+    return 0;
+  }
   if (!strcmp(varname, "AODV_M$rreq_msg_"))
   {
     *addr = (uintptr_t)&AODV_M$rreq_msg_[__nesc_mote];
@@ -25861,6 +25902,7 @@ static void __nesc_nido_initialise(int __nesc_mote)
   /* Module LedsP */
 
   /* Module AODV_M */
+  memset((void *)&AODV_M$protocol[__nesc_mote], 0, sizeof AODV_M$protocol[__nesc_mote]);
   memset((void *)&AODV_M$rreq_msg_[__nesc_mote], 0, sizeof AODV_M$rreq_msg_[__nesc_mote]);
   memset((void *)&AODV_M$rrep_msg_[__nesc_mote], 0, sizeof AODV_M$rrep_msg_[__nesc_mote]);
   memset((void *)&AODV_M$rerr_msg_[__nesc_mote], 0, sizeof AODV_M$rerr_msg_[__nesc_mote]);

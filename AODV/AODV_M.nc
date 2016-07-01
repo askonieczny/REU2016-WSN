@@ -16,6 +16,7 @@ module AODV_M {
   }
   
   uses {
+    interface GetProt;
     interface SplitControl as AMControl;
     interface Timer<TMilli> as AODVTimer;
     interface Timer<TMilli> as RREQTimer;
@@ -32,11 +33,14 @@ module AODV_M {
     interface AMSend as SubSend;
     interface Receive as SubReceive;
     interface PacketAcknowledgements;
+    //interface Get as GetProt;
   }
 }
 
 implementation {
-  
+
+  nx_int32_t protocol;
+
   message_t rreq_msg_;
   message_t rrep_msg_;
   message_t rerr_msg_;
@@ -87,12 +91,13 @@ implementation {
   bool add_route_table( uint8_t seq, am_addr_t dest, am_addr_t nexthop, uint8_t hop );
   void del_route_table( am_addr_t dest );
   am_addr_t get_next_hop( am_addr_t dest );
+
   
 #if AODV_DEBUG
   void print_route_table();
   void print_rreq_cache();
 #endif
-  
+
   command error_t SplitControl.start() {
     int i;
     
@@ -120,7 +125,6 @@ implementation {
     
     return SUCCESS;
   } // start
-  
   
   command error_t SplitControl.stop() {
     call AMControl.stop();
@@ -151,7 +155,7 @@ implementation {
   bool sendRREQ( am_addr_t dest, bool forward ) {
     aodv_rreq_hdr* aodv_hdr = (aodv_rreq_hdr*)(p_rreq_msg_->data);
     
-    //dbg("AODV", "%s\t AODV: sendRREQ() dest: %d\n", sim_time_string(), dest);
+    dbg("AODV", "%s\t AODV: sendRREQ() dest: %d\n", sim_time_string(), dest);
     
     if( rreq_pending_ == TRUE ) {
       return FALSE;
@@ -643,7 +647,7 @@ implementation {
     else
       rerr_pending_ = TRUE;
   }
-  
+     
   
   //--------------------------------------------------------------------------
   //  ReceiveRREQ.receive: If the destination of the RREQ is me, the node will
@@ -652,57 +656,62 @@ implementation {
   //--------------------------------------------------------------------------
   event message_t* ReceiveRREQ.receive( message_t* p_msg, 
                                                  void* payload, uint8_t len ) {
-    bool cached = FALSE;
-    bool added  = FALSE;
-    
-    am_addr_t me  = call AMPacket.address();
-    am_addr_t src = call AMPacket.source( p_msg );
-    aodv_rreq_hdr* aodv_hdr      = (aodv_rreq_hdr*)(p_msg->data);
-    aodv_rreq_hdr* rreq_aodv_hdr = (aodv_rreq_hdr*)(p_rreq_msg_->data);
-    aodv_rrep_hdr* rrep_aodv_hdr = (aodv_rrep_hdr*)(p_rrep_msg_->data);
-    
-    dbg("AODV", "%s\t AODV: ReceiveRREQ.receive() src:%d dest: %d \n",
-                     sim_time_string(), aodv_hdr->src, aodv_hdr->dest);
-    
-    if( aodv_hdr->hop > AODV_MAX_HOP ) {
-      return p_msg;
+
+    protocol = call GetProt.get(); //this gets specified protocol from current node
+    if(protocol == 2) { //only receive AODV packets if protocol is AODV
+   
+      bool cached = FALSE;
+      bool added  = FALSE;
+      
+      am_addr_t me  = call AMPacket.address();
+      am_addr_t src = call AMPacket.source( p_msg );
+      aodv_rreq_hdr* aodv_hdr      = (aodv_rreq_hdr*)(p_msg->data);
+      aodv_rreq_hdr* rreq_aodv_hdr = (aodv_rreq_hdr*)(p_rreq_msg_->data);
+      aodv_rrep_hdr* rrep_aodv_hdr = (aodv_rrep_hdr*)(p_rrep_msg_->data);
+      
+      dbg("AODV", "%s\t AODV: ReceiveRREQ.receive() src:%d dest: %d \n",
+                       sim_time_string(), aodv_hdr->src, aodv_hdr->dest);
+      
+      if( aodv_hdr->hop > AODV_MAX_HOP ) {
+        return p_msg;
+      }
+      
+      /* if the received RREQ is already received one, it will be ignored */
+      if( !is_rreq_cached( aodv_hdr ) ) {
+        dbg("AODV_DBG", "%s\t AODV: ReceiveRREQ.receive() already received one\n", 
+                                                               sim_time_string());
+        return p_msg;
+      }
+      
+      /* add the route information into the route table */
+      add_route_table( aodv_hdr->seq, src, src, 1 );
+      added = add_route_table( aodv_hdr->seq, aodv_hdr->src, src, aodv_hdr->hop );
+      
+      cached = add_rreq_cache( aodv_hdr->seq, aodv_hdr->dest, aodv_hdr->src, aodv_hdr->hop );
+      
+      
+      /* if the destination of the RREQ is me, the node will send the RREP */
+      if( aodv_hdr->dest == me && added ) {
+        rrep_aodv_hdr->seq  = aodv_hdr->seq;
+        rrep_aodv_hdr->dest = aodv_hdr->dest;
+        rrep_aodv_hdr->src  = aodv_hdr->src;
+        rrep_aodv_hdr->hop  = 1;
+        sendRREP( src, FALSE );
+        return p_msg;
+      }
+      
+      // not for me
+      if( !rreq_pending_ && aodv_hdr->src != me && cached ) {
+        // forward RREQ
+        rreq_aodv_hdr->seq  = aodv_hdr->seq;
+        rreq_aodv_hdr->dest = aodv_hdr->dest;
+        rreq_aodv_hdr->src  = aodv_hdr->src;
+        rreq_aodv_hdr->hop  = aodv_hdr->hop + 1;
+        call RREQTimer.stop();
+        call RREQTimer.startOneShot( (call Random.rand16() % 7) * 10 );
+      }
+      
     }
-    
-    /* if the received RREQ is already received one, it will be ignored */
-    if( !is_rreq_cached( aodv_hdr ) ) {
-      dbg("AODV_DBG", "%s\t AODV: ReceiveRREQ.receive() already received one\n", 
-                                                             sim_time_string());
-      return p_msg;
-    }
-    
-    /* add the route information into the route table */
-    add_route_table( aodv_hdr->seq, src, src, 1 );
-    added = add_route_table( aodv_hdr->seq, aodv_hdr->src, src, aodv_hdr->hop );
-    
-    cached = add_rreq_cache( aodv_hdr->seq, aodv_hdr->dest, aodv_hdr->src, aodv_hdr->hop );
-    
-    
-    /* if the destination of the RREQ is me, the node will send the RREP */
-    if( aodv_hdr->dest == me && added ) {
-      rrep_aodv_hdr->seq  = aodv_hdr->seq;
-      rrep_aodv_hdr->dest = aodv_hdr->dest;
-      rrep_aodv_hdr->src  = aodv_hdr->src;
-      rrep_aodv_hdr->hop  = 1;
-      sendRREP( src, FALSE );
-      return p_msg;
-    }
-    
-    // not for me
-    if( !rreq_pending_ && aodv_hdr->src != me && cached ) {
-      // forward RREQ
-      rreq_aodv_hdr->seq  = aodv_hdr->seq;
-      rreq_aodv_hdr->dest = aodv_hdr->dest;
-      rreq_aodv_hdr->src  = aodv_hdr->src;
-      rreq_aodv_hdr->hop  = aodv_hdr->hop + 1;
-      call RREQTimer.stop();
-      call RREQTimer.startOneShot( (call Random.rand16() % 7) * 10 );
-    }
-    
     return p_msg;
   }
   

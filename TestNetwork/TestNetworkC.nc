@@ -15,6 +15,7 @@
 #include "CtpDebugMsg.h"
 
 module TestNetworkC {
+  provides interface GetProt;
   uses interface Boot;
   uses interface Receive as ReceiveAODV;
   uses interface Receive as ReceiveCTP;
@@ -41,7 +42,7 @@ module TestNetworkC {
   uses interface Pool<message_t>;
   uses interface CollectionDebug;
   uses interface AMPacket;
-  uses interface Packet as RadioPacket;
+  uses interface Packet as RadioPacket; 
 }
 
 
@@ -103,10 +104,9 @@ implementation {
 
   event void SplitControlAODV.startDone(error_t err) {
     if (err == SUCCESS) {
-      initialBoot = TRUE;
     } else {
       call SplitControlAODV.start();
-      }
+      }                
   }
   event void SplitControlAODV.stopDone(error_t err) {}
   event void RadioControl.stopDone(error_t err) {}
@@ -205,6 +205,7 @@ implementation {
         call Timer.startOneShot(call Random.rand16() & 0x1ff);
     }
     
+    //Set up AODV routing stuff
     if(prot == 2 && initialBoot == TRUE) {
       dbg("APPS", "%s\t APPS: startDone\n", sim_time_string());
       p_pkt = &pkt;
@@ -216,8 +217,9 @@ implementation {
     return msg;
   }
 
+
   event message_t* ReceiveAODV.receive(message_t* msg, void* payload, uint8_t len) {
-    if(prot == 2) {
+    if(prot == 2) { //if protocol is AODV
      dbg("AODV", "%s\t Received!!!!\n", sim_time_string());
     }
     return msg;
@@ -282,6 +284,10 @@ implementation {
     else {
       //        call CtpCongestion.setClientCongested(FALSE);
     }
+  }
+
+  command nx_int32_t GetProt.get() {
+    return prot;
   }
 
   /* Default implementations for CollectionDebug calls.
