@@ -1,0 +1,259 @@
+Booting  0  at  1
+Booting  1  at  1001
+Booting  2  at  2001
+Booting  3  at  3001
+Booting  4  at  4001
+Booting  5  at  5001
+Booting  6  at  6001
+Booting  7  at  7001
+Booting  8  at  8001
+Booting  9  at  9001
+Booting  10  at  10001
+Booting  11  at  11001
+Booting  12  at  12001
+Booting  13  at  13001
+Booting  14  at  14001
+Booting  15  at  15001
+Booting  16  at  16001
+Booting  17  at  17001
+Booting  18  at  18001
+Booting  19  at  19001
+Starting simulation.
+DEBUG (0): Routing protocol for this node (0) is 1
+DEBUG (1): Routing protocol for this node (1) is 1
+DEBUG (2): Routing protocol for this node (2) is 1
+DEBUG (3): Routing protocol for this node (3) is 1
+DEBUG (4): Routing protocol for this node (4) is 1
+DEBUG (5): Routing protocol for this node (5) is 1
+DEBUG (6): Routing protocol for this node (6) is 1
+DEBUG (7): Routing protocol for this node (7) is 1
+DEBUG (8): Routing protocol for this node (8) is 1
+DEBUG (9): Routing protocol for this node (9) is 1
+DEBUG (10): Routing protocol for this node (10) is 2
+DEBUG (10): 0:0:0.000002101	 APPS: startDone
+DEBUG (10): Millitimer started on node 10 because src is 10
+DEBUG (11): Routing protocol for this node (11) is 2
+DEBUG (11): 0:0:0.000002101	 APPS: startDone
+DEBUG (12): Routing protocol for this node (12) is 2
+DEBUG (12): 0:0:0.000002101	 APPS: startDone
+DEBUG (13): Routing protocol for this node (13) is 2
+DEBUG (13): 0:0:0.000002101	 APPS: startDone
+DEBUG (14): Routing protocol for this node (14) is 2
+DEBUG (14): 0:0:0.000002101	 APPS: startDone
+DEBUG (15): Routing protocol for this node (15) is 2
+DEBUG (15): 0:0:0.000002101	 APPS: startDone
+DEBUG (16): Routing protocol for this node (16) is 2
+DEBUG (16): 0:0:0.000002101	 APPS: startDone
+DEBUG (17): Routing protocol for this node (17) is 2
+DEBUG (17): 0:0:0.000002101	 APPS: startDone
+DEBUG (18): Routing protocol for this node (18) is 2
+DEBUG (18): 0:0:0.000002102	 APPS: startDone
+DEBUG (19): Routing protocol for this node (19) is 2
+DEBUG (19): 0:0:0.000002102	 APPS: startDone
+DEBUG (0): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (0): CTP Node received packet at 0:0:0.041015655 from node 0.
+DEBUG (0): CTP Send completed.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (1): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (2): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (3): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (4): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (5): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (6): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (7): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (8): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (9): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (0): CTP Node received packet at 0:0:0.644317650 from node 1.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (1): CTP Send completed.
+DEBUG (4): CTP Send completed.
+DEBUG (0): CTP Node received packet at 0:0:0.734649987 from node 4.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (5): CTP Send completed.
+DEBUG (0): CTP Node received packet at 0:0:0.753204566 from node 5.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (0): CTP Node received packet at 0:0:0.768386993 from node 2.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (2): CTP Send completed.
+DEBUG (3): CTP Send completed.
+DEBUG (0): CTP Node received packet at 0:0:0.784973364 from node 3.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (7): CTP Send completed.
+DEBUG (0): CTP Node received packet at 0:0:0.836243293 from node 7.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (8): CTP Send completed.
+DEBUG (0): CTP Node received packet at 0:0:0.847519119 from node 8.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (6): CTP Send completed.
+DEBUG (0): CTP Node received packet at 0:0:0.911484267 from node 6.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (9): CTP Send completed.
+DEBUG (10): 0:0:1.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:1.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 65535
+DEBUG (10): 0:0:1.000001010	 AODV: AMSend.send() a new destination
+DEBUG (10): 0:0:1.000001010	 AODV: sendRREQ() dest: 19
+DEBUG (10): 0:0:1.000001010	 AODV: sendRREQ()
+DEBUG (15): 0:0:1.007645618	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (15): 0:0:1.007645618	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (15): 0:0:1.007645618	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (18): 0:0:1.007645618	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (18): 0:0:1.007645618	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (18): 0:0:1.007645618	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (12): 0:0:1.007645618	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (12): 0:0:1.007645618	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (12): 0:0:1.007645618	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (10): 0:0:1.007813464	 AODV: SendRREQ.sendDone()
+DEBUG (0): CTP Node received packet at 0:0:1.010025822 from node 9.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (12): 0:0:1.016602772	 AODV: RREQTimer.fired()
+DEBUG (12): 0:0:1.016602772	 AODV: sendRREQ() dest: 0
+DEBUG (12): 0:0:1.016602772	 AODV: sendRREQ()
+DEBUG (16): 0:0:1.026017390	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (16): 0:0:1.026017390	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
+DEBUG (16): 0:0:1.026017390	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
+DEBUG (13): 0:0:1.026017390	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (13): 0:0:1.026017390	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
+DEBUG (13): 0:0:1.026017390	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
+DEBUG (19): 0:0:1.026017390	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (19): 0:0:1.026017390	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
+DEBUG (19): 0:0:1.026017390	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
+DEBUG (19): 0:0:1.026017390	 AODV: sendRREP() dest: 12 send_pending_: 0
+DEBUG (19): 0:0:1.026017390	 AODV: sendRREP() to 12
+DEBUG (10): 0:0:1.026017390	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (10): 0:0:1.026017390	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (12): 0:0:1.026185236	 AODV: SendRREQ.sendDone()
+DEBUG (12): 0:0:1.032624407	 AODV: ReceiveRREP.receive() src: 10 dest: 19 
+DEBUG (12): 0:0:1.032624407	 AODV: add_route_table() seq:0 dest:19 next:19 hop:2
+DEBUG (12): 0:0:1.032624407	 AODV: sendRREP() dest: 10 send_pending_: 0
+DEBUG (12): 0:0:1.032624407	 AODV: sendRREP() to 10
+DEBUG (19): 0:0:1.032792253	 AODV: SendRREP.sendDone()
+DEBUG (13): 0:0:1.035157560	 AODV: RREQTimer.fired()
+DEBUG (13): 0:0:1.035157560	 AODV: sendRREQ() dest: 0
+DEBUG (13): 0:0:1.035157560	 AODV: sendRREQ()
+DEBUG (18): 0:0:1.036134622	 AODV: RREQTimer.fired()
+DEBUG (18): 0:0:1.036134622	 AODV: sendRREQ() dest: 0
+DEBUG (18): 0:0:1.036134622	 AODV: sendRREQ()
+DEBUG (16): 0:0:1.039277409	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (16): 0:0:1.039277409	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (19): 0:0:1.039277409	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (19): 0:0:1.039277409	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (12): 0:0:1.039277409	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (12): 0:0:1.039277409	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (13): 0:0:1.039445254	 AODV: SendRREQ.sendDone()
+DEBUG (10): 0:0:1.042084801	 AODV: ReceiveRREP.receive() src: 10 dest: 19 
+DEBUG (10): 0:0:1.042084801	 AODV: add_route_table() seq:0 dest:19 next:12 hop:1
+DEBUG (12): 0:0:1.042252647	 AODV: SendRREP.sendDone()
+DEBUG (17): 0:0:1.043763972	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (17): 0:0:1.043763972	 AODV: add_route_table() seq:0 dest:18 next:18 hop:1
+DEBUG (17): 0:0:1.043763972	 AODV: add_route_table() seq:0 dest:10 next:18 hop:3
+DEBUG (10): 0:0:1.043763972	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (10): 0:0:1.043763972	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (18): 0:0:1.043931818	 AODV: SendRREQ.sendDone()
+DEBUG (16): 0:0:1.064454735	 AODV: RREQTimer.fired()
+DEBUG (16): 0:0:1.064454735	 AODV: sendRREQ() dest: 0
+DEBUG (16): 0:0:1.064454735	 AODV: sendRREQ()
+DEBUG (15): 0:0:1.065431197	 AODV: RREQTimer.fired()
+DEBUG (15): 0:0:1.065431197	 AODV: sendRREQ() dest: 0
+DEBUG (15): 0:0:1.065431197	 AODV: sendRREQ()
+DEBUG (13): 0:0:1.069993643	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (13): 0:0:1.069993643	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (12): 0:0:1.069993643	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (12): 0:0:1.069993643	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (16): 0:0:1.070161488	 AODV: SendRREQ.sendDone()
+DEBUG (17): 0:0:1.072267335	 AODV: RREQTimer.fired()
+DEBUG (17): 0:0:1.072267335	 AODV: sendRREQ() dest: 0
+DEBUG (17): 0:0:1.072267335	 AODV: sendRREQ()
+DEBUG (14): 0:0:1.072984254	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (14): 0:0:1.072984254	 AODV: add_route_table() seq:0 dest:15 next:15 hop:1
+DEBUG (14): 0:0:1.072984254	 AODV: add_route_table() seq:0 dest:10 next:15 hop:3
+DEBUG (10): 0:0:1.072984254	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (10): 0:0:1.072984254	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (15): 0:0:1.073152099	 AODV: SendRREQ.sendDone()
+DEBUG (18): 0:0:1.080171341	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (18): 0:0:1.080171341	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (11): 0:0:1.080171341	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (11): 0:0:1.080171341	 AODV: add_route_table() seq:0 dest:17 next:17 hop:1
+DEBUG (11): 0:0:1.080171341	 AODV: add_route_table() seq:0 dest:10 next:17 hop:5
+DEBUG (17): 0:0:1.080339187	 AODV: SendRREQ.sendDone()
+DEBUG (14): 0:0:1.082032660	 AODV: RREQTimer.fired()
+DEBUG (14): 0:0:1.082032660	 AODV: sendRREQ() dest: 0
+DEBUG (14): 0:0:1.082032660	 AODV: sendRREQ()
+DEBUG (15): 0:0:1.088151398	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (15): 0:0:1.088151398	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (14): 0:0:1.088319244	 AODV: SendRREQ.sendDone()
+DEBUG (11): 0:0:1.089844860	 AODV: RREQTimer.fired()
+DEBUG (11): 0:0:1.089844860	 AODV: sendRREQ() dest: 0
+DEBUG (11): 0:0:1.089844860	 AODV: sendRREQ()
+DEBUG (17): 0:0:1.097642055	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (17): 0:0:1.097642055	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (11): 0:0:1.097809901	 AODV: SendRREQ.sendDone()
+DEBUG (10): 0:0:2.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:2.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
+DEBUG (10): 0:0:2.000001010	 AODV: AMSend.send() there is a route to 19
+DEBUG (12): 0:0:2.009308817	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (12): 0:0:2.009308817	 AODV: SubReceive.receive() deliver to next hop:13
+DEBUG (12): 0:0:2.009308817	 AODV: forwardMSG() try to forward to 19 
+DEBUG (12): 0:0:2.009308817	 AODV: forwardMSG() send MSG to: 19
+DEBUG (10): 0:0:2.009476662	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (10): APPS: sendDone!!
+DEBUG (19): 0:0:2.017304375	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (19): 0:0:2.017304375	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (19): 0:0:2.017304375	 Received!!!!
+DEBUG (12): 0:0:2.017472221	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (10): 0:0:3.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:3.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
+DEBUG (10): 0:0:3.000001010	 AODV: AMSend.send() there is a route to 19
+DEBUG (12): 0:0:3.011979089	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (12): 0:0:3.011979089	 AODV: SubReceive.receive() deliver to next hop:13
+DEBUG (12): 0:0:3.011979089	 AODV: forwardMSG() try to forward to 19 
+DEBUG (12): 0:0:3.011979089	 AODV: forwardMSG() send MSG to: 19
+DEBUG (10): 0:0:3.012146935	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (10): APPS: sendDone!!
+DEBUG (19): 0:0:3.016678769	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (19): 0:0:3.016678769	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (12): 0:0:3.016846614	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (10): 0:0:4.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:4.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
+DEBUG (10): 0:0:4.000001010	 AODV: AMSend.send() there is a route to 19
+DEBUG (12): 0:0:4.008820538	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (12): 0:0:4.008820538	 AODV: SubReceive.receive() deliver to next hop:13
+DEBUG (12): 0:0:4.008820538	 AODV: forwardMSG() try to forward to 19 
+DEBUG (12): 0:0:4.008820538	 AODV: forwardMSG() send MSG to: 19
+DEBUG (10): 0:0:4.008988384	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (10): APPS: sendDone!!
+DEBUG (19): 0:0:4.014313670	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (19): 0:0:4.014313670	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (12): 0:0:4.014481516	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (10): 0:0:5.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:5.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
+DEBUG (10): 0:0:5.000001010	 AODV: AMSend.send() there is a route to 19
+DEBUG (12): 0:0:5.012055383	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (12): 0:0:5.012055383	 AODV: SubReceive.receive() deliver to next hop:13
+DEBUG (12): 0:0:5.012055383	 AODV: forwardMSG() try to forward to 19 
+DEBUG (12): 0:0:5.012055383	 AODV: forwardMSG() send MSG to: 19
+DEBUG (10): 0:0:5.012223228	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (10): APPS: sendDone!!
+DEBUG (19): 0:0:5.021347931	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (19): 0:0:5.021347931	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (12): 0:0:5.021515777	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (9): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (9): CTP Send completed.
+DEBUG (0): CTP Node received packet at 0:0:5.431168393 from node 9.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (4): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (4): CTP Send completed.
+DEBUG (0): CTP Node received packet at 0:0:5.701996198 from node 4.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+Completed simulation.

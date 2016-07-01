@@ -8,6 +8,7 @@ enum {
  CL_TEST = 0xee,
  TEST_NETWORK_QUEUE_SIZE = 8,
  AM_ROUT_MSG = 1,
+ AM_UNIVERSALMSG = 1,
 };
 
 #endif
