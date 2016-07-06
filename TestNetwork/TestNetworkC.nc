@@ -13,6 +13,7 @@
 #include <Timer.h>
 #include "TestNetwork.h"
 #include "CtpDebugMsg.h"
+#include <stdlib.h>
 
 module TestNetworkC {
   provides interface GetProt;
@@ -42,7 +43,7 @@ module TestNetworkC {
   uses interface Pool<message_t>;
   uses interface CollectionDebug;
   uses interface AMPacket;
-  uses interface Packet as RadioPacket; 
+  uses interface Packet as RadioPacket;
 }
 
 
@@ -65,6 +66,10 @@ implementation {
   bool initialBoot = TRUE;
   bool firstTimer = TRUE;
   uint16_t seqno;
+  float temp;
+  float wind;
+  float hum;
+  float num = 0;
   enum {
     SEND_INTERVAL = 8192
   };
@@ -96,9 +101,9 @@ implementation {
     if (err != SUCCESS) {
       call RadioControl.start();
     }
-    else { 
+    else {
       initialBoot = TRUE;
-      
+
     }
   }
 
@@ -106,7 +111,7 @@ implementation {
     if (err == SUCCESS) {
     } else {
       call SplitControlAODV.start();
-      }                
+      }
   }
   event void SplitControlAODV.stopDone(error_t err) {}
   event void RadioControl.stopDone(error_t err) {}
@@ -127,7 +132,9 @@ implementation {
 
     msg->source = TOS_NODE_ID;
     msg->seqno = seqno;
-    msg->data = 0xCAFE;
+    msg->temp = rand() % 40 + 40;
+    msg ->hum = rand() % 20 + 70;
+    msg ->wind = rand() % 20;
     msg->parent = parent;
     msg->hopcount = 0;
     msg->metric = metric;
@@ -204,7 +211,7 @@ implementation {
       seqno = 0;
         call Timer.startOneShot(call Random.rand16() & 0x1ff);
     }
-    
+
     //Set up AODV routing stuff
     if(prot == 2 && initialBoot == TRUE) {
       dbg("APPS", "%s\t APPS: startDone\n", sim_time_string());
@@ -227,6 +234,16 @@ implementation {
 
   event message_t* ReceiveCTP.receive(message_t* msg, void* payload, uint8_t len) {
     if(prot == 1) { //if protocol is CTP
+    if(TOS_NODE_ID == 0){
+    TestNetworkMsg* rcm = (TestNetworkMsg*) payload;
+    temp += rcm -> temp;
+    hum  += rcm -> hum;
+    wind += rcm -> wind;
+    num++;
+    dbg("TestNetworkC", "Temp value is %.3f.\n", temp/num);
+    dbg("TestNetworkC", "Wind value is %.3f.\n", wind/num);
+    dbg("TestNetworkC", "Humidity value is %.3f.\n", hum/num);
+    }
     dbg("TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
     call Leds.led1Toggle();
 

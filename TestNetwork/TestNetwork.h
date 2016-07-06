@@ -10,7 +10,9 @@ typedef nx_struct TestNetworkMsg {
   nx_uint16_t seqno;
   nx_am_addr_t parent;
   nx_uint16_t metric;
-  nx_uint16_t data;
+  nx_uint16_t temp;
+  nx_uint16_t hum;
+  nx_uint16_t wind;
   nx_uint8_t hopcount;
   nx_uint16_t sendCount;
   nx_uint16_t sendSuccessCount;
