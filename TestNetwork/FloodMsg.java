@@ -7,12 +7,12 @@
 public class FloodMsg extends net.tinyos.message.Message {
 
     /** The default size of this message type in bytes. */
-    public static final int DEFAULT_MESSAGE_SIZE = 22;
+    public static final int DEFAULT_MESSAGE_SIZE = 26;
 
     /** The Active Message type associated with this message. */
     public static final int AM_TYPE = 2;
 
-    /** Create a new FloodMsg of size 22. */
+    /** Create a new FloodMsg of size 26. */
     public FloodMsg() {
         super(DEFAULT_MESSAGE_SIZE);
         amTypeSet(AM_TYPE);
@@ -93,6 +93,12 @@ public class FloodMsg extends net.tinyos.message.Message {
       } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
       try {
         s += "  [temp=0x"+Long.toHexString(get_temp())+"]\n";
+      } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
+      try {
+        s += "  [hum=0x"+Long.toHexString(get_hum())+"]\n";
+      } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
+      try {
+        s += "  [wind=0x"+Long.toHexString(get_wind())+"]\n";
       } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
       return s;
     }
@@ -287,6 +293,132 @@ public class FloodMsg extends net.tinyos.message.Message {
      * Return the size, in bits, of the field 'temp'
      */
     public static int sizeBits_temp() {
+        return 16;
+    }
+
+    /////////////////////////////////////////////////////////
+    // Accessor methods for field: hum
+    //   Field type: int, unsigned
+    //   Offset (bits): 176
+    //   Size (bits): 16
+    /////////////////////////////////////////////////////////
+
+    /**
+     * Return whether the field 'hum' is signed (false).
+     */
+    public static boolean isSigned_hum() {
+        return false;
+    }
+
+    /**
+     * Return whether the field 'hum' is an array (false).
+     */
+    public static boolean isArray_hum() {
+        return false;
+    }
+
+    /**
+     * Return the offset (in bytes) of the field 'hum'
+     */
+    public static int offset_hum() {
+        return (176 / 8);
+    }
+
+    /**
+     * Return the offset (in bits) of the field 'hum'
+     */
+    public static int offsetBits_hum() {
+        return 176;
+    }
+
+    /**
+     * Return the value (as a int) of the field 'hum'
+     */
+    public int get_hum() {
+        return (int)getUIntBEElement(offsetBits_hum(), 16);
+    }
+
+    /**
+     * Set the value of the field 'hum'
+     */
+    public void set_hum(int value) {
+        setUIntBEElement(offsetBits_hum(), 16, value);
+    }
+
+    /**
+     * Return the size, in bytes, of the field 'hum'
+     */
+    public static int size_hum() {
+        return (16 / 8);
+    }
+
+    /**
+     * Return the size, in bits, of the field 'hum'
+     */
+    public static int sizeBits_hum() {
+        return 16;
+    }
+
+    /////////////////////////////////////////////////////////
+    // Accessor methods for field: wind
+    //   Field type: int, unsigned
+    //   Offset (bits): 192
+    //   Size (bits): 16
+    /////////////////////////////////////////////////////////
+
+    /**
+     * Return whether the field 'wind' is signed (false).
+     */
+    public static boolean isSigned_wind() {
+        return false;
+    }
+
+    /**
+     * Return whether the field 'wind' is an array (false).
+     */
+    public static boolean isArray_wind() {
+        return false;
+    }
+
+    /**
+     * Return the offset (in bytes) of the field 'wind'
+     */
+    public static int offset_wind() {
+        return (192 / 8);
+    }
+
+    /**
+     * Return the offset (in bits) of the field 'wind'
+     */
+    public static int offsetBits_wind() {
+        return 192;
+    }
+
+    /**
+     * Return the value (as a int) of the field 'wind'
+     */
+    public int get_wind() {
+        return (int)getUIntBEElement(offsetBits_wind(), 16);
+    }
+
+    /**
+     * Set the value of the field 'wind'
+     */
+    public void set_wind(int value) {
+        setUIntBEElement(offsetBits_wind(), 16, value);
+    }
+
+    /**
+     * Return the size, in bytes, of the field 'wind'
+     */
+    public static int size_wind() {
+        return (16 / 8);
+    }
+
+    /**
+     * Return the size, in bits, of the field 'wind'
+     */
+    public static int sizeBits_wind() {
         return 16;
     }
 

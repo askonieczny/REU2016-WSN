@@ -13,6 +13,7 @@
 #include <Timer.h>
 #include "TestNetwork.h"
 #include "CtpDebugMsg.h"
+#include <stdlib.h>
 
 module TestNetworkC {
   provides interface GetProt;
@@ -46,7 +47,7 @@ module TestNetworkC {
   uses interface CollectionDebug;
   uses interface AMPacket;
   uses interface Packet;
-  uses interface Packet as RadioPacket; 
+  uses interface Packet as RadioPacket;
 }
 
 
@@ -58,20 +59,24 @@ implementation {
   */
   nx_int32_t prot; //protocol not initially specified
 
-  //CTP variables
-  task void uartEchoTask();
-  message_t packet;
-  message_t uartpacket;
-  message_t* recvPtr = &uartpacket;
-  uint8_t msglen;
-  bool sendBusy = FALSE;
-  bool uartbusy = FALSE;
-  bool initialBoot = TRUE;
-  bool firstTimer = TRUE;
-  uint16_t seqno;
-  enum {
-    SEND_INTERVAL = 8192
-  };
+    //CTP variables
+    task void uartEchoTask();
+    message_t packet;
+    message_t uartpacket;
+    message_t* recvPtr = &uartpacket;
+    uint8_t msglen;
+    bool sendBusy = FALSE;
+    bool uartbusy = FALSE;
+    bool initialBoot = TRUE;
+    bool firstTimer = TRUE;
+    uint16_t seqno;
+    float temp;
+    float wind;
+    float hum;
+    float num = 0;
+    enum {
+      SEND_INTERVAL = 8192
+    };
 
 
   //AODV variables
@@ -88,7 +93,10 @@ implementation {
 
   //Simple flooding variables
   uint16_t sfSink = 20;
-  uint16_t temp = 50;
+  float temp_f = 0;
+  float wind_f = 0;
+  float hum_f =0;
+  float num_f = 0;
   uint16_t tmpSources[10];
   uint16_t msgSources[10];
   message_t floodPkt;
@@ -111,7 +119,7 @@ implementation {
     if (err != SUCCESS) {
       call RadioControl.start();
     }
-    else { 
+    else {
       initialBoot = TRUE;
     }
   }
@@ -120,14 +128,14 @@ implementation {
     if (err == SUCCESS) {
     } else {
       call SplitControlAODV.start();
-      }                
+      }
   }
 
   event void SplitControlFlood.startDone(error_t err) {
     if (err == SUCCESS) {
     } else {
       call SplitControlFlood.start();
-      }   
+      }
   }
   event void SplitControlAODV.stopDone(error_t err) {}
   event void SplitControlFlood.stopDone(error_t err) {}
@@ -147,12 +155,14 @@ implementation {
     call CtpInfo.getParent(&parent);
     call CtpInfo.getEtx(&metric);
 
-    msg->source = TOS_NODE_ID;
-    msg->seqno = seqno;
-    msg->data = 0xCAFE;
-    msg->parent = parent;
-    msg->hopcount = 0;
-    msg->metric = metric;
+      msg->source = TOS_NODE_ID;
+      msg->seqno = seqno;
+      msg->temp = rand() % 40 + 40;
+      msg ->hum = rand() % 20 + 70;
+      msg ->wind = rand() % 20;
+      msg->parent = parent;
+      msg->hopcount = 0;
+      msg->metric = metric;
 
     if (call Send.send(&packet, sizeof(TestNetworkMsg)) != SUCCESS) {
       failedSend();
@@ -188,7 +198,7 @@ implementation {
       dbg("APPS", "%s\t APPS: MilliTimer.fired()\n", sim_time_string());
       call Leds.led0Toggle();
       call AMAODVSend.send(dest, p_pkt, sizeof(pkt));
-    } 
+    }
     else if(prot == 3) { //if protocol is Simple flooding
       flood_msg_t* floodMsg = (flood_msg_t*)call Packet.getPayload(&floodPkt, sizeof(flood_msg_t));
       /*
@@ -196,7 +206,9 @@ implementation {
         return;
       }
       */
-      floodMsg -> temp = temp;
+      floodMsg -> temp = rand() % 40 + 40;
+      floodMsg -> hum = rand() % 20 + 70;
+      floodMsg -> wind = rand() % 20;
       i = 0;
       while(i < 10) {
         floodMsg -> sources[i] = 0;
@@ -218,8 +230,8 @@ implementation {
   event void AMAODVSend.sendDone(message_t* bufPtr, error_t error) {
     if(prot == 2) {
       dbg("APPS", "APPS: AODV sendDone!!\n");
-    } 
-  }  
+    }
+  }
 
   event void AMFloodSend.sendDone(message_t* bufPtr, error_t error) {
     if(prot == 3) {
@@ -249,7 +261,7 @@ implementation {
       seqno = 0;
         call Timer.startOneShot(call Random.rand16() & 0x1ff);
     }
-    
+
     //Set up AODV routing stuff
     if(prot == 2 && initialBoot == TRUE) {
       dbg("APPS", "%s\t APPS: startDone\n", sim_time_string());
@@ -295,8 +307,17 @@ implementation {
 
       //add ID to source array, send to next nodes if not already received
       if(match == FALSE) {
-        temp = f -> temp;
-        dbg("TestNetworkC", "\t Flooding: message received, temp is %d\n", temp);
+        dbg("TestNetworkC", "\t Flooding: message received, \n");
+        if(TOS_NODE_ID == sfSink){
+
+        temp_f += f -> temp;
+        hum_f += f -> hum;
+        wind_f += f -> wind;
+        num_f ++;
+        dbg("TestNetworkC", "\t Flooding: message received, temp is %.3f\n", temp_f/num_f);
+        dbg("TestNetworkC", "\t Flooding: message received, hum is %.3f\n", hum_f/num_f);
+        dbg("TestNetworkC", "\t Flooding: message received, wind is %.3f\n", wind_f/num_f);
+        }
         j = 0;
         while(TRUE && j < 10) {
           if(msgSources[j] == 0) {
@@ -308,7 +329,9 @@ implementation {
 
         //send new message
         floodMsgNew = (flood_msg_t*)call Packet.getPayload(&floodPkt, sizeof(flood_msg_t));
-        floodMsgNew -> temp = temp;
+        floodMsgNew -> temp = rand() % 40 + 40;
+        floodMsgNew -> hum = rand() % 20 +70;
+        floodMsgNew -> wind = rand() % 20;
         i = 0;
         while(i < 10) {
           floodMsgNew -> sources[i] = msgSources[i];
@@ -332,6 +355,16 @@ implementation {
 
   event message_t* ReceiveCTP.receive(message_t* msg, void* payload, uint8_t len) {
     if(prot == 1) { //if protocol is CTP
+    if(TOS_NODE_ID == 0){
+    TestNetworkMsg* rcm = (TestNetworkMsg*) payload;
+    temp += rcm -> temp;
+    hum  += rcm -> hum;
+    wind += rcm -> wind;
+    num++;
+    dbg("TestNetworkC", "Temp value is %.3f.\n", temp/num);
+    dbg("TestNetworkC", "Wind value is %.3f.\n", wind/num);
+    dbg("TestNetworkC", "Humidity value is %.3f.\n", hum/num);
+    }
     dbg("TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
     call Leds.led1Toggle();
 

@@ -7,14 +7,14 @@
 import tinyos.message.Message
 
 # The default size of this message type in bytes.
-DEFAULT_MESSAGE_SIZE = 22
+DEFAULT_MESSAGE_SIZE = 26
 
 # The Active Message type associated with this message.
 AM_TYPE = 2
 
 class FloodMsg(tinyos.message.Message.Message):
-    # Create a new FloodMsg of size 22.
-    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=22):
+    # Create a new FloodMsg of size 26.
+    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=26):
         tinyos.message.Message.Message.__init__(self, data, addr, gid, base_offset, data_length)
         self.amTypeSet(AM_TYPE)
     
@@ -39,6 +39,14 @@ class FloodMsg(tinyos.message.Message.Message):
             pass
         try:
             s += "  [temp=0x%x]\n" % (self.get_temp())
+        except:
+            pass
+        try:
+            s += "  [hum=0x%x]\n" % (self.get_hum())
+        except:
+            pass
+        try:
+            s += "  [wind=0x%x]\n" % (self.get_wind())
         except:
             pass
         return s
@@ -213,5 +221,115 @@ class FloodMsg(tinyos.message.Message.Message):
     # Return the size, in bits, of the field 'temp'
     #
     def sizeBits_temp(self):
+        return 16
+    
+    #
+    # Accessor methods for field: hum
+    #   Field type: int
+    #   Offset (bits): 176
+    #   Size (bits): 16
+    #
+
+    #
+    # Return whether the field 'hum' is signed (False).
+    #
+    def isSigned_hum(self):
+        return False
+    
+    #
+    # Return whether the field 'hum' is an array (False).
+    #
+    def isArray_hum(self):
+        return False
+    
+    #
+    # Return the offset (in bytes) of the field 'hum'
+    #
+    def offset_hum(self):
+        return (176 / 8)
+    
+    #
+    # Return the offset (in bits) of the field 'hum'
+    #
+    def offsetBits_hum(self):
+        return 176
+    
+    #
+    # Return the value (as a int) of the field 'hum'
+    #
+    def get_hum(self):
+        return self.getUIntElement(self.offsetBits_hum(), 16, 1)
+    
+    #
+    # Set the value of the field 'hum'
+    #
+    def set_hum(self, value):
+        self.setUIntElement(self.offsetBits_hum(), 16, value, 1)
+    
+    #
+    # Return the size, in bytes, of the field 'hum'
+    #
+    def size_hum(self):
+        return (16 / 8)
+    
+    #
+    # Return the size, in bits, of the field 'hum'
+    #
+    def sizeBits_hum(self):
+        return 16
+    
+    #
+    # Accessor methods for field: wind
+    #   Field type: int
+    #   Offset (bits): 192
+    #   Size (bits): 16
+    #
+
+    #
+    # Return whether the field 'wind' is signed (False).
+    #
+    def isSigned_wind(self):
+        return False
+    
+    #
+    # Return whether the field 'wind' is an array (False).
+    #
+    def isArray_wind(self):
+        return False
+    
+    #
+    # Return the offset (in bytes) of the field 'wind'
+    #
+    def offset_wind(self):
+        return (192 / 8)
+    
+    #
+    # Return the offset (in bits) of the field 'wind'
+    #
+    def offsetBits_wind(self):
+        return 192
+    
+    #
+    # Return the value (as a int) of the field 'wind'
+    #
+    def get_wind(self):
+        return self.getUIntElement(self.offsetBits_wind(), 16, 1)
+    
+    #
+    # Set the value of the field 'wind'
+    #
+    def set_wind(self, value):
+        self.setUIntElement(self.offsetBits_wind(), 16, value, 1)
+    
+    #
+    # Return the size, in bytes, of the field 'wind'
+    #
+    def size_wind(self):
+        return (16 / 8)
+    
+    #
+    # Return the size, in bits, of the field 'wind'
+    #
+    def sizeBits_wind(self):
         return 16
     
