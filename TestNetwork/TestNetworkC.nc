@@ -19,10 +19,12 @@ module TestNetworkC {
   uses interface Boot;
   uses interface Receive as ReceiveAODV;
   uses interface Receive as ReceiveCTP;
+  uses interface Receive as ReceiveFlood;
   uses interface Receive as ReceiveRout;
   uses interface SplitControl as SplitControlAODV;
   uses interface SplitControl as RadioControl;
   uses interface SplitControl as SerialControl;
+  uses interface SplitControl as SplitControlFlood;
   uses interface StdControl as RoutingControl;
   uses interface StdControl as DisseminationControl;
   uses interface DisseminationValue<uint32_t> as DisseminationPeriod;
@@ -32,7 +34,8 @@ module TestNetworkC {
   uses interface Timer<TMilli>;
   uses interface Timer<TMilli> as MilliTimer;
   uses interface RootControl;
-  uses interface AMSend;
+  uses interface AMSend as AMAODVSend;
+  uses interface AMSend as AMFloodSend;
   uses interface AMSend as UARTSend;
   uses interface CollectionPacket;
   uses interface CtpInfo;
@@ -42,6 +45,7 @@ module TestNetworkC {
   uses interface Pool<message_t>;
   uses interface CollectionDebug;
   uses interface AMPacket;
+  uses interface Packet;
   uses interface Packet as RadioPacket; 
 }
 
@@ -82,10 +86,21 @@ implementation {
 
   rout_msg_t* r;
 
+  //Simple flooding variables
+  uint16_t sfSink = 20;
+  uint16_t temp = 50;
+  uint16_t tmpSources[10];
+  uint16_t msgSources[10];
+  message_t floodPkt;
+  bool match;
+  uint16_t i;
+  uint16_t j;
+
   event void ReadSensor.readDone(error_t err, uint16_t val) { }
 
   event void Boot.booted() {
     call SplitControlAODV.start();
+    call SplitControlFlood.start();
     call SerialControl.start();
   }
 
@@ -98,7 +113,6 @@ implementation {
     }
     else { 
       initialBoot = TRUE;
-      
     }
   }
 
@@ -108,7 +122,15 @@ implementation {
       call SplitControlAODV.start();
       }                
   }
+
+  event void SplitControlFlood.startDone(error_t err) {
+    if (err == SUCCESS) {
+    } else {
+      call SplitControlFlood.start();
+      }   
+  }
   event void SplitControlAODV.stopDone(error_t err) {}
+  event void SplitControlFlood.stopDone(error_t err) {}
   event void RadioControl.stopDone(error_t err) {}
   event void SerialControl.stopDone(error_t err) {}
 
@@ -144,6 +166,7 @@ implementation {
     }
   }
 
+  //This timer used exclusively for CTP nodes
   event void Timer.fired() {
     if(prot == 1) {
       uint32_t nextInt;
@@ -159,12 +182,27 @@ implementation {
     }
   }
 
-
+  //This timer used for AODV and simple flooding nodes
   event void MilliTimer.fired() {
-    if(prot == 2) {
+    if(prot == 2) { //if protocol is AODV
       dbg("APPS", "%s\t APPS: MilliTimer.fired()\n", sim_time_string());
       call Leds.led0Toggle();
-      call AMSend.send(dest, p_pkt, sizeof(pkt));
+      call AMAODVSend.send(dest, p_pkt, sizeof(pkt));
+    } 
+    else if(prot == 3) { //if protocol is Simple flooding
+      flood_msg_t* floodMsg = (flood_msg_t*)call Packet.getPayload(&floodPkt, sizeof(flood_msg_t));
+      /*
+      if(floodMsg == NULL) {
+        return;
+      }
+      */
+      floodMsg -> temp = temp;
+      i = 0;
+      while(i < 10) {
+        floodMsg -> sources[i] = 0;
+        i++;
+      }
+      call AMFloodSend.send(AM_BROADCAST_ADDR, &floodPkt, sizeof(flood_msg_t));
     }
   }
 
@@ -177,9 +215,17 @@ implementation {
     dbg("TestNetworkC", "CTP Send completed.\n");
   }
 
-  event void AMSend.sendDone(message_t* bufPtr, error_t error) {
-      dbg("APPS", "APPS: sendDone!!\n");
+  event void AMAODVSend.sendDone(message_t* bufPtr, error_t error) {
+    if(prot == 2) {
+      dbg("APPS", "APPS: AODV sendDone!!\n");
+    } 
+  }  
+
+  event void AMFloodSend.sendDone(message_t* bufPtr, error_t error) {
+    if(prot == 3) {
+      dbg("TestNetworkC", "Flooding: send done\n");
     }
+  }
 
   event void DisseminationPeriod.changed() {
     const uint32_t* newVal = call DisseminationPeriod.get();
@@ -187,7 +233,7 @@ implementation {
     call Timer.startPeriodic(*newVal);
   }
 
-  //This event receives routing protocol specification (CTP = 1, AODV = 2)
+  //This event receives routing protocol specification (CTP = 1, AODV = 2, Simple flooding = 3)
   event message_t* ReceiveRout.receive(message_t* msg, void* payload, uint8_t len) {
     r = (rout_msg_t*)payload;
     prot = r -> routing;
@@ -197,7 +243,6 @@ implementation {
     if(prot == 1 && initialBoot == TRUE) {
       call DisseminationControl.start();
       call RoutingControl.start();
-      //p_pkt = &pkt;
       if (TOS_NODE_ID % 500 == 0) {
        call RootControl.setRoot();
       }
@@ -213,6 +258,66 @@ implementation {
         dbg("AODV", "Millitimer started on node %d because src is %d\n", TOS_NODE_ID, src);
         call MilliTimer.startPeriodic(1024);
         }
+    }
+
+    if(prot == 3 && initialBoot == TRUE) {
+      dbg("APPS", "%s\t Flooding: startDone\n", sim_time_string());
+      if( TOS_NODE_ID == sfSink) {
+        call MilliTimer.startPeriodic(1000);
+      }
+    }
+    return msg;
+  }
+
+  //Protocol receive events (different depending upon which protocol node is following)
+
+  event message_t* ReceiveFlood.receive(message_t* msg, void* payload, uint8_t len) {
+    flood_msg_t* f;
+    flood_msg_t* floodMsgNew;
+    if(prot == 3) { //if protocol is Flooding
+      f = (flood_msg_t*)payload;
+      i = 0;
+      while(i < 10) {
+        msgSources[i] = f -> sources[i];
+        i++;
+      }
+
+      //see if node should ignore this message (if already broadcast)
+      i = 0;
+      match = FALSE;
+      while (i < 10) {
+        if(msgSources[i] == TOS_NODE_ID) {
+          match = TRUE;
+          break;
+        }
+        i++;
+      }
+
+      //add ID to source array, send to next nodes if not already received
+      if(match == FALSE) {
+        temp = f -> temp;
+        dbg("TestNetworkC", "\t Flooding: message received, temp is %d\n", temp);
+        j = 0;
+        while(TRUE && j < 10) {
+          if(msgSources[j] == 0) {
+            msgSources[j] = TOS_NODE_ID;
+            break;
+          }
+          j++;
+        }
+
+        //send new message
+        floodMsgNew = (flood_msg_t*)call Packet.getPayload(&floodPkt, sizeof(flood_msg_t));
+        floodMsgNew -> temp = temp;
+        i = 0;
+        while(i < 10) {
+          floodMsgNew -> sources[i] = msgSources[i];
+          i++;
+        }
+        call AMFloodSend.send(AM_BROADCAST_ADDR, &floodPkt, sizeof(flood_msg_t));
+      } else {
+        //dbg("TestNetworkC", "\t Flooding: message IGNORED\n");
+      }
     }
     return msg;
   }

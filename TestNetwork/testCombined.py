@@ -8,7 +8,7 @@ import sys
 #t = Tossim(n.variables.variables())
 t = Tossim([])
 r = t.radio()
-numNodes = 20
+numNodes = 30
 endTime = 6 #seconds
 sys.stdout = open('out_testCombined.txt','w')
 
@@ -57,17 +57,29 @@ t.addChannel("AODV_DBG", sys.stdout)
 #Declares routing protocol for each node
 #1 = CTP
 #2 = AODV
+#3 = simple
 for i in range(numNodes):
   msg = RoutMsg()
   if (i < 10):
   	msg.set_routing(1) #nodes 0-9 will be CTP nodes
-  else:
+  elif (i < 20):
   	msg.set_routing(2) #nodes 10-19 will be AODV nodes
+  elif (i < 30):
+	  msg.set_routing(3) #nodes 20-29 will be Simple flooding nodes
+
   pkt = t.newPacket()
   pkt.setType(msg.get_amType())
   pkt.setData(msg.data)
   pkt.setDestination(i)
   pkt.deliver(i, numNodes * 1000 + 1000 + i + 2)
+
+
+# for i in range(20, 30):
+#   fMsg = FloodMsg()
+#   tempSources = [0,0,0,0,0,0,0,0,0,0]
+#   fMsg.set_sources(tempSources)
+#   pkt.setType(fMsg.)
+  #finish injecting empty floodMsg
 
 # while (t.time() < 150 * t.ticksPerSecond()):
 #   t.runNextEvent()

@@ -16,6 +16,8 @@ LIBMOTE = $(TOSDIR)/../support/sdk/c/libmote.a
 #BUILD_EXTRA_DEPS += tn-injector #tn-listener
 LISTEN_OBJS = collection_msg.o test_network_msg.o tn-listener.o $(LIBMOTE)
 INJECT_OBJS = set_rate_msg.o tn-injector.o collection_debug_msg.o $(LIBMOTE)
+BUILD_EXTRA_DEPS = RoutMsg.py RoutMsg.class FloodMsg.py FloodMsg.class
+CLEAN_EXTRA = RoutMsg.py RoutMsg.class RoutMsg.java FloodMsg.py FloodMsg.class FloodMsg.java
 
 # arguments: output filename stem, input filename, struct name
 define mig_templ
@@ -69,6 +71,14 @@ RoutMsg.class: RoutMsg.java
 RoutMsg.java: TestNetwork.h
 	mig java -target=$(PLATFORM) $(CFLAGS) -java-classname=RoutMsg TestNetwork.h rout_msg -o $@
 
+RoutMsg.py: TestNetwork.h
+	mig python -target=$(PLATFORM) $(CFLAGS) -python-classname=FloodMsg TestNetwork.h flood_msg -o $@
+
+RoutMsg.class: FloodMsg.java
+	javac FloodMsg.java
+
+RoutMsg.java: TestNetwork.h
+	mig java -target=$(PLATFORM) $(CFLAGS) -java-classname=FloodMsg TestNetwork.h flood_msg -o $@
 
 include $(MAKERULES)
 

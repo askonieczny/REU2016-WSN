@@ -9,7 +9,7 @@ import sys
 t = Tossim([])
 r = t.radio()
 numNodes = 20
-endTime = 6
+endTime = 6 #seconds
 sys.stdout = open('out_testCombined.txt','w')
 
 f = open("combined_topo.txt", "r")

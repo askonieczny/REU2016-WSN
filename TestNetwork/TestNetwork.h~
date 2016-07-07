@@ -20,4 +20,9 @@ typedef nx_struct rout_msg {
   nx_int32_t routing;
 } rout_msg_t;
 
+typedef nx_struct flood_msg {
+  nx_uint16_t sources[10];
+  nx_uint16_t temp;
+} flood_msg;
+
 #endif

@@ -24,7 +24,9 @@ implementation {
   components new TimerMilliC();
   components new DemoSensorC();
   components new SerialAMSenderC(CL_TEST);
-  components new AMReceiverC(AM_ROUT_MSG);
+  components new AMReceiverC(AM_ROUT_MSG) as RoutReceiver;
+  components new AMReceiverC(AM_FLOOD_MSG) as FloodReceiver;
+  components new AMSenderC(AM_FLOOD_MSG);
   components SerialActiveMessageC;
 #ifndef NO_DEBUG 
   components new SerialAMSenderC(AM_COLLECTION_DEBUG) as UARTSender;
@@ -57,13 +59,19 @@ implementation {
 
   //AODV components
   TestNetworkC.ReceiveAODV -> AODV.Receive[1];
-  TestNetworkC.AMSend -> AODV.AMSend[1];
+  TestNetworkC.AMAODVSend -> AODV.AMSend[1];
   TestNetworkC.SplitControlAODV -> AODV.SplitControl;
   TestNetworkC.MilliTimer -> TimerMilliC;
   TestNetworkC.Leds -> LedsC;
 
   //Routing protocol receive component
-  TestNetworkC.ReceiveRout -> AMReceiverC;
+  TestNetworkC.ReceiveRout -> RoutReceiver;
+
+  //Simple flooding components
+  TestNetworkC.ReceiveFlood -> FloodReceiver;
+  TestNetworkC.Packet -> AMSenderC;
+  TestNetworkC.AMFloodSend -> AMSenderC;
+  TestNetworkC.SplitControlFlood -> ActiveMessageC;
 
 
 #ifndef NO_DEBUG
