@@ -7,14 +7,14 @@
 import tinyos.message.Message
 
 # The default size of this message type in bytes.
-DEFAULT_MESSAGE_SIZE = 4
+DEFAULT_MESSAGE_SIZE = 6
 
 # The Active Message type associated with this message.
 AM_TYPE = 1
 
 class RoutMsg(tinyos.message.Message.Message):
-    # Create a new RoutMsg of size 4.
-    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=4):
+    # Create a new RoutMsg of size 6.
+    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=6):
         tinyos.message.Message.Message.__init__(self, data, addr, gid, base_offset, data_length)
         self.amTypeSet(AM_TYPE)
     
@@ -32,6 +32,10 @@ class RoutMsg(tinyos.message.Message.Message):
         s = "Message <RoutMsg> \n"
         try:
             s += "  [routing=0x%x]\n" % (self.get_routing())
+        except:
+            pass
+        try:
+            s += "  [overlap=0x%x]\n" % (self.get_overlap())
         except:
             pass
         return s
@@ -92,4 +96,59 @@ class RoutMsg(tinyos.message.Message.Message):
     #
     def sizeBits_routing(self):
         return 32
+    
+    #
+    # Accessor methods for field: overlap
+    #   Field type: short
+    #   Offset (bits): 32
+    #   Size (bits): 16
+    #
+
+    #
+    # Return whether the field 'overlap' is signed (False).
+    #
+    def isSigned_overlap(self):
+        return False
+    
+    #
+    # Return whether the field 'overlap' is an array (False).
+    #
+    def isArray_overlap(self):
+        return False
+    
+    #
+    # Return the offset (in bytes) of the field 'overlap'
+    #
+    def offset_overlap(self):
+        return (32 / 8)
+    
+    #
+    # Return the offset (in bits) of the field 'overlap'
+    #
+    def offsetBits_overlap(self):
+        return 32
+    
+    #
+    # Return the value (as a short) of the field 'overlap'
+    #
+    def get_overlap(self):
+        return self.getSIntElement(self.offsetBits_overlap(), 16, 1)
+    
+    #
+    # Set the value of the field 'overlap'
+    #
+    def set_overlap(self, value):
+        self.setSIntElement(self.offsetBits_overlap(), 16, value, 1)
+    
+    #
+    # Return the size, in bytes, of the field 'overlap'
+    #
+    def size_overlap(self):
+        return (16 / 8)
+    
+    #
+    # Return the size, in bits, of the field 'overlap'
+    #
+    def sizeBits_overlap(self):
+        return 16
     

@@ -54,10 +54,11 @@ module TestNetworkC {
 implementation {
 
   /*
-    global variable that determines whether to use CTP (if 1)
-    or AODV (if 2)
+    global variables that determines whether to use CTP (if 1)
+    or AODV (if 2) or simple flooding (if 3), as well as overlap
   */
   nx_int32_t prot; //protocol not initially specified
+  nx_int16_t overlap; //tells whether the node is in overlapping position or not
 
     //CTP variables
     task void uartEchoTask();
@@ -244,7 +245,9 @@ implementation {
   event message_t* ReceiveRout.receive(message_t* msg, void* payload, uint8_t len) {
     r = (rout_msg_t*)payload;
     prot = r -> routing;
+    overlap = r -> overlap;
     dbg("TestNetworkC", "Routing protocol for this node (%d) is %d\n", TOS_NODE_ID, prot);
+    dbg("TestNetworkC", "Overlap status for this node (%d) is %d\n", TOS_NODE_ID, overlap);
 
     //Set up CTP routing stuff
     if(prot == 1 && initialBoot == TRUE) {

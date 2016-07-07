@@ -7,12 +7,12 @@
 public class RoutMsg extends net.tinyos.message.Message {
 
     /** The default size of this message type in bytes. */
-    public static final int DEFAULT_MESSAGE_SIZE = 4;
+    public static final int DEFAULT_MESSAGE_SIZE = 6;
 
     /** The Active Message type associated with this message. */
     public static final int AM_TYPE = 1;
 
-    /** Create a new RoutMsg of size 4. */
+    /** Create a new RoutMsg of size 6. */
     public RoutMsg() {
         super(DEFAULT_MESSAGE_SIZE);
         amTypeSet(AM_TYPE);
@@ -87,6 +87,9 @@ public class RoutMsg extends net.tinyos.message.Message {
       try {
         s += "  [routing=0x"+Long.toHexString(get_routing())+"]\n";
       } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
+      try {
+        s += "  [overlap=0x"+Long.toHexString(get_overlap())+"]\n";
+      } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
       return s;
     }
 
@@ -153,6 +156,69 @@ public class RoutMsg extends net.tinyos.message.Message {
      */
     public static int sizeBits_routing() {
         return 32;
+    }
+
+    /////////////////////////////////////////////////////////
+    // Accessor methods for field: overlap
+    //   Field type: short, signed
+    //   Offset (bits): 32
+    //   Size (bits): 16
+    /////////////////////////////////////////////////////////
+
+    /**
+     * Return whether the field 'overlap' is signed (true).
+     */
+    public static boolean isSigned_overlap() {
+        return true;
+    }
+
+    /**
+     * Return whether the field 'overlap' is an array (false).
+     */
+    public static boolean isArray_overlap() {
+        return false;
+    }
+
+    /**
+     * Return the offset (in bytes) of the field 'overlap'
+     */
+    public static int offset_overlap() {
+        return (32 / 8);
+    }
+
+    /**
+     * Return the offset (in bits) of the field 'overlap'
+     */
+    public static int offsetBits_overlap() {
+        return 32;
+    }
+
+    /**
+     * Return the value (as a short) of the field 'overlap'
+     */
+    public short get_overlap() {
+        return (short)getSIntBEElement(offsetBits_overlap(), 16);
+    }
+
+    /**
+     * Set the value of the field 'overlap'
+     */
+    public void set_overlap(short value) {
+        setSIntBEElement(offsetBits_overlap(), 16, value);
+    }
+
+    /**
+     * Return the size, in bytes, of the field 'overlap'
+     */
+    public static int size_overlap() {
+        return (16 / 8);
+    }
+
+    /**
+     * Return the size, in bits, of the field 'overlap'
+     */
+    public static int sizeBits_overlap() {
+        return 16;
     }
 
 }
