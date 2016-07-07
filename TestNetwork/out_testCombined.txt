@@ -81,9 +81,9 @@ DEBUG (28): 0:0:0.000003103	 Flooding: startDone
 DEBUG (29): Routing protocol for this node (29) is 3
 DEBUG (29): 0:0:0.000003103	 Flooding: startDone
 DEBUG (0): TestNetworkC$sendMessage: Transmission succeeded.
-DEBUG (0): Temp value is 63.000.
-DEBUG (0): Wind value is 17.000.
-DEBUG (0): Humidity value is 76.000.
+DEBUG (0): CTP: Temp value is 63.000.
+DEBUG (0): CTP: Wind value is 17.000.
+DEBUG (0): CTP: Humidity value is 76.000.
 DEBUG (0): CTP Node received packet at 0:0:0.041015655 from node 0.
 DEBUG (0): CTP Send completed.
 DEBUG (0): CTP node sending packet to UART.
@@ -97,366 +97,581 @@ DEBUG (6): TestNetworkC$sendMessage: Transmission succeeded.
 DEBUG (7): TestNetworkC$sendMessage: Transmission succeeded.
 DEBUG (8): TestNetworkC$sendMessage: Transmission succeeded.
 DEBUG (9): TestNetworkC$sendMessage: Transmission succeeded.
-DEBUG (0): Temp value is 64.500.
-DEBUG (0): Wind value is 13.000.
-DEBUG (0): Humidity value is 79.000.
-DEBUG (0): CTP Node received packet at 0:0:0.787246813 from node 2.
-DEBUG (0): CTP node sending packet to UART.
-DEBUG (0): Sending packet to UART.
-DEBUG (2): CTP Send completed.
-DEBUG (7): CTP Send completed.
-DEBUG (8): CTP Send completed.
-DEBUG (0): Temp value is 59.000.
-DEBUG (0): Wind value is 11.667.
-DEBUG (0): Humidity value is 78.333.
-DEBUG (0): CTP Node received packet at 0:0:0.866409908 from node 7.
-DEBUG (0): CTP node sending packet to UART.
-DEBUG (0): Sending packet to UART.
-DEBUG (0): Temp value is 59.750.
-DEBUG (0): Wind value is 9.250.
-DEBUG (0): Humidity value is 78.750.
-DEBUG (0): CTP Node received packet at 0:0:0.878479192 from node 8.
-DEBUG (0): CTP node sending packet to UART.
-DEBUG (0): Sending packet to UART.
-DEBUG (0): Temp value is 62.800.
-DEBUG (0): Wind value is 10.400.
-DEBUG (0): Humidity value is 79.600.
-DEBUG (0): CTP Node received packet at 0:0:0.885864301 from node 1.
+DEBUG (0): CTP: Temp value is 69.000.
+DEBUG (0): CTP: Wind value is 16.000.
+DEBUG (0): CTP: Humidity value is 79.500.
+DEBUG (0): CTP Node received packet at 0:0:0.888198922 from node 1.
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
 DEBUG (1): CTP Send completed.
-DEBUG (9): CTP Send completed.
 DEBUG (5): CTP Send completed.
-DEBUG (0): Temp value is 59.500.
-DEBUG (0): Wind value is 11.167.
-DEBUG (0): Humidity value is 79.167.
-DEBUG (0): CTP Node received packet at 0:0:0.958695258 from node 9.
+DEBUG (0): CTP: Temp value is 61.333.
+DEBUG (0): CTP: Wind value is 12.667.
+DEBUG (0): CTP: Humidity value is 76.333.
+DEBUG (0): CTP Node received packet at 0:0:0.964584811 from node 5.
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
 DEBUG (4): CTP Send completed.
-DEBUG (0): Temp value is 57.571.
-DEBUG (0): Wind value is 10.429.
-DEBUG (0): Humidity value is 77.857.
-DEBUG (0): CTP Node received packet at 0:0:0.962402714 from node 5.
-DEBUG (0): CTP node sending packet to UART.
-DEBUG (0): Sending packet to UART.
-DEBUG (0): Temp value is 56.625.
-DEBUG (0): Wind value is 9.500.
-DEBUG (0): Humidity value is 79.250.
-DEBUG (0): CTP Node received packet at 0:0:0.972259626 from node 4.
-DEBUG (0): CTP node sending packet to UART.
-DEBUG (0): Sending packet to UART.
-DEBUG (3): CTP Send completed.
 DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 49.000
+DEBUG (22): 	 Flooding: message received, hum is 72.000
+DEBUG (22): 	 Flooding: message received, wind is 2.000
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (20): Flooding: send done
-DEBUG (0): Temp value is 57.111.
-DEBUG (0): Wind value is 9.222.
-DEBUG (0): Humidity value is 78.444.
-DEBUG (0): CTP Node received packet at 0:0:0.987442269 from node 3.
+DEBUG (21): 	 Flooding: message received, temp is 49.000
+DEBUG (21): 	 Flooding: message received, hum is 72.000
+DEBUG (21): 	 Flooding: message received, wind is 2.000
+DEBUG (20): 	 Flooding: send done
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 58.000
+DEBUG (25): 	 Flooding: message received, hum is 79.000
+DEBUG (25): 	 Flooding: message received, wind is 7.000
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 58.000
+DEBUG (20): 	 Flooding: message received, hum is 79.000
+DEBUG (20): 	 Flooding: message received, wind is 7.000
+DEBUG (22): 	 Flooding: send done
+DEBUG (21): 	 Flooding: message received, 
+DEBUG (21): 	 Flooding: message received, temp is 55.000
+DEBUG (21): 	 Flooding: message received, hum is 80.500
+DEBUG (21): 	 Flooding: message received, wind is 3.000
+DEBUG (20): 	 Flooding: send done
+DEBUG (0): CTP: Temp value is 58.500.
+DEBUG (0): CTP: Wind value is 10.250.
+DEBUG (0): CTP: Humidity value is 79.500.
+DEBUG (0): CTP Node received packet at 0:0:0.992904955 from node 4.
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
-DEBUG (23): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 73.000
-DEBUG (20): 	 Flooding: message received, hum is 86.000
-DEBUG (20): 	 Flooding: message received, wind is 11.000
 DEBUG (24): 	 Flooding: message received, 
-DEBUG (21): Flooding: send done
-DEBUG (25): 	 Flooding: message received, 
-DEBUG (22): Flooding: send done
-DEBUG (28): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, 
-DEBUG (26): 	 Flooding: message received, 
-DEBUG (23): Flooding: send done
+DEBUG (24): 	 Flooding: message received, temp is 57.000
+DEBUG (24): 	 Flooding: message received, hum is 88.000
+DEBUG (24): 	 Flooding: message received, wind is 4.000
+DEBUG (23): 	 Flooding: message received, 
+DEBUG (23): 	 Flooding: message received, temp is 57.000
+DEBUG (23): 	 Flooding: message received, hum is 88.000
+DEBUG (23): 	 Flooding: message received, wind is 4.000
+DEBUG (21): 	 Flooding: send done
 DEBUG (29): 	 Flooding: message received, 
-DEBUG (25): Flooding: send done
-DEBUG (24): Flooding: send done
-DEBUG (22): 	 Flooding: message received, 
-DEBUG (20): Flooding: send done
-DEBUG (26): Flooding: send done
-DEBUG (27): Flooding: send done
+DEBUG (29): 	 Flooding: message received, temp is 42.000
+DEBUG (29): 	 Flooding: message received, hum is 79.000
+DEBUG (29): 	 Flooding: message received, wind is 13.000
+DEBUG (25): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
 DEBUG (10): 0:0:1.000001010	 APPS: MilliTimer.fired()
 DEBUG (10): 0:0:1.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 65535
 DEBUG (10): 0:0:1.000001010	 AODV: AMSend.send() a new destination
 DEBUG (10): 0:0:1.000001010	 AODV: sendRREQ() dest: 19
 DEBUG (10): 0:0:1.000001010	 AODV: sendRREQ()
-DEBUG (29): Flooding: send done
-DEBUG (22): Flooding: send done
-DEBUG (28): Flooding: send done
-DEBUG (15): 0:0:1.007523549	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (15): 0:0:1.007523549	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (15): 0:0:1.007523549	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (18): 0:0:1.007523549	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (18): 0:0:1.007523549	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (18): 0:0:1.007523549	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (12): 0:0:1.007523549	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (12): 0:0:1.007523549	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (12): 0:0:1.007523549	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (10): 0:0:1.007691394	 AODV: SendRREQ.sendDone()
-DEBUG (12): 0:0:1.016602772	 AODV: RREQTimer.fired()
-DEBUG (12): 0:0:1.016602772	 AODV: sendRREQ() dest: 0
-DEBUG (12): 0:0:1.016602772	 AODV: sendRREQ()
-DEBUG (16): 0:0:1.019944427	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (16): 0:0:1.019944427	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
-DEBUG (16): 0:0:1.019944427	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
-DEBUG (13): 0:0:1.019944427	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (13): 0:0:1.019944427	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
-DEBUG (13): 0:0:1.019944427	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
-DEBUG (19): 0:0:1.019944427	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (19): 0:0:1.019944427	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
-DEBUG (19): 0:0:1.019944427	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
-DEBUG (19): 0:0:1.019944427	 AODV: sendRREP() dest: 12 send_pending_: 0
-DEBUG (19): 0:0:1.019944427	 AODV: sendRREP() to 12
-DEBUG (10): 0:0:1.019944427	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (10): 0:0:1.019944427	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (12): 0:0:1.020112273	 AODV: SendRREQ.sendDone()
+DEBUG (15): 0:0:1.002335591	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (15): 0:0:1.002335591	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (15): 0:0:1.002335591	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (18): 0:0:1.002335591	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (18): 0:0:1.002335591	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (18): 0:0:1.002335591	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (12): 0:0:1.002335591	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (12): 0:0:1.002335591	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (12): 0:0:1.002335591	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
+DEBUG (10): 0:0:1.002503436	 AODV: SendRREQ.sendDone()
+DEBUG (29): 	 Flooding: send done
+DEBUG (3): CTP Send completed.
+DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 46.000
+DEBUG (28): 	 Flooding: message received, hum is 81.000
+DEBUG (28): 	 Flooding: message received, wind is 0.000
+DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 46.000
+DEBUG (27): 	 Flooding: message received, hum is 81.000
+DEBUG (27): 	 Flooding: message received, wind is 0.000
+DEBUG (26): 	 Flooding: message received, 
+DEBUG (26): 	 Flooding: message received, temp is 46.000
+DEBUG (26): 	 Flooding: message received, hum is 81.000
+DEBUG (26): 	 Flooding: message received, wind is 0.000
+DEBUG (23): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (12): 0:0:1.011719960	 AODV: RREQTimer.fired()
+DEBUG (12): 0:0:1.011719960	 AODV: sendRREQ() dest: 0
+DEBUG (12): 0:0:1.011719960	 AODV: sendRREQ()
+DEBUG (18): 0:0:1.011720560	 AODV: RREQTimer.fired()
+DEBUG (18): 0:0:1.011720560	 AODV: sendRREQ() dest: 0
+DEBUG (18): 0:0:1.011720560	 AODV: sendRREQ()
+DEBUG (27): 	 Flooding: send done
+DEBUG (26): 	 Flooding: send done
+DEBUG (17): 0:0:1.016649120	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (17): 0:0:1.016649120	 AODV: add_route_table() seq:0 dest:18 next:18 hop:1
+DEBUG (17): 0:0:1.016649120	 AODV: add_route_table() seq:0 dest:10 next:18 hop:3
+DEBUG (10): 0:0:1.016649120	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (10): 0:0:1.016649120	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (18): 0:0:1.016816965	 AODV: SendRREQ.sendDone()
+DEBUG (16): 0:0:1.019685001	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (16): 0:0:1.019685001	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
+DEBUG (16): 0:0:1.019685001	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
+DEBUG (13): 0:0:1.019685001	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (13): 0:0:1.019685001	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
+DEBUG (13): 0:0:1.019685001	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
+DEBUG (19): 0:0:1.019685001	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (19): 0:0:1.019685001	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
+DEBUG (19): 0:0:1.019685001	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
+DEBUG (19): 0:0:1.019685001	 AODV: sendRREP() dest: 12 send_pending_: 0
+DEBUG (19): 0:0:1.019685001	 AODV: sendRREP() to 12
+DEBUG (10): 0:0:1.019685001	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (10): 0:0:1.019685001	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (12): 0:0:1.019852847	 AODV: SendRREQ.sendDone()
+DEBUG (12): 0:0:1.024445715	 AODV: ReceiveRREP.receive() src: 10 dest: 19 
+DEBUG (12): 0:0:1.024445715	 AODV: add_route_table() seq:0 dest:19 next:19 hop:2
+DEBUG (12): 0:0:1.024445715	 AODV: sendRREP() dest: 10 send_pending_: 0
+DEBUG (12): 0:0:1.024445715	 AODV: sendRREP() to 10
+DEBUG (19): 0:0:1.024613561	 AODV: SendRREP.sendDone()
+DEBUG (0): CTP: Temp value is 59.000.
+DEBUG (0): CTP: Wind value is 9.600.
+DEBUG (0): CTP: Humidity value is 78.000.
+DEBUG (0): CTP Node received packet at 0:0:1.027145467 from node 3.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (10): 0:0:1.028916515	 AODV: ReceiveRREP.receive() src: 10 dest: 19 
+DEBUG (10): 0:0:1.028916515	 AODV: add_route_table() seq:0 dest:19 next:12 hop:1
+DEBUG (12): 0:0:1.029084360	 AODV: SendRREP.sendDone()
 DEBUG (13): 0:0:1.029298185	 AODV: RREQTimer.fired()
 DEBUG (13): 0:0:1.029298185	 AODV: sendRREQ() dest: 0
 DEBUG (13): 0:0:1.029298185	 AODV: sendRREQ()
-DEBUG (12): 0:0:1.029969393	 AODV: ReceiveRREP.receive() src: 10 dest: 19 
-DEBUG (12): 0:0:1.029969393	 AODV: add_route_table() seq:0 dest:19 next:19 hop:2
-DEBUG (12): 0:0:1.029969393	 AODV: sendRREP() dest: 10 send_pending_: 0
-DEBUG (12): 0:0:1.029969393	 AODV: sendRREP() to 10
-DEBUG (19): 0:0:1.030137239	 AODV: SendRREP.sendDone()
-DEBUG (16): 0:0:1.031754835	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (16): 0:0:1.031754835	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (19): 0:0:1.031754835	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (19): 0:0:1.031754835	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (12): 0:0:1.031754835	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (12): 0:0:1.031754835	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (13): 0:0:1.031922681	 AODV: SendRREQ.sendDone()
-DEBUG (18): 0:0:1.036134622	 AODV: RREQTimer.fired()
-DEBUG (18): 0:0:1.036134622	 AODV: sendRREQ() dest: 0
-DEBUG (18): 0:0:1.036134622	 AODV: sendRREQ()
-DEBUG (10): 0:0:1.037919176	 AODV: ReceiveRREP.receive() src: 10 dest: 19 
-DEBUG (10): 0:0:1.037919176	 AODV: add_route_table() seq:0 dest:19 next:12 hop:1
-DEBUG (12): 0:0:1.038087022	 AODV: SendRREP.sendDone()
+DEBUG (16): 0:0:1.031052935	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (16): 0:0:1.031052935	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (19): 0:0:1.031052935	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (19): 0:0:1.031052935	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (12): 0:0:1.031052935	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (12): 0:0:1.031052935	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (13): 0:0:1.031220781	 AODV: SendRREQ.sendDone()
 DEBUG (16): 0:0:1.039064110	 AODV: RREQTimer.fired()
 DEBUG (16): 0:0:1.039064110	 AODV: sendRREQ() dest: 0
 DEBUG (16): 0:0:1.039064110	 AODV: sendRREQ()
-DEBUG (17): 0:0:1.039430501	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (17): 0:0:1.039430501	 AODV: add_route_table() seq:0 dest:18 next:18 hop:1
-DEBUG (17): 0:0:1.039430501	 AODV: add_route_table() seq:0 dest:10 next:18 hop:3
-DEBUG (10): 0:0:1.039430501	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (10): 0:0:1.039430501	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (18): 0:0:1.039598347	 AODV: SendRREQ.sendDone()
+DEBUG (13): 0:0:1.046098370	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (13): 0:0:1.046098370	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (12): 0:0:1.046098370	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (12): 0:0:1.046098370	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (16): 0:0:1.046266216	 AODV: SendRREQ.sendDone()
 DEBUG (6): CTP Send completed.
-DEBUG (13): 0:0:1.047547947	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (13): 0:0:1.047547947	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (12): 0:0:1.047547947	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (12): 0:0:1.047547947	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (16): 0:0:1.047715793	 AODV: SendRREQ.sendDone()
-DEBUG (0): Temp value is 56.600.
-DEBUG (0): Wind value is 9.400.
-DEBUG (0): Humidity value is 79.200.
-DEBUG (0): CTP Node received packet at 0:0:1.057068344 from node 6.
+DEBUG (15): 0:0:1.060548385	 AODV: RREQTimer.fired()
+DEBUG (15): 0:0:1.060548385	 AODV: sendRREQ() dest: 0
+DEBUG (15): 0:0:1.060548385	 AODV: sendRREQ()
+DEBUG (14): 0:0:1.062043737	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (14): 0:0:1.062043737	 AODV: add_route_table() seq:0 dest:15 next:15 hop:1
+DEBUG (14): 0:0:1.062043737	 AODV: add_route_table() seq:0 dest:10 next:15 hop:3
+DEBUG (10): 0:0:1.062043737	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (10): 0:0:1.062043737	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (15): 0:0:1.062211583	 AODV: SendRREQ.sendDone()
+DEBUG (17): 0:0:1.065431397	 AODV: RREQTimer.fired()
+DEBUG (17): 0:0:1.065431397	 AODV: sendRREQ() dest: 0
+DEBUG (17): 0:0:1.065431397	 AODV: sendRREQ()
+DEBUG (14): 0:0:1.071290472	 AODV: RREQTimer.fired()
+DEBUG (14): 0:0:1.071290472	 AODV: sendRREQ() dest: 0
+DEBUG (14): 0:0:1.071290472	 AODV: sendRREQ()
+DEBUG (18): 0:0:1.075547915	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (18): 0:0:1.075547915	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (11): 0:0:1.075547915	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (11): 0:0:1.075547915	 AODV: add_route_table() seq:0 dest:17 next:17 hop:1
+DEBUG (11): 0:0:1.075547915	 AODV: add_route_table() seq:0 dest:10 next:17 hop:5
+DEBUG (17): 0:0:1.075715761	 AODV: SendRREQ.sendDone()
+DEBUG (0): CTP: Temp value is 57.833.
+DEBUG (0): CTP: Wind value is 9.833.
+DEBUG (0): CTP: Humidity value is 79.333.
+DEBUG (0): CTP Node received packet at 0:0:1.076431663 from node 6.
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
-DEBUG (15): 0:0:1.065431197	 AODV: RREQTimer.fired()
-DEBUG (15): 0:0:1.065431197	 AODV: sendRREQ() dest: 0
-DEBUG (15): 0:0:1.065431197	 AODV: sendRREQ()
-DEBUG (14): 0:0:1.068742335	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (14): 0:0:1.068742335	 AODV: add_route_table() seq:0 dest:15 next:15 hop:1
-DEBUG (14): 0:0:1.068742335	 AODV: add_route_table() seq:0 dest:10 next:15 hop:3
-DEBUG (10): 0:0:1.068742335	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (10): 0:0:1.068742335	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (15): 0:0:1.068910181	 AODV: SendRREQ.sendDone()
-DEBUG (14): 0:0:1.078126410	 AODV: RREQTimer.fired()
-DEBUG (14): 0:0:1.078126410	 AODV: sendRREQ() dest: 0
-DEBUG (14): 0:0:1.078126410	 AODV: sendRREQ()
-DEBUG (17): 0:0:1.087892335	 AODV: RREQTimer.fired()
-DEBUG (17): 0:0:1.087892335	 AODV: sendRREQ() dest: 0
-DEBUG (17): 0:0:1.087892335	 AODV: sendRREQ()
-DEBUG (15): 0:0:1.088426032	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (15): 0:0:1.088426032	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (14): 0:0:1.088593878	 AODV: SendRREQ.sendDone()
-DEBUG (18): 0:0:1.091478129	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (18): 0:0:1.091478129	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (11): 0:0:1.091478129	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (11): 0:0:1.091478129	 AODV: add_route_table() seq:0 dest:17 next:17 hop:1
-DEBUG (11): 0:0:1.091478129	 AODV: add_route_table() seq:0 dest:10 next:17 hop:5
-DEBUG (17): 0:0:1.091645975	 AODV: SendRREQ.sendDone()
-DEBUG (11): 0:0:1.100587047	 AODV: RREQTimer.fired()
-DEBUG (11): 0:0:1.100587047	 AODV: sendRREQ() dest: 0
-DEBUG (11): 0:0:1.100587047	 AODV: sendRREQ()
-DEBUG (17): 0:0:1.106919408	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (17): 0:0:1.106919408	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (11): 0:0:1.107087253	 AODV: SendRREQ.sendDone()
+DEBUG (15): 0:0:1.077683867	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (15): 0:0:1.077683867	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (14): 0:0:1.077851713	 AODV: SendRREQ.sendDone()
+DEBUG (11): 0:0:1.084962047	 AODV: RREQTimer.fired()
+DEBUG (11): 0:0:1.084962047	 AODV: sendRREQ() dest: 0
+DEBUG (11): 0:0:1.084962047	 AODV: sendRREQ()
+DEBUG (17): 0:0:1.088166374	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
+DEBUG (17): 0:0:1.088166374	 AODV: ReceiveRREQ.receive() already received one
+DEBUG (11): 0:0:1.088334220	 AODV: SendRREQ.sendDone()
+DEBUG (0): CTP: Temp value is 59.000.
+DEBUG (0): CTP: Wind value is 9.714.
+DEBUG (0): CTP: Humidity value is 79.714.
+DEBUG (0): CTP Node received packet at 0:0:1.194778573 from node 2.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (2): CTP Send completed.
+DEBUG (8): CTP Send completed.
+DEBUG (7): CTP Send completed.
+DEBUG (0): CTP: Temp value is 59.375.
+DEBUG (0): CTP: Wind value is 8.750.
+DEBUG (0): CTP: Humidity value is 79.750.
+DEBUG (0): CTP Node received packet at 0:0:1.261200104 from node 8.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (0): CTP: Temp value is 58.111.
+DEBUG (0): CTP: Wind value is 8.778.
+DEBUG (0): CTP: Humidity value is 79.444.
+DEBUG (0): CTP Node received packet at 0:0:1.274933067 from node 7.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (9): CTP Send completed.
+DEBUG (0): CTP: Temp value is 56.600.
+DEBUG (0): CTP: Wind value is 9.400.
+DEBUG (0): CTP: Humidity value is 79.200.
+DEBUG (0): CTP Node received packet at 0:0:1.444061431 from node 9.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
 DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 47.500
+DEBUG (22): 	 Flooding: message received, hum is 75.500
+DEBUG (22): 	 Flooding: message received, wind is 7.500
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (20): Flooding: send done
-DEBUG (24): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 67.500
-DEBUG (20): 	 Flooding: message received, hum is 80.500
-DEBUG (20): 	 Flooding: message received, wind is 12.500
-DEBUG (21): Flooding: send done
+DEBUG (21): 	 Flooding: message received, temp is 52.000
+DEBUG (21): 	 Flooding: message received, hum is 80.000
+DEBUG (21): 	 Flooding: message received, wind is 6.333
+DEBUG (20): 	 Flooding: send done
 DEBUG (25): 	 Flooding: message received, 
-DEBUG (22): Flooding: send done
+DEBUG (25): 	 Flooding: message received, temp is 57.500
+DEBUG (25): 	 Flooding: message received, hum is 76.500
+DEBUG (25): 	 Flooding: message received, wind is 11.000
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 57.500
+DEBUG (20): 	 Flooding: message received, hum is 76.500
+DEBUG (20): 	 Flooding: message received, wind is 11.000
+DEBUG (22): 	 Flooding: send done
+DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 59.500
+DEBUG (24): 	 Flooding: message received, hum is 81.500
+DEBUG (24): 	 Flooding: message received, wind is 9.000
+DEBUG (23): 	 Flooding: message received, 
+DEBUG (23): 	 Flooding: message received, temp is 59.500
+DEBUG (23): 	 Flooding: message received, hum is 81.500
+DEBUG (23): 	 Flooding: message received, wind is 9.000
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 59.000
+DEBUG (20): 	 Flooding: message received, hum is 76.000
+DEBUG (20): 	 Flooding: message received, wind is 12.000
+DEBUG (21): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
 DEBUG (29): 	 Flooding: message received, 
-DEBUG (25): Flooding: send done
+DEBUG (29): 	 Flooding: message received, temp is 44.500
+DEBUG (29): 	 Flooding: message received, hum is 81.500
+DEBUG (29): 	 Flooding: message received, wind is 8.500
+DEBUG (25): 	 Flooding: send done
 DEBUG (22): 	 Flooding: message received, 
-DEBUG (20): Flooding: send done
-DEBUG (24): Flooding: send done
+DEBUG (22): 	 Flooding: message received, temp is 48.667
+DEBUG (22): 	 Flooding: message received, hum is 78.333
+DEBUG (22): 	 Flooding: message received, wind is 11.333
+DEBUG (20): 	 Flooding: send done
 DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 57.000
+DEBUG (28): 	 Flooding: message received, hum is 77.500
+DEBUG (28): 	 Flooding: message received, wind is 1.500
 DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 57.000
+DEBUG (27): 	 Flooding: message received, hum is 77.500
+DEBUG (27): 	 Flooding: message received, wind is 1.500
 DEBUG (26): 	 Flooding: message received, 
-DEBUG (23): Flooding: send done
-DEBUG (29): Flooding: send done
-DEBUG (22): Flooding: send done
-DEBUG (27): Flooding: send done
-DEBUG (28): Flooding: send done
-DEBUG (26): Flooding: send done
+DEBUG (26): 	 Flooding: message received, temp is 57.000
+DEBUG (26): 	 Flooding: message received, hum is 77.500
+DEBUG (26): 	 Flooding: message received, wind is 1.500
+DEBUG (23): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
+DEBUG (22): 	 Flooding: send done
+DEBUG (27): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (26): 	 Flooding: send done
 DEBUG (10): 0:0:2.000001010	 APPS: MilliTimer.fired()
 DEBUG (10): 0:0:2.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
 DEBUG (10): 0:0:2.000001010	 AODV: AMSend.send() there is a route to 19
-DEBUG (12): 0:0:2.009018901	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (12): 0:0:2.009018901	 AODV: SubReceive.receive() deliver to next hop:13
-DEBUG (12): 0:0:2.009018901	 AODV: forwardMSG() try to forward to 19 
-DEBUG (12): 0:0:2.009018901	 AODV: forwardMSG() send MSG to: 19
-DEBUG (10): 0:0:2.009186747	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (12): 0:0:2.007172599	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (12): 0:0:2.007172599	 AODV: SubReceive.receive() deliver to next hop:13
+DEBUG (12): 0:0:2.007172599	 AODV: forwardMSG() try to forward to 19 
+DEBUG (12): 0:0:2.007172599	 AODV: forwardMSG() send MSG to: 19
+DEBUG (10): 0:0:2.007340444	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
 DEBUG (10): APPS: AODV sendDone!!
-DEBUG (19): 0:0:2.018876022	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (19): 0:0:2.018876022	 AODV: SubReceive.receive() deliver to upper layer
-DEBUG (19): 0:0:2.018876022	 Received!!!!
-DEBUG (12): 0:0:2.019043867	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (19): 0:0:2.012696248	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (19): 0:0:2.012696248	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (19): 0:0:2.012696248	 Received!!!!
+DEBUG (12): 0:0:2.012864094	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
 DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 46.750
+DEBUG (22): 	 Flooding: message received, hum is 80.500
+DEBUG (22): 	 Flooding: message received, wind is 9.000
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (20): Flooding: send done
-DEBUG (25): 	 Flooding: message received, 
+DEBUG (21): 	 Flooding: message received, temp is 49.250
+DEBUG (21): 	 Flooding: message received, hum is 81.750
+DEBUG (21): 	 Flooding: message received, wind is 5.250
+DEBUG (20): 	 Flooding: send done
 DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 65.000
+DEBUG (24): 	 Flooding: message received, hum is 78.000
+DEBUG (24): 	 Flooding: message received, wind is 6.000
 DEBUG (23): 	 Flooding: message received, 
-DEBUG (22): Flooding: send done
-DEBUG (21): Flooding: send done
+DEBUG (23): 	 Flooding: message received, temp is 65.000
+DEBUG (23): 	 Flooding: message received, hum is 78.000
+DEBUG (23): 	 Flooding: message received, wind is 6.000
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 63.250
+DEBUG (20): 	 Flooding: message received, hum is 74.750
+DEBUG (20): 	 Flooding: message received, wind is 9.000
+DEBUG (21): 	 Flooding: send done
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 64.000
+DEBUG (25): 	 Flooding: message received, hum is 78.333
+DEBUG (25): 	 Flooding: message received, wind is 11.333
+DEBUG (22): 	 Flooding: send done
+DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 45.400
+DEBUG (22): 	 Flooding: message received, hum is 80.200
+DEBUG (22): 	 Flooding: message received, wind is 9.400
+DEBUG (20): 	 Flooding: send done
 DEBUG (29): 	 Flooding: message received, 
-DEBUG (25): Flooding: send done
+DEBUG (29): 	 Flooding: message received, temp is 55.333
+DEBUG (29): 	 Flooding: message received, hum is 83.333
+DEBUG (29): 	 Flooding: message received, wind is 9.333
 DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 54.333
+DEBUG (28): 	 Flooding: message received, hum is 76.333
+DEBUG (28): 	 Flooding: message received, wind is 7.333
 DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 54.333
+DEBUG (27): 	 Flooding: message received, hum is 76.333
+DEBUG (27): 	 Flooding: message received, wind is 7.333
 DEBUG (26): 	 Flooding: message received, 
-DEBUG (23): Flooding: send done
-DEBUG (24): Flooding: send done
-DEBUG (28): Flooding: send done
-DEBUG (29): Flooding: send done
-DEBUG (26): Flooding: send done
-DEBUG (27): Flooding: send done
+DEBUG (26): 	 Flooding: message received, temp is 54.333
+DEBUG (26): 	 Flooding: message received, hum is 76.333
+DEBUG (26): 	 Flooding: message received, wind is 7.333
+DEBUG (25): 	 Flooding: send done
+DEBUG (23): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 58.250
+DEBUG (25): 	 Flooding: message received, hum is 80.000
+DEBUG (25): 	 Flooding: message received, wind is 10.750
+DEBUG (22): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
+DEBUG (26): 	 Flooding: send done
+DEBUG (29): 	 Flooding: message received, 
+DEBUG (29): 	 Flooding: message received, temp is 59.250
+DEBUG (29): 	 Flooding: message received, hum is 83.000
+DEBUG (29): 	 Flooding: message received, wind is 9.250
+DEBUG (25): 	 Flooding: send done
+DEBUG (27): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
 DEBUG (10): 0:0:3.000001010	 APPS: MilliTimer.fired()
 DEBUG (10): 0:0:3.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
 DEBUG (10): 0:0:3.000001010	 AODV: AMSend.send() there is a route to 19
-DEBUG (12): 0:0:3.009552956	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (12): 0:0:3.009552956	 AODV: SubReceive.receive() deliver to next hop:13
-DEBUG (12): 0:0:3.009552956	 AODV: forwardMSG() try to forward to 19 
-DEBUG (12): 0:0:3.009552956	 AODV: forwardMSG() send MSG to: 19
-DEBUG (10): 0:0:3.009720802	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (12): 0:0:3.006485957	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (12): 0:0:3.006485957	 AODV: SubReceive.receive() deliver to next hop:13
+DEBUG (12): 0:0:3.006485957	 AODV: forwardMSG() try to forward to 19 
+DEBUG (12): 0:0:3.006485957	 AODV: forwardMSG() send MSG to: 19
+DEBUG (10): 0:0:3.006653803	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
 DEBUG (10): APPS: AODV sendDone!!
-DEBUG (19): 0:0:3.019776285	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (19): 0:0:3.019776285	 AODV: SubReceive.receive() deliver to upper layer
-DEBUG (12): 0:0:3.019944131	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (19): 0:0:3.011155119	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (19): 0:0:3.011155119	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (12): 0:0:3.011322965	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
 DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 45.833
+DEBUG (22): 	 Flooding: message received, hum is 79.833
+DEBUG (22): 	 Flooding: message received, wind is 10.333
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (20): Flooding: send done
+DEBUG (21): 	 Flooding: message received, temp is 49.000
+DEBUG (21): 	 Flooding: message received, hum is 81.000
+DEBUG (21): 	 Flooding: message received, wind is 7.200
+DEBUG (20): 	 Flooding: send done
 DEBUG (25): 	 Flooding: message received, 
-DEBUG (22): Flooding: send done
+DEBUG (25): 	 Flooding: message received, temp is 58.600
+DEBUG (25): 	 Flooding: message received, hum is 79.800
+DEBUG (25): 	 Flooding: message received, wind is 11.800
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 62.600
+DEBUG (20): 	 Flooding: message received, hum is 75.600
+DEBUG (20): 	 Flooding: message received, wind is 10.400
+DEBUG (22): 	 Flooding: send done
 DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 59.500
+DEBUG (24): 	 Flooding: message received, hum is 80.500
+DEBUG (24): 	 Flooding: message received, wind is 5.750
 DEBUG (23): 	 Flooding: message received, 
-DEBUG (21): Flooding: send done
+DEBUG (23): 	 Flooding: message received, temp is 59.500
+DEBUG (23): 	 Flooding: message received, hum is 80.500
+DEBUG (23): 	 Flooding: message received, wind is 5.750
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 59.333
+DEBUG (20): 	 Flooding: message received, hum is 77.667
+DEBUG (20): 	 Flooding: message received, wind is 9.500
+DEBUG (21): 	 Flooding: send done
+DEBUG (20): 	 Flooding: send done
 DEBUG (29): 	 Flooding: message received, 
-DEBUG (25): Flooding: send done
+DEBUG (29): 	 Flooding: message received, temp is 56.600
+DEBUG (29): 	 Flooding: message received, hum is 82.600
+DEBUG (29): 	 Flooding: message received, wind is 7.600
+DEBUG (25): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
 DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 58.250
+DEBUG (28): 	 Flooding: message received, hum is 78.000
+DEBUG (28): 	 Flooding: message received, wind is 5.500
 DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 58.250
+DEBUG (27): 	 Flooding: message received, hum is 78.000
+DEBUG (27): 	 Flooding: message received, wind is 5.500
 DEBUG (26): 	 Flooding: message received, 
-DEBUG (23): Flooding: send done
-DEBUG (24): Flooding: send done
-DEBUG (26): Flooding: send done
-DEBUG (28): Flooding: send done
-DEBUG (29): Flooding: send done
-DEBUG (27): Flooding: send done
+DEBUG (26): 	 Flooding: message received, temp is 58.250
+DEBUG (26): 	 Flooding: message received, hum is 78.000
+DEBUG (26): 	 Flooding: message received, wind is 5.500
+DEBUG (23): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (26): 	 Flooding: send done
+DEBUG (27): 	 Flooding: send done
 DEBUG (10): 0:0:4.000001010	 APPS: MilliTimer.fired()
 DEBUG (10): 0:0:4.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
 DEBUG (10): 0:0:4.000001010	 AODV: AMSend.send() there is a route to 19
-DEBUG (12): 0:0:4.006592768	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (12): 0:0:4.006592768	 AODV: SubReceive.receive() deliver to next hop:13
-DEBUG (12): 0:0:4.006592768	 AODV: forwardMSG() try to forward to 19 
-DEBUG (12): 0:0:4.006592768	 AODV: forwardMSG() send MSG to: 19
-DEBUG (10): 0:0:4.006760614	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (12): 0:0:4.008728986	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (12): 0:0:4.008728986	 AODV: SubReceive.receive() deliver to next hop:13
+DEBUG (12): 0:0:4.008728986	 AODV: forwardMSG() try to forward to 19 
+DEBUG (12): 0:0:4.008728986	 AODV: forwardMSG() send MSG to: 19
+DEBUG (10): 0:0:4.008896832	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
 DEBUG (10): APPS: AODV sendDone!!
-DEBUG (12): 0:0:4.013077716	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:0
-DEBUG (12): 0:0:4.013077716	 AODV: SubSend.sendDone() msg was not acked, resend
-DEBUG (19): 0:0:4.022232936	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (19): 0:0:4.022232936	 AODV: SubReceive.receive() deliver to upper layer
-DEBUG (12): 0:0:4.022400781	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (19): 0:0:4.018876022	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (19): 0:0:4.018876022	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (12): 0:0:4.019043867	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
 DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 49.000
+DEBUG (22): 	 Flooding: message received, hum is 80.571
+DEBUG (22): 	 Flooding: message received, wind is 9.857
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (20): Flooding: send done
-DEBUG (24): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 69.667
-DEBUG (20): 	 Flooding: message received, hum is 78.333
-DEBUG (20): 	 Flooding: message received, wind is 9.667
-DEBUG (21): Flooding: send done
+DEBUG (21): 	 Flooding: message received, temp is 52.167
+DEBUG (21): 	 Flooding: message received, hum is 81.667
+DEBUG (21): 	 Flooding: message received, wind is 7.167
+DEBUG (20): 	 Flooding: send done
 DEBUG (25): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 69.750
-DEBUG (20): 	 Flooding: message received, hum is 79.500
-DEBUG (20): 	 Flooding: message received, wind is 7.250
-DEBUG (22): Flooding: send done
-DEBUG (24): Flooding: send done
-DEBUG (20): Flooding: send done
-DEBUG (29): 	 Flooding: message received, 
-DEBUG (25): Flooding: send done
+DEBUG (25): 	 Flooding: message received, temp is 61.167
+DEBUG (25): 	 Flooding: message received, hum is 78.333
+DEBUG (25): 	 Flooding: message received, wind is 12.833
+DEBUG (22): 	 Flooding: send done
+DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 62.600
+DEBUG (24): 	 Flooding: message received, hum is 80.200
+DEBUG (24): 	 Flooding: message received, wind is 8.000
+DEBUG (23): 	 Flooding: message received, 
+DEBUG (23): 	 Flooding: message received, temp is 62.600
+DEBUG (23): 	 Flooding: message received, hum is 80.200
+DEBUG (23): 	 Flooding: message received, wind is 8.000
+DEBUG (21): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
 DEBUG (28): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 56.200
+DEBUG (28): 	 Flooding: message received, hum is 78.200
+DEBUG (28): 	 Flooding: message received, wind is 7.600
 DEBUG (26): 	 Flooding: message received, 
-DEBUG (23): Flooding: send done
-DEBUG (26): Flooding: send done
-DEBUG (29): Flooding: send done
-DEBUG (27): Flooding: send done
-DEBUG (28): Flooding: send done
+DEBUG (26): 	 Flooding: message received, temp is 56.200
+DEBUG (26): 	 Flooding: message received, hum is 78.200
+DEBUG (26): 	 Flooding: message received, wind is 7.600
+DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 56.200
+DEBUG (27): 	 Flooding: message received, hum is 78.200
+DEBUG (27): 	 Flooding: message received, wind is 7.600
+DEBUG (23): 	 Flooding: send done
+DEBUG (27): 	 Flooding: send done
+DEBUG (29): 	 Flooding: message received, 
+DEBUG (29): 	 Flooding: message received, temp is 59.667
+DEBUG (29): 	 Flooding: message received, hum is 82.667
+DEBUG (29): 	 Flooding: message received, wind is 9.333
+DEBUG (25): 	 Flooding: send done
+DEBUG (26): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
 DEBUG (10): 0:0:5.000001010	 APPS: MilliTimer.fired()
 DEBUG (10): 0:0:5.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
 DEBUG (10): 0:0:5.000001010	 AODV: AMSend.send() there is a route to 19
-DEBUG (12): 0:0:5.004258187	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (12): 0:0:5.004258187	 AODV: SubReceive.receive() deliver to next hop:13
-DEBUG (12): 0:0:5.004258187	 AODV: forwardMSG() try to forward to 19 
-DEBUG (12): 0:0:5.004258187	 AODV: forwardMSG() send MSG to: 19
-DEBUG (10): 0:0:5.004426033	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (12): 0:0:5.009491921	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (12): 0:0:5.009491921	 AODV: SubReceive.receive() deliver to next hop:13
+DEBUG (12): 0:0:5.009491921	 AODV: forwardMSG() try to forward to 19 
+DEBUG (12): 0:0:5.009491921	 AODV: forwardMSG() send MSG to: 19
+DEBUG (10): 0:0:5.009659767	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
 DEBUG (10): APPS: AODV sendDone!!
-DEBUG (19): 0:0:5.009461404	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (19): 0:0:5.009461404	 AODV: SubReceive.receive() deliver to upper layer
-DEBUG (12): 0:0:5.009629249	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (19): 0:0:5.020661289	 AODV: SubReceive.receive() dest: 19 src:10
+DEBUG (19): 0:0:5.020661289	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (12): 0:0:5.020829135	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (9): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (9): CTP Send completed.
+DEBUG (0): CTP: Temp value is 58.455.
+DEBUG (0): CTP: Wind value is 10.000.
+DEBUG (0): CTP: Humidity value is 79.909.
+DEBUG (0): CTP Node received packet at 0:0:5.425309052 from node 9.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
 DEBUG (4): TestNetworkC$sendMessage: Transmission succeeded.
 DEBUG (4): CTP Send completed.
-DEBUG (0): Temp value is 55.818.
-DEBUG (0): Wind value is 10.000.
-DEBUG (0): Humidity value is 79.182.
-DEBUG (0): CTP Node received packet at 0:0:5.697372811 from node 4.
+DEBUG (0): CTP: Temp value is 57.250.
+DEBUG (0): CTP: Wind value is 10.000.
+DEBUG (0): CTP: Humidity value is 79.333.
+DEBUG (0): CTP Node received packet at 0:0:5.692963047 from node 4.
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
 DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 50.750
+DEBUG (22): 	 Flooding: message received, hum is 80.500
+DEBUG (22): 	 Flooding: message received, wind is 11.000
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (20): Flooding: send done
+DEBUG (21): 	 Flooding: message received, temp is 53.714
+DEBUG (21): 	 Flooding: message received, hum is 81.429
+DEBUG (21): 	 Flooding: message received, wind is 8.857
+DEBUG (20): 	 Flooding: send done
 DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 59.857
+DEBUG (25): 	 Flooding: message received, hum is 77.857
+DEBUG (25): 	 Flooding: message received, wind is 11.571
 DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 66.400
-DEBUG (20): 	 Flooding: message received, hum is 81.200
-DEBUG (20): 	 Flooding: message received, wind is 7.000
-DEBUG (22): Flooding: send done
-DEBUG (21): 	 Flooding: message received, 
-DEBUG (20): Flooding: send done
-DEBUG (24): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, 
-DEBUG (21): Flooding: send done
+DEBUG (20): 	 Flooding: message received, temp is 58.286
+DEBUG (20): 	 Flooding: message received, hum is 77.286
+DEBUG (20): 	 Flooding: message received, wind is 8.714
+DEBUG (22): 	 Flooding: send done
 DEBUG (29): 	 Flooding: message received, 
-DEBUG (25): Flooding: send done
-DEBUG (24): Flooding: send done
-DEBUG (29): Flooding: send done
+DEBUG (29): 	 Flooding: message received, temp is 61.714
+DEBUG (29): 	 Flooding: message received, hum is 81.714
+DEBUG (29): 	 Flooding: message received, wind is 9.286
+DEBUG (25): 	 Flooding: send done
+DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 63.833
+DEBUG (24): 	 Flooding: message received, hum is 79.333
+DEBUG (24): 	 Flooding: message received, wind is 9.833
+DEBUG (23): 	 Flooding: message received, 
+DEBUG (23): 	 Flooding: message received, temp is 63.833
+DEBUG (23): 	 Flooding: message received, hum is 79.333
+DEBUG (23): 	 Flooding: message received, wind is 9.833
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 59.750
+DEBUG (20): 	 Flooding: message received, hum is 77.000
+DEBUG (20): 	 Flooding: message received, wind is 10.000
+DEBUG (21): 	 Flooding: send done
+DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 52.111
+DEBUG (22): 	 Flooding: message received, hum is 80.000
+DEBUG (22): 	 Flooding: message received, wind is 10.667
+DEBUG (20): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
 DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 57.167
+DEBUG (28): 	 Flooding: message received, hum is 78.167
+DEBUG (28): 	 Flooding: message received, wind is 9.500
 DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 57.167
+DEBUG (27): 	 Flooding: message received, hum is 78.167
+DEBUG (27): 	 Flooding: message received, wind is 9.500
 DEBUG (26): 	 Flooding: message received, 
-DEBUG (23): Flooding: send done
-DEBUG (27): Flooding: send done
-DEBUG (28): Flooding: send done
-DEBUG (26): Flooding: send done
+DEBUG (26): 	 Flooding: message received, temp is 57.167
+DEBUG (26): 	 Flooding: message received, hum is 78.167
+DEBUG (26): 	 Flooding: message received, wind is 9.500
+DEBUG (23): 	 Flooding: send done
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 59.875
+DEBUG (25): 	 Flooding: message received, hum is 77.125
+DEBUG (25): 	 Flooding: message received, wind is 11.500
+DEBUG (22): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (27): 	 Flooding: send done
+DEBUG (26): 	 Flooding: send done
+DEBUG (29): 	 Flooding: message received, 
+DEBUG (29): 	 Flooding: message received, temp is 59.500
+DEBUG (29): 	 Flooding: message received, hum is 81.000
+DEBUG (29): 	 Flooding: message received, wind is 8.375
+DEBUG (25): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
 Completed simulation.

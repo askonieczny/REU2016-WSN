@@ -201,11 +201,6 @@ implementation {
     }
     else if(prot == 3) { //if protocol is Simple flooding
       flood_msg_t* floodMsg = (flood_msg_t*)call Packet.getPayload(&floodPkt, sizeof(flood_msg_t));
-      /*
-      if(floodMsg == NULL) {
-        return;
-      }
-      */
       floodMsg -> temp = rand() % 40 + 40;
       floodMsg -> hum = rand() % 20 + 70;
       floodMsg -> wind = rand() % 20;
@@ -235,7 +230,7 @@ implementation {
 
   event void AMFloodSend.sendDone(message_t* bufPtr, error_t error) {
     if(prot == 3) {
-      dbg("TestNetworkC", "Flooding: send done\n");
+      dbg("TestNetworkC", "\t Flooding: send done\n");
     }
   }
 
@@ -308,7 +303,7 @@ implementation {
       //add ID to source array, send to next nodes if not already received
       if(match == FALSE) {
         dbg("TestNetworkC", "\t Flooding: message received, \n");
-        if(TOS_NODE_ID == sfSink){
+        //if(TOS_NODE_ID == sfSink){
 
         temp_f += f -> temp;
         hum_f += f -> hum;
@@ -317,7 +312,7 @@ implementation {
         dbg("TestNetworkC", "\t Flooding: message received, temp is %.3f\n", temp_f/num_f);
         dbg("TestNetworkC", "\t Flooding: message received, hum is %.3f\n", hum_f/num_f);
         dbg("TestNetworkC", "\t Flooding: message received, wind is %.3f\n", wind_f/num_f);
-        }
+        //}
         j = 0;
         while(TRUE && j < 10) {
           if(msgSources[j] == 0) {
@@ -355,15 +350,15 @@ implementation {
 
   event message_t* ReceiveCTP.receive(message_t* msg, void* payload, uint8_t len) {
     if(prot == 1) { //if protocol is CTP
-    if(TOS_NODE_ID == 0){
+    if(TOS_NODE_ID == 0){ //if current node is base station
     TestNetworkMsg* rcm = (TestNetworkMsg*) payload;
     temp += rcm -> temp;
     hum  += rcm -> hum;
     wind += rcm -> wind;
     num++;
-    dbg("TestNetworkC", "Temp value is %.3f.\n", temp/num);
-    dbg("TestNetworkC", "Wind value is %.3f.\n", wind/num);
-    dbg("TestNetworkC", "Humidity value is %.3f.\n", hum/num);
+    dbg("TestNetworkC", "CTP: Temp value is %.3f.\n", temp/num);
+    dbg("TestNetworkC", "CTP: Wind value is %.3f.\n", wind/num);
+    dbg("TestNetworkC", "CTP: Humidity value is %.3f.\n", hum/num);
     }
     dbg("TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
     call Leds.led1Toggle();
