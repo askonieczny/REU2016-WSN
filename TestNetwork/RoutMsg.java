@@ -7,12 +7,12 @@
 public class RoutMsg extends net.tinyos.message.Message {
 
     /** The default size of this message type in bytes. */
-    public static final int DEFAULT_MESSAGE_SIZE = 6;
+    public static final int DEFAULT_MESSAGE_SIZE = 8;
 
     /** The Active Message type associated with this message. */
     public static final int AM_TYPE = 1;
 
-    /** Create a new RoutMsg of size 6. */
+    /** Create a new RoutMsg of size 8. */
     public RoutMsg() {
         super(DEFAULT_MESSAGE_SIZE);
         amTypeSet(AM_TYPE);
@@ -89,6 +89,9 @@ public class RoutMsg extends net.tinyos.message.Message {
       } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
       try {
         s += "  [overlap=0x"+Long.toHexString(get_overlap())+"]\n";
+      } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
+      try {
+        s += "  [numNodes=0x"+Long.toHexString(get_numNodes())+"]\n";
       } catch (ArrayIndexOutOfBoundsException aioobe) { /* Skip field */ }
       return s;
     }
@@ -218,6 +221,69 @@ public class RoutMsg extends net.tinyos.message.Message {
      * Return the size, in bits, of the field 'overlap'
      */
     public static int sizeBits_overlap() {
+        return 16;
+    }
+
+    /////////////////////////////////////////////////////////
+    // Accessor methods for field: numNodes
+    //   Field type: short, signed
+    //   Offset (bits): 48
+    //   Size (bits): 16
+    /////////////////////////////////////////////////////////
+
+    /**
+     * Return whether the field 'numNodes' is signed (true).
+     */
+    public static boolean isSigned_numNodes() {
+        return true;
+    }
+
+    /**
+     * Return whether the field 'numNodes' is an array (false).
+     */
+    public static boolean isArray_numNodes() {
+        return false;
+    }
+
+    /**
+     * Return the offset (in bytes) of the field 'numNodes'
+     */
+    public static int offset_numNodes() {
+        return (48 / 8);
+    }
+
+    /**
+     * Return the offset (in bits) of the field 'numNodes'
+     */
+    public static int offsetBits_numNodes() {
+        return 48;
+    }
+
+    /**
+     * Return the value (as a short) of the field 'numNodes'
+     */
+    public short get_numNodes() {
+        return (short)getSIntBEElement(offsetBits_numNodes(), 16);
+    }
+
+    /**
+     * Set the value of the field 'numNodes'
+     */
+    public void set_numNodes(short value) {
+        setSIntBEElement(offsetBits_numNodes(), 16, value);
+    }
+
+    /**
+     * Return the size, in bytes, of the field 'numNodes'
+     */
+    public static int size_numNodes() {
+        return (16 / 8);
+    }
+
+    /**
+     * Return the size, in bits, of the field 'numNodes'
+     */
+    public static int sizeBits_numNodes() {
         return 16;
     }
 

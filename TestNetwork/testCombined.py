@@ -131,6 +131,7 @@ for i in range(numNodes):
         overlap = 3
 
   msg.set_overlap(overlap)
+  msg.set_numNodes(numNodes)
   pkt = t.newPacket()
   pkt.setType(msg.get_amType())
   pkt.setData(msg.data)

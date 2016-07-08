@@ -8,7 +8,9 @@ enum {
  CL_TEST = 0xee,
  TEST_NETWORK_QUEUE_SIZE = 8,
  AM_ROUT_MSG = 1,
- AM_FLOOD_MSG = 2
+ AM_FLOOD_MSG = 2,
+ AM_OVERLAP_PING_REQ = 7,
+ AM_OVERLAP_PING_REP = 8
 };
 
 #endif

@@ -22,6 +22,8 @@ module TestNetworkC {
   uses interface Receive as ReceiveCTP;
   uses interface Receive as ReceiveFlood;
   uses interface Receive as ReceiveRout;
+  uses interface Receive as ReceivePingReq; //used for overlap pings
+  uses interface Receive as ReceivePingRep; //used for overlap pings
   uses interface SplitControl as SplitControlAODV;
   uses interface SplitControl as RadioControl;
   uses interface SplitControl as SerialControl;
@@ -38,6 +40,8 @@ module TestNetworkC {
   uses interface AMSend as AMAODVSend;
   uses interface AMSend as AMFloodSend;
   uses interface AMSend as UARTSend;
+  uses interface AMSend as PingReqSend;
+  uses interface AMSend as PingRepSend;
   uses interface CollectionPacket;
   uses interface CtpInfo;
   uses interface CtpCongestion;
@@ -48,6 +52,8 @@ module TestNetworkC {
   uses interface AMPacket;
   uses interface Packet;
   uses interface Packet as RadioPacket;
+  uses interface Packet as PingReqPacket;
+  uses interface Packet as PingRepPacket;
 }
 
 
@@ -59,6 +65,7 @@ implementation {
   */
   nx_int32_t prot; //protocol not initially specified
   nx_int16_t overlap; //tells whether the node is in overlapping position or not
+  nx_int16_t numNodes; //global variable that will also be injected by TOSSIM
 
     //CTP variables
     task void uartEchoTask();
@@ -98,12 +105,18 @@ implementation {
   float wind_f = 0;
   float hum_f =0;
   float num_f = 0;
-  uint16_t tmpSources[10];
-  uint16_t msgSources[10];
+  uint16_t tmpSources[30]; //30 must be changed if topo size is changed
+  uint16_t msgSources[30];
   message_t floodPkt;
   bool match;
   uint16_t i;
   uint16_t j;
+  uint16_t numFloodNodes = 10; //must be changed according to topo
+
+  //Overlap protocol variables
+  message_t ping_req_pkt;
+  message_t ping_rep_pkt;
+  int16_t overlappingNodes[30]; //30 must be changed if topo size is changed
 
   event void ReadSensor.readDone(error_t err, uint16_t val) { }
 
@@ -206,7 +219,7 @@ implementation {
       floodMsg -> hum = rand() % 20 + 70;
       floodMsg -> wind = rand() % 20;
       i = 0;
-      while(i < 10) {
+      while(i < numFloodNodes) {
         floodMsg -> sources[i] = 0;
         i++;
       }
@@ -235,6 +248,14 @@ implementation {
     }
   }
 
+  event void PingReqSend.sendDone(message_t* bufPtr, error_t error) {
+    dbg("TestNetworkC", "Overlap: Send of overlap ping request done\n");
+  }
+
+  event void PingRepSend.sendDone(message_t* bufPtr, error_t error) {
+    dbg("TestNetworkC", "Overlap: Send of overlap ping reply done\n");
+  }
+
   event void DisseminationPeriod.changed() {
     const uint32_t* newVal = call DisseminationPeriod.get();
     call Timer.stop();
@@ -243,9 +264,11 @@ implementation {
 
   //This event receives routing protocol specification (CTP = 1, AODV = 2, Simple flooding = 3)
   event message_t* ReceiveRout.receive(message_t* msg, void* payload, uint8_t len) {
+    overlap_ping_req_t* pingReq;
     r = (rout_msg_t*)payload;
     prot = r -> routing;
     overlap = r -> overlap;
+    numNodes = r -> numNodes;
     dbg("TestNetworkC", "Routing protocol for this node (%d) is %d\n", TOS_NODE_ID, prot);
     dbg("TestNetworkC", "Overlap status for this node (%d) is %d\n", TOS_NODE_ID, overlap);
 
@@ -276,6 +299,65 @@ implementation {
         call MilliTimer.startPeriodic(1000);
       }
     }
+
+    if(overlap != 0) {
+      i = 0;
+      while(i < numNodes) { 
+        overlappingNodes[i] = -1; //initialize all at -1 (no nodes)
+        i++;
+      }
+      pingReq = (overlap_ping_req_t*)call PingReqPacket.getPayload(&ping_req_pkt, sizeof(overlap_ping_req_t));
+
+      pingReq -> prot = prot;
+      pingReq -> source = TOS_NODE_ID;
+
+      call PingReqSend.send(AM_BROADCAST_ADDR, &ping_req_pkt, sizeof(overlap_ping_req_t));
+    }
+    return msg;
+  }
+
+  //Overlap ping receive events
+  event message_t* ReceivePingReq.receive(message_t* msg, void* payload, uint8_t len) {
+    overlap_ping_req_t* oReq;
+    overlap_ping_rep_t* pingRep;
+    uint16_t incomingProt;
+    uint16_t replyToNode;
+
+    if(!(overlap==0)) { //if the node overlaps at all
+      oReq = (overlap_ping_req_t*)payload;
+      incomingProt = oReq -> prot;
+      if(incomingProt != prot) { //if not dealing with same protocol as current node
+        replyToNode = oReq -> source;
+
+        //send a ping reply to original node to give OK for communication
+        pingRep = (overlap_ping_rep_t*)call PingRepPacket.getPayload(&ping_rep_pkt, sizeof(overlap_ping_rep_t));
+        pingRep -> dest = TOS_NODE_ID;
+
+        call PingRepSend.send(replyToNode, &ping_rep_pkt, sizeof(overlap_ping_rep_t));
+      }
+    }
+
+    return msg;
+  }
+
+  event message_t* ReceivePingRep.receive(message_t* msg, void* payload, uint8_t len) {
+    overlap_ping_rep_t* oRep;
+    uint16_t desiredNode;
+
+    oRep = (overlap_ping_rep_t*)payload;
+    desiredNode = oRep -> dest;
+
+    //add desiredNode to array of overlappingNodes
+    i = 0;
+    while(TRUE && i < numNodes) {
+      if(overlappingNodes[i] == -1) {
+        overlappingNodes[i] = desiredNode;
+        break;
+      }
+      i++;
+    }
+    dbg("TestNetworkC", "\tPingRep received from node %d, added to overlapping array\n", desiredNode);
+
     return msg;
   }
 
@@ -287,7 +369,7 @@ implementation {
     if(prot == 3) { //if protocol is Flooding
       f = (flood_msg_t*)payload;
       i = 0;
-      while(i < 10) {
+      while(i < numFloodNodes) {
         msgSources[i] = f -> sources[i];
         i++;
       }
@@ -295,7 +377,7 @@ implementation {
       //see if node should ignore this message (if already broadcast)
       i = 0;
       match = FALSE;
-      while (i < 10) {
+      while (i < numFloodNodes) {
         if(msgSources[i] == TOS_NODE_ID) {
           match = TRUE;
           break;
@@ -306,18 +388,17 @@ implementation {
       //add ID to source array, send to next nodes if not already received
       if(match == FALSE) {
         dbg("TestNetworkC", "\t Flooding: message received, \n");
-        //if(TOS_NODE_ID == sfSink){
 
         temp_f += f -> temp;
         hum_f += f -> hum;
         wind_f += f -> wind;
-        num_f ++;
+        num_f++;
         dbg("TestNetworkC", "\t Flooding: message received, temp is %.3f\n", temp_f/num_f);
         dbg("TestNetworkC", "\t Flooding: message received, hum is %.3f\n", hum_f/num_f);
         dbg("TestNetworkC", "\t Flooding: message received, wind is %.3f\n", wind_f/num_f);
-        //}
+
         j = 0;
-        while(TRUE && j < 10) {
+        while(TRUE && j < numFloodNodes) {
           if(msgSources[j] == 0) {
             msgSources[j] = TOS_NODE_ID;
             break;
@@ -327,11 +408,11 @@ implementation {
 
         //send new message
         floodMsgNew = (flood_msg_t*)call Packet.getPayload(&floodPkt, sizeof(flood_msg_t));
-        floodMsgNew -> temp = rand() % 40 + 40;
-        floodMsgNew -> hum = rand() % 20 +70;
-        floodMsgNew -> wind = rand() % 20;
+        floodMsgNew -> temp = f -> temp;
+        floodMsgNew -> hum = f -> hum;
+        floodMsgNew -> wind = f -> wind;
         i = 0;
-        while(i < 10) {
+        while(i < numFloodNodes) {
           floodMsgNew -> sources[i] = msgSources[i];
           i++;
         }

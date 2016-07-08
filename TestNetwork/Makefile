@@ -16,8 +16,8 @@ LIBMOTE = $(TOSDIR)/../support/sdk/c/libmote.a
 #BUILD_EXTRA_DEPS += tn-injector #tn-listener
 LISTEN_OBJS = collection_msg.o test_network_msg.o tn-listener.o $(LIBMOTE)
 INJECT_OBJS = set_rate_msg.o tn-injector.o collection_debug_msg.o $(LIBMOTE)
-BUILD_EXTRA_DEPS = RoutMsg.py RoutMsg.class FloodMsg.py FloodMsg.class
-CLEAN_EXTRA = RoutMsg.py RoutMsg.class RoutMsg.java FloodMsg.py FloodMsg.class FloodMsg.java
+BUILD_EXTRA_DEPS = RoutMsg.py RoutMsg.class FloodMsg.py FloodMsg.class OverlapPingReq.py OverlapPingReq.class OverlapPingRep.py OverlapPingRep.class
+CLEAN_EXTRA = RoutMsg.py RoutMsg.class RoutMsg.java FloodMsg.py FloodMsg.class FloodMsg.java OverlapPingReq.py OverlapPingReq.class OverlapPingReq.java OverlapPingRep.py OverlapPingRep.class OverlapPingRep.java
 
 # arguments: output filename stem, input filename, struct name
 define mig_templ
@@ -79,6 +79,24 @@ FloodMsg.class: FloodMsg.java
 
 FloodMsg.java: TestNetwork.h
 	mig java -target=$(PLATFORM) $(CFLAGS) -java-classname=FloodMsg TestNetwork.h flood_msg -o $@
+
+OverlapPingReq.py: TestNetwork.h
+	mig python -target=$(PLATFORM) $(CFLAGS) -python-classname=OverlapPingReq TestNetwork.h overlap_ping_req -o $@
+
+OverlapPingReq.class: OverlapPingReq.java
+	javac OverlapPingReq.java
+
+OverlapPingReq.java: TestNetwork.h
+	mig java -target=$(PLATFORM) $(CFLAGS) -java-classname=OverlapPingReq TestNetwork.h overlap_ping_req -o $@
+
+OverlapPingRep.py: TestNetwork.h
+	mig python -target=$(PLATFORM) $(CFLAGS) -python-classname=OverlapPingRep TestNetwork.h overlap_ping_rep -o $@
+
+OverlapPingRep.class: OverlapPingRep.java
+	javac OverlapPingRep.java
+
+OverlapPingRep.java: TestNetwork.h
+	mig java -target=$(PLATFORM) $(CFLAGS) -java-classname=OverlapPingRep TestNetwork.h overlap_ping_rep -o $@
 
 include $(MAKERULES)
 

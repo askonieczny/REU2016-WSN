@@ -26,7 +26,11 @@ implementation {
   components new SerialAMSenderC(CL_TEST);
   components new AMReceiverC(AM_ROUT_MSG) as RoutReceiver;
   components new AMReceiverC(AM_FLOOD_MSG) as FloodReceiver;
-  components new AMSenderC(AM_FLOOD_MSG);
+  components new AMReceiverC(AM_OVERLAP_PING_REQ) as PingReqReceiver;
+  components new AMReceiverC(AM_OVERLAP_PING_REP) as PingRepReceiver;
+  components new AMSenderC(AM_FLOOD_MSG) as FloodSender;
+  components new AMSenderC(AM_OVERLAP_PING_REQ) as PingReqSender;
+  components new AMSenderC(AM_OVERLAP_PING_REP) as PingRepSender;
   components SerialActiveMessageC;
 #ifndef NO_DEBUG 
   components new SerialAMSenderC(AM_COLLECTION_DEBUG) as UARTSender;
@@ -69,9 +73,17 @@ implementation {
 
   //Simple flooding components
   TestNetworkC.ReceiveFlood -> FloodReceiver;
-  TestNetworkC.Packet -> AMSenderC;
-  TestNetworkC.AMFloodSend -> AMSenderC;
+  TestNetworkC.Packet -> FloodSender;
+  TestNetworkC.AMFloodSend -> FloodSender;
   TestNetworkC.SplitControlFlood -> ActiveMessageC;
+
+  //Overlapping components
+  TestNetworkC.PingReqSend -> PingReqSender;
+  TestNetworkC.PingRepSend -> PingRepSender;
+  TestNetworkC.ReceivePingReq -> PingReqReceiver;
+  TestNetworkC.ReceivePingRep -> PingRepReceiver;
+  TestNetworkC.PingReqPacket -> PingReqSender;
+  TestNetworkC.PingRepPacket -> PingRepSender;
 
 
 #ifndef NO_DEBUG

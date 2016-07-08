@@ -20,6 +20,7 @@ typedef nx_struct TestNetworkMsg {
 typedef nx_struct rout_msg {
   nx_int32_t routing;
   nx_int16_t overlap;
+  nx_int16_t numNodes;
 } rout_msg_t;
 
 typedef nx_struct flood_msg {
@@ -29,6 +30,13 @@ typedef nx_struct flood_msg {
   nx_uint16_t wind;
 } flood_msg_t;
 
+typedef nx_struct overlap_ping_req {
+  nx_uint16_t prot;
+  nx_am_addr_t source;
+} overlap_ping_req_t;
 
+typedef nx_struct overlap_ping_rep {
+  nx_am_addr_t dest;
+} overlap_ping_rep_t;
 
 #endif
