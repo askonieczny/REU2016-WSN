@@ -24,6 +24,7 @@ module TestNetworkC {
   uses interface Receive as ReceiveRout;
   uses interface Receive as ReceivePingReq; //used for overlap pings
   uses interface Receive as ReceivePingRep; //used for overlap pings
+  uses interface Receive as ReceiveUniversal; 
   uses interface SplitControl as SplitControlAODV;
   uses interface SplitControl as RadioControl;
   uses interface SplitControl as SerialControl;
@@ -42,6 +43,7 @@ module TestNetworkC {
   uses interface AMSend as UARTSend;
   uses interface AMSend as PingReqSend;
   uses interface AMSend as PingRepSend;
+  uses interface AMSend as UniversalSend;
   uses interface CollectionPacket;
   uses interface CtpInfo;
   uses interface CtpCongestion;
@@ -54,6 +56,7 @@ module TestNetworkC {
   uses interface Packet as RadioPacket;
   uses interface Packet as PingReqPacket;
   uses interface Packet as PingRepPacket;
+  uses interface Packet as UniversalPacket;
 }
 
 
@@ -67,24 +70,24 @@ implementation {
   nx_int16_t overlap; //tells whether the node is in overlapping position or not
   nx_int16_t numNodes; //global variable that will also be injected by TOSSIM
 
-    //CTP variables
-    task void uartEchoTask();
-    message_t packet;
-    message_t uartpacket;
-    message_t* recvPtr = &uartpacket;
-    uint8_t msglen;
-    bool sendBusy = FALSE;
-    bool uartbusy = FALSE;
-    bool initialBoot = TRUE;
-    bool firstTimer = TRUE;
-    uint16_t seqno;
-    float temp;
-    float wind;
-    float hum;
-    float num = 0;
-    enum {
-      SEND_INTERVAL = 8192
-    };
+  //CTP variables
+  task void uartEchoTask();
+  message_t packet;
+  message_t uartpacket;
+  message_t* recvPtr = &uartpacket;
+  uint8_t msglen;
+  bool sendBusy = FALSE;
+  bool uartbusy = FALSE;
+  bool initialBoot = TRUE;
+  bool firstTimer = TRUE;
+  uint16_t seqno;
+  float temp;
+  float wind;
+  float hum;
+  float num = 0;
+  enum {
+    SEND_INTERVAL = 8192
+  };
 
 
   //AODV variables
@@ -105,9 +108,10 @@ implementation {
   float wind_f = 0;
   float hum_f =0;
   float num_f = 0;
-  uint16_t tmpSources[30]; //30 must be changed if topo size is changed
-  uint16_t msgSources[30];
+  int16_t tmpSources[10]; //10 must be changed if topo size is changed
+  int16_t msgSources[10];
   message_t floodPkt;
+  message_t fPkt;
   bool match;
   uint16_t i;
   uint16_t j;
@@ -117,6 +121,15 @@ implementation {
   message_t ping_req_pkt;
   message_t ping_rep_pkt;
   int16_t overlappingNodes[30]; //30 must be changed if topo size is changed
+
+  //Universal protocol variables
+  message_t uPkt;
+  nx_uint16_t tempNew;
+  nx_uint16_t humNew;
+  nx_uint16_t windNew;
+  uint16_t tempReceived;
+  uint16_t humReceived;
+  uint16_t windReceived;
 
   event void ReadSensor.readDone(error_t err, uint16_t val) { }
 
@@ -165,15 +178,45 @@ implementation {
     TestNetworkMsg* msg = (TestNetworkMsg*)call Send.getPayload(&packet, sizeof(TestNetworkMsg));
     uint16_t metric;
     am_addr_t parent = 0;
+    
+    universal_msg_t* u;
+    int16_t universalDest;
+    float temp_temp = rand() % 40 + 40;
+    float temp_hum = rand() % 20 + 70;
+    float temp_wind = rand() % 20;
+
+    
+    if(!(overlap == 0)) { //overlaps with something
+      u = (universal_msg_t*)call UniversalPacket.getPayload(&uPkt, sizeof(universal_msg_t));
+      tempNew = temp_temp;
+      humNew = temp_hum;
+      windNew = temp_wind;
+      u -> temp = tempNew;
+      u -> hum = humNew;
+      u -> wind = windNew;
+      dbg("Universal", "Universal: Universal message packaged with temp %d, hum %d, and wind %d\n", tempNew, humNew, windNew);
+  
+      //send to connected nodes 
+      i = 0;
+      while(i < numNodes && overlappingNodes[i] != -1) {
+        universalDest = (uint16_t)overlappingNodes[i];
+        dbg("CTP", "CTP: Sending universal packet to %d\n", universalDest);
+        call UniversalSend.send(universalDest, &uPkt, sizeof(universal_msg_t));
+        i++;
+      }
+    }
+    
+
+    
 
     call CtpInfo.getParent(&parent);
     call CtpInfo.getEtx(&metric);
 
       msg->source = TOS_NODE_ID;
       msg->seqno = seqno;
-      msg->temp = rand() % 40 + 40;
-      msg ->hum = rand() % 20 + 70;
-      msg ->wind = rand() % 20;
+      msg->temp = temp_temp;
+      msg->hum = temp_hum;
+      msg->wind = temp_wind;
       msg->parent = parent;
       msg->hopcount = 0;
       msg->metric = metric;
@@ -208,10 +251,19 @@ implementation {
 
   //This timer used for AODV and simple flooding nodes
   event void MilliTimer.fired() {
+    //uint8_t test;
     if(prot == 2) { //if protocol is AODV
       dbg("APPS", "%s\t APPS: MilliTimer.fired()\n", sim_time_string());
+      /*
+      aodv_msg = (aodv_msg_hdr*)call Packet.getPayload(&pkt, sizeof(aodv_msg_hdr));
+      aodv_msg -> temp = rand() % 40 + 40;
+      aodv_msg -> hum = rand() % 20 + 70;
+      aodv_msg -> wind = rand() % 20;
+      */
+
       call Leds.led0Toggle();
-      call AMAODVSend.send(dest, p_pkt, sizeof(pkt));
+      dbg("TestNetworkC", "Test variable is %d\n", test);
+      call AMAODVSend.send(dest, &pkt, sizeof(p_pkt));
     }
     else if(prot == 3) { //if protocol is Simple flooding
       flood_msg_t* floodMsg = (flood_msg_t*)call Packet.getPayload(&floodPkt, sizeof(flood_msg_t));
@@ -220,7 +272,7 @@ implementation {
       floodMsg -> wind = rand() % 20;
       i = 0;
       while(i < numFloodNodes) {
-        floodMsg -> sources[i] = 0;
+        floodMsg -> sources[i] = -1;
         i++;
       }
       call AMFloodSend.send(AM_BROADCAST_ADDR, &floodPkt, sizeof(flood_msg_t));
@@ -233,18 +285,18 @@ implementation {
       call Leds.led0On();
     }
     sendBusy = FALSE;
-    dbg("TestNetworkC", "CTP Send completed.\n");
+    dbg("CTP", "CTP Send completed.\n");
   }
 
   event void AMAODVSend.sendDone(message_t* bufPtr, error_t error) {
     if(prot == 2) {
-      dbg("APPS", "APPS: AODV sendDone!!\n");
+      dbg("AODV", "AODV: sendDone!!\n");
     }
   }
 
   event void AMFloodSend.sendDone(message_t* bufPtr, error_t error) {
     if(prot == 3) {
-      dbg("TestNetworkC", "\t Flooding: send done\n");
+      dbg("Flooding", "\t Flooding: send done\n");
     }
   }
 
@@ -255,6 +307,14 @@ implementation {
   event void PingRepSend.sendDone(message_t* bufPtr, error_t error) {
     dbg("TestNetworkC", "Overlap: Send of overlap ping reply done\n");
   }
+
+  event void UniversalSend.sendDone(message_t* bufPtr, error_t error) {
+    if(error != SUCCESS) {
+       dbg("Universal", "Universal: send failed\n");
+    } else {
+      dbg("Universal", "Universal: send done\n");
+    }
+ }
 
   event void DisseminationPeriod.changed() {
     const uint32_t* newVal = call DisseminationPeriod.get();
@@ -316,6 +376,96 @@ implementation {
     return msg;
   }
 
+  //Universal message receive event (tunneling strategy)
+  event message_t* ReceiveUniversal.receive(message_t* msg, void* payload, uint8_t len) {
+    //variables needed for CTP nodes
+    TestNetworkMsg* networkMsg;
+    uint16_t metric;
+    am_addr_t parent = 0;
+
+    //variables needed for flood nodes
+    flood_msg_t* f;
+
+    //different responses according to what protocol the node follows
+    if(prot == 1) { //if node follows CTP
+      universal_msg_t* u;
+      u = (universal_msg_t*)payload;
+      
+      //extract existing fields
+      tempReceived = u -> temp;
+      humReceived = u -> hum;
+      windReceived = u -> wind;
+      dbg("CTP", "CTP: universal packet received\n");
+
+      networkMsg = (TestNetworkMsg*)call Send.getPayload(&packet, sizeof(TestNetworkMsg));
+      networkMsg -> temp = tempReceived;
+      networkMsg -> hum = humReceived;
+      networkMsg -> wind = windReceived;
+
+      //add in remaining fields
+      call CtpInfo.getParent(&parent);
+      call CtpInfo.getEtx(&metric);
+
+      networkMsg->source = TOS_NODE_ID;
+      networkMsg->seqno = seqno;
+      networkMsg->parent = parent;
+      networkMsg->hopcount = 0;
+      networkMsg->metric = metric;
+
+      //send to remaining nodes
+      if (call Send.send(&packet, sizeof(TestNetworkMsg)) != SUCCESS) {
+      failedSend();
+      call Leds.led0On();
+      dbg("TestNetworkC", "%s: Transmission failed.\n", __FUNCTION__);
+      }
+      else {
+       sendBusy = TRUE;
+       seqno++;
+       dbg("TestNetworkC", "%s: Transmission succeeded.\n", __FUNCTION__);
+      }
+
+    } else if(prot == 2) { //if node follows AODV
+
+    } else if(prot == 3) {
+      universal_msg_t* u;
+      u = (universal_msg_t*)payload;
+      
+      //extract existing fields
+      tempReceived = u -> temp;
+      humReceived = u -> hum;
+      windReceived = u -> wind;
+      
+      dbg("Flooding", "Flooding: universal packet received\n");
+      /*
+      dbg("Flooding", "Flooding: universal packet says temp is %d\n", tempReceived);
+      dbg("Flooding", "Flooding: universal packet says hum is %d\n", humReceived);
+      dbg("Flooding", "Flooding: universal packet says wind is %d\n", windReceived);
+      */
+
+      f = (flood_msg_t*)call Packet.getPayload(&fPkt, sizeof(flood_msg_t));
+      f -> temp = tempReceived;
+      f -> hum = humReceived;
+      f -> wind = windReceived;
+      //add remaining fields
+      
+      i = 0;
+      while(i < 10) {
+        if(i == 0) {
+          f -> sources[i] = TOS_NODE_ID;
+        }
+        else {
+          f -> sources[i] = -1;
+        }
+        i++;
+      }
+
+      //send out to rest of simple flooding nodes
+      call AMFloodSend.send(AM_BROADCAST_ADDR, &fPkt, sizeof(flood_msg_t));
+    }
+
+    return msg;
+  }
+
   //Overlap ping receive events
   event message_t* ReceivePingReq.receive(message_t* msg, void* payload, uint8_t len) {
     overlap_ping_req_t* oReq;
@@ -366,6 +516,11 @@ implementation {
   event message_t* ReceiveFlood.receive(message_t* msg, void* payload, uint8_t len) {
     flood_msg_t* f;
     flood_msg_t* floodMsgNew;
+
+    //variables needed for universal message send
+    universal_msg_t* u;
+    int16_t universalDest;
+
     if(prot == 3) { //if protocol is Flooding
       f = (flood_msg_t*)payload;
       i = 0;
@@ -387,19 +542,19 @@ implementation {
 
       //add ID to source array, send to next nodes if not already received
       if(match == FALSE) {
-        dbg("TestNetworkC", "\t Flooding: message received, \n");
+        dbg("Flooding", "\t Flooding: message received, \n");
 
         temp_f += f -> temp;
         hum_f += f -> hum;
         wind_f += f -> wind;
         num_f++;
-        dbg("TestNetworkC", "\t Flooding: message received, temp is %.3f\n", temp_f/num_f);
-        dbg("TestNetworkC", "\t Flooding: message received, hum is %.3f\n", hum_f/num_f);
-        dbg("TestNetworkC", "\t Flooding: message received, wind is %.3f\n", wind_f/num_f);
+        dbg("Flooding", "\t Flooding: message received, temp is %.3f\n", temp_f/num_f);
+        dbg("Flooding", "\t Flooding: message received, hum is %.3f\n", hum_f/num_f);
+        dbg("Flooding", "\t Flooding: message received, wind is %.3f\n", wind_f/num_f);
 
         j = 0;
         while(TRUE && j < numFloodNodes) {
-          if(msgSources[j] == 0) {
+          if(msgSources[j] == -1) {
             msgSources[j] = TOS_NODE_ID;
             break;
           }
@@ -417,8 +572,32 @@ implementation {
           i++;
         }
         call AMFloodSend.send(AM_BROADCAST_ADDR, &floodPkt, sizeof(flood_msg_t));
+
+        //send universal message
+        tempNew = f->temp;
+        humNew = f->hum;
+        windNew = f->wind;
+
+        
+        if(!(overlap == 0)) { //overlaps with something
+          u = (universal_msg_t*)call UniversalPacket.getPayload(&uPkt, sizeof(universal_msg_t));
+          u -> temp = tempNew;
+          u -> hum = humNew;
+          u -> wind = windNew;
+          dbg("Universal", "Universal: Universal message packaged with temp %d, hum %d, and wind %d\n", tempNew, humNew, windNew);
+      
+          //send to connected nodes 
+          i = 0;
+          while(i < numNodes && overlappingNodes[i] != -1) {
+            universalDest = (uint16_t)overlappingNodes[i];
+            dbg("Flooding", "Flooding: Sending universal packet to %d\n", universalDest);
+            call UniversalSend.send(universalDest, &uPkt, sizeof(universal_msg_t));
+            i++;
+          }
+
+        }
       } else {
-        //dbg("TestNetworkC", "\t Flooding: message IGNORED\n");
+        //dbg("Flooding", "\t Flooding: message IGNORED\n");
       }
     }
     return msg;
@@ -426,49 +605,67 @@ implementation {
 
 
   event message_t* ReceiveAODV.receive(message_t* msg, void* payload, uint8_t len) {
+    //uint16_t aodv_temp;
+    //uint16_t aodv_hum;
+    //uint16_t aodv_wind;
+    //aodv_msg = (message_t*)payload;
     if(prot == 2) { //if protocol is AODV
-     dbg("AODV", "%s\t Received!!!!\n", sim_time_string());
+      dbg("AODV", "%s\t AODV: Received!!!!\n", sim_time_string());
+      /*
+      aodv_temp = aodv_msg -> temp;
+      aodv_hum = aodv_msg -> hum;
+      aodv_wind = aodv_msg -> wind;
+      dbg("AODV", "AODV temp value is %d\n", aodv_temp);
+      dbg("AODV", "AODV hum value is %d\n", aodv_hum);
+      dbg("AODV", "AODV wind value is %d\n", aodv_wind;
+      */
     }
     return msg;
   }
 
   event message_t* ReceiveCTP.receive(message_t* msg, void* payload, uint8_t len) {
+    //variables needed for universal message sends
+
     if(prot == 1) { //if protocol is CTP
-    if(TOS_NODE_ID == 0){ //if current node is base station
-    TestNetworkMsg* rcm = (TestNetworkMsg*) payload;
-    temp += rcm -> temp;
-    hum  += rcm -> hum;
-    wind += rcm -> wind;
-    num++;
-    dbg("TestNetworkC", "CTP: Temp value is %.3f.\n", temp/num);
-    dbg("TestNetworkC", "CTP: Wind value is %.3f.\n", wind/num);
-    dbg("TestNetworkC", "CTP: Humidity value is %.3f.\n", hum/num);
-    }
-    dbg("TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
-    call Leds.led1Toggle();
+      //if(TOS_NODE_ID == 0){ 
+      TestNetworkMsg* rcm = (TestNetworkMsg*) payload;
+      temp += rcm -> temp;
+      hum  += rcm -> hum;
+      wind += rcm -> wind;
+      num++;
+      dbg("CTP", "CTP: Temp value is %.3f.\n", temp/num);
+      dbg("CTP", "CTP: Wind value is %.3f.\n", wind/num);
+      dbg("CTP", "CTP: Humidity value is %.3f.\n", hum/num);
+      //}
+      dbg("TestNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
+      dbg("TestNetworkC", "Current overlap status is %d\n", overlap);
+      call Leds.led1Toggle();
+      
 
-    if (call CollectionPacket.getOrigin(msg) == 1) {
-      if (firstMsg == 1) {
-      if (call CollectionPacket.getSequenceNumber(msg) - prevSeq > 1) {
-        call Leds.led2On();
-      }
-        } else {
-          firstMsg = 1;
+      if (call CollectionPacket.getOrigin(msg) == 1) {
+        if (firstMsg == 1) {
+        if (call CollectionPacket.getSequenceNumber(msg) - prevSeq > 1) {
+          call Leds.led2On();
         }
-        prevSeq = call CollectionPacket.getSequenceNumber(msg);
-    }
-
-    if (!call Pool.empty() && call Queue.size() < call Queue.maxSize()) {
-      message_t* tmp = call Pool.get();
-      call Queue.enqueue(msg);
-      if (!uartbusy) {
-        post uartEchoTask();
+          } else {
+            firstMsg = 1;
+          }
+          prevSeq = call CollectionPacket.getSequenceNumber(msg);
       }
-      return tmp;
+     
+
+      if (!call Pool.empty() && call Queue.size() < call Queue.maxSize()) {
+        message_t* tmp = call Pool.get();
+        call Queue.enqueue(msg);
+        if (!uartbusy) {
+          post uartEchoTask();
+        }
+        return tmp;
+      }
+
+      
     }
     return msg;
-
-    }
  }
 
  task void uartEchoTask() {

@@ -28,9 +28,11 @@ implementation {
   components new AMReceiverC(AM_FLOOD_MSG) as FloodReceiver;
   components new AMReceiverC(AM_OVERLAP_PING_REQ) as PingReqReceiver;
   components new AMReceiverC(AM_OVERLAP_PING_REP) as PingRepReceiver;
+  components new AMReceiverC(AM_UNIVERSAL_MSG) as UniversalReceiver;
   components new AMSenderC(AM_FLOOD_MSG) as FloodSender;
   components new AMSenderC(AM_OVERLAP_PING_REQ) as PingReqSender;
   components new AMSenderC(AM_OVERLAP_PING_REP) as PingRepSender;
+  components new AMSenderC(AM_UNIVERSAL_MSG) as UniversalSender;
   components SerialActiveMessageC;
 #ifndef NO_DEBUG 
   components new SerialAMSenderC(AM_COLLECTION_DEBUG) as UARTSender;
@@ -84,6 +86,11 @@ implementation {
   TestNetworkC.ReceivePingRep -> PingRepReceiver;
   TestNetworkC.PingReqPacket -> PingReqSender;
   TestNetworkC.PingRepPacket -> PingRepSender;
+
+  //Universal msg components
+  TestNetworkC.UniversalSend -> UniversalSender;
+  TestNetworkC.UniversalPacket -> UniversalSender;
+  TestNetworkC.ReceiveUniversal -> UniversalReceiver;
 
 
 #ifndef NO_DEBUG

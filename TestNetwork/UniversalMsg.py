@@ -7,14 +7,14 @@
 import tinyos.message.Message
 
 # The default size of this message type in bytes.
-DEFAULT_MESSAGE_SIZE = 18
+DEFAULT_MESSAGE_SIZE = 6
 
 # The Active Message type associated with this message.
-AM_TYPE = 1
+AM_TYPE = 3
 
 class UniversalMsg(tinyos.message.Message.Message):
-    # Create a new UniversalMsg of size 18.
-    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=18):
+    # Create a new UniversalMsg of size 6.
+    def __init__(self, data="", addr=None, gid=None, base_offset=0, data_length=6):
         tinyos.message.Message.Message.__init__(self, data, addr, gid, base_offset, data_length)
         self.amTypeSet(AM_TYPE)
     
@@ -31,43 +31,15 @@ class UniversalMsg(tinyos.message.Message.Message):
     def __str__(self):
         s = "Message <UniversalMsg> \n"
         try:
-            s += "  [source=0x%x]\n" % (self.get_source())
+            s += "  [temp=0x%x]\n" % (self.get_temp())
         except:
             pass
         try:
-            s += "  [seqno=0x%x]\n" % (self.get_seqno())
+            s += "  [hum=0x%x]\n" % (self.get_hum())
         except:
             pass
         try:
-            s += "  [parent=0x%x]\n" % (self.get_parent())
-        except:
-            pass
-        try:
-            s += "  [metric=0x%x]\n" % (self.get_metric())
-        except:
-            pass
-        try:
-            s += "  [data=0x%x]\n" % (self.get_data())
-        except:
-            pass
-        try:
-            s += "  [hopcount=0x%x]\n" % (self.get_hopcount())
-        except:
-            pass
-        try:
-            s += "  [sendCount=0x%x]\n" % (self.get_sendCount())
-        except:
-            pass
-        try:
-            s += "  [sendSuccessCount=0x%x]\n" % (self.get_sendSuccessCount())
-        except:
-            pass
-        try:
-            s += "  [dest=0x%x]\n" % (self.get_dest())
-        except:
-            pass
-        try:
-            s += "  [app=0x%x]\n" % (self.get_app())
+            s += "  [wind=0x%x]\n" % (self.get_wind())
         except:
             pass
         return s
@@ -75,552 +47,167 @@ class UniversalMsg(tinyos.message.Message.Message):
     # Message-type-specific access methods appear below.
 
     #
-    # Accessor methods for field: source
+    # Accessor methods for field: temp
     #   Field type: int
     #   Offset (bits): 0
     #   Size (bits): 16
     #
 
     #
-    # Return whether the field 'source' is signed (False).
+    # Return whether the field 'temp' is signed (False).
     #
-    def isSigned_source(self):
+    def isSigned_temp(self):
         return False
     
     #
-    # Return whether the field 'source' is an array (False).
+    # Return whether the field 'temp' is an array (False).
     #
-    def isArray_source(self):
+    def isArray_temp(self):
         return False
     
     #
-    # Return the offset (in bytes) of the field 'source'
+    # Return the offset (in bytes) of the field 'temp'
     #
-    def offset_source(self):
+    def offset_temp(self):
         return (0 / 8)
     
     #
-    # Return the offset (in bits) of the field 'source'
+    # Return the offset (in bits) of the field 'temp'
     #
-    def offsetBits_source(self):
+    def offsetBits_temp(self):
         return 0
     
     #
-    # Return the value (as a int) of the field 'source'
+    # Return the value (as a int) of the field 'temp'
     #
-    def get_source(self):
-        return self.getUIntElement(self.offsetBits_source(), 16, 1)
+    def get_temp(self):
+        return self.getUIntElement(self.offsetBits_temp(), 16, 1)
     
     #
-    # Set the value of the field 'source'
+    # Set the value of the field 'temp'
     #
-    def set_source(self, value):
-        self.setUIntElement(self.offsetBits_source(), 16, value, 1)
+    def set_temp(self, value):
+        self.setUIntElement(self.offsetBits_temp(), 16, value, 1)
     
     #
-    # Return the size, in bytes, of the field 'source'
+    # Return the size, in bytes, of the field 'temp'
     #
-    def size_source(self):
+    def size_temp(self):
         return (16 / 8)
     
     #
-    # Return the size, in bits, of the field 'source'
+    # Return the size, in bits, of the field 'temp'
     #
-    def sizeBits_source(self):
+    def sizeBits_temp(self):
         return 16
     
     #
-    # Accessor methods for field: seqno
+    # Accessor methods for field: hum
     #   Field type: int
     #   Offset (bits): 16
     #   Size (bits): 16
     #
 
     #
-    # Return whether the field 'seqno' is signed (False).
+    # Return whether the field 'hum' is signed (False).
     #
-    def isSigned_seqno(self):
+    def isSigned_hum(self):
         return False
     
     #
-    # Return whether the field 'seqno' is an array (False).
+    # Return whether the field 'hum' is an array (False).
     #
-    def isArray_seqno(self):
+    def isArray_hum(self):
         return False
     
     #
-    # Return the offset (in bytes) of the field 'seqno'
+    # Return the offset (in bytes) of the field 'hum'
     #
-    def offset_seqno(self):
+    def offset_hum(self):
         return (16 / 8)
     
     #
-    # Return the offset (in bits) of the field 'seqno'
+    # Return the offset (in bits) of the field 'hum'
     #
-    def offsetBits_seqno(self):
+    def offsetBits_hum(self):
         return 16
     
     #
-    # Return the value (as a int) of the field 'seqno'
+    # Return the value (as a int) of the field 'hum'
     #
-    def get_seqno(self):
-        return self.getUIntElement(self.offsetBits_seqno(), 16, 1)
+    def get_hum(self):
+        return self.getUIntElement(self.offsetBits_hum(), 16, 1)
     
     #
-    # Set the value of the field 'seqno'
+    # Set the value of the field 'hum'
     #
-    def set_seqno(self, value):
-        self.setUIntElement(self.offsetBits_seqno(), 16, value, 1)
+    def set_hum(self, value):
+        self.setUIntElement(self.offsetBits_hum(), 16, value, 1)
     
     #
-    # Return the size, in bytes, of the field 'seqno'
+    # Return the size, in bytes, of the field 'hum'
     #
-    def size_seqno(self):
+    def size_hum(self):
         return (16 / 8)
     
     #
-    # Return the size, in bits, of the field 'seqno'
+    # Return the size, in bits, of the field 'hum'
     #
-    def sizeBits_seqno(self):
+    def sizeBits_hum(self):
         return 16
     
     #
-    # Accessor methods for field: parent
+    # Accessor methods for field: wind
     #   Field type: int
     #   Offset (bits): 32
     #   Size (bits): 16
     #
 
     #
-    # Return whether the field 'parent' is signed (False).
+    # Return whether the field 'wind' is signed (False).
     #
-    def isSigned_parent(self):
+    def isSigned_wind(self):
         return False
     
     #
-    # Return whether the field 'parent' is an array (False).
+    # Return whether the field 'wind' is an array (False).
     #
-    def isArray_parent(self):
+    def isArray_wind(self):
         return False
     
     #
-    # Return the offset (in bytes) of the field 'parent'
+    # Return the offset (in bytes) of the field 'wind'
     #
-    def offset_parent(self):
+    def offset_wind(self):
         return (32 / 8)
     
     #
-    # Return the offset (in bits) of the field 'parent'
+    # Return the offset (in bits) of the field 'wind'
     #
-    def offsetBits_parent(self):
+    def offsetBits_wind(self):
         return 32
     
     #
-    # Return the value (as a int) of the field 'parent'
+    # Return the value (as a int) of the field 'wind'
     #
-    def get_parent(self):
-        return self.getUIntElement(self.offsetBits_parent(), 16, 1)
+    def get_wind(self):
+        return self.getUIntElement(self.offsetBits_wind(), 16, 1)
     
     #
-    # Set the value of the field 'parent'
+    # Set the value of the field 'wind'
     #
-    def set_parent(self, value):
-        self.setUIntElement(self.offsetBits_parent(), 16, value, 1)
+    def set_wind(self, value):
+        self.setUIntElement(self.offsetBits_wind(), 16, value, 1)
     
     #
-    # Return the size, in bytes, of the field 'parent'
+    # Return the size, in bytes, of the field 'wind'
     #
-    def size_parent(self):
+    def size_wind(self):
         return (16 / 8)
     
     #
-    # Return the size, in bits, of the field 'parent'
+    # Return the size, in bits, of the field 'wind'
     #
-    def sizeBits_parent(self):
+    def sizeBits_wind(self):
         return 16
-    
-    #
-    # Accessor methods for field: metric
-    #   Field type: int
-    #   Offset (bits): 48
-    #   Size (bits): 16
-    #
-
-    #
-    # Return whether the field 'metric' is signed (False).
-    #
-    def isSigned_metric(self):
-        return False
-    
-    #
-    # Return whether the field 'metric' is an array (False).
-    #
-    def isArray_metric(self):
-        return False
-    
-    #
-    # Return the offset (in bytes) of the field 'metric'
-    #
-    def offset_metric(self):
-        return (48 / 8)
-    
-    #
-    # Return the offset (in bits) of the field 'metric'
-    #
-    def offsetBits_metric(self):
-        return 48
-    
-    #
-    # Return the value (as a int) of the field 'metric'
-    #
-    def get_metric(self):
-        return self.getUIntElement(self.offsetBits_metric(), 16, 1)
-    
-    #
-    # Set the value of the field 'metric'
-    #
-    def set_metric(self, value):
-        self.setUIntElement(self.offsetBits_metric(), 16, value, 1)
-    
-    #
-    # Return the size, in bytes, of the field 'metric'
-    #
-    def size_metric(self):
-        return (16 / 8)
-    
-    #
-    # Return the size, in bits, of the field 'metric'
-    #
-    def sizeBits_metric(self):
-        return 16
-    
-    #
-    # Accessor methods for field: data
-    #   Field type: int
-    #   Offset (bits): 64
-    #   Size (bits): 16
-    #
-
-    #
-    # Return whether the field 'data' is signed (False).
-    #
-    def isSigned_data(self):
-        return False
-    
-    #
-    # Return whether the field 'data' is an array (False).
-    #
-    def isArray_data(self):
-        return False
-    
-    #
-    # Return the offset (in bytes) of the field 'data'
-    #
-    def offset_data(self):
-        return (64 / 8)
-    
-    #
-    # Return the offset (in bits) of the field 'data'
-    #
-    def offsetBits_data(self):
-        return 64
-    
-    #
-    # Return the value (as a int) of the field 'data'
-    #
-    def get_data(self):
-        return self.getUIntElement(self.offsetBits_data(), 16, 1)
-    
-    #
-    # Set the value of the field 'data'
-    #
-    def set_data(self, value):
-        self.setUIntElement(self.offsetBits_data(), 16, value, 1)
-    
-    #
-    # Return the size, in bytes, of the field 'data'
-    #
-    def size_data(self):
-        return (16 / 8)
-    
-    #
-    # Return the size, in bits, of the field 'data'
-    #
-    def sizeBits_data(self):
-        return 16
-    
-    #
-    # Accessor methods for field: hopcount
-    #   Field type: short
-    #   Offset (bits): 80
-    #   Size (bits): 8
-    #
-
-    #
-    # Return whether the field 'hopcount' is signed (False).
-    #
-    def isSigned_hopcount(self):
-        return False
-    
-    #
-    # Return whether the field 'hopcount' is an array (False).
-    #
-    def isArray_hopcount(self):
-        return False
-    
-    #
-    # Return the offset (in bytes) of the field 'hopcount'
-    #
-    def offset_hopcount(self):
-        return (80 / 8)
-    
-    #
-    # Return the offset (in bits) of the field 'hopcount'
-    #
-    def offsetBits_hopcount(self):
-        return 80
-    
-    #
-    # Return the value (as a short) of the field 'hopcount'
-    #
-    def get_hopcount(self):
-        return self.getUIntElement(self.offsetBits_hopcount(), 8, 1)
-    
-    #
-    # Set the value of the field 'hopcount'
-    #
-    def set_hopcount(self, value):
-        self.setUIntElement(self.offsetBits_hopcount(), 8, value, 1)
-    
-    #
-    # Return the size, in bytes, of the field 'hopcount'
-    #
-    def size_hopcount(self):
-        return (8 / 8)
-    
-    #
-    # Return the size, in bits, of the field 'hopcount'
-    #
-    def sizeBits_hopcount(self):
-        return 8
-    
-    #
-    # Accessor methods for field: sendCount
-    #   Field type: int
-    #   Offset (bits): 88
-    #   Size (bits): 16
-    #
-
-    #
-    # Return whether the field 'sendCount' is signed (False).
-    #
-    def isSigned_sendCount(self):
-        return False
-    
-    #
-    # Return whether the field 'sendCount' is an array (False).
-    #
-    def isArray_sendCount(self):
-        return False
-    
-    #
-    # Return the offset (in bytes) of the field 'sendCount'
-    #
-    def offset_sendCount(self):
-        return (88 / 8)
-    
-    #
-    # Return the offset (in bits) of the field 'sendCount'
-    #
-    def offsetBits_sendCount(self):
-        return 88
-    
-    #
-    # Return the value (as a int) of the field 'sendCount'
-    #
-    def get_sendCount(self):
-        return self.getUIntElement(self.offsetBits_sendCount(), 16, 1)
-    
-    #
-    # Set the value of the field 'sendCount'
-    #
-    def set_sendCount(self, value):
-        self.setUIntElement(self.offsetBits_sendCount(), 16, value, 1)
-    
-    #
-    # Return the size, in bytes, of the field 'sendCount'
-    #
-    def size_sendCount(self):
-        return (16 / 8)
-    
-    #
-    # Return the size, in bits, of the field 'sendCount'
-    #
-    def sizeBits_sendCount(self):
-        return 16
-    
-    #
-    # Accessor methods for field: sendSuccessCount
-    #   Field type: int
-    #   Offset (bits): 104
-    #   Size (bits): 16
-    #
-
-    #
-    # Return whether the field 'sendSuccessCount' is signed (False).
-    #
-    def isSigned_sendSuccessCount(self):
-        return False
-    
-    #
-    # Return whether the field 'sendSuccessCount' is an array (False).
-    #
-    def isArray_sendSuccessCount(self):
-        return False
-    
-    #
-    # Return the offset (in bytes) of the field 'sendSuccessCount'
-    #
-    def offset_sendSuccessCount(self):
-        return (104 / 8)
-    
-    #
-    # Return the offset (in bits) of the field 'sendSuccessCount'
-    #
-    def offsetBits_sendSuccessCount(self):
-        return 104
-    
-    #
-    # Return the value (as a int) of the field 'sendSuccessCount'
-    #
-    def get_sendSuccessCount(self):
-        return self.getUIntElement(self.offsetBits_sendSuccessCount(), 16, 1)
-    
-    #
-    # Set the value of the field 'sendSuccessCount'
-    #
-    def set_sendSuccessCount(self, value):
-        self.setUIntElement(self.offsetBits_sendSuccessCount(), 16, value, 1)
-    
-    #
-    # Return the size, in bytes, of the field 'sendSuccessCount'
-    #
-    def size_sendSuccessCount(self):
-        return (16 / 8)
-    
-    #
-    # Return the size, in bits, of the field 'sendSuccessCount'
-    #
-    def sizeBits_sendSuccessCount(self):
-        return 16
-    
-    #
-    # Accessor methods for field: dest
-    #   Field type: int
-    #   Offset (bits): 120
-    #   Size (bits): 16
-    #
-
-    #
-    # Return whether the field 'dest' is signed (False).
-    #
-    def isSigned_dest(self):
-        return False
-    
-    #
-    # Return whether the field 'dest' is an array (False).
-    #
-    def isArray_dest(self):
-        return False
-    
-    #
-    # Return the offset (in bytes) of the field 'dest'
-    #
-    def offset_dest(self):
-        return (120 / 8)
-    
-    #
-    # Return the offset (in bits) of the field 'dest'
-    #
-    def offsetBits_dest(self):
-        return 120
-    
-    #
-    # Return the value (as a int) of the field 'dest'
-    #
-    def get_dest(self):
-        return self.getUIntElement(self.offsetBits_dest(), 16, 1)
-    
-    #
-    # Set the value of the field 'dest'
-    #
-    def set_dest(self, value):
-        self.setUIntElement(self.offsetBits_dest(), 16, value, 1)
-    
-    #
-    # Return the size, in bytes, of the field 'dest'
-    #
-    def size_dest(self):
-        return (16 / 8)
-    
-    #
-    # Return the size, in bits, of the field 'dest'
-    #
-    def sizeBits_dest(self):
-        return 16
-    
-    #
-    # Accessor methods for field: app
-    #   Field type: short
-    #   Offset (bits): 136
-    #   Size (bits): 8
-    #
-
-    #
-    # Return whether the field 'app' is signed (False).
-    #
-    def isSigned_app(self):
-        return False
-    
-    #
-    # Return whether the field 'app' is an array (False).
-    #
-    def isArray_app(self):
-        return False
-    
-    #
-    # Return the offset (in bytes) of the field 'app'
-    #
-    def offset_app(self):
-        return (136 / 8)
-    
-    #
-    # Return the offset (in bits) of the field 'app'
-    #
-    def offsetBits_app(self):
-        return 136
-    
-    #
-    # Return the value (as a short) of the field 'app'
-    #
-    def get_app(self):
-        return self.getUIntElement(self.offsetBits_app(), 8, 1)
-    
-    #
-    # Set the value of the field 'app'
-    #
-    def set_app(self, value):
-        self.setUIntElement(self.offsetBits_app(), 8, value, 1)
-    
-    #
-    # Return the size, in bytes, of the field 'app'
-    #
-    def size_app(self):
-        return (8 / 8)
-    
-    #
-    # Return the size, in bits, of the field 'app'
-    #
-    def sizeBits_app(self):
-        return 8
     

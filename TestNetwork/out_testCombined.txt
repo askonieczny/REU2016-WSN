@@ -52,7 +52,6 @@ DEBUG (9): Overlap status for this node (9) is 1
 DEBUG (10): Routing protocol for this node (10) is 2
 DEBUG (10): Overlap status for this node (10) is 3
 DEBUG (10): 0:0:0.000003101	 APPS: startDone
-DEBUG (10): Millitimer started on node 10 because src is 10
 DEBUG (11): Routing protocol for this node (11) is 2
 DEBUG (11): Overlap status for this node (11) is 0
 DEBUG (11): 0:0:0.000003101	 APPS: startDone
@@ -110,655 +109,812 @@ DEBUG (28): 0:0:0.000003103	 Flooding: startDone
 DEBUG (29): Routing protocol for this node (29) is 3
 DEBUG (29): Overlap status for this node (29) is 3
 DEBUG (29): 0:0:0.000003103	 Flooding: startDone
-DEBUG (19): Overlap: Send of overlap ping request done
-DEBUG (8): Overlap: Send of overlap ping request done
-DEBUG (16): Overlap: Send of overlap ping request done
 DEBUG (17): Overlap: Send of overlap ping request done
-DEBUG (28): Overlap: Send of overlap ping request done
-DEBUG (27): Overlap: Send of overlap ping request done
-DEBUG (18): Overlap: Send of overlap ping request done
 DEBUG (10): Overlap: Send of overlap ping request done
 DEBUG (24): Overlap: Send of overlap ping request done
-DEBUG (29): Overlap: Send of overlap ping request done
-DEBUG (6): Overlap: Send of overlap ping request done
-DEBUG (9): Overlap: Send of overlap ping request done
+DEBUG (18): Overlap: Send of overlap ping request done
+DEBUG (28): Overlap: Send of overlap ping request done
 DEBUG (2): Overlap: Send of overlap ping request done
-DEBUG (9): 	PingRep received from node 17, added to overlapping array
+DEBUG (9): Overlap: Send of overlap ping request done
+DEBUG (19): Overlap: Send of overlap ping request done
 DEBUG (0): Overlap: Send of overlap ping request done
-DEBUG (17): Overlap: Send of overlap ping reply done
-DEBUG (10): 	PingRep received from node 29, added to overlapping array
-DEBUG (29): Overlap: Send of overlap ping reply done
-DEBUG (0): 	PingRep received from node 28, added to overlapping array
-DEBUG (28): Overlap: Send of overlap ping reply done
-DEBUG (19): 	PingRep received from node 24, added to overlapping array
-DEBUG (24): Overlap: Send of overlap ping reply done
-DEBUG (6): 	PingRep received from node 16, added to overlapping array
-DEBUG (16): Overlap: Send of overlap ping reply done
 DEBUG (2): 	PingRep received from node 18, added to overlapping array
 DEBUG (18): Overlap: Send of overlap ping reply done
 DEBUG (24): 	PingRep received from node 19, added to overlapping array
 DEBUG (19): Overlap: Send of overlap ping reply done
+DEBUG (6): Overlap: Send of overlap ping request done
+DEBUG (29): Overlap: Send of overlap ping request done
+DEBUG (27): Overlap: Send of overlap ping request done
+DEBUG (8): Overlap: Send of overlap ping request done
+DEBUG (9): 	PingRep received from node 17, added to overlapping array
+DEBUG (16): Overlap: Send of overlap ping request done
+DEBUG (17): Overlap: Send of overlap ping reply done
+DEBUG (19): 	PingRep received from node 8, added to overlapping array
+DEBUG (8): Overlap: Send of overlap ping reply done
+DEBUG (8): 	PingRep received from node 19, added to overlapping array
+DEBUG (19): Overlap: Send of overlap ping reply done
+DEBUG (0): 	PingRep received from node 28, added to overlapping array
+DEBUG (28): Overlap: Send of overlap ping reply done
 DEBUG (29): 	PingRep received from node 10, added to overlapping array
 DEBUG (10): Overlap: Send of overlap ping reply done
-DEBUG (16): 	PingRep received from node 6, added to overlapping array
-DEBUG (6): Overlap: Send of overlap ping reply done
-DEBUG (2): 	PingRep received from node 27, added to overlapping array
-DEBUG (27): Overlap: Send of overlap ping reply done
+DEBUG (27): 	PingRep received from node 2, added to overlapping array
+DEBUG (17): 	PingRep received from node 9, added to overlapping array
+DEBUG (2): Overlap: Send of overlap ping reply done
+DEBUG (9): Overlap: Send of overlap ping reply done
+DEBUG (19): 	PingRep received from node 24, added to overlapping array
+DEBUG (24): Overlap: Send of overlap ping reply done
 DEBUG (28): 	PingRep received from node 0, added to overlapping array
 DEBUG (0): Overlap: Send of overlap ping reply done
+DEBUG (10): 	PingRep received from node 29, added to overlapping array
+DEBUG (29): Overlap: Send of overlap ping reply done
+DEBUG (2): 	PingRep received from node 27, added to overlapping array
+DEBUG (27): Overlap: Send of overlap ping reply done
+DEBUG (16): 	PingRep received from node 6, added to overlapping array
+DEBUG (6): Overlap: Send of overlap ping reply done
+DEBUG (6): 	PingRep received from node 16, added to overlapping array
+DEBUG (16): Overlap: Send of overlap ping reply done
+DEBUG (0): Universal: Universal message packaged with temp 63, hum 76, and wind 17
+DEBUG (0): CTP: Sending universal packet to 28
 DEBUG (0): TestNetworkC$sendMessage: Transmission succeeded.
 DEBUG (0): CTP: Temp value is 63.000.
 DEBUG (0): CTP: Wind value is 17.000.
 DEBUG (0): CTP: Humidity value is 76.000.
 DEBUG (0): CTP Node received packet at 0:0:0.041015655 from node 0.
+DEBUG (0): Current overlap status is 2
 DEBUG (0): CTP Send completed.
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
+DEBUG (28): Flooding: universal packet received
+DEBUG (0): Universal: send done
+DEBUG (23): 	 Flooding: message received, 
+DEBUG (23): 	 Flooding: message received, temp is 63.000
+DEBUG (23): 	 Flooding: message received, hum is 76.000
+DEBUG (23): 	 Flooding: message received, wind is 17.000
+DEBUG (28): 	 Flooding: send done
+DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 63.000
+DEBUG (27): 	 Flooding: message received, hum is 76.000
+DEBUG (27): 	 Flooding: message received, wind is 17.000
+DEBUG (27): Universal: Universal message packaged with temp 63, hum 76, and wind 17
+DEBUG (27): Flooding: Sending universal packet to 2
+DEBUG (26): 	 Flooding: message received, 
+DEBUG (26): 	 Flooding: message received, temp is 63.000
+DEBUG (26): 	 Flooding: message received, hum is 76.000
+DEBUG (26): 	 Flooding: message received, wind is 17.000
+DEBUG (21): 	 Flooding: message received, 
+DEBUG (21): 	 Flooding: message received, temp is 63.000
+DEBUG (21): 	 Flooding: message received, hum is 76.000
+DEBUG (21): 	 Flooding: message received, wind is 17.000
+DEBUG (23): 	 Flooding: send done
+DEBUG (27): 	 Flooding: send done
+DEBUG (26): 	 Flooding: send done
+DEBUG (2): CTP: universal packet received
+DEBUG (2): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (27): Universal: send done
+DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 63.000
+DEBUG (24): 	 Flooding: message received, hum is 76.000
+DEBUG (24): 	 Flooding: message received, wind is 17.000
+DEBUG (24): Universal: Universal message packaged with temp 63, hum 76, and wind 17
+DEBUG (24): Flooding: Sending universal packet to 19
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 63.000
+DEBUG (20): 	 Flooding: message received, hum is 76.000
+DEBUG (20): 	 Flooding: message received, wind is 17.000
+DEBUG (21): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
 DEBUG (1): TestNetworkC$sendMessage: Transmission succeeded.
-DEBUG (2): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 63.000
+DEBUG (22): 	 Flooding: message received, hum is 76.000
+DEBUG (22): 	 Flooding: message received, wind is 17.000
+DEBUG (20): 	 Flooding: send done
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 63.000
+DEBUG (25): 	 Flooding: message received, hum is 76.000
+DEBUG (25): 	 Flooding: message received, wind is 17.000
+DEBUG (22): 	 Flooding: send done
+DEBUG (24): Universal: send done
+DEBUG (29): 	 Flooding: message received, 
+DEBUG (29): 	 Flooding: message received, temp is 63.000
+DEBUG (29): 	 Flooding: message received, hum is 76.000
+DEBUG (29): 	 Flooding: message received, wind is 17.000
+DEBUG (29): Universal: Universal message packaged with temp 63, hum 76, and wind 17
+DEBUG (29): Flooding: Sending universal packet to 10
+DEBUG (25): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
+DEBUG (29): Universal: send done
 DEBUG (3): TestNetworkC$sendMessage: Transmission succeeded.
 DEBUG (4): TestNetworkC$sendMessage: Transmission succeeded.
 DEBUG (5): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (6): Universal: Universal message packaged with temp 46, hum 70, and wind 6
+DEBUG (6): CTP: Sending universal packet to 16
 DEBUG (6): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (6): Universal: send done
 DEBUG (7): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (8): Universal: Universal message packaged with temp 48, hum 77, and wind 9
+DEBUG (8): CTP: Sending universal packet to 19
 DEBUG (8): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (8): Universal: send done
+DEBUG (9): Universal: Universal message packaged with temp 62, hum 80, and wind 2
+DEBUG (9): CTP: Sending universal packet to 17
 DEBUG (9): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (9): Universal: send done
 DEBUG (0): CTP: Temp value is 69.000.
 DEBUG (0): CTP: Wind value is 16.000.
 DEBUG (0): CTP: Humidity value is 79.500.
-DEBUG (0): CTP Node received packet at 0:0:0.871795717 from node 1.
+DEBUG (0): CTP Node received packet at 0:0:0.642059413 from node 1.
+DEBUG (0): Current overlap status is 2
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
 DEBUG (1): CTP Send completed.
-DEBUG (0): CTP: Temp value is 68.000.
-DEBUG (0): CTP: Wind value is 13.667.
-DEBUG (0): CTP: Humidity value is 80.333.
-DEBUG (0): CTP Node received packet at 0:0:0.881454608 from node 2.
+DEBUG (4): CTP Send completed.
+DEBUG (0): CTP: Temp value is 66.333.
+DEBUG (0): CTP: Wind value is 13.000.
+DEBUG (0): CTP: Humidity value is 77.000.
+DEBUG (0): CTP Node received packet at 0:0:0.743500095 from node 4.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (5): CTP Send completed.
+DEBUG (0): CTP: Temp value is 62.250.
+DEBUG (0): CTP: Wind value is 10.500.
+DEBUG (0): CTP: Humidity value is 80.000.
+DEBUG (0): CTP Node received packet at 0:0:0.788253857 from node 5.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (0): CTP: Temp value is 62.400.
+DEBUG (0): CTP: Wind value is 11.800.
+DEBUG (0): CTP: Humidity value is 79.200.
+DEBUG (0): CTP Node received packet at 0:0:0.790329169 from node 2.
+DEBUG (0): Current overlap status is 2
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
 DEBUG (2): CTP Send completed.
-DEBUG (5): CTP Send completed.
-DEBUG (8): CTP Send completed.
-DEBUG (0): CTP: Temp value is 62.500.
-DEBUG (0): CTP: Wind value is 11.750.
-DEBUG (0): CTP: Humidity value is 77.750.
-DEBUG (0): CTP Node received packet at 0:0:0.948913983 from node 5.
-DEBUG (0): CTP node sending packet to UART.
-DEBUG (0): Sending packet to UART.
-DEBUG (4): CTP Send completed.
-DEBUG (0): CTP: Temp value is 62.400.
-DEBUG (0): CTP: Wind value is 9.800.
-DEBUG (0): CTP: Humidity value is 78.200.
-DEBUG (0): CTP Node received packet at 0:0:0.973388853 from node 8.
-DEBUG (0): CTP node sending packet to UART.
-DEBUG (0): Sending packet to UART.
-DEBUG (0): CTP: Temp value is 60.333.
-DEBUG (0): CTP: Wind value is 8.667.
-DEBUG (0): CTP: Humidity value is 80.000.
-DEBUG (0): CTP Node received packet at 0:0:0.976700194 from node 4.
-DEBUG (0): CTP node sending packet to UART.
-DEBUG (0): Sending packet to UART.
-DEBUG (22): 	 Flooding: message received, 
-DEBUG (22): 	 Flooding: message received, temp is 49.000
-DEBUG (22): 	 Flooding: message received, hum is 72.000
-DEBUG (22): 	 Flooding: message received, wind is 2.000
-DEBUG (21): 	 Flooding: message received, 
-DEBUG (21): 	 Flooding: message received, temp is 49.000
-DEBUG (21): 	 Flooding: message received, hum is 72.000
-DEBUG (21): 	 Flooding: message received, wind is 2.000
-DEBUG (20): 	 Flooding: send done
 DEBUG (3): CTP Send completed.
-DEBUG (24): 	 Flooding: message received, 
-DEBUG (24): 	 Flooding: message received, temp is 49.000
-DEBUG (24): 	 Flooding: message received, hum is 72.000
-DEBUG (24): 	 Flooding: message received, wind is 2.000
-DEBUG (23): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, temp is 49.000
-DEBUG (23): 	 Flooding: message received, hum is 72.000
-DEBUG (23): 	 Flooding: message received, wind is 2.000
-DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 49.000
-DEBUG (20): 	 Flooding: message received, hum is 72.000
-DEBUG (20): 	 Flooding: message received, wind is 2.000
-DEBUG (21): 	 Flooding: send done
-DEBUG (22): 	 Flooding: message received, 
-DEBUG (22): 	 Flooding: message received, temp is 49.000
-DEBUG (22): 	 Flooding: message received, hum is 72.000
-DEBUG (22): 	 Flooding: message received, wind is 2.000
-DEBUG (20): 	 Flooding: send done
-DEBUG (25): 	 Flooding: message received, 
-DEBUG (25): 	 Flooding: message received, temp is 49.000
-DEBUG (25): 	 Flooding: message received, hum is 72.000
-DEBUG (25): 	 Flooding: message received, wind is 2.000
-DEBUG (22): 	 Flooding: send done
-DEBUG (24): 	 Flooding: send done
-DEBUG (0): CTP: Temp value is 60.429.
-DEBUG (0): CTP: Wind value is 8.429.
-DEBUG (0): CTP: Humidity value is 78.857.
-DEBUG (0): CTP Node received packet at 0:0:0.996826236 from node 3.
+DEBUG (0): CTP: Temp value is 63.000.
+DEBUG (0): CTP: Wind value is 11.333.
+DEBUG (0): CTP: Humidity value is 79.667.
+DEBUG (0): CTP Node received packet at 0:0:0.806244170 from node 3.
+DEBUG (0): Current overlap status is 2
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
-DEBUG (27): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, temp is 49.000
-DEBUG (27): 	 Flooding: message received, hum is 72.000
-DEBUG (27): 	 Flooding: message received, wind is 2.000
-DEBUG (26): 	 Flooding: message received, 
-DEBUG (26): 	 Flooding: message received, temp is 49.000
-DEBUG (26): 	 Flooding: message received, hum is 72.000
-DEBUG (26): 	 Flooding: message received, wind is 2.000
-DEBUG (28): 	 Flooding: message received, 
-DEBUG (28): 	 Flooding: message received, temp is 49.000
-DEBUG (28): 	 Flooding: message received, hum is 72.000
-DEBUG (28): 	 Flooding: message received, wind is 2.000
-DEBUG (23): 	 Flooding: send done
-DEBUG (10): 0:0:1.000001010	 APPS: MilliTimer.fired()
-DEBUG (10): 0:0:1.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 65535
-DEBUG (10): 0:0:1.000001010	 AODV: AMSend.send() a new destination
-DEBUG (10): 0:0:1.000001010	 AODV: sendRREQ() dest: 19
-DEBUG (10): 0:0:1.000001010	 AODV: sendRREQ()
-DEBUG (29): 	 Flooding: message received, 
-DEBUG (29): 	 Flooding: message received, temp is 49.000
-DEBUG (29): 	 Flooding: message received, hum is 72.000
-DEBUG (29): 	 Flooding: message received, wind is 2.000
-DEBUG (25): 	 Flooding: send done
-DEBUG (28): 	 Flooding: send done
-DEBUG (26): 	 Flooding: send done
-DEBUG (15): 0:0:1.005860350	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (15): 0:0:1.005860350	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (15): 0:0:1.005860350	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (18): 0:0:1.005860350	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (18): 0:0:1.005860350	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (18): 0:0:1.005860350	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (12): 0:0:1.005860350	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (12): 0:0:1.005860350	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (12): 0:0:1.005860350	 AODV: add_route_table() seq:0 dest:10 next:10 hop:1
-DEBUG (10): 0:0:1.006028196	 AODV: SendRREQ.sendDone()
-DEBUG (29): 	 Flooding: send done
-DEBUG (27): 	 Flooding: send done
-DEBUG (12): 0:0:1.014649647	 AODV: RREQTimer.fired()
-DEBUG (12): 0:0:1.014649647	 AODV: sendRREQ() dest: 0
-DEBUG (12): 0:0:1.014649647	 AODV: sendRREQ()
-DEBUG (16): 0:0:1.019181481	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (16): 0:0:1.019181481	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
-DEBUG (16): 0:0:1.019181481	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
-DEBUG (13): 0:0:1.019181481	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (13): 0:0:1.019181481	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
-DEBUG (13): 0:0:1.019181481	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
-DEBUG (19): 0:0:1.019181481	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (19): 0:0:1.019181481	 AODV: add_route_table() seq:0 dest:12 next:12 hop:1
-DEBUG (19): 0:0:1.019181481	 AODV: add_route_table() seq:0 dest:10 next:12 hop:3
-DEBUG (19): 0:0:1.019181481	 AODV: sendRREP() dest: 12 send_pending_: 0
-DEBUG (19): 0:0:1.019181481	 AODV: sendRREP() to 12
-DEBUG (10): 0:0:1.019181481	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (10): 0:0:1.019181481	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (12): 0:0:1.019349327	 AODV: SendRREQ.sendDone()
-DEBUG (6): CTP Send completed.
-DEBUG (13): 0:0:1.028321622	 AODV: RREQTimer.fired()
-DEBUG (13): 0:0:1.028321622	 AODV: sendRREQ() dest: 0
-DEBUG (13): 0:0:1.028321622	 AODV: sendRREQ()
-DEBUG (12): 0:0:1.030076193	 AODV: ReceiveRREP.receive() src: 10 dest: 19 
-DEBUG (12): 0:0:1.030076193	 AODV: add_route_table() seq:0 dest:19 next:19 hop:2
-DEBUG (12): 0:0:1.030076193	 AODV: sendRREP() dest: 10 send_pending_: 0
-DEBUG (12): 0:0:1.030076193	 AODV: sendRREP() to 10
-DEBUG (19): 0:0:1.030244039	 AODV: SendRREP.sendDone()
-DEBUG (10): 0:0:1.036896832	 AODV: ReceiveRREP.receive() src: 10 dest: 19 
-DEBUG (10): 0:0:1.036896832	 AODV: add_route_table() seq:0 dest:19 next:12 hop:1
-DEBUG (12): 0:0:1.037064677	 AODV: SendRREP.sendDone()
-DEBUG (16): 0:0:1.037995638	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (16): 0:0:1.037995638	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (19): 0:0:1.037995638	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (19): 0:0:1.037995638	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (12): 0:0:1.037995638	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (12): 0:0:1.037995638	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (16): 0:0:1.038087547	 AODV: RREQTimer.fired()
-DEBUG (16): 0:0:1.038087547	 AODV: sendRREQ() dest: 0
-DEBUG (16): 0:0:1.038087547	 AODV: sendRREQ()
-DEBUG (13): 0:0:1.038163484	 AODV: SendRREQ.sendDone()
-DEBUG (13): 0:0:1.043321281	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (13): 0:0:1.043321281	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (12): 0:0:1.043321281	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (12): 0:0:1.043321281	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (16): 0:0:1.043489127	 AODV: SendRREQ.sendDone()
 DEBUG (7): CTP Send completed.
-DEBUG (0): CTP: Temp value is 59.375.
-DEBUG (0): CTP: Wind value is 8.750.
-DEBUG (0): CTP: Humidity value is 79.750.
-DEBUG (0): CTP Node received packet at 0:0:1.050873198 from node 6.
+DEBUG (0): CTP: Temp value is 61.429.
+DEBUG (0): CTP: Wind value is 11.286.
+DEBUG (0): CTP: Humidity value is 80.571.
+DEBUG (0): CTP Node received packet at 0:0:0.847808993 from node 7.
+DEBUG (0): Current overlap status is 2
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
-DEBUG (0): CTP: Temp value is 58.111.
-DEBUG (0): CTP: Wind value is 8.778.
-DEBUG (0): CTP: Humidity value is 79.444.
-DEBUG (0): CTP Node received packet at 0:0:1.053436922 from node 7.
+DEBUG (8): CTP Send completed.
+DEBUG (6): CTP Send completed.
+DEBUG (0): CTP: Temp value is 59.750.
+DEBUG (0): CTP: Wind value is 11.000.
+DEBUG (0): CTP: Humidity value is 80.125.
+DEBUG (0): CTP Node received packet at 0:0:0.899994612 from node 8.
+DEBUG (0): Current overlap status is 2
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
-DEBUG (18): 0:0:1.053712747	 AODV: RREQTimer.fired()
-DEBUG (18): 0:0:1.053712747	 AODV: sendRREQ() dest: 0
-DEBUG (18): 0:0:1.053712747	 AODV: sendRREQ()
-DEBUG (17): 0:0:1.058641307	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (17): 0:0:1.058641307	 AODV: add_route_table() seq:0 dest:18 next:18 hop:1
-DEBUG (17): 0:0:1.058641307	 AODV: add_route_table() seq:0 dest:10 next:18 hop:3
-DEBUG (10): 0:0:1.058641307	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (10): 0:0:1.058641307	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (18): 0:0:1.058809153	 AODV: SendRREQ.sendDone()
-DEBUG (15): 0:0:1.063478072	 AODV: RREQTimer.fired()
-DEBUG (15): 0:0:1.063478072	 AODV: sendRREQ() dest: 0
-DEBUG (15): 0:0:1.063478072	 AODV: sendRREQ()
-DEBUG (14): 0:0:1.066285673	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (14): 0:0:1.066285673	 AODV: add_route_table() seq:0 dest:15 next:15 hop:1
-DEBUG (14): 0:0:1.066285673	 AODV: add_route_table() seq:0 dest:10 next:15 hop:3
-DEBUG (10): 0:0:1.066285673	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (10): 0:0:1.066285673	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (15): 0:0:1.066453519	 AODV: SendRREQ.sendDone()
-DEBUG (14): 0:0:1.076173285	 AODV: RREQTimer.fired()
-DEBUG (14): 0:0:1.076173285	 AODV: sendRREQ() dest: 0
-DEBUG (14): 0:0:1.076173285	 AODV: sendRREQ()
-DEBUG (15): 0:0:1.086564459	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (15): 0:0:1.086564459	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (14): 0:0:1.086732305	 AODV: SendRREQ.sendDone()
-DEBUG (17): 0:0:1.107423585	 AODV: RREQTimer.fired()
-DEBUG (17): 0:0:1.107423585	 AODV: sendRREQ() dest: 0
-DEBUG (17): 0:0:1.107423585	 AODV: sendRREQ()
-DEBUG (18): 0:0:1.111696021	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (18): 0:0:1.111696021	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (11): 0:0:1.111696021	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (11): 0:0:1.111696021	 AODV: add_route_table() seq:0 dest:17 next:17 hop:1
-DEBUG (11): 0:0:1.111696021	 AODV: add_route_table() seq:0 dest:10 next:17 hop:5
-DEBUG (17): 0:0:1.111863866	 AODV: SendRREQ.sendDone()
-DEBUG (11): 0:0:1.121094860	 AODV: RREQTimer.fired()
-DEBUG (11): 0:0:1.121094860	 AODV: sendRREQ() dest: 0
-DEBUG (11): 0:0:1.121094860	 AODV: sendRREQ()
-DEBUG (17): 0:0:1.130173786	 AODV: ReceiveRREQ.receive() src:10 dest: 19 
-DEBUG (17): 0:0:1.130173786	 AODV: ReceiveRREQ.receive() already received one
-DEBUG (11): 0:0:1.130341632	 AODV: SendRREQ.sendDone()
+DEBUG (0): CTP: Temp value is 58.222.
+DEBUG (0): CTP: Wind value is 10.444.
+DEBUG (0): CTP: Humidity value is 79.000.
+DEBUG (0): CTP Node received packet at 0:0:0.915527862 from node 6.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 53.000
+DEBUG (22): 	 Flooding: message received, hum is 76.500
+DEBUG (22): 	 Flooding: message received, wind is 16.000
+DEBUG (21): 	 Flooding: message received, 
+DEBUG (21): 	 Flooding: message received, temp is 53.000
+DEBUG (21): 	 Flooding: message received, hum is 76.500
+DEBUG (21): 	 Flooding: message received, wind is 16.000
+DEBUG (20): 	 Flooding: send done
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 53.000
+DEBUG (25): 	 Flooding: message received, hum is 76.500
+DEBUG (25): 	 Flooding: message received, wind is 16.000
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 53.000
+DEBUG (20): 	 Flooding: message received, hum is 76.500
+DEBUG (20): 	 Flooding: message received, wind is 16.000
+DEBUG (22): 	 Flooding: send done
+DEBUG (21): 	 Flooding: message received, 
+DEBUG (21): 	 Flooding: message received, temp is 49.667
+DEBUG (21): 	 Flooding: message received, hum is 76.667
+DEBUG (21): 	 Flooding: message received, wind is 15.667
+DEBUG (20): 	 Flooding: send done
+DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 53.000
+DEBUG (24): 	 Flooding: message received, hum is 76.500
+DEBUG (24): 	 Flooding: message received, wind is 16.000
+DEBUG (24): Universal: Universal message packaged with temp 43, hum 77, and wind 15
+DEBUG (24): Flooding: Sending universal packet to 19
+DEBUG (23): 	 Flooding: message received, 
+DEBUG (23): 	 Flooding: message received, temp is 53.000
+DEBUG (23): 	 Flooding: message received, hum is 76.500
+DEBUG (23): 	 Flooding: message received, wind is 16.000
+DEBUG (21): 	 Flooding: send done
+DEBUG (29): 	 Flooding: message received, 
+DEBUG (29): 	 Flooding: message received, temp is 53.000
+DEBUG (29): 	 Flooding: message received, hum is 76.500
+DEBUG (29): 	 Flooding: message received, wind is 16.000
+DEBUG (29): Universal: Universal message packaged with temp 43, hum 77, and wind 15
+DEBUG (29): Flooding: Sending universal packet to 10
+DEBUG (25): 	 Flooding: send done
+DEBUG (26): 	 Flooding: message received, 
+DEBUG (26): 	 Flooding: message received, temp is 53.000
+DEBUG (26): 	 Flooding: message received, hum is 76.500
+DEBUG (26): 	 Flooding: message received, wind is 16.000
+DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 43.000
+DEBUG (28): 	 Flooding: message received, hum is 77.000
+DEBUG (28): 	 Flooding: message received, wind is 15.000
+DEBUG (28): Universal: Universal message packaged with temp 43, hum 77, and wind 15
+DEBUG (28): Flooding: Sending universal packet to 0
+DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 53.000
+DEBUG (27): 	 Flooding: message received, hum is 76.500
+DEBUG (27): 	 Flooding: message received, wind is 16.000
+DEBUG (27): Universal: Universal message packaged with temp 43, hum 77, and wind 15
+DEBUG (27): Flooding: Sending universal packet to 2
+DEBUG (23): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
+DEBUG (27): 	 Flooding: send done
+DEBUG (10): 0:0:1.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): Test variable is 1
+DEBUG (24): Universal: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (26): 	 Flooding: send done
+DEBUG (29): Universal: send done
+DEBUG (0): CTP: universal packet received
+DEBUG (0): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (0): CTP: Temp value is 56.700.
+DEBUG (0): CTP: Wind value is 10.900.
+DEBUG (0): CTP: Humidity value is 78.800.
+DEBUG (0): CTP Node received packet at 0:0:1.005754433 from node 0.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP Send completed.
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (28): Universal: send done
+DEBUG (2): CTP: universal packet received
+DEBUG (2): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (27): Universal: send done
+DEBUG (0): CTP: Temp value is 55.455.
+DEBUG (0): CTP: Wind value is 11.273.
+DEBUG (0): CTP: Humidity value is 78.636.
+DEBUG (0): CTP Node received packet at 0:0:1.010011610 from node 2.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP node sending packet to UART.
+DEBUG (0): Sending packet to UART.
+DEBUG (2): CTP Send completed.
 DEBUG (9): CTP Send completed.
-DEBUG (0): CTP: Temp value is 56.600.
-DEBUG (0): CTP: Wind value is 9.400.
-DEBUG (0): CTP: Humidity value is 79.200.
-DEBUG (0): CTP Node received packet at 0:0:1.169587056 from node 9.
+DEBUG (0): CTP: Temp value is 56.000.
+DEBUG (0): CTP: Wind value is 10.500.
+DEBUG (0): CTP: Humidity value is 78.750.
+DEBUG (0): CTP Node received packet at 0:0:1.043014676 from node 9.
+DEBUG (0): Current overlap status is 2
 DEBUG (0): CTP node sending packet to UART.
 DEBUG (0): Sending packet to UART.
 DEBUG (22): 	 Flooding: message received, 
-DEBUG (22): 	 Flooding: message received, temp is 52.000
-DEBUG (22): 	 Flooding: message received, hum is 74.333
-DEBUG (22): 	 Flooding: message received, wind is 3.667
+DEBUG (22): 	 Flooding: message received, temp is 51.667
+DEBUG (22): 	 Flooding: message received, hum is 75.000
+DEBUG (22): 	 Flooding: message received, wind is 11.333
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (21): 	 Flooding: message received, temp is 53.500
+DEBUG (21): 	 Flooding: message received, temp is 49.500
 DEBUG (21): 	 Flooding: message received, hum is 75.500
-DEBUG (21): 	 Flooding: message received, wind is 4.500
+DEBUG (21): 	 Flooding: message received, wind is 12.250
 DEBUG (20): 	 Flooding: send done
 DEBUG (25): 	 Flooding: message received, 
-DEBUG (25): 	 Flooding: message received, temp is 53.500
-DEBUG (25): 	 Flooding: message received, hum is 75.500
-DEBUG (25): 	 Flooding: message received, wind is 4.500
-DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 53.500
-DEBUG (20): 	 Flooding: message received, hum is 75.500
-DEBUG (20): 	 Flooding: message received, wind is 4.500
+DEBUG (25): 	 Flooding: message received, temp is 51.667
+DEBUG (25): 	 Flooding: message received, hum is 75.000
+DEBUG (25): 	 Flooding: message received, wind is 11.333
 DEBUG (22): 	 Flooding: send done
 DEBUG (24): 	 Flooding: message received, 
-DEBUG (24): 	 Flooding: message received, temp is 53.500
-DEBUG (24): 	 Flooding: message received, hum is 75.500
-DEBUG (24): 	 Flooding: message received, wind is 4.500
+DEBUG (24): 	 Flooding: message received, temp is 51.667
+DEBUG (24): 	 Flooding: message received, hum is 75.000
+DEBUG (24): 	 Flooding: message received, wind is 11.333
+DEBUG (24): Universal: Universal message packaged with temp 49, hum 72, and wind 2
+DEBUG (24): Flooding: Sending universal packet to 19
 DEBUG (23): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, temp is 53.500
-DEBUG (23): 	 Flooding: message received, hum is 75.500
-DEBUG (23): 	 Flooding: message received, wind is 4.500
-DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 55.000
-DEBUG (20): 	 Flooding: message received, hum is 76.667
-DEBUG (20): 	 Flooding: message received, wind is 5.333
+DEBUG (23): 	 Flooding: message received, temp is 51.667
+DEBUG (23): 	 Flooding: message received, hum is 75.000
+DEBUG (23): 	 Flooding: message received, wind is 11.333
 DEBUG (21): 	 Flooding: send done
 DEBUG (24): 	 Flooding: send done
-DEBUG (22): 	 Flooding: message received, 
-DEBUG (22): 	 Flooding: message received, temp is 53.500
-DEBUG (22): 	 Flooding: message received, hum is 75.500
-DEBUG (22): 	 Flooding: message received, wind is 4.500
-DEBUG (20): 	 Flooding: send done
-DEBUG (25): 	 Flooding: message received, 
-DEBUG (25): 	 Flooding: message received, temp is 55.000
-DEBUG (25): 	 Flooding: message received, hum is 76.667
-DEBUG (25): 	 Flooding: message received, wind is 5.333
-DEBUG (22): 	 Flooding: send done
-DEBUG (28): 	 Flooding: message received, 
-DEBUG (28): 	 Flooding: message received, temp is 53.500
-DEBUG (28): 	 Flooding: message received, hum is 75.500
-DEBUG (28): 	 Flooding: message received, wind is 4.500
-DEBUG (27): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, temp is 53.500
-DEBUG (27): 	 Flooding: message received, hum is 75.500
-DEBUG (27): 	 Flooding: message received, wind is 4.500
-DEBUG (26): 	 Flooding: message received, 
-DEBUG (26): 	 Flooding: message received, temp is 53.500
-DEBUG (26): 	 Flooding: message received, hum is 75.500
-DEBUG (26): 	 Flooding: message received, wind is 4.500
-DEBUG (23): 	 Flooding: send done
 DEBUG (29): 	 Flooding: message received, 
-DEBUG (29): 	 Flooding: message received, temp is 53.500
-DEBUG (29): 	 Flooding: message received, hum is 75.500
-DEBUG (29): 	 Flooding: message received, wind is 4.500
+DEBUG (29): 	 Flooding: message received, temp is 51.667
+DEBUG (29): 	 Flooding: message received, hum is 75.000
+DEBUG (29): 	 Flooding: message received, wind is 11.333
+DEBUG (29): Universal: Universal message packaged with temp 49, hum 72, and wind 2
+DEBUG (29): Flooding: Sending universal packet to 10
 DEBUG (25): 	 Flooding: send done
-DEBUG (28): 	 Flooding: send done
-DEBUG (26): 	 Flooding: send done
+DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 51.667
+DEBUG (27): 	 Flooding: message received, hum is 75.000
+DEBUG (27): 	 Flooding: message received, wind is 11.333
+DEBUG (27): Universal: Universal message packaged with temp 49, hum 72, and wind 2
+DEBUG (27): Flooding: Sending universal packet to 2
+DEBUG (26): 	 Flooding: message received, 
+DEBUG (26): 	 Flooding: message received, temp is 51.667
+DEBUG (26): 	 Flooding: message received, hum is 75.000
+DEBUG (26): 	 Flooding: message received, wind is 11.333
+DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 46.000
+DEBUG (28): 	 Flooding: message received, hum is 74.500
+DEBUG (28): 	 Flooding: message received, wind is 8.500
+DEBUG (28): Universal: Universal message packaged with temp 49, hum 72, and wind 2
+DEBUG (28): Flooding: Sending universal packet to 0
+DEBUG (23): 	 Flooding: send done
+DEBUG (24): Universal: send done
 DEBUG (27): 	 Flooding: send done
+DEBUG (2): CTP: universal packet received
+DEBUG (2): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (27): Universal: send done
+DEBUG (26): 	 Flooding: send done
 DEBUG (29): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (0): CTP: universal packet received
+DEBUG (0): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (0): CTP: Temp value is 55.462.
+DEBUG (0): CTP: Wind value is 9.846.
+DEBUG (0): CTP: Humidity value is 78.231.
+DEBUG (0): CTP Node received packet at 0:0:1.986635145 from node 0.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP Send completed.
+DEBUG (28): Universal: send done
+DEBUG (29): Universal: send done
 DEBUG (10): 0:0:2.000001010	 APPS: MilliTimer.fired()
-DEBUG (10): 0:0:2.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
-DEBUG (10): 0:0:2.000001010	 AODV: AMSend.send() there is a route to 19
-DEBUG (12): 0:0:2.006928459	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (12): 0:0:2.006928459	 AODV: SubReceive.receive() deliver to next hop:13
-DEBUG (12): 0:0:2.006928459	 AODV: forwardMSG() try to forward to 19 
-DEBUG (12): 0:0:2.006928459	 AODV: forwardMSG() send MSG to: 19
-DEBUG (10): 0:0:2.007096305	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
-DEBUG (10): APPS: AODV sendDone!!
-DEBUG (19): 0:0:2.014374705	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (19): 0:0:2.014374705	 AODV: SubReceive.receive() deliver to upper layer
-DEBUG (19): 0:0:2.014374705	 Received!!!!
-DEBUG (12): 0:0:2.014542551	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (10): Test variable is 1
+DEBUG (0): CTP: Temp value is 55.000.
+DEBUG (0): CTP: Wind value is 9.286.
+DEBUG (0): CTP: Humidity value is 77.786.
+DEBUG (0): CTP Node received packet at 0:0:2.000946202 from node 2.
+DEBUG (0): Current overlap status is 2
+DEBUG (2): CTP Send completed.
 DEBUG (22): 	 Flooding: message received, 
-DEBUG (22): 	 Flooding: message received, temp is 57.400
-DEBUG (22): 	 Flooding: message received, hum is 77.600
-DEBUG (22): 	 Flooding: message received, wind is 5.800
+DEBUG (22): 	 Flooding: message received, temp is 53.250
+DEBUG (22): 	 Flooding: message received, hum is 76.000
+DEBUG (22): 	 Flooding: message received, wind is 10.250
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (21): 	 Flooding: message received, temp is 60.000
-DEBUG (21): 	 Flooding: message received, hum is 79.000
-DEBUG (21): 	 Flooding: message received, wind is 6.667
+DEBUG (21): 	 Flooding: message received, temp is 51.200
+DEBUG (21): 	 Flooding: message received, hum is 76.200
+DEBUG (21): 	 Flooding: message received, wind is 11.200
 DEBUG (20): 	 Flooding: send done
 DEBUG (24): 	 Flooding: message received, 
-DEBUG (24): 	 Flooding: message received, temp is 60.000
-DEBUG (24): 	 Flooding: message received, hum is 79.000
-DEBUG (24): 	 Flooding: message received, wind is 6.667
+DEBUG (24): 	 Flooding: message received, temp is 53.250
+DEBUG (24): 	 Flooding: message received, hum is 76.000
+DEBUG (24): 	 Flooding: message received, wind is 10.250
+DEBUG (24): Universal: Universal message packaged with temp 58, hum 79, and wind 7
+DEBUG (24): Flooding: Sending universal packet to 19
 DEBUG (23): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, temp is 60.000
-DEBUG (23): 	 Flooding: message received, hum is 79.000
-DEBUG (23): 	 Flooding: message received, wind is 6.667
+DEBUG (23): 	 Flooding: message received, temp is 53.250
+DEBUG (23): 	 Flooding: message received, hum is 76.000
+DEBUG (23): 	 Flooding: message received, wind is 10.250
 DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 59.500
-DEBUG (20): 	 Flooding: message received, hum is 79.000
-DEBUG (20): 	 Flooding: message received, wind is 6.750
+DEBUG (20): 	 Flooding: message received, temp is 54.667
+DEBUG (20): 	 Flooding: message received, hum is 77.333
+DEBUG (20): 	 Flooding: message received, wind is 13.000
 DEBUG (21): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
 DEBUG (25): 	 Flooding: message received, 
-DEBUG (25): 	 Flooding: message received, temp is 59.500
-DEBUG (25): 	 Flooding: message received, hum is 79.000
-DEBUG (25): 	 Flooding: message received, wind is 6.750
+DEBUG (25): 	 Flooding: message received, temp is 53.250
+DEBUG (25): 	 Flooding: message received, hum is 76.000
+DEBUG (25): 	 Flooding: message received, wind is 10.250
 DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 62.200
-DEBUG (20): 	 Flooding: message received, hum is 80.400
-DEBUG (20): 	 Flooding: message received, wind is 7.600
+DEBUG (20): 	 Flooding: message received, temp is 55.500
+DEBUG (20): 	 Flooding: message received, hum is 77.750
+DEBUG (20): 	 Flooding: message received, wind is 11.500
 DEBUG (22): 	 Flooding: send done
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (21): 	 Flooding: message received, temp is 63.250
-DEBUG (21): 	 Flooding: message received, hum is 80.750
-DEBUG (21): 	 Flooding: message received, wind is 7.750
+DEBUG (21): 	 Flooding: message received, temp is 52.333
+DEBUG (21): 	 Flooding: message received, hum is 76.667
+DEBUG (21): 	 Flooding: message received, wind is 10.500
 DEBUG (20): 	 Flooding: send done
-DEBUG (24): 	 Flooding: send done
-DEBUG (26): 	 Flooding: message received, 
-DEBUG (26): 	 Flooding: message received, temp is 60.000
-DEBUG (26): 	 Flooding: message received, hum is 79.000
-DEBUG (26): 	 Flooding: message received, wind is 6.667
 DEBUG (28): 	 Flooding: message received, 
-DEBUG (28): 	 Flooding: message received, temp is 60.000
-DEBUG (28): 	 Flooding: message received, hum is 79.000
-DEBUG (28): 	 Flooding: message received, wind is 6.667
-DEBUG (27): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, temp is 60.000
-DEBUG (27): 	 Flooding: message received, hum is 79.000
-DEBUG (27): 	 Flooding: message received, wind is 6.667
-DEBUG (23): 	 Flooding: send done
-DEBUG (29): 	 Flooding: message received, 
-DEBUG (29): 	 Flooding: message received, temp is 60.000
-DEBUG (29): 	 Flooding: message received, hum is 79.000
-DEBUG (29): 	 Flooding: message received, wind is 6.667
-DEBUG (25): 	 Flooding: send done
-DEBUG (24): 	 Flooding: message received, 
-DEBUG (24): 	 Flooding: message received, temp is 63.250
-DEBUG (24): 	 Flooding: message received, hum is 80.750
-DEBUG (24): 	 Flooding: message received, wind is 7.750
-DEBUG (23): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, temp is 63.250
-DEBUG (23): 	 Flooding: message received, hum is 80.750
-DEBUG (23): 	 Flooding: message received, wind is 7.750
-DEBUG (21): 	 Flooding: send done
-DEBUG (24): 	 Flooding: send done
-DEBUG (29): 	 Flooding: send done
-DEBUG (26): 	 Flooding: send done
-DEBUG (27): 	 Flooding: send done
-DEBUG (28): 	 Flooding: send done
-DEBUG (28): 	 Flooding: message received, 
-DEBUG (28): 	 Flooding: message received, temp is 63.250
-DEBUG (28): 	 Flooding: message received, hum is 80.750
-DEBUG (28): 	 Flooding: message received, wind is 7.750
-DEBUG (27): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, temp is 63.250
-DEBUG (27): 	 Flooding: message received, hum is 80.750
-DEBUG (27): 	 Flooding: message received, wind is 7.750
-DEBUG (26): 	 Flooding: message received, 
-DEBUG (26): 	 Flooding: message received, temp is 63.250
-DEBUG (26): 	 Flooding: message received, hum is 80.750
-DEBUG (26): 	 Flooding: message received, wind is 7.750
-DEBUG (23): 	 Flooding: send done
-DEBUG (28): 	 Flooding: send done
-DEBUG (27): 	 Flooding: send done
-DEBUG (26): 	 Flooding: send done
-DEBUG (10): 0:0:3.000001010	 APPS: MilliTimer.fired()
-DEBUG (10): 0:0:3.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
-DEBUG (10): 0:0:3.000001010	 AODV: AMSend.send() there is a route to 19
-DEBUG (12): 0:0:3.008500106	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (12): 0:0:3.008500106	 AODV: SubReceive.receive() deliver to next hop:13
-DEBUG (12): 0:0:3.008500106	 AODV: forwardMSG() try to forward to 19 
-DEBUG (12): 0:0:3.008500106	 AODV: forwardMSG() send MSG to: 19
-DEBUG (10): 0:0:3.008667951	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
-DEBUG (10): APPS: AODV sendDone!!
-DEBUG (19): 0:0:3.015976869	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (19): 0:0:3.015976869	 AODV: SubReceive.receive() deliver to upper layer
-DEBUG (12): 0:0:3.016144714	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
-DEBUG (22): 	 Flooding: message received, 
-DEBUG (22): 	 Flooding: message received, temp is 54.833
-DEBUG (22): 	 Flooding: message received, hum is 77.833
-DEBUG (22): 	 Flooding: message received, wind is 7.000
-DEBUG (21): 	 Flooding: message received, 
-DEBUG (21): 	 Flooding: message received, temp is 59.000
-DEBUG (21): 	 Flooding: message received, hum is 80.400
-DEBUG (21): 	 Flooding: message received, wind is 8.800
-DEBUG (20): 	 Flooding: send done
-DEBUG (25): 	 Flooding: message received, 
-DEBUG (25): 	 Flooding: message received, temp is 56.000
-DEBUG (25): 	 Flooding: message received, hum is 79.000
-DEBUG (25): 	 Flooding: message received, wind is 8.000
-DEBUG (22): 	 Flooding: send done
-DEBUG (24): 	 Flooding: message received, 
-DEBUG (24): 	 Flooding: message received, temp is 59.000
-DEBUG (24): 	 Flooding: message received, hum is 80.400
-DEBUG (24): 	 Flooding: message received, wind is 8.800
-DEBUG (23): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, temp is 59.000
-DEBUG (23): 	 Flooding: message received, hum is 80.400
-DEBUG (23): 	 Flooding: message received, wind is 8.800
-DEBUG (21): 	 Flooding: send done
-DEBUG (28): 	 Flooding: message received, 
-DEBUG (28): 	 Flooding: message received, temp is 59.000
-DEBUG (28): 	 Flooding: message received, hum is 80.400
-DEBUG (28): 	 Flooding: message received, wind is 8.800
-DEBUG (27): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, temp is 59.000
-DEBUG (27): 	 Flooding: message received, hum is 80.400
-DEBUG (27): 	 Flooding: message received, wind is 8.800
-DEBUG (26): 	 Flooding: message received, 
-DEBUG (26): 	 Flooding: message received, temp is 59.000
-DEBUG (26): 	 Flooding: message received, hum is 80.400
-DEBUG (26): 	 Flooding: message received, wind is 8.800
-DEBUG (23): 	 Flooding: send done
-DEBUG (27): 	 Flooding: send done
-DEBUG (26): 	 Flooding: send done
-DEBUG (29): 	 Flooding: message received, 
-DEBUG (29): 	 Flooding: message received, temp is 55.500
-DEBUG (29): 	 Flooding: message received, hum is 79.000
-DEBUG (29): 	 Flooding: message received, wind is 8.250
-DEBUG (24): 	 Flooding: send done
-DEBUG (25): 	 Flooding: send done
-DEBUG (28): 	 Flooding: send done
-DEBUG (29): 	 Flooding: send done
-DEBUG (10): 0:0:4.000001010	 APPS: MilliTimer.fired()
-DEBUG (10): 0:0:4.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
-DEBUG (10): 0:0:4.000001010	 AODV: AMSend.send() there is a route to 19
-DEBUG (12): 0:0:4.009736060	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (12): 0:0:4.009736060	 AODV: SubReceive.receive() deliver to next hop:13
-DEBUG (12): 0:0:4.009736060	 AODV: forwardMSG() try to forward to 19 
-DEBUG (12): 0:0:4.009736060	 AODV: forwardMSG() send MSG to: 19
-DEBUG (10): 0:0:4.009903906	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
-DEBUG (10): APPS: AODV sendDone!!
-DEBUG (19): 0:0:4.020813876	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (19): 0:0:4.020813876	 AODV: SubReceive.receive() deliver to upper layer
-DEBUG (12): 0:0:4.020981722	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
-DEBUG (22): 	 Flooding: message received, 
-DEBUG (22): 	 Flooding: message received, temp is 55.714
-DEBUG (22): 	 Flooding: message received, hum is 79.429
-DEBUG (22): 	 Flooding: message received, wind is 6.571
-DEBUG (21): 	 Flooding: message received, 
-DEBUG (21): 	 Flooding: message received, temp is 59.333
-DEBUG (21): 	 Flooding: message received, hum is 81.833
-DEBUG (21): 	 Flooding: message received, wind is 8.000
-DEBUG (20): 	 Flooding: send done
-DEBUG (24): 	 Flooding: message received, 
-DEBUG (24): 	 Flooding: message received, temp is 59.333
-DEBUG (24): 	 Flooding: message received, hum is 81.833
-DEBUG (24): 	 Flooding: message received, wind is 8.000
-DEBUG (23): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, temp is 59.333
-DEBUG (23): 	 Flooding: message received, hum is 81.833
-DEBUG (23): 	 Flooding: message received, wind is 8.000
-DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 62.000
-DEBUG (20): 	 Flooding: message received, hum is 81.833
-DEBUG (20): 	 Flooding: message received, wind is 7.000
-DEBUG (21): 	 Flooding: send done
-DEBUG (25): 	 Flooding: message received, 
-DEBUG (25): 	 Flooding: message received, temp is 56.833
-DEBUG (25): 	 Flooding: message received, hum is 80.667
-DEBUG (25): 	 Flooding: message received, wind is 7.333
-DEBUG (20): 	 Flooding: message received, 
-DEBUG (20): 	 Flooding: message received, temp is 61.857
-DEBUG (20): 	 Flooding: message received, hum is 82.857
-DEBUG (20): 	 Flooding: message received, wind is 6.571
-DEBUG (22): 	 Flooding: send done
-DEBUG (24): 	 Flooding: send done
-DEBUG (28): 	 Flooding: message received, 
-DEBUG (28): 	 Flooding: message received, temp is 59.333
-DEBUG (28): 	 Flooding: message received, hum is 81.833
+DEBUG (28): 	 Flooding: message received, temp is 50.000
+DEBUG (28): 	 Flooding: message received, hum is 76.000
 DEBUG (28): 	 Flooding: message received, wind is 8.000
+DEBUG (28): Universal: Universal message packaged with temp 58, hum 79, and wind 7
+DEBUG (28): Flooding: Sending universal packet to 0
 DEBUG (27): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, temp is 59.333
-DEBUG (27): 	 Flooding: message received, hum is 81.833
-DEBUG (27): 	 Flooding: message received, wind is 8.000
+DEBUG (27): 	 Flooding: message received, temp is 53.250
+DEBUG (27): 	 Flooding: message received, hum is 76.000
+DEBUG (27): 	 Flooding: message received, wind is 10.250
+DEBUG (27): Universal: Universal message packaged with temp 58, hum 79, and wind 7
+DEBUG (27): Flooding: Sending universal packet to 2
 DEBUG (26): 	 Flooding: message received, 
-DEBUG (26): 	 Flooding: message received, temp is 59.333
-DEBUG (26): 	 Flooding: message received, hum is 81.833
-DEBUG (26): 	 Flooding: message received, wind is 8.000
+DEBUG (26): 	 Flooding: message received, temp is 53.250
+DEBUG (26): 	 Flooding: message received, hum is 76.000
+DEBUG (26): 	 Flooding: message received, wind is 10.250
 DEBUG (23): 	 Flooding: send done
-DEBUG (21): 	 Flooding: message received, 
-DEBUG (21): 	 Flooding: message received, temp is 59.571
-DEBUG (21): 	 Flooding: message received, hum is 82.857
-DEBUG (21): 	 Flooding: message received, wind is 7.429
-DEBUG (20): 	 Flooding: send done
+DEBUG (27): 	 Flooding: send done
+DEBUG (24): Universal: send done
 DEBUG (29): 	 Flooding: message received, 
-DEBUG (29): 	 Flooding: message received, temp is 56.600
-DEBUG (29): 	 Flooding: message received, hum is 81.000
-DEBUG (29): 	 Flooding: message received, wind is 7.400
+DEBUG (29): 	 Flooding: message received, temp is 53.250
+DEBUG (29): 	 Flooding: message received, hum is 76.000
+DEBUG (29): 	 Flooding: message received, wind is 10.250
+DEBUG (29): Universal: Universal message packaged with temp 58, hum 79, and wind 7
+DEBUG (29): Flooding: Sending universal packet to 10
 DEBUG (25): 	 Flooding: send done
-DEBUG (28): 	 Flooding: send done
 DEBUG (26): 	 Flooding: send done
+DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 54.200
+DEBUG (24): 	 Flooding: message received, hum is 76.600
+DEBUG (24): 	 Flooding: message received, wind is 9.600
+DEBUG (24): Universal: Universal message packaged with temp 58, hum 79, and wind 7
+DEBUG (24): Flooding: Sending universal packet to 19
+DEBUG (21): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (24): 	 Flooding: send done
+DEBUG (2): CTP: universal packet received
+DEBUG (2): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (27): Universal: send done
+DEBUG (0): CTP: universal packet received
+DEBUG (0): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (0): CTP: Temp value is 55.200.
+DEBUG (0): CTP: Wind value is 9.133.
+DEBUG (0): CTP: Humidity value is 77.867.
+DEBUG (0): CTP Node received packet at 0:0:2.966035763 from node 0.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP Send completed.
+DEBUG (29): 	 Flooding: send done
+DEBUG (28): Universal: send done
+DEBUG (24): Universal: send done
+DEBUG (29): Universal: send done
+DEBUG (0): CTP: Temp value is 55.375.
+DEBUG (0): CTP: Wind value is 9.000.
+DEBUG (0): CTP: Humidity value is 77.938.
+DEBUG (0): CTP Node received packet at 0:0:2.968614483 from node 2.
+DEBUG (0): Current overlap status is 2
+DEBUG (2): CTP Send completed.
+DEBUG (10): 0:0:3.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): Test variable is 1
+DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 57.200
+DEBUG (22): 	 Flooding: message received, hum is 78.000
+DEBUG (22): 	 Flooding: message received, wind is 10.400
+DEBUG (21): 	 Flooding: message received, 
+DEBUG (21): 	 Flooding: message received, temp is 55.286
+DEBUG (21): 	 Flooding: message received, hum is 78.000
+DEBUG (21): 	 Flooding: message received, wind is 10.571
+DEBUG (20): 	 Flooding: send done
+DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 57.333
+DEBUG (24): 	 Flooding: message received, hum is 78.167
+DEBUG (24): 	 Flooding: message received, wind is 9.833
+DEBUG (24): Universal: Universal message packaged with temp 73, hum 86, and wind 11
+DEBUG (24): Flooding: Sending universal packet to 19
+DEBUG (23): 	 Flooding: message received, 
+DEBUG (23): 	 Flooding: message received, temp is 57.200
+DEBUG (23): 	 Flooding: message received, hum is 78.000
+DEBUG (23): 	 Flooding: message received, wind is 10.400
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 59.000
+DEBUG (20): 	 Flooding: message received, hum is 79.400
+DEBUG (20): 	 Flooding: message received, wind is 11.400
+DEBUG (21): 	 Flooding: send done
+DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 59.833
+DEBUG (22): 	 Flooding: message received, hum is 79.333
+DEBUG (22): 	 Flooding: message received, wind is 10.500
+DEBUG (20): 	 Flooding: send done
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 57.200
+DEBUG (25): 	 Flooding: message received, hum is 78.000
+DEBUG (25): 	 Flooding: message received, wind is 10.400
+DEBUG (24): 	 Flooding: send done
+DEBUG (22): 	 Flooding: send done
+DEBUG (24): Universal: send done
+DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 55.750
+DEBUG (28): 	 Flooding: message received, hum is 78.500
+DEBUG (28): 	 Flooding: message received, wind is 8.750
+DEBUG (28): Universal: Universal message packaged with temp 73, hum 86, and wind 11
+DEBUG (28): Flooding: Sending universal packet to 0
+DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 57.200
+DEBUG (27): 	 Flooding: message received, hum is 78.000
+DEBUG (27): 	 Flooding: message received, wind is 10.400
+DEBUG (27): Universal: Universal message packaged with temp 73, hum 86, and wind 11
+DEBUG (27): Flooding: Sending universal packet to 2
+DEBUG (26): 	 Flooding: message received, 
+DEBUG (26): 	 Flooding: message received, temp is 57.200
+DEBUG (26): 	 Flooding: message received, hum is 78.000
+DEBUG (26): 	 Flooding: message received, wind is 10.400
+DEBUG (23): 	 Flooding: send done
+DEBUG (29): 	 Flooding: message received, 
+DEBUG (29): 	 Flooding: message received, temp is 57.200
+DEBUG (29): 	 Flooding: message received, hum is 78.000
+DEBUG (29): 	 Flooding: message received, wind is 10.400
+DEBUG (29): Universal: Universal message packaged with temp 73, hum 86, and wind 11
+DEBUG (29): Flooding: Sending universal packet to 10
+DEBUG (25): 	 Flooding: send done
+DEBUG (26): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
 DEBUG (27): 	 Flooding: send done
 DEBUG (29): 	 Flooding: send done
+DEBUG (2): CTP: universal packet received
+DEBUG (2): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (27): Universal: send done
+DEBUG (0): CTP: universal packet received
+DEBUG (0): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (0): CTP: Temp value is 56.412.
+DEBUG (0): CTP: Wind value is 9.118.
+DEBUG (0): CTP: Humidity value is 78.412.
+DEBUG (0): CTP Node received packet at 0:0:3.939805921 from node 0.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP Send completed.
+DEBUG (28): Universal: send done
+DEBUG (29): Universal: send done
+DEBUG (0): CTP: Temp value is 57.333.
+DEBUG (0): CTP: Wind value is 9.222.
+DEBUG (0): CTP: Humidity value is 78.833.
+DEBUG (0): CTP Node received packet at 0:0:3.943742666 from node 2.
+DEBUG (0): Current overlap status is 2
+DEBUG (2): CTP Send completed.
+DEBUG (10): 0:0:4.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): Test variable is 1
+DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 57.286
+DEBUG (22): 	 Flooding: message received, hum is 79.286
+DEBUG (22): 	 Flooding: message received, wind is 10.857
+DEBUG (21): 	 Flooding: message received, 
+DEBUG (21): 	 Flooding: message received, temp is 53.625
+DEBUG (21): 	 Flooding: message received, hum is 78.125
+DEBUG (21): 	 Flooding: message received, wind is 10.875
+DEBUG (20): 	 Flooding: send done
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 54.667
+DEBUG (25): 	 Flooding: message received, hum is 78.167
+DEBUG (25): 	 Flooding: message received, wind is 10.833
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 56.167
+DEBUG (20): 	 Flooding: message received, hum is 79.333
+DEBUG (20): 	 Flooding: message received, wind is 11.667
+DEBUG (22): 	 Flooding: send done
 DEBUG (24): 	 Flooding: message received, 
-DEBUG (24): 	 Flooding: message received, temp is 59.571
-DEBUG (24): 	 Flooding: message received, hum is 82.857
-DEBUG (24): 	 Flooding: message received, wind is 7.429
+DEBUG (24): 	 Flooding: message received, temp is 55.143
+DEBUG (24): 	 Flooding: message received, hum is 78.286
+DEBUG (24): 	 Flooding: message received, wind is 10.286
+DEBUG (24): Universal: Universal message packaged with temp 42, hum 79, and wind 13
+DEBUG (24): Flooding: Sending universal packet to 19
 DEBUG (23): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, temp is 59.571
-DEBUG (23): 	 Flooding: message received, hum is 82.857
-DEBUG (23): 	 Flooding: message received, wind is 7.429
+DEBUG (23): 	 Flooding: message received, temp is 54.667
+DEBUG (23): 	 Flooding: message received, hum is 78.167
+DEBUG (23): 	 Flooding: message received, wind is 10.833
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 54.143
+DEBUG (20): 	 Flooding: message received, hum is 79.286
+DEBUG (20): 	 Flooding: message received, wind is 11.857
 DEBUG (21): 	 Flooding: send done
-DEBUG (28): 	 Flooding: message received, 
-DEBUG (28): 	 Flooding: message received, temp is 59.571
-DEBUG (28): 	 Flooding: message received, hum is 82.857
-DEBUG (28): 	 Flooding: message received, wind is 7.429
-DEBUG (27): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, temp is 59.571
-DEBUG (27): 	 Flooding: message received, hum is 82.857
-DEBUG (27): 	 Flooding: message received, wind is 7.429
-DEBUG (26): 	 Flooding: message received, 
-DEBUG (26): 	 Flooding: message received, temp is 59.571
-DEBUG (26): 	 Flooding: message received, hum is 82.857
-DEBUG (26): 	 Flooding: message received, wind is 7.429
-DEBUG (23): 	 Flooding: send done
-DEBUG (27): 	 Flooding: send done
+DEBUG (29): 	 Flooding: message received, 
+DEBUG (29): 	 Flooding: message received, temp is 54.667
+DEBUG (29): 	 Flooding: message received, hum is 78.167
+DEBUG (29): 	 Flooding: message received, wind is 10.833
+DEBUG (29): Universal: Universal message packaged with temp 42, hum 79, and wind 13
+DEBUG (29): Flooding: Sending universal packet to 10
+DEBUG (25): 	 Flooding: send done
+DEBUG (22): 	 Flooding: message received, 
+DEBUG (22): 	 Flooding: message received, temp is 55.375
+DEBUG (22): 	 Flooding: message received, hum is 79.250
+DEBUG (22): 	 Flooding: message received, wind is 11.125
+DEBUG (20): 	 Flooding: send done
 DEBUG (24): 	 Flooding: send done
-DEBUG (26): 	 Flooding: send done
+DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 54.667
+DEBUG (27): 	 Flooding: message received, hum is 78.167
+DEBUG (27): 	 Flooding: message received, wind is 10.833
+DEBUG (27): Universal: Universal message packaged with temp 42, hum 79, and wind 13
+DEBUG (27): Flooding: Sending universal packet to 2
+DEBUG (26): 	 Flooding: message received, 
+DEBUG (26): 	 Flooding: message received, temp is 54.667
+DEBUG (26): 	 Flooding: message received, hum is 78.167
+DEBUG (26): 	 Flooding: message received, wind is 10.833
+DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 53.000
+DEBUG (28): 	 Flooding: message received, hum is 78.600
+DEBUG (28): 	 Flooding: message received, wind is 9.600
+DEBUG (28): Universal: Universal message packaged with temp 42, hum 79, and wind 13
+DEBUG (28): Flooding: Sending universal packet to 0
+DEBUG (23): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 52.857
+DEBUG (25): 	 Flooding: message received, hum is 78.286
+DEBUG (25): 	 Flooding: message received, wind is 11.143
+DEBUG (22): 	 Flooding: send done
+DEBUG (24): Universal: send done
+DEBUG (27): 	 Flooding: send done
 DEBUG (28): 	 Flooding: send done
+DEBUG (29): 	 Flooding: message received, 
+DEBUG (29): 	 Flooding: message received, temp is 52.857
+DEBUG (29): 	 Flooding: message received, hum is 78.286
+DEBUG (29): 	 Flooding: message received, wind is 11.143
+DEBUG (29): Universal: Universal message packaged with temp 42, hum 79, and wind 13
+DEBUG (29): Flooding: Sending universal packet to 10
+DEBUG (26): 	 Flooding: send done
+DEBUG (25): 	 Flooding: send done
+DEBUG (2): CTP: universal packet received
+DEBUG (2): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (27): Universal: send done
+DEBUG (29): Universal: send done
+DEBUG (0): CTP: universal packet received
+DEBUG (0): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (0): CTP: Temp value is 56.526.
+DEBUG (0): CTP: Wind value is 9.421.
+DEBUG (0): CTP: Humidity value is 78.842.
+DEBUG (0): CTP Node received packet at 0:0:4.920045768 from node 0.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP Send completed.
+DEBUG (28): Universal: send done
+DEBUG (29): 	 Flooding: send done
+DEBUG (0): CTP: Temp value is 55.800.
+DEBUG (0): CTP: Wind value is 9.600.
+DEBUG (0): CTP: Humidity value is 78.850.
+DEBUG (0): CTP Node received packet at 0:0:4.924531825 from node 2.
+DEBUG (0): Current overlap status is 2
+DEBUG (2): CTP Send completed.
 DEBUG (10): 0:0:5.000001010	 APPS: MilliTimer.fired()
-DEBUG (10): 0:0:5.000001010	 AODV: AMSend.send() dest: 19 id: 1 len: 41 nexthop: 12
-DEBUG (10): 0:0:5.000001010	 AODV: AMSend.send() there is a route to 19
-DEBUG (12): 0:0:5.011506069	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (12): 0:0:5.011506069	 AODV: SubReceive.receive() deliver to next hop:13
-DEBUG (12): 0:0:5.011506069	 AODV: forwardMSG() try to forward to 19 
-DEBUG (12): 0:0:5.011506069	 AODV: forwardMSG() send MSG to: 19
-DEBUG (10): 0:0:5.011673915	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
-DEBUG (10): APPS: AODV sendDone!!
-DEBUG (19): 0:0:5.021759916	 AODV: SubReceive.receive() dest: 19 src:10
-DEBUG (19): 0:0:5.021759916	 AODV: SubReceive.receive() deliver to upper layer
-DEBUG (12): 0:0:5.021927762	 AODV: SubSend.sendDone() dest:19 src:10 wasAcked:1
+DEBUG (10): Test variable is 1
+DEBUG (9): Universal: Universal message packaged with temp 61, hum 89, and wind 4
+DEBUG (9): CTP: Sending universal packet to 17
+DEBUG (9): TestNetworkC$sendMessage: Transmission succeeded.
+DEBUG (9): Universal: send done
+DEBUG (9): CTP Send completed.
+DEBUG (0): CTP: Temp value is 56.048.
+DEBUG (0): CTP: Wind value is 9.333.
+DEBUG (0): CTP: Humidity value is 79.333.
+DEBUG (0): CTP Node received packet at 0:0:5.430741129 from node 9.
+DEBUG (0): Current overlap status is 2
 DEBUG (4): TestNetworkC$sendMessage: Transmission succeeded.
 DEBUG (4): CTP Send completed.
-DEBUG (0): CTP: Temp value is 56.636.
-DEBUG (0): CTP: Wind value is 8.909.
-DEBUG (0): CTP: Humidity value is 80.000.
-DEBUG (0): CTP Node received packet at 0:0:5.696670911 from node 4.
-DEBUG (0): CTP node sending packet to UART.
-DEBUG (0): Sending packet to UART.
+DEBUG (0): CTP: Temp value is 56.091.
+DEBUG (0): CTP: Wind value is 9.091.
+DEBUG (0): CTP: Humidity value is 79.727.
+DEBUG (0): CTP Node received packet at 0:0:5.691925456 from node 4.
+DEBUG (0): Current overlap status is 2
 DEBUG (22): 	 Flooding: message received, 
-DEBUG (22): 	 Flooding: message received, temp is 58.125
-DEBUG (22): 	 Flooding: message received, hum is 79.500
-DEBUG (22): 	 Flooding: message received, wind is 7.375
+DEBUG (22): 	 Flooding: message received, temp is 57.556
+DEBUG (22): 	 Flooding: message received, hum is 79.333
+DEBUG (22): 	 Flooding: message received, wind is 11.333
 DEBUG (21): 	 Flooding: message received, 
-DEBUG (21): 	 Flooding: message received, temp is 61.500
-DEBUG (21): 	 Flooding: message received, hum is 82.500
-DEBUG (21): 	 Flooding: message received, wind is 8.125
+DEBUG (21): 	 Flooding: message received, temp is 56.000
+DEBUG (21): 	 Flooding: message received, hum is 78.333
+DEBUG (21): 	 Flooding: message received, wind is 11.111
 DEBUG (20): 	 Flooding: send done
-DEBUG (25): 	 Flooding: message received, 
-DEBUG (25): 	 Flooding: message received, temp is 59.429
-DEBUG (25): 	 Flooding: message received, hum is 80.571
-DEBUG (25): 	 Flooding: message received, wind is 8.143
-DEBUG (22): 	 Flooding: send done
 DEBUG (24): 	 Flooding: message received, 
-DEBUG (24): 	 Flooding: message received, temp is 61.500
-DEBUG (24): 	 Flooding: message received, hum is 82.500
-DEBUG (24): 	 Flooding: message received, wind is 8.125
+DEBUG (24): 	 Flooding: message received, temp is 57.625
+DEBUG (24): 	 Flooding: message received, hum is 78.500
+DEBUG (24): 	 Flooding: message received, wind is 10.625
+DEBUG (24): Universal: Universal message packaged with temp 75, hum 80, and wind 13
+DEBUG (24): Flooding: Sending universal packet to 19
 DEBUG (23): 	 Flooding: message received, 
-DEBUG (23): 	 Flooding: message received, temp is 61.500
-DEBUG (23): 	 Flooding: message received, hum is 82.500
-DEBUG (23): 	 Flooding: message received, wind is 8.125
+DEBUG (23): 	 Flooding: message received, temp is 57.571
+DEBUG (23): 	 Flooding: message received, hum is 78.429
+DEBUG (23): 	 Flooding: message received, wind is 11.143
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 56.750
+DEBUG (20): 	 Flooding: message received, hum is 79.375
+DEBUG (20): 	 Flooding: message received, wind is 12.000
 DEBUG (21): 	 Flooding: send done
-DEBUG (28): 	 Flooding: message received, 
-DEBUG (28): 	 Flooding: message received, temp is 61.500
-DEBUG (28): 	 Flooding: message received, hum is 82.500
-DEBUG (28): 	 Flooding: message received, wind is 8.125
-DEBUG (27): 	 Flooding: message received, 
-DEBUG (27): 	 Flooding: message received, temp is 61.500
-DEBUG (27): 	 Flooding: message received, hum is 82.500
-DEBUG (27): 	 Flooding: message received, wind is 8.125
-DEBUG (26): 	 Flooding: message received, 
-DEBUG (26): 	 Flooding: message received, temp is 61.500
-DEBUG (26): 	 Flooding: message received, hum is 82.500
-DEBUG (26): 	 Flooding: message received, wind is 8.125
-DEBUG (23): 	 Flooding: send done
-DEBUG (29): 	 Flooding: message received, 
-DEBUG (29): 	 Flooding: message received, temp is 59.667
-DEBUG (29): 	 Flooding: message received, hum is 80.833
-DEBUG (29): 	 Flooding: message received, wind is 8.333
+DEBUG (25): 	 Flooding: message received, 
+DEBUG (25): 	 Flooding: message received, temp is 55.625
+DEBUG (25): 	 Flooding: message received, hum is 78.500
+DEBUG (25): 	 Flooding: message received, wind is 11.375
+DEBUG (20): 	 Flooding: message received, 
+DEBUG (20): 	 Flooding: message received, temp is 58.778
+DEBUG (20): 	 Flooding: message received, hum is 79.444
+DEBUG (20): 	 Flooding: message received, wind is 12.111
+DEBUG (22): 	 Flooding: send done
 DEBUG (24): 	 Flooding: send done
+DEBUG (29): 	 Flooding: message received, 
+DEBUG (29): 	 Flooding: message received, temp is 55.625
+DEBUG (29): 	 Flooding: message received, hum is 78.500
+DEBUG (29): 	 Flooding: message received, wind is 11.375
+DEBUG (29): Universal: Universal message packaged with temp 75, hum 80, and wind 13
+DEBUG (29): Flooding: Sending universal packet to 10
 DEBUG (25): 	 Flooding: send done
+DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 56.667
+DEBUG (28): 	 Flooding: message received, hum is 78.833
+DEBUG (28): 	 Flooding: message received, wind is 10.167
+DEBUG (28): Universal: Universal message packaged with temp 75, hum 80, and wind 13
+DEBUG (28): Flooding: Sending universal packet to 0
+DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 57.571
+DEBUG (27): 	 Flooding: message received, hum is 78.429
+DEBUG (27): 	 Flooding: message received, wind is 11.143
+DEBUG (27): Universal: Universal message packaged with temp 75, hum 80, and wind 13
+DEBUG (27): Flooding: Sending universal packet to 2
+DEBUG (26): 	 Flooding: message received, 
+DEBUG (26): 	 Flooding: message received, temp is 57.571
+DEBUG (26): 	 Flooding: message received, hum is 78.429
+DEBUG (26): 	 Flooding: message received, wind is 11.143
+DEBUG (23): 	 Flooding: send done
+DEBUG (21): 	 Flooding: message received, 
+DEBUG (21): 	 Flooding: message received, temp is 57.900
+DEBUG (21): 	 Flooding: message received, hum is 78.500
+DEBUG (21): 	 Flooding: message received, wind is 11.300
+DEBUG (20): 	 Flooding: send done
+DEBUG (29): 	 Flooding: send done
+DEBUG (24): Universal: send done
+DEBUG (27): 	 Flooding: send done
 DEBUG (28): 	 Flooding: send done
+DEBUG (29): Universal: send done
+DEBUG (2): CTP: universal packet received
+DEBUG (2): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (27): Universal: send done
+DEBUG (26): 	 Flooding: send done
+DEBUG (24): 	 Flooding: message received, 
+DEBUG (24): 	 Flooding: message received, temp is 59.556
+DEBUG (24): 	 Flooding: message received, hum is 78.667
+DEBUG (24): 	 Flooding: message received, wind is 10.889
+DEBUG (24): Universal: Universal message packaged with temp 75, hum 80, and wind 13
+DEBUG (24): Flooding: Sending universal packet to 19
+DEBUG (23): 	 Flooding: message received, 
+DEBUG (23): 	 Flooding: message received, temp is 59.750
+DEBUG (23): 	 Flooding: message received, hum is 78.625
+DEBUG (23): 	 Flooding: message received, wind is 11.375
+DEBUG (0): CTP: Temp value is 56.913.
+DEBUG (0): CTP: Wind value is 9.261.
+DEBUG (0): CTP: Humidity value is 79.739.
+DEBUG (0): CTP Node received packet at 0:0:5.896028437 from node 2.
+DEBUG (0): Current overlap status is 2
+DEBUG (21): 	 Flooding: send done
+DEBUG (2): CTP Send completed.
+DEBUG (0): CTP: universal packet received
+DEBUG (0): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (0): CTP: Temp value is 57.667.
+DEBUG (0): CTP: Wind value is 9.417.
+DEBUG (0): CTP: Humidity value is 79.750.
+DEBUG (0): CTP Node received packet at 0:0:5.898271466 from node 0.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP Send completed.
+DEBUG (28): Universal: send done
+DEBUG (24): 	 Flooding: send done
+DEBUG (26): 	 Flooding: message received, 
+DEBUG (26): 	 Flooding: message received, temp is 59.750
+DEBUG (26): 	 Flooding: message received, hum is 78.625
+DEBUG (26): 	 Flooding: message received, wind is 11.375
+DEBUG (28): 	 Flooding: message received, 
+DEBUG (28): 	 Flooding: message received, temp is 59.286
+DEBUG (28): 	 Flooding: message received, hum is 79.000
+DEBUG (28): 	 Flooding: message received, wind is 10.571
+DEBUG (28): Universal: Universal message packaged with temp 75, hum 80, and wind 13
+DEBUG (28): Flooding: Sending universal packet to 0
+DEBUG (27): 	 Flooding: message received, 
+DEBUG (27): 	 Flooding: message received, temp is 59.750
+DEBUG (27): 	 Flooding: message received, hum is 78.625
+DEBUG (27): 	 Flooding: message received, wind is 11.375
+DEBUG (27): Universal: Universal message packaged with temp 75, hum 80, and wind 13
+DEBUG (27): Flooding: Sending universal packet to 2
+DEBUG (23): 	 Flooding: send done
+DEBUG (24): Universal: send done
 DEBUG (26): 	 Flooding: send done
 DEBUG (27): 	 Flooding: send done
-DEBUG (29): 	 Flooding: send done
+DEBUG (28): 	 Flooding: send done
+DEBUG (0): CTP: universal packet received
+DEBUG (0): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (0): CTP: Temp value is 58.360.
+DEBUG (0): CTP: Wind value is 9.560.
+DEBUG (0): CTP: Humidity value is 79.760.
+DEBUG (0): CTP Node received packet at 0:0:5.913682753 from node 0.
+DEBUG (0): Current overlap status is 2
+DEBUG (0): CTP Send completed.
+DEBUG (28): Universal: send done
+DEBUG (2): CTP: universal packet received
+DEBUG (2): TestNetworkC$ReceiveUniversal$receive: Transmission succeeded.
+DEBUG (27): Universal: send done
+DEBUG (0): CTP: Temp value is 59.000.
+DEBUG (0): CTP: Wind value is 9.692.
+DEBUG (0): CTP: Humidity value is 79.769.
+DEBUG (0): CTP Node received packet at 0:0:5.927171444 from node 2.
+DEBUG (0): Current overlap status is 2
+DEBUG (2): CTP Send completed.
 Completed simulation.

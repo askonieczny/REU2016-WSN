@@ -24,7 +24,7 @@ typedef nx_struct rout_msg {
 } rout_msg_t;
 
 typedef nx_struct flood_msg {
-  nx_uint16_t sources[30];
+  nx_int16_t sources[10];
   nx_uint16_t temp;
   nx_uint16_t hum;
   nx_uint16_t wind;
@@ -38,5 +38,18 @@ typedef nx_struct overlap_ping_req {
 typedef nx_struct overlap_ping_rep {
   nx_am_addr_t dest;
 } overlap_ping_rep_t;
+
+typedef nx_struct universal_msg {
+  nx_uint16_t temp;
+  nx_uint16_t hum;
+  nx_uint16_t wind;
+} universal_msg_t;
+
+typedef nx_struct aodv_msg {
+  nx_uint16_t temp;
+  nx_uint16_t hum;
+  nx_uint16_t wind;
+} aodv_msg_t;
+
 
 #endif

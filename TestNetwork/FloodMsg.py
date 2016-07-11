@@ -55,7 +55,7 @@ class FloodMsg(tinyos.message.Message.Message):
 
     #
     # Accessor methods for field: sources
-    #   Field type: int[]
+    #   Field type: short[]
     #   Offset (bits): 0
     #   Size of each element (bits): 16
     #
@@ -93,7 +93,7 @@ class FloodMsg(tinyos.message.Message.Message):
         return offset
     
     #
-    # Return the entire array 'sources' as a int[]
+    # Return the entire array 'sources' as a short[]
     #
     def get_sources(self):
         tmp = [None]*10
@@ -102,23 +102,23 @@ class FloodMsg(tinyos.message.Message.Message):
         return tmp
     
     #
-    # Set the contents of the array 'sources' from the given int[]
+    # Set the contents of the array 'sources' from the given short[]
     #
     def set_sources(self, value):
         for index0 in range(0, len(value)):
             self.setElement_sources(index0, value[index0])
 
     #
-    # Return an element (as a int) of the array 'sources'
+    # Return an element (as a short) of the array 'sources'
     #
     def getElement_sources(self, index1):
-        return self.getUIntElement(self.offsetBits_sources(index1), 16, 1)
+        return self.getSIntElement(self.offsetBits_sources(index1), 16, 1)
     
     #
     # Set an element of the array 'sources'
     #
     def setElement_sources(self, index1, value):
-        self.setUIntElement(self.offsetBits_sources(index1), 16, value, 1)
+        self.setSIntElement(self.offsetBits_sources(index1), 16, value, 1)
     
     #
     # Return the total size, in bytes, of the array 'sources'

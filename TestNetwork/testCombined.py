@@ -71,11 +71,14 @@ print "Starting simulation."
 #t.addChannel("QueueC", sys.stdout)
 #t.addChannel("Gain", sys.stdout)
 #t.addChannel("Forwarder", sys.stdout)
-t.addChannel("AODV", sys.stdout)
+#t.addChannel("AODV", sys.stdout)
 t.addChannel("TestNetworkC", sys.stdout)
+t.addChannel("Flooding", sys.stdout)
+t.addChannel("CTP", sys.stdout)
 t.addChannel("APPS", sys.stdout)
 t.addChannel("Traffic", sys.stdout)
-t.addChannel("AODV_DBG", sys.stdout)
+t.addChannel("Universal", sys.stdout)
+#t.addChannel("AODV_DBG", sys.stdout)
 #t.addChannel("Acks", sys.stdout)
 
 #Declares routing protocol and overlap info for each node

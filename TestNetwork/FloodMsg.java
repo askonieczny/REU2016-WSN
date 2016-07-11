@@ -107,7 +107,7 @@ public class FloodMsg extends net.tinyos.message.Message {
 
     /////////////////////////////////////////////////////////
     // Accessor methods for field: sources
-    //   Field type: int[], unsigned
+    //   Field type: short[], unsigned
     //   Offset (bits): 0
     //   Size of each element (bits): 16
     /////////////////////////////////////////////////////////
@@ -147,10 +147,10 @@ public class FloodMsg extends net.tinyos.message.Message {
     }
 
     /**
-     * Return the entire array 'sources' as a int[]
+     * Return the entire array 'sources' as a short[]
      */
-    public int[] get_sources() {
-        int[] tmp = new int[10];
+    public short[] get_sources() {
+        short[] tmp = new short[10];
         for (int index0 = 0; index0 < numElements_sources(0); index0++) {
             tmp[index0] = getElement_sources(index0);
         }
@@ -158,26 +158,26 @@ public class FloodMsg extends net.tinyos.message.Message {
     }
 
     /**
-     * Set the contents of the array 'sources' from the given int[]
+     * Set the contents of the array 'sources' from the given short[]
      */
-    public void set_sources(int[] value) {
+    public void set_sources(short[] value) {
         for (int index0 = 0; index0 < value.length; index0++) {
             setElement_sources(index0, value[index0]);
         }
     }
 
     /**
-     * Return an element (as a int) of the array 'sources'
+     * Return an element (as a short) of the array 'sources'
      */
-    public int getElement_sources(int index1) {
-        return (int)getUIntBEElement(offsetBits_sources(index1), 16);
+    public short getElement_sources(int index1) {
+        return (short)getSIntBEElement(offsetBits_sources(index1), 16);
     }
 
     /**
      * Set an element of the array 'sources'
      */
-    public void setElement_sources(int index1, int value) {
-        setUIntBEElement(offsetBits_sources(index1), 16, value);
+    public void setElement_sources(int index1, short value) {
+        setSIntBEElement(offsetBits_sources(index1), 16, value);
     }
 
     /**
