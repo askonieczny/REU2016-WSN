@@ -93,6 +93,7 @@ implementation {
   //AODV variables
   message_t pkt;
   message_t* p_pkt;
+  message_t* aodv_msg;
 
   uint16_t src = 10; //source node of AODV send
   uint16_t dest = 19; //destination node of AODV send
@@ -254,13 +255,9 @@ implementation {
     //uint8_t test;
     if(prot == 2) { //if protocol is AODV
       dbg("APPS", "%s\t APPS: MilliTimer.fired()\n", sim_time_string());
-      /*
-      aodv_msg = (aodv_msg_hdr*)call Packet.getPayload(&pkt, sizeof(aodv_msg_hdr));
-      aodv_msg -> temp = rand() % 40 + 40;
-      aodv_msg -> hum = rand() % 20 + 70;
-      aodv_msg -> wind = rand() % 20;
-      */
-
+      p_pkt -> data[0] = 40;
+      p_pkt -> data[1] = 50;
+      p_pkt -> data[2] = 60;
       call Leds.led0Toggle();
       dbg("TestNetworkC", "Test variable is %d\n", test);
       call AMAODVSend.send(dest, &pkt, sizeof(p_pkt));
@@ -396,6 +393,9 @@ implementation {
       humReceived = u -> hum;
       windReceived = u -> wind;
       dbg("CTP", "CTP: universal packet received\n");
+      dbg("CTP", "CTP: universal packet says temp is %d\n", tempReceived);
+      dbg("CTP", "CTP: universal packet says hum is %d\n", humReceived);
+      dbg("CTP", "CTP: universal packet says wind is %d\n", windReceived);
 
       networkMsg = (TestNetworkMsg*)call Send.getPayload(&packet, sizeof(TestNetworkMsg));
       networkMsg -> temp = tempReceived;
@@ -608,9 +608,16 @@ implementation {
     //uint16_t aodv_temp;
     //uint16_t aodv_hum;
     //uint16_t aodv_wind;
-    //aodv_msg = (message_t*)payload;
+    aodv_msg = (message_t*)payload;
     if(prot == 2) { //if protocol is AODV
+      tempReceived = aodv_msg -> data[0];
+      humReceived = aodv_msg -> data[1];
+      windReceived = aodv_msg -> data[2];
       dbg("AODV", "%s\t AODV: Received!!!!\n", sim_time_string());
+      dbg("AODV", "\t AODV: Temp is %d\n", tempReceived);
+      dbg("AODV", "\t AODV: Hum is %d\n", humReceived);
+      dbg("AODV", "\t AODV: Wind is %d\n", windReceived);
+
       /*
       aodv_temp = aodv_msg -> temp;
       aodv_hum = aodv_msg -> hum;
@@ -629,10 +636,18 @@ implementation {
     if(prot == 1) { //if protocol is CTP
       //if(TOS_NODE_ID == 0){ 
       TestNetworkMsg* rcm = (TestNetworkMsg*) payload;
-      temp += rcm -> temp;
-      hum  += rcm -> hum;
-      wind += rcm -> wind;
+      tempReceived = rcm -> temp;
+      humReceived = rcm -> hum;
+      windReceived = rcm -> wind;
+      temp += tempReceived;
+      hum  += humReceived;
+      wind += windReceived;
       num++;
+      /*
+      dbg("CTP", "CTP: Received temp value is %d\n", tempReceived);
+      dbg("CTP", "CTP: Received temp value is %d\n", humReceived);
+      dbg("CTP", "CTP: Received temp value is %d\n", windReceived);
+      */
       dbg("CTP", "CTP: Temp value is %.3f.\n", temp/num);
       dbg("CTP", "CTP: Wind value is %.3f.\n", wind/num);
       dbg("CTP", "CTP: Humidity value is %.3f.\n", hum/num);

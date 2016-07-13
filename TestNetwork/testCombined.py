@@ -7,9 +7,11 @@ import sys
 
 #Node class needed to construct a directed graph of network in TOSSIM
 class Node(object):
-	def __init__(self,idNum):
-		self.nextNodes = []
-		self.idNum=idNum
+  def __init__(self,idNum,xCord,yCord):
+    self.nextNodes = []
+    self.idNum=idNum
+    self.xCord=xCord
+    self.yCord=yCord
 
 #n = NescApp("TestNetwork", "app.xml")
 #t = Tossim(n.variables.variables())
@@ -18,11 +20,17 @@ r = t.radio()
 numNodes = 30
 endTime = 6 #seconds
 
+#CLIENT SPECIFICED REGION OF INTEREST (change according to client's preferences)
+clientXOne = 20
+clientXTwo = 80
+clientYOne = 30
+clientYTwo = 60
+
 #neded to construct directed graphs (which will show overlaps)
 listNodes = []
 graph = []
 for i in range(numNodes):
-	graph.append(Node(-1))
+  graph.append(Node(-1, 0, 0))
 
 sys.stdout = open('out_testCombined.txt','w')
 
@@ -31,17 +39,21 @@ lines = f.readlines()
 for line in lines:
   s = line.split()
   if (len(s) > 0):
-	r.add(int(s[0]), int(s[1]), float(s[2]))
-	valOne = int(s[0])
-	valTwo = int(s[1])
-	if valOne not in listNodes:
-		graph[valOne] = Node(valOne)
-		listNodes.append(int(s[0]))
-	if valTwo not in listNodes:
-		graph[valTwo] = Node(valTwo)
-		listNodes.append(int(s[1]))
+    r.add(int(s[0]), int(s[1]), float(s[2]))
+    valOne = int(s[0])
+    valTwo = int(s[1])
+    xCordOne = int(s[3])
+    yCordOne = int(s[4])
+    xCordTwo = int(s[5])
+    yCordTwo = int(s[6])
+    if valOne not in listNodes:
+      graph[valOne] = Node(valOne, xCordOne, yCordOne)
+      listNodes.append(int(s[0]))
+    if valTwo not in listNodes:
+      graph[valTwo] = Node(valTwo, xCordTwo, yCordTwo)
+      listNodes.append(int(s[1]))
 
-	graph[valOne].nextNodes.append(valTwo)
+  graph[valOne].nextNodes.append(valTwo)
 
 noise = open("noise.txt", "r")
 lines = noise.readlines()
@@ -53,7 +65,37 @@ for line in lines:
       m = t.getNode(i);
       m.addNoiseTraceReading(val)
 
+#construct graph of nodes and edges in region of interest
+graphRegionWithAllEdges = []
+nodesInRegion = []
+for mote in graph:
+  #check if in region of interest
+  if (mote.xCord > clientXOne and mote.yCord > clientYOne 
+      and mote.xCord < clientXTwo and mote.yCord < clientYTwo): 
+    graphRegionWithAllEdges.append(mote)
+    nodesInRegion.append(mote.idNum)
 
+#remove edges outside of region of interest
+graphRegion = []
+for i in range(len(graphRegionWithAllEdges)):
+  mote = graphRegionWithAllEdges[i]
+  relevantNextNodes = []
+  for edge in mote.nextNodes:
+    if(edge in nodesInRegion):
+      relevantNextNodes.append(edge)
+  graphRegion.append(Node(mote.idNum, mote.xCord, mote.yCord))
+  for edge in relevantNextNodes:
+    graphRegion[i].nextNodes.append(edge)
+
+#print out region of interest nodes and edges to test
+for mote in graphRegion:
+  print "Node ", mote.idNum, " is connected to:",
+  for edge in mote.nextNodes:
+    print edge, " ",
+  print " "
+
+#KYLE ADD YOUR STUFF HERE
+CDSgraph = []
 
 for i in range(0, numNodes):
   m = t.getNode(i);
@@ -71,7 +113,7 @@ print "Starting simulation."
 #t.addChannel("QueueC", sys.stdout)
 #t.addChannel("Gain", sys.stdout)
 #t.addChannel("Forwarder", sys.stdout)
-#t.addChannel("AODV", sys.stdout)
+t.addChannel("AODV", sys.stdout)
 t.addChannel("TestNetworkC", sys.stdout)
 t.addChannel("Flooding", sys.stdout)
 t.addChannel("CTP", sys.stdout)
