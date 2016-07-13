@@ -25,15 +25,15 @@ def findmcds(region):
             next_node = node
             max_card = len(adj_dict[node])
 #    print 'next node to add to MCDS: %s with cardinality %d \n' % (next_node, max_card)
-    working_mcds.add(next_node)
+    working_mcds.add(next_node)  # add that node to mcds
 #    print 'current mcds: ', working_mcds, '\n'
-    reachable = reachable | adj_dict[next_node]
+    reachable = reachable | adj_dict[next_node]  # add adjacent nodes to reachable
 #    print 'reachable nodes ', reachable, '\n'
-    for node in adj_dict:
+    for node in adj_dict:  # Remove redundant adjacency  
         adj_dict[node] = adj_dict[node] - reachable
     max_card = 0
-    while len(adj_dict) - len(reachable) != 0:
-        for node in reachable:  # find node with highest cardinality
+    while len(adj_dict) - len(reachable) != 0:  # While there are still unreachable nodes,
+        for node in reachable:                  # repeat only using the cardinality of reachable nodes
             if not len(adj_dict[node]) < max_card:
                 next_node = node
                 max_card = len(adj_dict[node])
