@@ -15,6 +15,8 @@ def findmcds(region):
     max_card = 0  # highest cardinality
     next_node = ' '
     region_set = set()
+    mcds = []
+    index = -1
 
     for mote in region:       # This part of the code converts the given list of nodes into a dictionary with a key
         region_set.add(mote)  # equal to idNum and the value equal to a set of all elements in nextNodes
@@ -53,5 +55,11 @@ def findmcds(region):
         max_card = 0
     if len(adj_dict) - len(reachable) != 0: # if there is an unconnected subgraph, error
         print "Error! No valid MCDS for this region"
-        return set()
-    return working_mcds
+        return []
+    for node in working_mcds:
+        for i in range(len(region)):
+            if region[i].idNum == node:
+                index = i
+                break
+        mcds.append(region[index])
+    return mcds

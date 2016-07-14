@@ -10,13 +10,16 @@
 def findmcds(region):
     adj_dict = {}  # dictionary which will hold sets of all nodes adjacent to key
     working_mcds = set()  # set which contains current MCDS
+    previous_mcds = set() # to make sure elements are being added to mcds
     reachable = set()  # set which contains all reachable nodes
     max_card = 0  # highest cardinality
     next_node = ' '
     region_set = set()
-    for mote in region:
-        region_set.add(mote)
+    mcds = []
+    index = -1
 
+    for mote in region:       # This part of the code converts the given list of nodes into a dictionary with a key
+        region_set.add(mote)  # equal to idNum and the value equal to a set of all elements in nextNodes
     for mote in region_set:
         if len(mote.nextNodes) > 0:
             adj_dict[mote.idNum] = set()
@@ -24,17 +27,6 @@ def findmcds(region):
             for x in mote.nextNodes:
                 adj_dict[mote.idNum].add(x)
 
-#    f = open('topo.txt', 'r')
-#    lines = f.readlines()
-#    for line in lines:  # Gather information from topo.txt
-#        edge = line.split()
-#        if len(edge) > 0:
-#            if edge[0] in adj_dict and edge[1] in region:
-#                adj_dict[edge[0]].add(edge[1])
-#            elif edge[0] in region and edge[1] in region:
-#                adj_dict[edge[0]] = set()
-#                adj_dict[edge[0]].add(edge[0])
-#                adj_dict[edge[0]].add(edge[1])
     for node in adj_dict:  # find node with highest cardinality
         if not len(adj_dict[node]) < max_card:
             next_node = node
@@ -47,7 +39,8 @@ def findmcds(region):
     for node in adj_dict:  # Remove redundant adjacency  
         adj_dict[node] = adj_dict[node] - reachable
     max_card = 0
-    while len(adj_dict) - len(reachable) != 0:  # While there are still unreachable nodes,
+    while len(adj_dict) - len(reachable) != 0 and previous_mcds != working_mcds:  # While there are still unreached
+        previous_mcds = previous_mcds | working_mcds                              # nodes and no unconnected subgraphs
         for node in reachable:                  # repeat only using the cardinality of reachable nodes
             if not len(adj_dict[node]) < max_card:
                 next_node = node
@@ -60,4 +53,13 @@ def findmcds(region):
         for node in adj_dict:
             adj_dict[node] = adj_dict[node] - reachable
         max_card = 0
-    return working_mcds
+    if len(adj_dict) - len(reachable) != 0: # if there is an unconnected subgraph, error
+        print "Error! No valid MCDS for this region"
+        return []
+    for node in working_mcds:
+        for i in range(len(region)):
+            if region[i].idNum == node:
+                index = i
+                break
+        mcds.append(region[index])
+    return mcds
