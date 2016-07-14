@@ -4,6 +4,7 @@ from tinyos.tossim.TossimApp import *
 import random
 from RoutMsg import *
 import sys
+import mcds
 
 #Node class needed to construct a directed graph of network in TOSSIM
 class Node(object):
@@ -94,8 +95,10 @@ for mote in graphRegion:
     print edge, " ",
   print " "
 
-#KYLE ADD YOUR STUFF HERE
-CDSgraph = []
+# for the sake of simplicity, I put this in another file
+CDSgraph = mcds.findmcds(graphRegion)
+print "MCDS is: ", CDSgraph
+
 
 for i in range(0, numNodes):
   m = t.getNode(i);
