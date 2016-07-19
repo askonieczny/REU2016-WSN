@@ -1,0 +1,55 @@
+Node  2  is connected to: 7   8   18   27    
+Node  6  is connected to: 16    
+Node  7  is connected to: 2    
+Node  8  is connected to: 2   9   19    
+Node  9  is connected to: 8    
+Node  12  is connected to: 19   13   16    
+Node  13  is connected to: 12   19   16    
+Node  16  is connected to: 12   13   6    
+Node  18  is connected to: 2    
+Node  19  is connected to: 12   13   8   24    
+Node  24  is connected to: 19    
+Node  27  is connected to: 2    
+Node  28  is connected to:  
+MCDS is: 
+8
+16
+2
+19
+13
+Booting  2  at  2001
+Booting  8  at  8001
+Booting  13  at  13001
+Booting  16  at  16001
+Booting  19  at  19001
+Starting simulation.
+DEBUG (2): Routing protocol for this node (2) is 1
+DEBUG (2): Overlap status for this node (2) is 4
+DEBUG (8): Routing protocol for this node (8) is 1
+DEBUG (8): Overlap status for this node (8) is 1
+DEBUG (13): Routing protocol for this node (13) is 2
+DEBUG (13): Overlap status for this node (13) is 0
+DEBUG (13): 0:0:0.000003101	 APPS: startDone
+DEBUG (16): Routing protocol for this node (16) is 2
+DEBUG (16): Overlap status for this node (16) is 1
+DEBUG (16): 0:0:0.000003101	 APPS: startDone
+DEBUG (19): Routing protocol for this node (19) is 2
+DEBUG (19): Overlap status for this node (19) is 4
+DEBUG (19): 0:0:0.000003102	 APPS: startDone
+DEBUG (2): Overlap: Send of overlap ping request done
+DEBUG (16): Overlap: Send of overlap ping request done
+DEBUG (8): Overlap: Send of overlap ping request done
+DEBUG (19): Overlap: Send of overlap ping request done
+DEBUG (19): 	PingRep received from node 8, added to overlapping array
+DEBUG (8): Overlap: Send of overlap ping reply done
+DEBUG (8): 	PingRep received from node 19, added to overlapping array
+DEBUG (19): Overlap: Send of overlap ping reply done
+DEBUG (2): Universal: Universal message packaged with temp 63, hum 76, and wind 17
+DEBUG (2): OverlayNetworkC$sendMessage: Transmission succeeded.
+DEBUG (8): Universal: Universal message packaged with temp 75, hum 83, and wind 15
+DEBUG (8): CTP: Sending universal packet to 19
+DEBUG (8): OverlayNetworkC$sendMessage: Transmission succeeded.
+DEBUG (19): AODV: universal packet received
+DEBUG (19): 0:0:0.376511410	 AODV: AMSend.send() dest: 19 id: 1 len: 8 nexthop: 65535
+DEBUG (8): Universal: send done
+Completed simulation.

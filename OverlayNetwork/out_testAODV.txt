@@ -1,0 +1,222 @@
+Booting  1  at  1000
+Booting  2  at  2000
+Booting  3  at  3000
+Booting  4  at  4000
+Booting  5  at  5000
+Booting  6  at  6000
+Booting  7  at  7000
+Booting  8  at  8000
+Booting  9  at  9000
+Booting  10  at  10000
+Booting  11  at  11000
+Booting  12  at  12000
+Booting  13  at  13000
+Booting  14  at  14000
+Booting  15  at  15000
+Booting  16  at  16000
+Booting  17  at  17000
+Booting  18  at  18000
+Booting  19  at  19000
+Booting  20  at  20000
+Starting simulation.
+DEBUG (1): Routing protocol for this node (1) is 2
+DEBUG (1): 0:0:0.000002100	 APPS: startDone
+DEBUG (2): Routing protocol for this node (2) is 2
+DEBUG (2): 0:0:0.000002100	 APPS: startDone
+DEBUG (3): Routing protocol for this node (3) is 2
+DEBUG (3): 0:0:0.000002100	 APPS: startDone
+DEBUG (4): Routing protocol for this node (4) is 2
+DEBUG (4): 0:0:0.000002100	 APPS: startDone
+DEBUG (5): Routing protocol for this node (5) is 2
+DEBUG (5): 0:0:0.000002100	 APPS: startDone
+DEBUG (6): Routing protocol for this node (6) is 2
+DEBUG (6): 0:0:0.000002100	 APPS: startDone
+DEBUG (7): Routing protocol for this node (7) is 2
+DEBUG (7): 0:0:0.000002100	 APPS: startDone
+DEBUG (8): Routing protocol for this node (8) is 2
+DEBUG (8): 0:0:0.000002100	 APPS: startDone
+DEBUG (9): Routing protocol for this node (9) is 2
+DEBUG (9): 0:0:0.000002100	 APPS: startDone
+DEBUG (10): Routing protocol for this node (10) is 2
+DEBUG (10): 0:0:0.000002101	 APPS: startDone
+DEBUG (10): Millitimer started on node 10 because src is 10
+DEBUG (11): Routing protocol for this node (11) is 2
+DEBUG (11): 0:0:0.000002101	 APPS: startDone
+DEBUG (12): Routing protocol for this node (12) is 2
+DEBUG (12): 0:0:0.000002101	 APPS: startDone
+DEBUG (13): Routing protocol for this node (13) is 2
+DEBUG (13): 0:0:0.000002101	 APPS: startDone
+DEBUG (14): Routing protocol for this node (14) is 2
+DEBUG (14): 0:0:0.000002101	 APPS: startDone
+DEBUG (15): Routing protocol for this node (15) is 2
+DEBUG (15): 0:0:0.000002101	 APPS: startDone
+DEBUG (16): Routing protocol for this node (16) is 2
+DEBUG (16): 0:0:0.000002101	 APPS: startDone
+DEBUG (17): Routing protocol for this node (17) is 2
+DEBUG (17): 0:0:0.000002101	 APPS: startDone
+DEBUG (18): Routing protocol for this node (18) is 2
+DEBUG (18): 0:0:0.000002101	 APPS: startDone
+DEBUG (19): Routing protocol for this node (19) is 2
+DEBUG (19): 0:0:0.000002101	 APPS: startDone
+DEBUG (20): Routing protocol for this node (20) is 2
+DEBUG (20): 0:0:0.000002102	 APPS: startDone
+DEBUG (10): 0:0:1.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:1.000001010	 AODV: AMSend.send() dest: 11 id: 1 len: 41 nexthop: 65535
+DEBUG (10): 0:0:1.000001010	 AODV: AMSend.send() a new destination
+DEBUG (10): 0:0:1.000001010	 AODV: sendRREQ() dest: 11
+DEBUG (10): 0:0:1.000001010	 AODV: sendRREQ()
+DEBUG (15): 0:0:1.008667951	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (18): 0:0:1.008667951	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:1.008667951	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:1.017579335	 AODV: sendRREQ() dest: 0
+DEBUG (12): 0:0:1.017579335	 AODV: sendRREQ()
+DEBUG (16): 0:0:1.023499710	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (19): 0:0:1.023499710	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (10): 0:0:1.023499710	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (19): 0:0:1.062501910	 AODV: sendRREQ() dest: 0
+DEBUG (19): 0:0:1.062501910	 AODV: sendRREQ()
+DEBUG (13): 0:0:1.064088814	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:1.064088814	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (15): 0:0:1.066407760	 AODV: sendRREQ() dest: 0
+DEBUG (15): 0:0:1.066407760	 AODV: sendRREQ()
+DEBUG (18): 0:0:1.066408060	 AODV: sendRREQ() dest: 0
+DEBUG (18): 0:0:1.066408060	 AODV: sendRREQ()
+DEBUG (17): 0:0:1.068986780	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (10): 0:0:1.068986780	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (13): 0:0:1.073243497	 AODV: sendRREQ() dest: 0
+DEBUG (13): 0:0:1.073243497	 AODV: sendRREQ()
+DEBUG (10): 0:0:1.074845821	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (14): 0:0:1.074845821	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (16): 0:0:1.081773110	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (19): 0:0:1.081773110	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (16): 0:0:1.082032860	 AODV: sendRREQ() dest: 0
+DEBUG (16): 0:0:1.082032860	 AODV: sendRREQ()
+DEBUG (14): 0:0:1.083985785	 AODV: sendRREQ() dest: 0
+DEBUG (14): 0:0:1.083985785	 AODV: sendRREQ()
+DEBUG (15): 0:0:1.087083301	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (13): 0:0:1.091462736	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:1.091462736	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (17): 0:0:1.126954835	 AODV: sendRREQ() dest: 0
+DEBUG (17): 0:0:1.126954835	 AODV: sendRREQ()
+DEBUG (18): 0:0:1.131898653	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (11): 0:0:1.131898653	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (11): 0:0:1.131898653	 AODV: sendRREP() to 17
+DEBUG (17): 0:0:1.138414118	 AODV: ReceiveRREP.receive() src: 10 dest: 11 
+DEBUG (17): 0:0:1.138414118	 AODV: sendRREP() to 18
+DEBUG (18): 0:0:1.140229904	 AODV: ReceiveRREP.receive() src: 10 dest: 11 
+DEBUG (18): 0:0:1.140229904	 AODV: sendRREP() to 10
+DEBUG (10): 0:0:1.142457674	 AODV: ReceiveRREP.receive() src: 10 dest: 11 
+DEBUG (10): 0:0:2.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:2.000001010	 AODV: AMSend.send() dest: 11 id: 1 len: 41 nexthop: 18
+DEBUG (10): 0:0:2.000001010	 AODV: AMSend.send() there is a route to 11
+DEBUG (18): 0:0:2.005921385	 AODV: SubReceive.receive() dest: 11 src:10
+DEBUG (18): 0:0:2.005921385	 AODV: SubReceive.receive() deliver to next hop:11
+DEBUG (18): 0:0:2.005921385	 AODV: forwardMSG() send MSG to: 17
+DEBUG (10): APPS: sendDone!!
+DEBUG (18): 0:0:2.013794874	 AODV: SubSend.sendDone() msg was not acked, resend
+DEBUG (17): 0:0:2.018525071	 AODV: SubReceive.receive() dest: 11 src:10
+DEBUG (17): 0:0:2.018525071	 AODV: SubReceive.receive() deliver to next hop:b
+DEBUG (17): 0:0:2.018525071	 AODV: forwardMSG() send MSG to: 11
+DEBUG (18): 0:0:2.018692917	 AODV: SubSend.sendDone() msg was not acked, resend
+DEBUG (11): 0:0:2.025971317	 AODV: SubReceive.receive() dest: 11 src:10
+DEBUG (11): 0:0:2.025971317	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (11): 0:0:2.025971317	 Received!!!!
+DEBUG (18): 0:0:2.026017093	 AODV: SubSend.sendDone() route may be corrupted
+DEBUG (18): 0:0:2.026017093	 AODV: del_route_table() dest:18
+DEBUG (10): 0:0:2.028855211	 AODV: ReceiveRERR.receive()
+DEBUG (10): 0:0:2.028855211	 AODV: del_route_table() dest:11
+DEBUG (10): 0:0:3.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:3.000001010	 AODV: AMSend.send() dest: 11 id: 1 len: 41 nexthop: 65535
+DEBUG (10): 0:0:3.000001010	 AODV: AMSend.send() a new destination
+DEBUG (10): 0:0:3.000001010	 AODV: sendRREQ() dest: 11
+DEBUG (10): 0:0:3.000001010	 AODV: sendRREQ()
+DEBUG (15): 0:0:3.005524659	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:3.005524659	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:3.005524669	 AODV: sendRREQ() dest: 0
+DEBUG (12): 0:0:3.005524669	 AODV: sendRREQ()
+DEBUG (16): 0:0:3.014649372	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (19): 0:0:3.014649372	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (10): 0:0:3.014649372	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (16): 0:0:3.023439110	 AODV: sendRREQ() dest: 0
+DEBUG (16): 0:0:3.023439110	 AODV: sendRREQ()
+DEBUG (13): 0:0:3.029100087	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:3.029100087	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (15): 0:0:3.043946822	 AODV: sendRREQ() dest: 0
+DEBUG (15): 0:0:3.043946822	 AODV: sendRREQ()
+DEBUG (13): 0:0:3.047852872	 AODV: sendRREQ() dest: 0
+DEBUG (13): 0:0:3.047852872	 AODV: sendRREQ()
+DEBUG (14): 0:0:3.052064450	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (10): 0:0:3.052064450	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (19): 0:0:3.052736285	 AODV: sendRREQ() dest: 0
+DEBUG (19): 0:0:3.052736285	 AODV: sendRREQ()
+DEBUG (16): 0:0:3.057069127	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (19): 0:0:3.057069127	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (13): 0:0:3.058092088	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:3.058092088	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (14): 0:0:3.110352972	 AODV: sendRREQ() dest: 0
+DEBUG (14): 0:0:3.110352972	 AODV: sendRREQ()
+DEBUG (15): 0:0:3.120850958	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (10): 0:0:4.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:4.000001010	 AODV: AMSend.send() dest: 11 id: 1 len: 41 nexthop: 65535
+DEBUG (10): 0:0:4.000001010	 AODV: AMSend.send() a new destination
+DEBUG (10): 0:0:4.000001010	 AODV: sendRREQ() dest: 11
+DEBUG (10): 0:0:4.000001010	 AODV: sendRREQ()
+DEBUG (15): 0:0:4.005127933	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (18): 0:0:4.005127933	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:4.005127933	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (18): 0:0:4.005127943	 AODV: sendRREQ() dest: 0
+DEBUG (18): 0:0:4.005127943	 AODV: sendRREQ()
+DEBUG (17): 0:0:4.007493041	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (10): 0:0:4.007493041	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (15): 0:0:4.034181197	 AODV: sendRREQ() dest: 0
+DEBUG (15): 0:0:4.034181197	 AODV: sendRREQ()
+DEBUG (17): 0:0:4.036134522	 AODV: sendRREQ() dest: 0
+DEBUG (17): 0:0:4.036134522	 AODV: sendRREQ()
+DEBUG (14): 0:0:4.039674329	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (10): 0:0:4.039674329	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (14): 0:0:4.039674339	 AODV: sendRREQ() dest: 0
+DEBUG (14): 0:0:4.039674339	 AODV: sendRREQ()
+DEBUG (18): 0:0:4.044923533	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (11): 0:0:4.044923533	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (11): 0:0:4.044923533	 AODV: sendRREP() to 17
+DEBUG (17): 0:0:4.049974163	 AODV: ReceiveRREP.receive() src: 10 dest: 11 
+DEBUG (17): 0:0:4.049974163	 AODV: sendRREP() to 18
+DEBUG (15): 0:0:4.050034996	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (18): 0:0:4.051789948	 AODV: ReceiveRREP.receive() src: 10 dest: 11 
+DEBUG (18): 0:0:4.051789948	 AODV: sendRREP() to 10
+DEBUG (12): 0:0:4.053712147	 AODV: sendRREQ() dest: 0
+DEBUG (12): 0:0:4.053712147	 AODV: sendRREQ()
+DEBUG (10): 0:0:4.058396965	 AODV: ReceiveRREP.receive() src: 10 dest: 11 
+DEBUG (16): 0:0:4.061936586	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (19): 0:0:4.061936586	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (10): 0:0:4.061936586	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (19): 0:0:4.071290972	 AODV: sendRREQ() dest: 0
+DEBUG (19): 0:0:4.071290972	 AODV: sendRREQ()
+DEBUG (12): 0:0:4.076173756	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (16): 0:0:4.090821922	 AODV: sendRREQ() dest: 0
+DEBUG (16): 0:0:4.090821922	 AODV: sendRREQ()
+DEBUG (13): 0:0:4.102326982	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (12): 0:0:4.102326982	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (13): 0:0:4.160157560	 AODV: sendRREQ() dest: 0
+DEBUG (13): 0:0:4.160157560	 AODV: sendRREQ()
+DEBUG (16): 0:0:4.170686063	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (19): 0:0:4.170686063	 AODV: ReceiveRREQ.receive() src:10 dest: 11 
+DEBUG (10): 0:0:5.000001010	 APPS: MilliTimer.fired()
+DEBUG (10): 0:0:5.000001010	 AODV: AMSend.send() dest: 11 id: 1 len: 41 nexthop: 18
+DEBUG (10): 0:0:5.000001010	 AODV: AMSend.send() there is a route to 11
+DEBUG (18): 0:0:5.006211300	 AODV: SubReceive.receive() dest: 11 src:10
+DEBUG (18): 0:0:5.006211300	 AODV: SubReceive.receive() deliver to next hop:11
+DEBUG (18): 0:0:5.006211300	 AODV: forwardMSG() send MSG to: 17
+DEBUG (10): APPS: sendDone!!
+DEBUG (17): 0:0:5.011445035	 AODV: SubReceive.receive() dest: 11 src:10
+DEBUG (17): 0:0:5.011445035	 AODV: SubReceive.receive() deliver to next hop:b
+DEBUG (17): 0:0:5.011445035	 AODV: forwardMSG() send MSG to: 11
+DEBUG (18): 0:0:5.011612880	 AODV: SubSend.sendDone() msg was not acked, resend
+DEBUG (18): 0:0:5.015915834	 AODV: SubSend.sendDone() msg was not acked, resend
+DEBUG (11): 0:0:5.018509813	 AODV: SubReceive.receive() dest: 11 src:10
+DEBUG (11): 0:0:5.018509813	 AODV: SubReceive.receive() deliver to upper layer
+DEBUG (18): 0:0:5.026398561	 AODV: SubSend.sendDone() route may be corrupted
+DEBUG (18): 0:0:5.026398561	 AODV: del_route_table() dest:18
+DEBUG (10): 0:0:5.035660591	 AODV: ReceiveRERR.receive()
+DEBUG (10): 0:0:5.035660591	 AODV: del_route_table() dest:11
+Completed simulation.
