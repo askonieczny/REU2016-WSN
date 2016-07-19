@@ -94,6 +94,10 @@ implementation {
   message_t pkt;
   message_t* p_pkt;
   message_t* aodv_msg;
+  aodv_msg_hdr* mReceived;
+  nx_uint8_t tempPackaged;
+  nx_uint8_t humPackaged;
+  nx_uint8_t windPackaged;
 
   uint16_t src = 10; //source node of AODV send
   uint16_t dest = 19; //destination node of AODV send
@@ -252,15 +256,38 @@ implementation {
 
   //This timer used for AODV and simple flooding nodes
   event void MilliTimer.fired() {
-    //uint8_t test;
+
+    //needed for AODV millitimer
+    universal_msg_t* u;
+    int16_t universalDest;
+
     if(prot == 2) { //if protocol is AODV
       dbg("APPS", "%s\t APPS: MilliTimer.fired()\n", sim_time_string());
-      p_pkt -> data[0] = 40;
-      p_pkt -> data[1] = 50;
-      p_pkt -> data[2] = 60;
+      tempPackaged = 40;
+      humPackaged = 50;
+      windPackaged = 60;
+      p_pkt -> data[5] = tempPackaged;
+      p_pkt -> data[6] = humPackaged;
+      p_pkt -> data[7] = windPackaged;
       call Leds.led0Toggle();
-      dbg("TestNetworkC", "Test variable is %d\n", test);
       call AMAODVSend.send(dest, &pkt, sizeof(p_pkt));
+
+      if(!(overlap == 0)) { //if node overlaps with something
+        u = (universal_msg_t*)call UniversalPacket.getPayload(&uPkt, sizeof(universal_msg_t));
+
+        u -> temp = tempPackaged;
+        u -> hum = humPackaged;
+        u -> wind = windPackaged;
+
+        i = 0;
+        while(i < numNodes && overlappingNodes[i] != -1) {
+          universalDest = (uint16_t)overlappingNodes[i];
+          dbg("Flooding", "Flooding: Sending universal packet to %d\n", universalDest);
+          call UniversalSend.send(universalDest, &uPkt, sizeof(universal_msg_t));
+          i++;
+        }
+      }
+
     }
     else if(prot == 3) { //if protocol is Simple flooding
       flood_msg_t* floodMsg = (flood_msg_t*)call Packet.getPayload(&floodPkt, sizeof(flood_msg_t));
@@ -383,6 +410,10 @@ implementation {
     //variables needed for flood nodes
     flood_msg_t* f;
 
+    //variables needed for AODV nodes
+    message_t aodv_pkt;
+    message_t* aodv_pkt_p;
+
     //different responses according to what protocol the node follows
     if(prot == 1) { //if node follows CTP
       universal_msg_t* u;
@@ -425,6 +456,23 @@ implementation {
       }
 
     } else if(prot == 2) { //if node follows AODV
+      universal_msg_t* u;
+      u = (universal_msg_t*)payload;
+      
+      //extract existing fields
+      tempReceived = u -> temp;
+      humReceived = u -> hum;
+      windReceived = u -> wind;
+      dbg("AODV", "AODV: universal packet received\n");
+
+      aodv_pkt_p = &aodv_pkt;
+      aodv_pkt_p -> data[5] = tempReceived;
+      aodv_pkt_p -> data[6] = humReceived;
+      aodv_pkt_p -> data[7] = windReceived; //MIGHT HAVE TO CHANGE THIS TO 8 bit
+
+      //send to designated destination
+      call AMAODVSend.send(dest, &aodv_pkt, sizeof(aodv_pkt_p));
+      
 
     } else if(prot == 3) {
       universal_msg_t* u;
@@ -608,8 +656,15 @@ implementation {
     //uint16_t aodv_temp;
     //uint16_t aodv_hum;
     //uint16_t aodv_wind;
-    aodv_msg = (message_t*)payload;
-    if(prot == 2) { //if protocol is AODV
+    //aodv_hdr = payload;
+    //message_t* m;
+    mReceived = (aodv_msg_hdr*)msg->data;
+    if(prot == 2) { //if protocol is aodv_msg
+      i = 0;
+      for( i=0;i<3;i++ ) {
+        dbg("AODV", "\t AODV: data[%d] is %d\n", i, mReceived->data[i]);
+      }
+      /*
       tempReceived = aodv_msg -> data[0];
       humReceived = aodv_msg -> data[1];
       windReceived = aodv_msg -> data[2];
@@ -617,6 +672,7 @@ implementation {
       dbg("AODV", "\t AODV: Temp is %d\n", tempReceived);
       dbg("AODV", "\t AODV: Hum is %d\n", humReceived);
       dbg("AODV", "\t AODV: Wind is %d\n", windReceived);
+      */
 
       /*
       aodv_temp = aodv_msg -> temp;

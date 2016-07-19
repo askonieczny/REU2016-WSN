@@ -97,14 +97,19 @@ for mote in graphRegion:
 
 # for the sake of simplicity, I put this in another file
 CDSgraph = mcds.findmcds(graphRegion)
-print "MCDS is: ", CDSgraph
+CDSgraphIDnums = []
+print "MCDS is: "
+for node in CDSgraph:
+  print node.idNum
+  CDSgraphIDnums.append(node.idNum)
 
 
 for i in range(0, numNodes):
-  m = t.getNode(i);
-  m.createNoiseModel();
-  m.bootAtTime(1000 * i + 1);
-  print "Booting ", i, " at ", i * 1000 + 1
+	m = t.getNode(i);
+	if(i in CDSgraphIDnums):
+		m.createNoiseModel();
+		m.bootAtTime(1000 * i + 1);
+		print "Booting ", i, " at ", i * 1000 + 1
 
 print "Starting simulation."
 
@@ -184,7 +189,8 @@ for i in range(numNodes):
   pkt.setType(msg.get_amType())
   pkt.setData(msg.data)
   pkt.setDestination(i)
-  pkt.deliver(i, numNodes * 1000 + 1000 + i + 2)
+  if(i in CDSgraphIDnums):
+  	pkt.deliver(i, numNodes * 1000 + 1000 + i + 2)
 
  
 

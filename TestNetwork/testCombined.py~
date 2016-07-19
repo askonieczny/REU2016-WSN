@@ -4,7 +4,6 @@ from tinyos.tossim.TossimApp import *
 import random
 from RoutMsg import *
 import sys
-import mcds
 
 #Node class needed to construct a directed graph of network in TOSSIM
 class Node(object):
@@ -95,10 +94,8 @@ for mote in graphRegion:
     print edge, " ",
   print " "
 
-# for the sake of simplicity, I put this in another file
-CDSgraph = mcds.findmcds(graphRegion)
-print "MCDS is: " CDSgraph
-
+#KYLE ADD YOUR STUFF HERE
+CDSgraph = []
 
 for i in range(0, numNodes):
   m = t.getNode(i);
@@ -117,12 +114,12 @@ print "Starting simulation."
 #t.addChannel("Gain", sys.stdout)
 #t.addChannel("Forwarder", sys.stdout)
 t.addChannel("AODV", sys.stdout)
-t.addChannel("TestNetworkC", sys.stdout)
-t.addChannel("Flooding", sys.stdout)
-t.addChannel("CTP", sys.stdout)
-t.addChannel("APPS", sys.stdout)
-t.addChannel("Traffic", sys.stdout)
-t.addChannel("Universal", sys.stdout)
+#t.addChannel("TestNetworkC", sys.stdout)
+#t.addChannel("Flooding", sys.stdout)
+#t.addChannel("CTP", sys.stdout)
+#t.addChannel("APPS", sys.stdout)
+#t.addChannel("Traffic", sys.stdout)
+#t.addChannel("Universal", sys.stdout)
 #t.addChannel("AODV_DBG", sys.stdout)
 #t.addChannel("Acks", sys.stdout)
 

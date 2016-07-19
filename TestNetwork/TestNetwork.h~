@@ -45,11 +45,5 @@ typedef nx_struct universal_msg {
   nx_uint16_t wind;
 } universal_msg_t;
 
-typedef nx_struct aodv_msg {
-  nx_uint16_t temp;
-  nx_uint16_t hum;
-  nx_uint16_t wind;
-} aodv_msg_t;
-
 
 #endif
