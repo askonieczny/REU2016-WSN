@@ -113,7 +113,7 @@ implementation {
   float wind_f = 0;
   float hum_f =0;
   float num_f = 0;
-  int16_t tmpSources[10]; //10 must be changed if topo size is changed
+  int16_t tmpSources[10]; //10 must be changed if numFloodNodes is changed
   int16_t msgSources[10];
   message_t floodPkt;
   message_t fPkt;
@@ -690,7 +690,6 @@ implementation {
     //variables needed for universal message sends
 
     if(prot == 1) { //if protocol is CTP
-      //if(TOS_NODE_ID == 0){ 
       TestNetworkMsg* rcm = (TestNetworkMsg*) payload;
       tempReceived = rcm -> temp;
       humReceived = rcm -> hum;
@@ -707,7 +706,6 @@ implementation {
       dbg("CTP", "CTP: Temp value is %.3f.\n", temp/num);
       dbg("CTP", "CTP: Wind value is %.3f.\n", wind/num);
       dbg("CTP", "CTP: Humidity value is %.3f.\n", hum/num);
-      //}
       dbg("OverlayNetworkC", "CTP Node received packet at %s from node %hhu.\n", sim_time_string(), call CollectionPacket.getOrigin(msg));
       dbg("OverlayNetworkC", "Current overlap status is %d\n", overlap);
       call Leds.led1Toggle();
@@ -732,9 +730,7 @@ implementation {
           post uartEchoTask();
         }
         return tmp;
-      }
-
-      
+      }     
     }
     return msg;
  }
